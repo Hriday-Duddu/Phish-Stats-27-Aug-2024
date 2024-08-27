@@ -1,0 +1,514 @@
+:root{
+    /* member */
+    --member-frame-width: 90%;
+    --member-theme-color: #ffab00;
+    --member-theme-gradient: linear-gradient(333deg,#ffab00 0%,#f3bc4f 100%);
+    --member-secondary-color: #673AB7;
+    --member-secondary-gradient: linear-gradient(333deg,#673AB7 0%,#5e05f6 100%);
+    --member-text:#fff;
+    --member-title-color: #673AB7;
+
+    /* member home */
+    --member-balance-wrap:#424242;
+    --member-balance-info:#673AB7;
+    --member-top-wrap:#eee;
+    --member-top-text:#424242;
+    --member-btn-color1: #9e9e9e;
+    --member-btn-color2: #FF4081;
+    --member-trans-bg1: #ffab00;
+    --member-trans-bg2: #FF4081;
+    --member-trans-bg3: #673ab7;
+    --member-trans-text1: #fff;
+    --member-trans-text2: #fff;
+    --member-trans-text3: #fff;
+    --member-right-wrap:#ededed;
+    --member-right-wrap-border:1px solid #E0E0E0;
+    --member-right-item:#fff;
+    --member-right-item-text:#616161;
+    --member-right-item-border:1px #e0e0e0 solid;
+    --member-icon-color: #ffab00;
+    --member-progress-bg: #dbdbdb;
+    --member-progress-color: var(--member-secondary-color);
+
+    /* member platform */
+    --member-platfrom-bg: #fff;
+    --member-platfrom-wrap: #424242;
+    --member-platfrom-amount-text: #fff;
+    --member-platfrom-amount-bg: var(--member-secondary-color);
+
+    /* member transaction nav */
+    --member-nav-bg: #EEEEEE;
+    --member-nav-hover: #fff;
+    --member-nav-text: #757575;
+
+    /* member profile */
+    --member-profile-label: #666;
+
+    /* member modal */
+    --member-modal-header: linear-gradient(90deg,#ff6f00,#ffab00);
+    --member-modal-content: #fff;
+    --member-modal-color: #424242;
+
+    /* member transaction */
+    --member-transaction-bg: #F5F5F5;
+    --member-transaction-text: #424242;
+
+    /* member report */
+    --member-report-header: #e0e0e0;
+    --member-report-input-border: 1px solid #e9e9e9;
+    --member-report-input-bg: #fff;
+    --member-report-input-text: #767676;
+    --member-report-icon-filter: unset;
+
+    /* member report */
+    --member-msg-text: #424242;
+
+    /* memer button */
+    --member-button-bg: var(--member-theme-color);
+    --member-button-text: var(--member-theme-text);
+
+    /* member preferential */
+    --member-preferential-text : #424242;
+}
+
+/* home */
+#memberhome--wrap .memberhome--wrap--top{
+    background: var(--member-top-wrap);
+}
+#memberhome--wrap .memberhome--wrap--top .memberhome--profile .memberhome--username .vip--label{
+    background: var(--member-secondary-color);
+    color: var(--member-text);
+}
+#memberhome--wrap .memberhome--wrap--top .memberhome--profile .memberhome--username{
+    color: var(--member-top-text);
+}
+#memberhome--wrap .memberhome--wrap--left .balance--wrap{
+    background: var(--member-balance-wrap);
+    color: var(--member-text);
+}
+#memberhome--wrap .memberhome--wrap--left .balance--wrap .balance--info{
+    background: var(--member-balance-info);
+}
+#memberhome--wrap .memberhome--wrap--left .balance--wrap .balance--button>div{
+    background: var(--member-btn-color1);
+}
+#memberhome--wrap .memberhome--wrap--left .balance--wrap .balance--button>div:nth-child(2){
+    background: var(--member-btn-color2);
+}
+#memberhome--wrap .memberhome--wrap--left .transaction--wrap > div{
+    background: var(--member-trans-bg1);
+    color: var(--member-trans-text1);
+}
+#memberhome--wrap .memberhome--wrap--left .transaction--wrap > div:nth-child(2){
+    background: var(--member-trans-bg2);
+    color: var(--member-trans-text2);
+}
+#memberhome--wrap .memberhome--wrap--left .transaction--wrap > div:nth-child(3){
+    background: var(--member-trans-bg3);
+    color: var(--member-trans-text3);
+}
+#memberhome--wrap .memberhome--wrap--right{
+    background: var(--member-right-wrap);
+    border: var(--member-right-wrap-border);
+}
+#memberhome--wrap .memberhome--wrap--right > div{
+    background: var(--member-right-item);
+    color: var(--member-right-item-text);
+    border: var(--member-right-item-border);
+}
+#memberhome--wrap .memberhome--wrap--right > div i{
+    color: var(--member-icon-color);
+}
+.memberhome--vip .vip--progress{
+    background-color: var(--member-progress-bg);
+}
+.memberhome--vip .vip--progress .progress--bar{
+    background-color: var(--member-progress-color);
+    color: var(--member-text);
+}
+
+/* report */
+#member-bet-wrap .bet-form {
+    background: var(--member-report-header);
+}
+#member-bet-wrap .bet-form form input,
+#member-bet-wrap .bet-form form select {
+    border: var(--member-report-input-border);
+    background: var(--member-report-input-bg);
+    color: var(--member-report-input-text);
+}
+#member-bet-wrap .bet-form form>span{
+    color: var(--member-report-input-text);
+}
+#member-bet-wrap .bet-content {
+    border: var(--member-report-input-border);
+    color: var(--member-report-input-text);
+}
+#member-report-wrap .top-title 
+{
+    color: var(--member-title-color);
+}
+#member-report-wrap .report-tap,
+#member-center-wrap .center-tap,
+#member-account-wrap .account-tap  {
+  background: var(--member-nav-bg);
+}
+
+#member-report-wrap .report-tap a,
+#member-center-wrap .center-tap a {
+    color: var(--member-nav-text);
+}
+
+#member-report-wrap .report-tap a.active, #member-report-wrap .report-tap a:hover,
+#member-center-wrap .center-tap a.active, #member-center-wrap .center-tap a:hover {
+  border-bottom-color: var(--member-theme-color);
+  color: var(--member-theme-color);
+}
+
+#member-bet-wrap .bet-form form .btn {
+    color: var(--member-text);
+    background: var(--member-theme-color);
+}
+
+#member-report-wrap .report-count .active {
+    color: var(--member-theme-color);
+}
+
+#member-bet-wrap .bet-content .content-info .info-div:hover {
+    background-color: var(--member-balance-wrap);
+    color: var(--member-theme-color);
+}
+#member-bet-wrap .bet-content .content-info .no-content img{
+    filter: var(--member-report-icon-filter);
+}
+/* transaction */
+#member-withdraw-wrap,
+#member-transfer-wrap,
+.member-deposit-wrap form,
+#member-deposit-wrap .member-deposit-box-wrap {
+    background: var(--member-transaction-bg);
+    color: var(--member-transaction-text);
+}
+
+/* deposit */
+.member-deposit-channels .deposit-channel-wrap .deposit-channel.active{
+    border: 1px solid var(--member-secondary-color);
+    background: #fff;
+  }
+.member-deposit-submit button{
+    background: var(--member-theme-color);
+    color: #f4f6f9;
+}
+
+#member-deposit-wrap .deposit-content-box .member-deposit-content{
+    border-color: var(--member-theme-color);
+    color: var(--member-theme-color);
+}
+#member-deposit-wrap input[type=file]::-ms-browse {
+    border: 1px solid var(--member-theme-color);
+    background: var(--member-theme-color);
+    color: #fff;
+}
+#member-deposit-wrap input[type=file]::-webkit-file-upload-button {
+    border: 1px solid var(--member-secondary-color);
+    background: var(--member-theme-color);
+    color: #fff;
+}
+#member-deposit-wrap input[type=file]::file-selector-button {
+    border: 1px solid var(--member-secondary-color);
+    background: var(--member-theme-color);
+    color: #fff;
+}
+.member-deposit-channels .deposit-channel-wrap .deposit-channel.active+div span{
+    color: var(--member-secondary-color);
+}
+#member-deposit-wrap .copy .fa.fa-copy {
+    color: var(--member-secondary-color);
+}
+.member-deposit-bankSelect .show-extra a {
+    background: linear-gradient(270deg, #ffc107, #ffeb3b);
+    box-shadow: 0 5px 12px 0 rgb(0 0 0 / 50%);
+    color: #000;
+}
+  
+/* withdraw */
+#member-withdraw-wrap .withdraw-top .top-title {
+    background: var(--member-secondary-gradient);
+    color: #fff;
+}
+
+#member-withdraw-wrap .withdraw-top .top-title input{
+    color: #fff;
+    background: var(--member-theme-gradient);
+}
+
+#member-withdraw-wrap .withdraw-top .top-title input.lock:hover{
+    background: var(--member-theme-gradient);
+}
+/* transfer */
+#member-transfer-wrap .top-title {
+    background: var(--member-secondary-gradient);
+    color: #fff;
+}
+
+#member-transfer-wrap .left-form>input,
+#member-transfer-wrap .top-title input {
+    color: #fff;
+    background: var(--member-theme-color);
+}
+#member-transfer-wrap .left-form>input.lock:hover,
+#member-transfer-wrap .top-title input.lock:hover {
+    background: var(--member-theme-color);
+}
+#member-transfer-wrap .left-form .form-table span{
+    color: var(--member-theme-color);
+}
+
+.transfer-top .form-submitbutton input{
+    background: var(--member-theme-color);
+    color: #f4f6f9;
+}
+
+/* platfrom */
+.form-submitbutton input{
+    background: var(--member-theme-gradient);
+    color: #f4f6f9;
+}
+ul.product_category li.active,ul.product_category li:hover {
+    color: var(--member-theme-color);
+}
+.platform {
+    background: var(--member-platfrom-wrap);
+}
+.platform ul li{
+    background: #fff;
+}
+.platform ul li .platform-logo .icon{
+    color: var(--member-platfrom-wrap);
+}
+
+.refresh_button{
+    border: 1px solid var(--member-theme-color);
+    color: var(--member-theme-color);
+    background: #fff;
+}
+
+.refresh_button:hover{
+    color: #ffffff;
+    background: var(--member-theme-color);
+}
+.platform ul li .amount-box{
+    color: var(--member-platfrom-amount-text);
+    background: var(--member-platfrom-amount-bg);
+}
+ul.product_category {
+    border: 1px solid var(--member-theme-color);
+}
+.platform ul li .amount-box .fa.fa-refresh.button{
+    color: var(--member-theme-color);
+}
+
+/* transaction nav */
+#member-navbar .backwrap{
+    color: var(--member-nav-text);
+}
+.transaction-navbar{
+    background-color: var(--member-nav-bg);
+}
+.transaction-navbar .navbar--item{
+    background-color: var(--member-nav-bg);
+    color: var(--member-nav-text)!important;
+}
+.transaction-navbar .navbar--item > div:hover,
+.transaction-navbar .navbar--item > div.selected{
+    background: var(--member-nav-hover);
+    color: var(--member-secondary-color);
+}
+
+/* msg */
+#member-msg-wrap{
+    background: var(--member-transaction-bg);
+    color: var(--member-transaction-text);
+}
+#member-msg-wrap .msg-count .active {
+    color: var(--member-theme-color);
+}
+
+/* preferential */
+#member-preferential-wrap{
+    background: var(--member-transaction-bg);
+    color: var(--member-transaction-text);
+}
+#member-preferential-wrap .preferential-title ul li:hover {
+    color: var(--member-theme-color);
+}
+#member-preferential-wrap .preferential-count .active, #member-preferential-wrap .preferential-title ul li.active {
+    color: var(--member-theme-color)!important;
+}
+.preferential-title .promo {
+    color: var(--member-secondary-color);
+}
+#member-preferential-wrap .preferential-title {
+    color: var(--member-preferential-text);
+}
+/* profile */
+#profile-wrap .top-title {
+    color: var(--member-secondary-color);
+}
+
+#profile-wrap .row label {
+    color: var(--member-profile-label);
+}
+
+#profile-wrap .row .fa-edit,
+#profile-wrap .row .close{
+    color: var(--member-profile-label);
+}
+#profile_modal .modal-header, #verify_modal_phone .modal-header, #verify_modal_TAC .modal-header{
+    background: var(--member-modal-header);
+}
+#profile-wrap .modal-body{
+    background: var(--member-modal-content);
+    color: var(--member-modal-color);
+    
+}
+.platform ul li {
+    background: var(--member-platfrom-bg);
+}
+
+#profile-wrap .row .fa-edit:hover{
+    color: var(--member-theme-color);
+}
+#profile-wrap .remind{
+    color: var(--member-theme-color);
+}
+#profile-wrap .verifyBtn{
+    background: var(--member-theme-color);
+    color: var(--member-text);
+}
+
+
+
+.modal_row label,
+#profile_modal label,
+#verify_modal_phone label,
+#verify_modal_TAC label{
+    color: var(--member-secondary-color);
+}
+.modal_row label {
+    padding: 0 5px 10px 0;
+    min-width: 45%;
+    text-align: right;
+    line-height: 30px;
+    font-weight: 700;
+}
+.modal_btn{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.modal_btn .button {
+    padding: 5px 40px;
+    cursor: pointer;
+    background: var(--member-button-bg);
+    border: 0px;
+    border-radius: 5px;
+    width: 135px;
+    color: var(--member-button-text);
+    height: 35px;
+    font-size: 15px;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+    text-align: center;
+}
+.modal_btn .button.submitButton{
+    background: var(--member-button-bg);
+    color: var(--member-button-text);
+}
+/* reference */
+#referral-link,
+#referral-wrap label,
+#referral-code,
+#referral-count {
+    color: var(--member-top-text);
+}
+
+#referral-wrap .fa{
+    color: var(--member-theme-color);
+}
+
+/* safety */
+.row label,
+#changePasswordForm .row label{
+    color: var(--member-profile-label);
+}
+#member-account-wrap .top-title 
+{
+  color: var(--member-secondary-color);;
+}
+
+#member-account-wrap .account-tap a.active, #member-account-wrap .account-tap a:hover {
+    border-bottom-color: var(--member-theme-color);
+    color: var(--member-theme-color);
+}
+
+.btn .button,
+.form-submitbutton input,
+.member-deposit-submit button,
+#changePasswordForm .btn button,
+#gamepassword .btn button {
+    background: var(--member-theme-color);
+    color: var(--member-text);
+}
+
+.gamepassword li.active {
+    border-color: var(--member-theme-color);
+    color: var(--member-theme-color);
+}
+
+/* verify  */
+#verifyInfoForm button {
+    background: var(--member-secondary-gradient);
+    color: #f4f6f9;
+}
+
+#verifyInfoForm button:hover {
+    background: var(--member-secondary-gradient);
+}
+
+#withdrawcards h2{
+    color: var(--member-secondary-color);
+}
+#bankcard .show {
+    background: var(--member-top-wrap);
+    color: var(--member-top-text);
+}
+#bankcard .fa{
+    color: #2f3971;
+}
+
+#bankcard .new_bankcard{
+    color: #ffab00;
+}
+
+#bankcard .new_bankcard a{
+    color: #00aeff;
+}
+
+#bankcard .btn button.submitButton
+{
+    background: var(--member-theme-color);
+    color: var(--member-text);
+}
+#crypto .fa{
+    color: #ffc200;
+}
+
+#crypto .new_crypto{
+    color: var(--member-theme-color);
+}
+
+#crypto .new_crypto a{
+    color: #14805e;
+}

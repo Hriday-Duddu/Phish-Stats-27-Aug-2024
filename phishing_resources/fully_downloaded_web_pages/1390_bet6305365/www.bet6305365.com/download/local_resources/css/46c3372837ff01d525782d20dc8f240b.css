@@ -1,0 +1,43 @@
+#announcement_modal .modal-header{
+	background-color: #14805e;
+}
+#announcement_modal .modal-body ul li.active:before{
+	background-color: #14805e;
+}
+#announcement_modal .modal-body ul li.active .announcement_content{
+	border: 1px solid #14805e;
+} 
+#announcement_modal .modal-body ul li.active .announcement_content>span:nth-of-type(2){
+	color: #007b5b;
+}
+.notice-list {
+    display: flex;
+    width: 781px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    height: 30px;
+}
+.notice-list .notice-icon {
+    background-position: left;
+    height: 30px;
+    width: 45px;
+    float: left;
+}
+.notice-icon span {
+    color: #7fbfac;
+}
+.notice {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+.notice-list marquee a {
+	color: #fff;
+	margin-left: 20px;
+  }
+.notice-list marquee a br {
+	display: none;
+  }
+.notice-list marquee a > div{
+	display: inline-block!important;
+  }

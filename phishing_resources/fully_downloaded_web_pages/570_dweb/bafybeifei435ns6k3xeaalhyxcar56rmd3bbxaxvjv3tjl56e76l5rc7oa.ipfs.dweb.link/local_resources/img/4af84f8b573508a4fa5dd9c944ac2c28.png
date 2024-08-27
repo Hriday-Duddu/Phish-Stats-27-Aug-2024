@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+    <meta name="referrer" content="strict-origin">
+    <title>Not Found</title>
+    <link rel="stylesheet" type="text/css" href="/site_media/css/font-awesome/css/font-awesome.css?v=5464" />
+    <link rel="stylesheet" type="text/css" href="/site_media/css/bootstrap.min.css?v=5464">
+    <style>
+      body {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -40%);
+        background: lightgrey;
+      }
+      .container {
+        margin-right: auto;
+        margin-left: auto;
+        padding: 20px;
+        min-width: 500px;
+        width: 500px;
+        background: white;
+        border-radius: 5px;
+        box-shadow: 0px 2px 6px #ccc;
+      }
+      div:empty {
+        display: none
+      }
+      .wide {
+         width: auto;
+      }
+      @media (min-width: 576px) {
+        .container {
+          max-width: 540px;
+        }
+      }
+      @media (min-width: 768px) {
+        .container {
+          max-width: 720px;
+        }
+      }
+      @media (min-width: 992px) {
+        .container {
+          max-width: 960px;
+        }
+      }
+      @media (min-width: 1200px) {
+        .container {
+          max-width: 1140px;
+        }
+      }
+      p {
+        margin-top: 0;
+        margin-bottom: 1rem;
+      }
+      .btn {
+        min-width: 100px;
+        transition: transform 0.2s;
+      }
+      .btn:hover {
+        transform: scale(1.02);
+      }
+      .btn-primary {
+        width: auto;
+        background: green;
+        border-color: green;
+        display: block;
+        margin: auto;
+        color: white;
+      }
+      .right {
+        float: right;
+      }
+      .btn-primary:hover,
+      .btn-primary:active,
+      .btn-primary:focus,
+      .btn-primary.active.focus,
+      .btn-primary.active:focus,
+      .btn-primary.active:hover,
+      .btn-primary:active.focus,
+      .btn-primary.active.focus, .btn-primary.active:focus,
+      .btn-primary.active:hover, .btn-primary:active.focus,
+      .btn-primary:active:focus, .btn-primary:active:hover {
+        color: #fff;
+        background: darkgreen;
+        border-color: darkgreen;
+      }
+      .btn-link {
+        padding: 0;
+      }
+      .input-group {
+        width: 300px;
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 1rem;
+      }
+      .input-group .form-control:focus {
+        z-index: 0;
+      }
+      .input-group-addon {
+        min-width: 36px;
+      }
+      .input-group input.form-control:last-child {
+        border-radius: 4px;
+      }
+      label.radio-button {
+        margin-left: 10px;
+      }
+      input[type=radio] {
+        top: 1px;
+        position: relative;
+      }
+      #fortinet-logo-login {
+        width: 120px;
+        padding: 10px;
+        display: block;
+        margin: auto;
+      }
+      #header {
+        border-radius: 8px;
+        margin-bottom: 10px;
+        padding: 5px;
+        position: relative;
+        bottom: 5px;
+      }
+      h3 {
+        color: black;
+        text-align: center;
+        font: initial;
+        font-size: 20px;
+        font-weight: bold;
+      }
+      .alert {
+        min-width: 300px;
+        max-width: 400px;
+        width: auto;
+      }
+      .error {
+        color: red;
+        margin-left: 10px;
+      }
+      select {
+        width: inherit;
+        padding: 6px 10px;
+        border-radius: 4px;
+      }
+      .fa-exclamation-triangle {
+  display: block;
+  text-align: center;
+  color: orange;
+}
+    </style>
+</head>
+<body>
+  <div class="container">
+    <div id="header" class="title logo">
+      <img id="fortinet-logo-login" src='/customviews/image/fortinet_logo:f0a067275aba3c71c62cffa2f50ac69c/' alt=""> 
+    </div>
+    <div class="fa-5x fa-solid fa-exclamation-triangle">
+    </div>
+    <br/>
+    <div class="input-group alert alert-danger text-center">
+    404 Not Found
+    </div>
+    <div class="input-group alert text-center">
+      <p>Server can't find the requested resource.</p>
+      <p>Please contact your administrator.</p>
+    </div>
+    <br/>
+  </div>
+</body>
+</html>

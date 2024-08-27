@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /$
+Allow: /page
+Allow: /design$
+Allow: v2/design$
+Allow: /templates/
+
+Disallow: /design/
+Disallow: /v2/design/
+Disallow: /workspace/
+
+Sitemap: https://www.miricanvas.com/sitemap.xml
+Sitemap: https://www.miricanvas.com/sitemaproot.xml
+Sitemap: https://www.miricanvas.com/templates-search-ko.xml
+Sitemap: https://www.miricanvas.com/templates-search-en.xml
+Sitemap: https://www.miricanvas.com/templates-search-ja.xml

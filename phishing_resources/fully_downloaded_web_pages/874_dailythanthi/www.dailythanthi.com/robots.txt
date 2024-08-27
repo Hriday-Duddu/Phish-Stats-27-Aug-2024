@@ -1,0 +1,38 @@
+#
+# robots.txt for https://www.dailythanthi.com/
+User-agent: *
+Allow: /
+Disallow: /admin/*
+Disallow: /search/*
+Disallow: /search?*
+Disallow: /xhr/*
+Disallow: /preview/story-*
+Disallow: /amp/preview/story-*
+Disallow: /alfoo
+Disallow: /sildoo
+Disallow: /dutas
+Disallow: /metsmall
+Disallow: /advance-search
+Disallow: /forgotPassword
+Disallow: /register
+Disallow: /subscription
+Disallow: /login?*
+Disallow: /user?*
+Disallow: /forgotPassword?*
+Disallow: /reset-password?*
+Disallow: /verify-email?*
+Disallow: /app-lite?*
+Disallow: /election.dtnext.in/*
+Disallow: /beta.dailythanthi.com/*
+Disallow: /hapi.dailythanthi.com/*
+
+Allow: /xhr/getNewsMixin*
+Allow: /content/servlet/RDESController?*
+
+Sitemap: https://www.dailythanthi.com/sitemap/sitemap-index.xml
+Sitemap: https://www.dailythanthi.com/news-sitemap-daily.xml
+Sitemap: https://www.dailythanthi.com/feeds.xml
+Sitemap: https://www.dailythanthi.com/google_feeds.xml
+Sitemap: https://www.dailythanthi.com/sitemap-daily.xml
+Sitemap: https://www.dailythanthi.com/sitemap/sitemap-home.xml
+Sitemap: https://www.dailythanthi.com/sitemap/photo-story-sitemap.xml

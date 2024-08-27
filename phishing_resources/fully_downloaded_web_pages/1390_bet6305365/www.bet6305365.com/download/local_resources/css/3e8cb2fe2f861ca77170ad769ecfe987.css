@@ -1,0 +1,35 @@
+#banner {
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+#banner .swiper-pagination-bullet {
+  width: 15px;
+  height: 15px;
+  background: #252420;
+  opacity: 1;
+}
+#banner .swiper-pagination-bullet-active {
+  background: #fff;
+}
+#banner .swiper-button-prev {
+  left: 10%;
+}
+
+#banner .swiper-button-next {
+  right: 10%;
+}
+
+#banner .swiper-container .swiper-slide a{
+  cursor: pointer;
+}
+
+#banner .swiper-container .swiper-slide a[href*='javascript'] {
+  cursor: default;
+}
+
+#banner .swiper-container .swiper-slide a img{
+  max-width: 100%;
+}

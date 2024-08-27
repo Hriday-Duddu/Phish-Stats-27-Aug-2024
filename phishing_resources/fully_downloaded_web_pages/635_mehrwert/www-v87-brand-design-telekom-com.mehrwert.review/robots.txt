@@ -1,0 +1,5 @@
+# URL: https://www.dshs-koeln.de/
+# Author: webmaster@dshs-koeln.de
+
+User-agent: *
+Disallow: /

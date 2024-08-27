@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    
+    
+    <meta charset="UTF-8">
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+    <title>URL Shortener, Branded Short Links & Analytics | TinyURL</title>
+    <meta data-vmid="description" content="TinyURL is the original URL shortener that shortens your unwieldly links into more manageable and useable URLs.">
+    <meta data-vmid="keywords" content="tinyurl url save share shorten analyze">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Montserrat:wght@100;300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="/css/front.css?id=dcfec8bae835c22cc9f537fb81531e85">
+    <link rel="preload" href="/js/app.js?id=b7543f0ce9ef04508793dfea8dcdf5cf" as="script">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="https://tinyurl.com/images/icons/favicon-16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="https://tinyurl.com/images/icons/favicon-32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://tinyurl.com/images/icons/favicon-48.png" sizes="48x48">
+    <link rel="icon" type="image/png" href="https://tinyurl.com/images/icons/favicon-64.png" sizes="64x64">
+    <link rel="icon" type="image/png" href="https://tinyurl.com/images/icons/favicon-128.png" sizes="128x128">
+    <link rel="icon" type="image/png" href="https://tinyurl.com/images/icons/favicon-192.png" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://tinyurl.com/images/icons/favicon-152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="https://tinyurl.com/images/icons/favicon-167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://tinyurl.com/images/icons/favicon-180.png">
+
+    <script type="text/javascript">
+        window.Spark = {"collectsBillingAddress":false,"collectsEuropeanVat":false,"env":"production","roles":["admin","member","viewer"],"state":null,"stripeKey":"pk_live_51H4yVKFoQollccOglSdqQ9hK0Ux7GcxtldtbJleZP9qMPYdJ3p76bqxEf7rWwXwxgTi1qiYgBOYCNhiNgZvIljCo00pCY5HoQC","cashierPath":"stripe","teamsPrefix":"team","teamsIdentifiedByPath":true,"trialDays":0,"teamTrialDays":0,"defaultRole":"viewer","operationsCosts":null};
+            </script>
+
+    <template id="freestar-assets">
+        <link data-owner="freestar" rel="preconnect" href="https://a.pub.network/" crossorigin />
+        <link data-owner="freestar" rel="preconnect" href="https://b.pub.network/" crossorigin />
+        <link data-owner="freestar" rel="preconnect" href="https://c.pub.network/" crossorigin />
+        <link data-owner="freestar" rel="preconnect" href="https://d.pub.network/" crossorigin />
+        <link data-owner="freestar" rel="preconnect" href="https://c.amazon-adsystem.com" crossorigin />
+        <link data-owner="freestar" rel="preconnect" href="https://s.amazon-adsystem.com" crossorigin />
+        <link data-owner="freestar" rel="preconnect" href="https://btloader.com/" crossorigin />
+        <link data-owner="freestar" rel="preconnect" href="https://api.btloader.com/" crossorigin />
+        <link data-owner="freestar" rel="preconnect" href="https://cdn.confiant-integrations.net" crossorigin />
+        <link data-owner="freestar" rel="stylesheet" href="https://a.pub.network/tinyurl-com/cls.css" />
+
+        <script data-cfasync="false" data-owner="freestar" type="text/javascript">
+            var freestar = freestar || {};
+            freestar.queue = freestar.queue || [];
+            freestar.config = freestar.config || {};
+            freestar.config.enabled_slots = [];
+            freestar.initCallback = function () {
+                freestar.config.enabled_slots.length === 0 ? (freestar.initCallbackCalled = false) : freestar.newAdSlots(freestar.config.enabled_slots);
+            };
+            freestar.queue.push(function () {
+                googletag.pubads().set('page_url', 'https://tinyurl.com/');
+            });
+        </script>
+        <script async data-cfasync="false" data-owner="freestar" src="https://a.pub.network/tinyurl-com/pubfig.min.js"></script>
+    </template>
+
+</head>
+
+<body>
+
+    
+    <div id="mainLoader" class="flex-center-center flex-column w-100" style="position: fixed; top: 0; left: 0; height: 100dvh; width: 100vw; z-index: 1000">
+        <img src="/images/header/logo.svg" width="250px" class="mb-4" alt="TinyURL Logo" />
+        <div class="spinner" style="height: 100px; width: 100px;">
+            <div class="spinner-wheel" style="border-width: 5px; border-top-color: white; border-bottom-color: white; height: 100px; width: 100px;"></div>
+        </div>
+        <div class="background-img">
+            <svg
+                class="background-img-top"
+                width="510"
+                height="227"
+                viewBox="0 0 510 227"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M-87.152 -39.8215C-88.9236 -97.5924 -78.1971 -154.94 -48.4234 -204.479C-20.7542 -250.517 24.1466 -281.369 72.3104 -305.144C118.507 -327.949 168.356 -332.792 219.715 -336.844C285.535 -342.038 369.083 -381.424 412.88 -332.018C457.935 -281.194 406.048 -201.31 399.82 -133.678C395.679 -88.7194 394.135 -46.317 382.55 -2.68C368.135 51.6174 373.1 123.327 324.232 151.04C275.433 178.714 218.732 122.276 162.632 122.037C93.5849 121.742 20.3777 187.044 -37.5683 149.496C-93.687 113.131 -85.1022 27.0177 -87.152 -39.8215Z"
+                    fill="url(#paint0_linear)"
+                    fill-opacity="0.4"
+                />

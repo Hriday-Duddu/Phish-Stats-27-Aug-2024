@@ -1,0 +1,267 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins',sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #000;
+    color: #fff;
+}
+
+.header{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url("bag.jpg");
+    background-size: cover;
+    background-position: center;
+     padding: 10px 8%;
+     position: relative;
+     border-bottom: 6px solid #333;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between ;
+   
+}
+
+.logo{
+    width: 200px;
+    height: 80px;
+}
+
+button{
+    font-weight: 700;
+    width: 76px;
+    height: 40px;
+    background-color: red;
+    color: #fff;
+    border: 2px solid red;
+    border-radius: 4px;
+
+}
+button:hover{
+    background-color: #fff;
+    color: red;
+    border: 2px solid #fff;
+    cursor: pointer;
+}
+
+.content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    margin-top: 100px;
+}
+
+.content h1{
+    font-size: 60px;
+    line-height: 70px;
+    font-weight: 600;
+    max-width: 650px;
+    margin-bottom: 10px;
+}
+
+.content h3{
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.email-sign-up{
+    background-color: #fff;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+.email-sign-up input{
+    flex: 1;
+    border: 0;
+    outline: 0;
+    margin-left: 20px;
+    height: 50px;
+}
+
+.email-sign-up button{
+    background-color:red;
+    color: #fff;
+    border: 0;
+    outline: 0;
+    font-size: 14px;
+    cursor: pointer;
+    height: 50px;
+    padding-left: 20px;
+    padding-right: 60px;
+}
+
+.email-sign-up button:hover{
+    background-color:#000;
+    color: #fff;
+}
+
+.main{
+    padding: 50px 12%;
+    font-size: 22px;
+}
+
+.row{
+    border-bottom: 6px solid #333;
+
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 50px 0;
+}
+
+.tcv-se{
+    flex-basis: 50%;
+    margin-bottom: 20px;
+
+}
+
+.img-sec{
+    flex-basis: 50%;
+    margin-bottom: 20px;
+
+}
+
+.img-sec img{
+    height: 40vh;
+    display: block;
+    width: 90%;
+    margin: auto;
+}
+
+.main h2{
+    font-size: 50px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.que{
+    padding: 10px 12%;
+    text-align: center;
+    font-size: 18px;
+
+}
+
+.que h2{
+    font-weight: 500;
+    font-size: 40px;
+}
+
+
+.acco{
+    margin: 60px auto;
+    width: 100%;
+    max-width: 750px;
+
+}
+
+.acco li{
+    list-style: none;
+    width: 100%;
+    padding: 5px;
+
+}
+
+.acco li label{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    background: #303030;
+    margin-bottom: 2px;
+    cursor: pointer;
+    position: relative;
+}
+
+input[type="radio"]{
+    display: none;
+}
+
+label::after{
+    content: '+';
+    font-size: 34px;
+    position: absolute;
+    right: 20px;
+    transition: transform 1s;
+}
+
+.acco .acc-con{
+    background: #303030;
+    text-align: left;
+    padding: 0 20px;
+    max-height: 0px;
+    overflow: hidden;
+
+}
+
+.acco input[type="radio"]:checked + label + .acc-con{
+    max-height: 600px;
+    padding: 30px 20px;
+    transition: max-height 0.5s , padding 0.5s ;
+}
+
+.acco input[type="radio"]:checked + label::after{
+    transform: rotate(135deg);
+}
+
+
+.que .email-sign-up{
+    max-width: 600px;
+    margin: 20px auto 60px;
+}
+
+.que small{
+    font-size: 15px;
+}
+
+
+footer{
+   padding-top: 80px;
+    border-top: 6px solid #333;
+    margin-bottom: 20px;
+}
+
+.fot{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.fot ul a{
+    display: block;
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+/* media Quarry */
+
+@media only screen and (max-width:600px){
+    .logo{
+        width: 100px;
+        height: 70px;
+    }
+    .nav button{
+        width: 66px;
+        height: 33px;
+    }
+
+    .content h1{
+        font-size: 50px;
+    }
+
+    .main h2{
+        font-size: 40px;
+    }
+
+}

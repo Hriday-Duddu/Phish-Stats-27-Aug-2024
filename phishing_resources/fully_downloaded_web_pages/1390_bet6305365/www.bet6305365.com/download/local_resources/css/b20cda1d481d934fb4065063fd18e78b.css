@@ -1,0 +1,106 @@
+
+.modal-dialog .fa {
+    font-size: 20px;
+}.modal-dialog .fa {
+    font-size: 20px;
+}
+.login_form {
+    align-items: center;
+}
+#header-wrap .login_form .text-box {
+    display: flex;
+}
+#header-wrap .login_form .text-box input {
+    width: 100px;
+    height: 25px;
+    line-height: 25px;
+    background-color: rgb(16, 105, 77);
+    color: rgb(96, 166, 146);
+    font-size: 12px;
+    box-shadow: rgb(40, 139, 108) 0px 1px 0px;
+    margin: 0px 5px 0px 0px;
+    padding: 0px 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(14, 89, 66);
+    border-image: initial;
+    border-radius: 3px;
+}
+#header-wrap .login_form .login-captcha .Logincaptcha {
+	padding-top: 2px;
+}
+#header-wrap .login_form .login-captcha .Logincaptcha input {
+	width: 120px;
+    height: 25px;
+    line-height: 25px;
+    padding: 0 5px;
+    border: 1px solid #0e5942; 
+    background-color: #10694d;
+    color: #60a692;
+    border-radius: 3px;
+    font-size: 14px;
+    box-shadow: 0 1px 0 #288b6c;
+}
+#header-wrap .login_form .gdcode img{
+	width: 66px;
+    position: relative;
+    bottom: 25px;
+    left: 785px;
+    transition: transform .2s;
+}
+#header-wrap .login_form .gdcode img:hover {
+    transform: scale(2) translateX(20px); 
+}
+#header-wrap .login_form .submit-item button {
+	display: inline-block;
+    width: 46px;
+    height: 26px;
+    background-image: none;
+    background-color: #fad910;
+    border: 1px solid #005e3c;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative; 
+    left: 233px;
+    bottom: 27px;
+}
+
+#header-wrap .login_form .submit-item button:hover {
+   background-color: #ddd;
+}
+#header-wrap .login_form .login-item {
+	height: 51px;
+}
+#header-wrap .login_form .login-item2 {
+    padding-top: 3px;
+    position: relative;
+	display: flex;
+	left: 721px;
+	bottom: 25px;
+	width: 277px;
+}
+#header-wrap .login_form .login-item2 .header-register {
+    color: #FFDF1B;
+    font-size: 11px;
+	line-height: 22px;
+	position: relative;
+	left: 178px;
+}
+#header-wrap .login_form .login-item2 .header-forget { 
+    color: #80BFAC;
+    font-size: 11px;
+	line-height: 22px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #60a692;
+  opacity: 1;
+}
+ 
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #60a692;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #60a692;
+}

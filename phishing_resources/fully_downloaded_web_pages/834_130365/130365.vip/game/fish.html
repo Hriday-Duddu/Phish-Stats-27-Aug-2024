@@ -1,0 +1,534 @@
+
+<!DOCTYPE html><html lang="cn"><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title></title><link rel="shortcut icon" href="https://cejhu.wzk.im/image/web/favicon.ico?ver=1598240076"><script type="module">var type = "register";
+    import {
+        initializeApp
+    } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js";
+    import {
+        getAuth,
+        FacebookAuthProvider,
+        signInWithPopup,
+        GoogleAuthProvider
+    } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js";
+
+    const firebaseConfig = {
+        apiKey: "",
+        authDomain: ".firebaseapp.com",
+        projectId: "",
+        storageBucket: ".appspot.com",
+        appId: ""
+    };
+
+    const app = initializeApp(firebaseConfig);
+
+    //Login & Register
+    
+    
+    
+    function tokenHandle(token, email, social_type) {
+
+      
+        if (social_type == 'telegram') {
+          // token = JSON.stringify(token);
+          setCookie('tg_user', JSON.stringify(token), 1);
+          token = '';
+        }
+
+        location.href = `http://130365.vip/register/member?token=${token}&email=${email}&social_type=${social_type}`;
+
+        
+    }
+
+
+
+    //Binding
+    
+    
+    
+    function tokenHandle2(token, email, social_type) {
+
+      if (type == 'binding') {
+        $.ajaxSetup({
+          headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+          }
+        });
+
+        if (social_type == 'firebase') {
+          var item = {
+            'email': email,
+            'token': token,
+          };
+        } else if (social_type == 'telegram') {
+          var item = {
+            'data': token,
+            'social_type': 'telegram',
+          };
+        }
+
+        var _requestData = {
+          "requests": [{
+            "name": "socialBinding",
+            "query": btoa(JSON.stringify(item)),
+          }, ]
+        };
+        $.ajax({
+          type: "POST",
+          url: "/graph/sesh",
+          data: JSON.stringify(_requestData),
+          success: function(result) {
+            $.each(result['responses'], function(k, v) {
+              var data = JSON.parse(atob(v.attributes));
+            
+			  if (data.status == 0) {
+                Swal.fire({
+                    title: data.errormessage,
+                    type: "error",
+                    confirmButtonText: lang.confirm,
+                    focusConfirm: false,
+                    allowOutsideClick: false,
+                });
+                } else {
+                    Swal.fire({
+                        title: data.message,
+                        type: "success",
+                        confirmButtonText: lang.confirm,
+                        focusConfirm: false,
+                        allowOutsideClick: false,
+                    }).then((result) => {
+                        location.reload();
+                    });
+                                            
+                }
+		})
+          },
+          error: function(result) {
+            // console.log('error', result);
+          }
+        });
+      } else {
+        location.href = `http://130365.vip/register/member?token=${token}&email=${email}&social_type=${social_type}`;
+      }
+    }</script><script>document['\x74\x69\x74\x6c\x65']="bet365";</script></head><link rel="stylesheet" href="https://cejhu.wzk.im/plugins/swiper/swiper.min.css?ver=1598240076"><link rel="stylesheet" href="https://cejhu.wzk.im/css/web/unite/unite.css?ver=1687252642"><link rel="stylesheet" href="https://cejhu.wzk.im/css/web/unite/member_unite.css?ver=1713775027"><link rel="stylesheet" href="https://cejhu.wzk.im/css/web/web.css?ver=1713775306"><link rel="stylesheet" href="https://cejhu.wzk.im/plugins/bootstrap/bootstrap.css?ver=1598240076"><link rel="stylesheet" href="https://cejhu.wzk.im/plugins/bootstrap/to_bootstrap.css?ver=1598240076"><link rel="stylesheet" href="https://cejhu.wzk.im/fonts/mobile/font.css?ver=1720670934"><link rel="stylesheet" href="https://cejhu.wzk.im/fonts/web/font-awesome.min.css?ver=1598240076"><link rel="stylesheet" href="https://cejhu.wzk.im/fonts/mobile/font.css?ver=1720670934"><link rel="stylesheet" href="https://cejhu.wzk.im/css/web/unite/animate.css?ver=1598240076"><link rel="stylesheet" href="https://cejhu.wzk.im/plugins/jquery/fm.selectator.jquery.css?ver=1603685232"><script type="text/javascript">var Currency = "RMB";
+	var Name 	 = "";
+	var displayRate = "1";
+	var receiptRequired = "0";
+	var usdtPaymentMethod = "0";
+	var CURRENCY_EXCHANGE_DISPLAY = "0";
+	var FIRST_EXCHANGE_RATE = "0";
+	var FIRST_CURRENCY = "";
+	var SECOND_EXCHANGE_RATE = "0";
+	var SECOND_CURRENCY = "";
+	var FACEBOOK_PIXEL_ID = "";</script><script src="https://cejhu.wzk.im/plugins/jquery/jquery.min.js?ver=1598240076"></script><script src="https://cejhu.wzk.im/plugins/jquery/jquery.cookie.js?ver=1644475394"></script><script src="https://cejhu.wzk.im/plugins/bootstrap/bootstrap.min.js?ver=1598240076"></script><script src="https://cejhu.wzk.im/plugins/swiper/swiper.min.js?ver=1598240076"></script><script src="https://cejhu.wzk.im/plugins/sweetalert/sweetalert2.all.min.js?ver=1598240076"></script><script src="https://cejhu.wzk.im/js/web/unite.js?ver=1719459671"></script><script src="https://cejhu.wzk.im/js/common/language_cn.js?ver=1722565210"></script><script src="https://cejhu.wzk.im/plugins/jquery/fm.selectator.jquery.js?ver=1603685232"></script><script src="https://cejhu.wzk.im/plugins/jquery/jquery.qrcode.min.js?ver=1598240076"></script><link rel="stylesheet" type="text/css" href="https://cejhu.wzk.im/css/web/unite/fish_unite.css?ver=1646722345"><link rel="stylesheet" type="text/css" href="https://cejhu.wzk.im/css/web/custom/fish_custom.css?ver=1598240076"><link rel="stylesheet" type="text/css" href="https://cejhu.wzk.im/css/web/header.css?ver=1598262624"><link rel="stylesheet" type="text/css" href="https://cejhu.wzk.im/css/web/unite/banner_unite.css?ver=1598240076"><link rel="stylesheet" type="text/css" href="https://cejhu.wzk.im/css/web/custom/banner_custom.css?ver=1600506094"><link rel="stylesheet" type="text/css" href="https://cejhu.wzk.im/css/web/unite/announcement_unite.css?ver=1601882813"><link rel="stylesheet" type="text/css" href="https://cejhu.wzk.im/css/web/custom/announcement_custom.css?ver=1614132298"><body><div class="bootstrap"><div class="modal fade" id="login_modal" role="dialog"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal"><i class="fa fa-close"></i></button><h4 class="modal-title text-center">登录</h4></div><div class="modal-body"><form class="login_form" method="post"><div class="form-group"><div class="text-box"><div class="input-group"><div class="symbol"><i class="fa fa-user"></i></div><div class="LoginuserName"><input onkeydown="this.value = this.value.toLowerCase();" type="text" class="form-control" placeholder="用户名" name="usr" required autofocus pattern="[a-zA-Z0-9]{4,15}" tabindex='1' /></div></div><div class="input-group"><div class="symbol"><i class="fa fa-lock"></i></div><div class="Loginpassword"><input type="password" class="form-control" placeholder="密码" name="pwd" required pattern=".{6,20}" tabindex='2' /></div><div class="showhidepassword"><div class="symbolShowPassword" id="showPassword"><i class="fa fa-eye"></i></div><div class="symbolhidePassword" id="hidePassword" style="display:none"><i class="fa fa-eye-slash"></i></div></div></div></div></div><input type="hidden" name="_token" value="8ra1CdHgvlF3sQqK9WKqJsU022AlsgaMTKAsF4wj"><div><button type="submit" class="btn-login">登录</button><div class="login-option"><a class="register" href="/register/member" >马上注册!</a><a>|</a><a class="forgot-pwd" href="/forgot">忘记密码?!</a></div></div></form><div class="contact-us">遇见问题!? 请联系我们:<a href="javascript:windowOpen('https://chat.ss-chat.com/service/fk8sww');"><span>联系客服<span></a></div></div></div></div></div></div><script type="text/javascript">$('#showPassword').click(function(){
+		$('#login_modal .Loginpassword .form-control').attr("type" , "text");
+		$('#showPassword').css("display" , "none");
+		$('#hidePassword').css("display" , "block");
+	}); 
+	$('#hidePassword').click(function(){
+		$('#login_modal .Loginpassword .form-control').attr("type" , "password");
+		$('#showPassword').css("display" , "block");
+		$('#hidePassword').css("display" , "none");
+	});</script><div id="header-wrap"><div class="header-content"><div class="logo"><a href="/"><img class="logo_image" src="https://cejhu.wzk.im/image/web/logo.png?ver=1598240076"></a></div><div class="header-navigation"><ul><li class="nav"><a href="/game/sport" class=" ">
+							体育&#25237;&#27880;</a></li><li class="nav"><a href="/game/casino" class="">
+							&#29616;&#22330;&#33655;&#23448;</a></li><li class="nav drop_menu"><a class="active">&#30005;&#23376;游艺</a><ul><li class="nav"><a href="/game/egame?pid=3205" class="">
+								PT&#32769;&#34382;&#26426;</a></li><li class="nav"><a href="/game/egame?pid=3212" class="">
+								维加斯</a></li><li class="nav"><a href="/game/egame?pid=3024" class="">
+								游戏</a></li><li class="nav"><a href="/game/fish" class="active">
+								&#25429;&#40060;</a></li></ul></li><li class="nav"><a href="/game/esport" class="">
+							电竞</a></li><li class="nav"><a href="/game/poker" class="">
+							&#26827;&#29260;</a></li><li class="nav"><a href="/game/lottery" class="">
+							&#24425;&#31080;</a></li><li class="nav"><a href="/promo" class="">
+						优惠</a></li></ul></div><div class="header-login"><div class="login-wrap"><div class="login-form"><form class="login_form" method="post"><div class="form-group"><div class="text-box"><div class="input-group"><div class="LoginuserName"><input onkeydown="this.value = this.value.toLowerCase();" type="text" class="form-control" placeholder="用户名" name="usr" required autofocus pattern="[a-zA-Z0-9]{4,15}" tabindex='1' /></div></div><div class="input-group"><div class="Loginpassword"><input type="password" class="form-control" placeholder="密码" name="pwd" required pattern=".{6,20}" tabindex='2' /></div><div class="showhidepassword"></div></div></div></div><input type="hidden" name="_token" value="8ra1CdHgvlF3sQqK9WKqJsU022AlsgaMTKAsF4wj"><div class="submit-item"><button type="submit">登录</button></div><div class="login-item2"><div class="header-forget"><a href="/forgot" class="yellowFont">忘记密码？</a></div><div class="header-register"><a href="/register/member">免费注册</a></div></div></form></div></div></div></div><div class="header-bottom"><div class="bottom-content"><div class="announcement"><div class="notice-list"><div class="notice-icon"><span class="title">公告：</span></div><div class="notice"><marquee scrollamount="10" scrolldelay="150" direction="left" onmouseover="this.stop();" onmouseout="this.start();"><a href="javascript:" data-annid="0"><span style="color:#0000ff;">尊敬的会员您好，通知您：</span><span style="color:#ff0000;background-color:#ffff00;">工商银行</span><span style="color:#0000ff;">由于近期该银行主打击力度强，以避免&#38134;&#34892;&#21345;风控冻结，因此目前无法使用</span><span style="color:#ff0000;background-color:#ffff00;">工商银行</span><span style="color:#0000ff;">&#20986;&#27454;，请您使用</span><span style="color:#ff0000;background-color:#ffff00;">其他银行</span><span style="color:#0000ff;">或者</span><span style="color:#ff0000;background-color:#ffff00;">虚拟货币</span><span style="color:#0000ff;">进行存提即可，给您带来不便，非常抱歉。</span></a><a href="javascript:" data-annid="1"><span style="color:#ff0000;background-color:#ffff00;">温馨提示： 请您在&#25552;&#27454;前先测试&#25552;&#27454;卡转账是否正常，确保&#25552;&#27454;卡正常转账后在进行&#25552;&#27454;，谢谢！</span></a><a href="javascript:" data-annid="2"><span style="color:#ff0000;">【&#25552;&#27454;&#38134;&#34892;&#21345;绑定通知】</span><span style="color:#0000ff;">为了您的&#25552;&#27454;资金更快到账，请您在绑定个人&#25552;&#27454;&#38134;&#34892;&#21345;的时候，</span><span style="color:#ff0000;">不要绑定二类三类&#38134;&#34892;&#21345;</span>，<span style="color:#0000ff;">由于绑定二类三类个人&#38134;&#34892;&#21345;，&#25552;&#27454;的银行金额会受到限制，</span><span style="color:#ff0000;">导致相关部门无法处理您的&#25552;&#27454;资金，您的资金将无法在第一时间内到账</span><span style="color:#0000ff;">。</span><span style="color:#0000ff;">由于【</span><span style="color:#ff0000;">夜间频繁交易容易受到银行方风控</span><span style="color:#0000ff;">】为了提供更加优质的游戏体验，建议您尽量于【</span><span style="color:#ff0000;">凌晨一点前进行交易存&#25552;&#27454;</span><span style="color:#0000ff;">】</span><span style="color:#0000ff;">【</span><span style="color:#ff0000;">存&#25552;&#27454;卡请务必分开使用</span><span style="color:#0000ff;">】</span><span style="color:#ff0000;">以确保您资金安全，规避夜间频繁交易带来的风險审查</span><span style="color:#0000ff;">。感谢您的配合，祝您&#30408;&#21033;多多、游戏愉快。</span></a><a href="javascript:" data-annid="3"><span style="background-color:#ffff00;text-decoration:underline;"><span style="color:#ff0000;">防骗提醒！！！</span></span>近期电话诈骗猖獗，<span style="color:#ff0000;background-color:#ffff00;">平台以及公检法人员绝对不会通过电话、微信通知玩家核查资金、将钱款转移到&ldquo;安全账户&rdquo;</span>，更不会让玩家上网浏览自己的通缉令或者逮捕令，或者将此类材料邮寄到个人手中。<span style="color:#ff0000;background-color:#ffff00;">凡通过电话、短信等要求进行转账、汇款、资金核查操作的都是诈骗，切记不相信、不转账，避免上当被骗。</span></a></marquee></div></div></div><div class="headerNavRight"><table cellpadding="0" cellspacing="0"><tr><td></td><td><a onclick="showLivechat();" id="HeaderReskin_Chat"><i class="fa fa-comment"></i><span class="livechat">聊天</span></a></td><td class="toggle-color color"><a href="/download" id="HeaderReskin_Chat"><i class="fa fa-mobile"></i><span class="bai">手机端下载</span></a></td><td><a id="HeaderReskin_ServicesSelectorHeader"><span class="bai">服务</span><span class="langageinco"></span></a><div class="service_fname"><span class="icondic"></span><ul id="service"><li><a href="/about/contact">联系我们</a></li><li><a href="/about/aboutus">帮助</a></li><li><a href="javascript:window.open(&#039;https://chat.ss-chat.com/service/fk8sww&#039;,&#039;LIVECHAT&#039;,&#039;height=600,width=800&#039;)">在线客服</a></li><li><a href="/about/responsible_gambling">&#21338;&#24425;责任</a></li><li><a href="/about/deposit">银行</a></li></ul></div></td></tr></table></div></div></div></div><div id="fish"><div class="fishgame-container"><div class="fish-container swiper-container "><ul class="fish-game swiper-wrapper"><li class="swiper-slide"><div class="swipeContent 38112Content" data-id="38112"><div class="fish-background-img"><div class="fish-img" ><img src="https://cejhu.wzk.im/image/web/fish/game/fish_38112.png?ver=1721803369" onerror=this.src="https://cejhu.wzk.im/image/web/fish/game/maintanence.png?ver=1607652018"></div></div><div class="fish-desc"><div class="fish-title"><div class="nameTitle">JDB&#30005;&#23376;</div><div class="name">海皇争霸龙凤传说</div></div></div></div></li><li class="swiper-slide"><div class="swipeContent 31776Content" data-id="31776"><div class="fish-background-img"><div class="fish-img" ><img src="https://cejhu.wzk.im/image/web/fish/game/fish_31776.png?ver=1608622915" onerror=this.src="https://cejhu.wzk.im/image/web/fish/game/maintanence.png?ver=1607652018"></div></div><div class="fish-desc"><div class="fish-title"><div class="nameTitle">QT&#30005;&#23376;</div><div class="name">QT猎龙高手</div></div></div></div></li><li class="swiper-slide"><div class="swipeContent 33870Content" data-id="33870"><div class="fish-background-img"><div class="fish-img" ><img src="https://cejhu.wzk.im/image/web/fish/game/fish_33870.png?ver=1659612902" onerror=this.src="https://cejhu.wzk.im/image/web/fish/game/maintanence.png?ver=1607652018"></div></div><div class="fish-desc"><div class="fish-title"><div class="nameTitle">CQ9游戏</div><div class="name">英雄&#25429;&#40060;</div></div></div></div></li><li class="swiper-slide"><div class="swipeContent 32417Content" data-id="32417"><div class="fish-background-img"><div class="fish-img" ><img src="https://cejhu.wzk.im/image/web/fish/game/fish_32417.png?ver=1607652018" onerror=this.src="https://cejhu.wzk.im/image/web/fish/game/maintanence.png?ver=1607652018"></div></div><div class="fish-desc"><div class="fish-title"><div class="nameTitle">BB &#30005;&#23376;</div><div class="name">BB&#25429;&#40060;大师</div></div></div></div></li><li class="swiper-slide"><div class="swipeContent 33452Content" data-id="33452"><div class="fish-background-img"><div class="fish-img" ><img src="https://cejhu.wzk.im/image/web/fish/game/fish_33452.png?ver=1687501496" onerror=this.src="https://cejhu.wzk.im/image/web/fish/game/maintanence.png?ver=1607652018"></div></div><div class="fish-desc"><div class="fish-title"><div class="nameTitle">JDB&#30005;&#23376;</div><div class="name">&#26143;&#38469;&#25429;&#40060;</div></div></div></div></li><li class="swiper-slide"><div class="swipeContent 33031Content" data-id="33031"><div class="fish-background-img"><div class="fish-img" ><img src="https://cejhu.wzk.im/image/web/fish/game/fish_33031.png?ver=1607652018" onerror=this.src="https://cejhu.wzk.im/image/web/fish/game/maintanence.png?ver=1607652018"></div></div><div class="fish-desc"><div class="fish-title"><div class="nameTitle">CQ9游戏</div><div class="name">CQ9皇金渔场</div></div></div></div></li><li class="swiper-slide"><div class="swipeContent 30000Content" data-id="30000"><div class="fish-background-img"><div class="fish-img" ><img src="https://cejhu.wzk.im/image/web/fish/game/fish_30000.png?ver=1607652018" onerror=this.src="https://cejhu.wzk.im/image/web/fish/game/maintanence.png?ver=1607652018"></div></div><div class="fish-desc"><div class="fish-title"><div class="nameTitle">AG&#30005;&#23376;</div><div class="name">AG&#25429;&#40060;王2</div></div></div></div></li><li class="swiper-slide"><div class="swipeContent 34845Content" data-id="34845"><div class="fish-background-img"><div class="fish-img" ><img src="https://cejhu.wzk.im/image/web/fish/game/fish_34845.png?ver=1607652018" onerror=this.src="https://cejhu.wzk.im/image/web/fish/game/maintanence.png?ver=1607652018"></div></div><div class="fish-desc"><div class="fish-title"><div class="nameTitle">MW&#30005;&#23376;</div><div class="name">MW千炮&#25429;&#40060;</div></div></div></div></li><li class="swiper-slide"><div class="swipeContent 33615Content" data-id="33615"><div class="fish-background-img"><div class="fish-img" ><img src="https://cejhu.wzk.im/image/web/fish/game/fish_33615.png?ver=1611923784" onerror=this.src="https://cejhu.wzk.im/image/web/fish/game/maintanence.png?ver=1607652018"></div></div><div class="fish-desc"><div class="fish-title"><div class="nameTitle">JDB&#30005;&#23376;</div><div class="name">捕魚迪斯可</div></div></div></div></li><li class="swiper-slide"><div class="swipeContent 35024Content" data-id="35024"><div class="fish-background-img"><div class="fish-img" ><img src="https://cejhu.wzk.im/image/web/fish/game/fish_35024.png?ver=1607652018" onerror=this.src="https://cejhu.wzk.im/image/web/fish/game/maintanence.png?ver=1607652018"></div></div><div class="fish-desc"><div class="fish-title"><div class="nameTitle">MW&#30005;&#23376;</div><div class="name">MW&#25429;&#40060;大满贯</div></div></div></div></li><li class="swiper-slide"><div class="swipeContent 33028Content" data-id="33028"><div class="fish-background-img"><div class="fish-img" ><img src="https://cejhu.wzk.im/image/web/fish/game/fish_33028.png?ver=1660869638" onerror=this.src="https://cejhu.wzk.im/image/web/fish/game/maintanence.png?ver=1607652018"></div></div><div class="fish-desc"><div class="fish-title"><div class="nameTitle">JDB&#30005;&#23376;</div><div class="name">JDB猎龙高手</div></div></div></div></li><li class="swiper-slide"><div class="swipeContent 33315Content" data-id="33315"><div class="fish-background-img"><div class="fish-img" ><img src="https://cejhu.wzk.im/image/web/fish/game/fish_33315.png?ver=1607652018" onerror=this.src="https://cejhu.wzk.im/image/web/fish/game/maintanence.png?ver=1607652018"></div></div><div class="fish-desc"><div class="fish-title"><div class="nameTitle">AG&#30005;&#23376;</div><div class="name">AG天际猎人</div></div></div></div></li><li class="swiper-slide"><div class="swipeContent 32838Content" data-id="32838"><div class="fish-background-img"><div class="fish-img" ><img src="https://cejhu.wzk.im/image/web/fish/game/fish_32838.png?ver=1607652018" onerror=this.src="https://cejhu.wzk.im/image/web/fish/game/maintanence.png?ver=1607652018"></div></div><div class="fish-desc"><div class="fish-title"><div class="nameTitle">JDB&#30005;&#23376;</div><div class="name">JDB龙王&#25429;&#40060;2</div></div></div></div></li><li class="swiper-slide"><div class="swipeContent 32693Content" data-id="32693"><div class="fish-background-img"><div class="fish-img" ><img src="https://cejhu.wzk.im/image/web/fish/game/fish_32693.png?ver=1626929716" onerror=this.src="https://cejhu.wzk.im/image/web/fish/game/maintanence.png?ver=1607652018"></div></div><div class="fish-desc"><div class="fish-title"><div class="nameTitle">SG&#30005;&#23376;</div><div class="name">SG玩翻丧尸</div></div></div></div></li><li class="swiper-slide"><div class="swipeContent 35806Content" data-id="35806"><div class="fish-background-img"><div class="fish-img" ><img src="https://cejhu.wzk.im/image/web/fish/game/fish_35806.png?ver=1660869638" onerror=this.src="https://cejhu.wzk.im/image/web/fish/game/maintanence.png?ver=1607652018"></div></div><div class="fish-desc"><div class="fish-title"><div class="nameTitle">JDB&#30005;&#23376;</div><div class="name">JDB 五龙&#25429;&#40060;</div></div></div></div></li><li class="swiper-slide"><div class="swipeContent 35004Content" data-id="35004"><div class="fish-background-img"><div class="fish-img" ><img src="https://cejhu.wzk.im/image/web/fish/game/fish_35004.png?ver=1607652018" onerror=this.src="https://cejhu.wzk.im/image/web/fish/game/maintanence.png?ver=1607652018"></div></div><div class="fish-desc"><div class="fish-title"><div class="nameTitle">SG&#30005;&#23376;</div><div class="name">SG&#25429;&#40060;大战</div></div></div></div></li><li class="swiper-slide"><div class="swipeContent 35834Content" data-id="35834"><div class="fish-background-img"><div class="fish-img" ><img src="https://cejhu.wzk.im/image/web/fish/game/fish_35834.png?ver=1661060596" onerror=this.src="https://cejhu.wzk.im/image/web/fish/game/maintanence.png?ver=1607652018"></div></div><div class="fish-desc"><div class="fish-title"><div class="nameTitle">SG&#30005;&#23376;</div><div class="name">SG异形猎人</div></div></div></div></li><li class="swiper-slide"><div class="swipeContent 32278Content" data-id="32278"><div class="fish-background-img"><div class="fish-img" ><img src="https://cejhu.wzk.im/image/web/fish/game/fish_32278.png?ver=1607652018" onerror=this.src="https://cejhu.wzk.im/image/web/fish/game/maintanence.png?ver=1607652018"></div></div><div class="fish-desc"><div class="fish-title"><div class="nameTitle">JDB&#30005;&#23376;</div><div class="name">JDB龙王&#25429;&#40060;</div></div></div></div></li><li class="swiper-slide"><div class="swipeContent 32839Content" data-id="32839"><div class="fish-background-img"><div class="fish-img" ><img src="https://cejhu.wzk.im/image/web/fish/game/fish_32839.png?ver=1607652018" onerror=this.src="https://cejhu.wzk.im/image/web/fish/game/maintanence.png?ver=1607652018"></div></div><div class="fish-desc"><div class="fish-title"><div class="nameTitle">JDB&#30005;&#23376;</div><div class="name">JDB财神&#25429;&#40060;</div></div></div></div></li><li class="swiper-slide"><div class="swipeContent 35835Content" data-id="35835"><div class="fish-background-img"><div class="fish-img" ><img src="https://cejhu.wzk.im/image/web/fish/game/fish_35835.png?ver=1661060596" onerror=this.src="https://cejhu.wzk.im/image/web/fish/game/maintanence.png?ver=1607652018"></div></div><div class="fish-desc"><div class="fish-title"><div class="nameTitle">SG&#30005;&#23376;</div><div class="name">SG&#25429;&#40060;天王</div></div></div></div></li><li class="swiper-slide"><div class="swipeContent 35213Content" data-id="35213"><div class="fish-background-img"><div class="fish-img" ><img src="https://cejhu.wzk.im/image/web/fish/game/fish_35213.png?ver=1607652018" onerror=this.src="https://cejhu.wzk.im/image/web/fish/game/maintanence.png?ver=1607652018"></div></div><div class="fish-desc"><div class="fish-title"><div class="nameTitle">JDB&#30005;&#23376;</div><div class="name">JDB&#25429;&#40060;一路发</div></div></div></div></li></ul></div><div class="swiper-arrow"><div class="arrow prev-btn"></div><div class="arrow next-btn"></div></div></div><div class ="GameContent"><div  class="fish-content 38112GamesContent" style="display:none;"><ul><li class="fish-img-content"><img class="fish-gameimage" src="https://cejhu.wzk.im/image/web/fish/game/fish_38112.png?ver=1721803369" onerror=this.src="https://cejhu.wzk.im/image/web/fish/game/maintanence.png?ver=1607652018"><div class="fish-content-right"><img class="fish-logo-img" src="https://cejhu.wzk.im/image/platform_logo/platform_logo_jdb168.png?ver=1721980691"><div class="Contentname">海皇争霸龙凤传说</div><div class="play-section" style="display:flex;justify-content:flex-start;"><a style="margin-right:20px" data-gameid="38112">立即游戏</a></div></div></li></ul></div><div  class="fish-content 31776GamesContent" style="display:none;"><ul><li class="fish-img-content"><img class="fish-gameimage" src="https://cejhu.wzk.im/image/web/fish/game/fish_31776.png?ver=1608622915" onerror=this.src="https://cejhu.wzk.im/image/web/fish/game/maintanence.png?ver=1607652018"><div class="fish-content-right"><img class="fish-logo-img" src="https://cejhu.wzk.im/image/platform_logo/platform_logo_qt.png?ver=1600076197"><div class="Contentname">QT猎龙高手</div><div class="play-section" style="display:flex;justify-content:flex-start;"><a style="margin-right:20px" data-gameid="31776">立即游戏</a></div></div></li></ul></div><div  class="fish-content 33870GamesContent" style="display:none;"><ul><li class="fish-img-content"><img class="fish-gameimage" src="https://cejhu.wzk.im/image/web/fish/game/fish_33870.png?ver=1659612902" onerror=this.src="https://cejhu.wzk.im/image/web/fish/game/maintanence.png?ver=1607652018"><div class="fish-content-right"><img class="fish-logo-img" src="https://cejhu.wzk.im/image/platform_logo/platform_logo_cq9.png?ver=1600076197"><div class="Contentname">英雄&#25429;&#40060;</div><div class="play-section" style="display:flex;justify-content:flex-start;"><a style="margin-right:20px" data-gameid="33870">立即游戏</a></div></div></li></ul></div><div  class="fish-content 32417GamesContent" style="display:none;"><ul><li class="fish-img-content"><img class="fish-gameimage" src="https://cejhu.wzk.im/image/web/fish/game/fish_32417.png?ver=1607652018" onerror=this.src="https://cejhu.wzk.im/image/web/fish/game/maintanence.png?ver=1607652018"><div class="fish-content-right"><img class="fish-logo-img" src="https://cejhu.wzk.im/image/platform_logo/platform_logo_bbin.png?ver=1600076197"><div class="Contentname">BB&#25429;&#40060;大师</div><div class="play-section" style="display:flex;justify-content:flex-start;"><a style="margin-right:20px" data-gameid="32417">立即游戏</a></div></div></li></ul></div><div  class="fish-content 33452GamesContent" style="display:none;"><ul><li class="fish-img-content"><img class="fish-gameimage" src="https://cejhu.wzk.im/image/web/fish/game/fish_33452.png?ver=1687501496" onerror=this.src="https://cejhu.wzk.im/image/web/fish/game/maintanence.png?ver=1607652018"><div class="fish-content-right"><img class="fish-logo-img" src="https://cejhu.wzk.im/image/platform_logo/platform_logo_jdb168.png?ver=1721980691"><div class="Contentname">&#26143;&#38469;&#25429;&#40060;</div><div class="play-section" style="display:flex;justify-content:flex-start;"><a style="margin-right:20px" data-gameid="33452">立即游戏</a></div></div></li></ul></div><div  class="fish-content 33031GamesContent" style="display:none;"><ul><li class="fish-img-content"><img class="fish-gameimage" src="https://cejhu.wzk.im/image/web/fish/game/fish_33031.png?ver=1607652018" onerror=this.src="https://cejhu.wzk.im/image/web/fish/game/maintanence.png?ver=1607652018"><div class="fish-content-right"><img class="fish-logo-img" src="https://cejhu.wzk.im/image/platform_logo/platform_logo_cq9.png?ver=1600076197"><div class="Contentname">CQ9皇金渔场</div><div class="play-section" style="display:flex;justify-content:flex-start;"><a style="margin-right:20px" data-gameid="33031">立即游戏</a></div></div></li></ul></div><div  class="fish-content 30000GamesContent" style="display:none;"><ul><li class="fish-img-content"><img class="fish-gameimage" src="https://cejhu.wzk.im/image/web/fish/game/fish_30000.png?ver=1607652018" onerror=this.src="https://cejhu.wzk.im/image/web/fish/game/maintanence.png?ver=1607652018"><div class="fish-content-right"><img class="fish-logo-img" src="https://cejhu.wzk.im/image/platform_logo/platform_logo_ag.png?ver=1653020191"><div class="Contentname">AG&#25429;&#40060;王2</div><div class="play-section" style="display:flex;justify-content:flex-start;"><a style="margin-right:20px" data-gameid="30000">立即游戏</a></div></div></li></ul></div><div  class="fish-content 34845GamesContent" style="display:none;"><ul><li class="fish-img-content"><img class="fish-gameimage" src="https://cejhu.wzk.im/image/web/fish/game/fish_34845.png?ver=1607652018" onerror=this.src="https://cejhu.wzk.im/image/web/fish/game/maintanence.png?ver=1607652018"><div class="fish-content-right"><img class="fish-logo-img" src="https://cejhu.wzk.im/image/platform_logo/platform_logo_mw.png?ver=1600076197"><div class="Contentname">MW千炮&#25429;&#40060;</div><div class="play-section" style="display:flex;justify-content:flex-start;"><a style="margin-right:20px" data-gameid="34845">立即游戏</a></div></div></li></ul></div><div  class="fish-content 33615GamesContent" style="display:none;"><ul><li class="fish-img-content"><img class="fish-gameimage" src="https://cejhu.wzk.im/image/web/fish/game/fish_33615.png?ver=1611923784" onerror=this.src="https://cejhu.wzk.im/image/web/fish/game/maintanence.png?ver=1607652018"><div class="fish-content-right"><img class="fish-logo-img" src="https://cejhu.wzk.im/image/platform_logo/platform_logo_jdb168.png?ver=1721980691"><div class="Contentname">捕魚迪斯可</div><div class="play-section" style="display:flex;justify-content:flex-start;"><a style="margin-right:20px" data-gameid="33615">立即游戏</a></div></div></li></ul></div><div  class="fish-content 35024GamesContent" style="display:none;"><ul><li class="fish-img-content"><img class="fish-gameimage" src="https://cejhu.wzk.im/image/web/fish/game/fish_35024.png?ver=1607652018" onerror=this.src="https://cejhu.wzk.im/image/web/fish/game/maintanence.png?ver=1607652018"><div class="fish-content-right"><img class="fish-logo-img" src="https://cejhu.wzk.im/image/platform_logo/platform_logo_mw.png?ver=1600076197"><div class="Contentname">MW&#25429;&#40060;大满贯</div><div class="play-section" style="display:flex;justify-content:flex-start;"><a style="margin-right:20px" data-gameid="35024">立即游戏</a></div></div></li></ul></div><div  class="fish-content 33028GamesContent" style="display:none;"><ul><li class="fish-img-content"><img class="fish-gameimage" src="https://cejhu.wzk.im/image/web/fish/game/fish_33028.png?ver=1660869638" onerror=this.src="https://cejhu.wzk.im/image/web/fish/game/maintanence.png?ver=1607652018"><div class="fish-content-right"><img class="fish-logo-img" src="https://cejhu.wzk.im/image/platform_logo/platform_logo_jdb168.png?ver=1721980691"><div class="Contentname">JDB猎龙高手</div><div class="play-section" style="display:flex;justify-content:flex-start;"><a style="margin-right:20px" data-gameid="33028">立即游戏</a></div></div></li></ul></div><div  class="fish-content 33315GamesContent" style="display:none;"><ul><li class="fish-img-content"><img class="fish-gameimage" src="https://cejhu.wzk.im/image/web/fish/game/fish_33315.png?ver=1607652018" onerror=this.src="https://cejhu.wzk.im/image/web/fish/game/maintanence.png?ver=1607652018"><div class="fish-content-right"><img class="fish-logo-img" src="https://cejhu.wzk.im/image/platform_logo/platform_logo_ag.png?ver=1653020191"><div class="Contentname">AG天际猎人</div><div class="play-section" style="display:flex;justify-content:flex-start;"><a style="margin-right:20px" data-gameid="33315">立即游戏</a></div></div></li></ul></div><div  class="fish-content 32838GamesContent" style="display:none;"><ul><li class="fish-img-content"><img class="fish-gameimage" src="https://cejhu.wzk.im/image/web/fish/game/fish_32838.png?ver=1607652018" onerror=this.src="https://cejhu.wzk.im/image/web/fish/game/maintanence.png?ver=1607652018"><div class="fish-content-right"><img class="fish-logo-img" src="https://cejhu.wzk.im/image/platform_logo/platform_logo_jdb168.png?ver=1721980691"><div class="Contentname">JDB龙王&#25429;&#40060;2</div><div class="play-section" style="display:flex;justify-content:flex-start;"><a style="margin-right:20px" data-gameid="32838">立即游戏</a></div></div></li></ul></div><div  class="fish-content 32693GamesContent" style="display:none;"><ul><li class="fish-img-content"><img class="fish-gameimage" src="https://cejhu.wzk.im/image/web/fish/game/fish_32693.png?ver=1626929716" onerror=this.src="https://cejhu.wzk.im/image/web/fish/game/maintanence.png?ver=1607652018"><div class="fish-content-right"><img class="fish-logo-img" src="https://cejhu.wzk.im/image/platform_logo/platform_logo_spade.png?ver=1721980691"><div class="Contentname">SG玩翻丧尸</div><div class="play-section" style="display:flex;justify-content:flex-start;"><a style="margin-right:20px" data-gameid="32693">立即游戏</a></div></div></li></ul></div><div  class="fish-content 35806GamesContent" style="display:none;"><ul><li class="fish-img-content"><img class="fish-gameimage" src="https://cejhu.wzk.im/image/web/fish/game/fish_35806.png?ver=1660869638" onerror=this.src="https://cejhu.wzk.im/image/web/fish/game/maintanence.png?ver=1607652018"><div class="fish-content-right"><img class="fish-logo-img" src="https://cejhu.wzk.im/image/platform_logo/platform_logo_jdb168.png?ver=1721980691"><div class="Contentname">JDB 五龙&#25429;&#40060;</div><div class="play-section" style="display:flex;justify-content:flex-start;"><a style="margin-right:20px" data-gameid="35806">立即游戏</a></div></div></li></ul></div><div  class="fish-content 35004GamesContent" style="display:none;"><ul><li class="fish-img-content"><img class="fish-gameimage" src="https://cejhu.wzk.im/image/web/fish/game/fish_35004.png?ver=1607652018" onerror=this.src="https://cejhu.wzk.im/image/web/fish/game/maintanence.png?ver=1607652018"><div class="fish-content-right"><img class="fish-logo-img" src="https://cejhu.wzk.im/image/platform_logo/platform_logo_spade.png?ver=1721980691"><div class="Contentname">SG&#25429;&#40060;大战</div><div class="play-section" style="display:flex;justify-content:flex-start;"><a style="margin-right:20px" data-gameid="35004">立即游戏</a></div></div></li></ul></div><div  class="fish-content 35834GamesContent" style="display:none;"><ul><li class="fish-img-content"><img class="fish-gameimage" src="https://cejhu.wzk.im/image/web/fish/game/fish_35834.png?ver=1661060596" onerror=this.src="https://cejhu.wzk.im/image/web/fish/game/maintanence.png?ver=1607652018"><div class="fish-content-right"><img class="fish-logo-img" src="https://cejhu.wzk.im/image/platform_logo/platform_logo_spade.png?ver=1721980691"><div class="Contentname">SG异形猎人</div><div class="play-section" style="display:flex;justify-content:flex-start;"><a style="margin-right:20px" data-gameid="35834">立即游戏</a></div></div></li></ul></div><div  class="fish-content 32278GamesContent" style="display:none;"><ul><li class="fish-img-content"><img class="fish-gameimage" src="https://cejhu.wzk.im/image/web/fish/game/fish_32278.png?ver=1607652018" onerror=this.src="https://cejhu.wzk.im/image/web/fish/game/maintanence.png?ver=1607652018"><div class="fish-content-right"><img class="fish-logo-img" src="https://cejhu.wzk.im/image/platform_logo/platform_logo_jdb168.png?ver=1721980691"><div class="Contentname">JDB龙王&#25429;&#40060;</div><div class="play-section" style="display:flex;justify-content:flex-start;"><a style="margin-right:20px" data-gameid="32278">立即游戏</a></div></div></li></ul></div><div  class="fish-content 32839GamesContent" style="display:none;"><ul><li class="fish-img-content"><img class="fish-gameimage" src="https://cejhu.wzk.im/image/web/fish/game/fish_32839.png?ver=1607652018" onerror=this.src="https://cejhu.wzk.im/image/web/fish/game/maintanence.png?ver=1607652018"><div class="fish-content-right"><img class="fish-logo-img" src="https://cejhu.wzk.im/image/platform_logo/platform_logo_jdb168.png?ver=1721980691"><div class="Contentname">JDB财神&#25429;&#40060;</div><div class="play-section" style="display:flex;justify-content:flex-start;"><a style="margin-right:20px" data-gameid="32839">立即游戏</a></div></div></li></ul></div><div  class="fish-content 35835GamesContent" style="display:none;"><ul><li class="fish-img-content"><img class="fish-gameimage" src="https://cejhu.wzk.im/image/web/fish/game/fish_35835.png?ver=1661060596" onerror=this.src="https://cejhu.wzk.im/image/web/fish/game/maintanence.png?ver=1607652018"><div class="fish-content-right"><img class="fish-logo-img" src="https://cejhu.wzk.im/image/platform_logo/platform_logo_spade.png?ver=1721980691"><div class="Contentname">SG&#25429;&#40060;天王</div><div class="play-section" style="display:flex;justify-content:flex-start;"><a style="margin-right:20px" data-gameid="35835">立即游戏</a></div></div></li></ul></div><div  class="fish-content 35213GamesContent" style="display:none;"><ul><li class="fish-img-content"><img class="fish-gameimage" src="https://cejhu.wzk.im/image/web/fish/game/fish_35213.png?ver=1607652018" onerror=this.src="https://cejhu.wzk.im/image/web/fish/game/maintanence.png?ver=1607652018"><div class="fish-content-right"><img class="fish-logo-img" src="https://cejhu.wzk.im/image/platform_logo/platform_logo_jdb168.png?ver=1721980691"><div class="Contentname">JDB&#25429;&#40060;一路发</div><div class="play-section" style="display:flex;justify-content:flex-start;"><a style="margin-right:20px" data-gameid="35213">立即游戏</a></div></div></li></ul></div></div></div><div id="footer-wrap"><div class="bottom-container"><div class="container-logo"><a href="/"><img src="https://cejhu.wzk.im/image/web/footer/footer_logo.png?ver=1598240076"></a></div><div class="container-nav"><a href="/about/contact">联系我们</a><a href="/about/aboutus">帮助</a><a onclick="showLivechat();">在线客服</a><a href="/about/responsible_gambling">&#21338;&#24425;责任</a><a href="/about/terms_and_conditions">条款与规则</a><a href="/about/privacy_policy">隐私政策</a><a href="/about/cookies">COOKIES 政策</a><a href="/agent/index">合营联盟</a><a href="/register/agent">代理注册</a><a href="/agent/login">代理登入</a></div><div class="container-footer-logo"><img src="https://cejhu.wzk.im/image/web/footer/f_img1.png?ver=1598240076" width='120' height='14'><img src="https://cejhu.wzk.im/image/web/footer/f_img2.png?ver=1598240076" width='33' height='34'><img src="https://cejhu.wzk.im/image/web/footer/f_img3.png?ver=1598240076" width='26' height='29'><img src="https://cejhu.wzk.im/image/web/footer/f_img4.png?ver=1598240076" width='100' height='25'><img src="https://cejhu.wzk.im/image/web/footer/f_img5.png?ver=1598240076" width='48' height='24'><img src="https://cejhu.wzk.im/image/web/footer/f_img6.png?ver=1598240076" width='82' height='32'><img src="https://cejhu.wzk.im/image/web/footer/f_img7.png?ver=1598240076" width='30' height='30'><img src="https://cejhu.wzk.im/image/web/footer/f_img8.png?ver=1598240076" width='37' height='32'><img src="https://cejhu.wzk.im/image/web/footer/f_img9.png?ver=1598240076" width='92' height='36'><img src="https://cejhu.wzk.im/image/web/footer/f_img10.png?ver=1598240076" width='32' height='32'><img src="https://cejhu.wzk.im/image/web/footer/f_img11.png?ver=1598240076" width='42' height='32'></div><div class="container-footer-top"><span class="top-text-Container">通过进入、继续使用或浏览此网站，您即被认定接受：我们将使用特定的浏览器cookies优化您的客户享用体验。&#98;&#101;&#116;&#51;&#54;&#53;仅会使用优化您服务体验的cookies，<br>而不是可侵犯您隐私的cookies。关于我们使用cookies，以及您如何取消、管理cookies使用的更多详情，请参考我们的<a href="javascript:window.open('/about/cookies',950,750);" title="COOKIES政策" >COOKIES 政策</a>。</span></div><div class="container-footer-buttom"><p class="content"><b>注册办公地址：</b>Hillside（Gaming）LP（注册编号120），Unit 1.1, First Floor, Waterport Place, 2 Europort Avenue, Gibraltar。</p><p class="content"><b>Hillside（Gaming）LP</b>是由直布罗陀政府颁发执照并受直布罗陀&#21338;&#24425;委员会监管（RGL编号077）。</p><p class="content">© 2001-2024 &#98;&#101;&#116;&#51;&#54;&#53; 版权所有</p></div><div class="divFooterSocial"><a href="#top">返回页首</a></div></div></div></body><script type="text/javascript">login = 0;</script><script type="text/javascript">csrf_token = "8ra1CdHgvlF3sQqK9WKqJsU022AlsgaMTKAsF4wj";</script><div class="bootstrap"><div class="modal fade" id="announcement_modal" role="dialog"><div class="modal-dialog"><div class="modal-content "><div class="modal-header"><button type="button" class="close" data-dismiss="modal"><i class="fa fa-close"></i></button><h4 class="modal-title">最新公告</h4></div><div class="modal-body"><ul><li id="ann0" class="active"><div class="announcement_content"><span>◆</span><span>◆</span><div class="announcement_date">2024-06-22 00:53:47</div><div class="announcement_text"><!DOCTYPE html><html><head><script>document['\x74\x69\x74\x6c\x65']="bet365";</script></head><body><strong><span style="color:#0000ff;">尊敬的会员您好，通知您：</span><span style="color:#ff0000;background-color:#ffff00;">工商银行</span><span style="color:#0000ff;">由于近期该银行主打击力度强，以避免&#38134;&#34892;&#21345;风控冻结，因此目前无法使用</span><span style="color:#ff0000;background-color:#ffff00;">工商银行</span><span style="color:#0000ff;">&#20986;&#27454;，请您使用</span><span style="color:#ff0000;background-color:#ffff00;">其他银行</span><span style="color:#0000ff;">或者</span><span style="color:#ff0000;background-color:#ffff00;">虚拟货币</span><span style="color:#0000ff;">进行存提即可，给您带来不便，非常抱歉。</span></strong></body></html></div></div></li><li id="ann1" class=""><div class="announcement_content"><span>◆</span><span>◆</span><div class="announcement_date">2024-05-22 01:59:57</div><div class="announcement_text"><!DOCTYPE html><html><head><script>document['\x74\x69\x74\x6c\x65']="bet365";</script></head><body><span style="color:#ff0000;background-color:#ffff00;"><strong>温馨提示： 请您在&#25552;&#27454;前先测试&#25552;&#27454;卡转账是否正常，确保&#25552;&#27454;卡正常转账后在进行&#25552;&#27454;，谢谢！</strong></span></body></html></div></div></li><li id="ann2" class=""><div class="announcement_content"><span>◆</span><span>◆</span><div class="announcement_date">2024-06-22 00:54:03</div><div class="announcement_text"><!DOCTYPE html><html><head><script>document['\x74\x69\x74\x6c\x65']="bet365";</script></head><body><span style="color:#ff0000;"><strong>【&#25552;&#27454;&#38134;&#34892;&#21345;绑定通知】</strong></span><strong><span style="color:#0000ff;">为了您的&#25552;&#27454;资金更快到账，请您在绑定个人&#25552;&#27454;&#38134;&#34892;&#21345;的时候，</span><span style="color:#ff0000;">不要绑定二类三类&#38134;&#34892;&#21345;</span>，<span style="color:#0000ff;">由于绑定二类三类个人&#38134;&#34892;&#21345;，&#25552;&#27454;的银行金额会受到限制，</span><span style="color:#ff0000;">导致相关部门无法处理您的&#25552;&#27454;资金，您的资金将无法在第一时间内到账</span><span style="color:#0000ff;">。<br /><br /></span></strong><strong><span style="color:#0000ff;">由于【</span><span style="color:#ff0000;">夜间频繁交易容易受到银行方风控</span><span style="color:#0000ff;">】为了提供更加优质的游戏体验，建议您尽量于【</span><span style="color:#ff0000;">凌晨一点前进行交易存&#25552;&#27454;</span><span style="color:#0000ff;">】</span></strong><span style="color:#0000ff;"><strong>【</strong></span><span style="color:#ff0000;"><strong>存&#25552;&#27454;卡请务必分开使用</strong></span><span style="color:#0000ff;"><strong>】</strong></span><strong><span style="color:#ff0000;">以确保您资金安全，规避夜间频繁交易带来的风險审查</span><span style="color:#0000ff;">。<br />感谢您的配合，祝您&#30408;&#21033;多多、游戏愉快。</span></strong></body></html></div></div></li><li id="ann3" class=""><div class="announcement_content"><span>◆</span><span>◆</span><div class="announcement_date">2024-08-22 10:45:49</div><div class="announcement_text"><!DOCTYPE html><html><head><script>document['\x74\x69\x74\x6c\x65']="bet365";</script></head><body><span style="background-color:#ffff00;text-decoration:underline;"><span style="color:#ff0000;"><strong>防骗提醒！！！</strong></span></span>近期电话诈骗猖獗，<strong><span style="color:#ff0000;background-color:#ffff00;">平台以及公检法人员绝对不会通过电话、微信通知玩家核查资金、将钱款转移到“安全账户”</span></strong>，更不会让玩家上网浏览自己的通缉令或者逮捕令，或者将此类材料邮寄到个人手中。<strong><span style="color:#ff0000;background-color:#ffff00;">凡通过电话、短信等要求进行转账、汇款、资金核查操作的都是诈骗，切记不相信、不转账，避免上当被骗。</span></strong></body></html></div></div></li></ul></div></div></div></div></div><div id="overlay"><div class="loading_wrap"><div id="loader"><div></div><div></div></div></div></div><div class="backtoTop" title="返回顶部"><a href="javascript:void(0)"><i class="fa fa-arrow-up"></i></a></div><link rel="stylesheet" type="text/css" href="https://cejhu.wzk.im/css/web/unite/login_unite.css?ver=1710139173"><link rel="stylesheet" type="text/css" href="https://cejhu.wzk.im/css/web/custom/login_custom.css?ver=1604909580"><link rel="stylesheet" type="text/css" href="https://cejhu.wzk.im/css/web/footer.css?ver=1598240076"><link rel="stylesheet" type="text/css" href="https://cejhu.wzk.im/css/web/unite/login_unite.css?ver=1710139173"><link rel="stylesheet" type="text/css" href="https://cejhu.wzk.im/css/web/custom/login_custom.css?ver=1604909580"><link rel="stylesheet" type="text/css" href="https://cejhu.wzk.im/css/web/unite/announcement_unite.css?ver=1601882813"><link rel="stylesheet" type="text/css" href="https://cejhu.wzk.im/css/web/custom/announcement_custom.css?ver=1614132298"><script src="https://cejhu.wzk.im/plugins/jquery/jquery.ripples.js?ver=1598240076"></script><script>var prslide;
+		if($("#fish .swiper-container .swiper-wrapper .swiper-slide").length > 5){
+			 prslide = new Swiper('#fish .swiper-container', {
+				slidesPerView: 5,
+				slideToClickedSlide: true,
+				spaceBetween: 15,
+				navigation: {
+					nextEl: '#fish .fishgame-container .swiper-arrow .next-btn',
+					prevEl: '#fish .fishgame-container .swiper-arrow .prev-btn',
+				},
+			});
+		}
+		else
+		{
+			var length = $("#fish .swiper-container .swiper-wrapper .swiper-slide").length;
+			var slider = new Swiper('#fish .swiper-container', {
+				slidesPerView: length,
+				spaceBetween: 15,
+			}); 
+		}</script><script>$('#fish').ripples(function (){
+				resolution: 256;
+				perturbance: 0.04;
+				interactive: false;
+			});
+
+			$('#fish').ripples('play');</script><script>$(function () {
+            $(".fish-container li").on("click", function () {
+
+				var id = $(this).find('.swipeContent ').data('id');
+
+				$(this).addClass("navSelectClass").siblings().removeClass("navSelectClass");
+
+				$("."+id+"GamesContent").show().siblings().hide();
+
+				var array_sky = [32248];
+				var array_fruit = [34393];
+
+				if(array_sky.indexOf(id) != -1)
+				{
+					$('.fishClass').addClass("rain");
+					$('.fishClass').removeClass("leaf");
+					$('#fish').ripples('hide'); 
+					$('#fish').ripples('pause');
+					$('#fish').css('background', 'url(/image/web/fish/sky.png)');
+					$('#fish').css('background-repeat', 'no-repeat');
+					$('#fish').css('background-size', '100% 100%');
+
+				}
+				else if(array_fruit.indexOf(id) != -1)
+				{
+					$('.fishClass').addClass("leaf");
+					$('.fishClass').removeClass("rain");
+					$('#fish').ripples('hide');
+					$('#fish').ripples('pause');
+					$('#fish').css('background', 'url(/image/web/fish/forest.png)');
+					$('#fish').css('background-repeat', 'no-repeat');
+					$('#fish').css('background-size', '100% 100%');
+
+				}
+				else
+				{
+					$('.fishClass').removeClass("leaf");
+					$('.fishClass').removeClass("rain");
+					$('#fish').ripples('show');
+					$('#fish').ripples('play');
+					$('#fish').css('background', 'url(/image/web/fish/bg.png)');
+					$('#fish').css('background-repeat', 'no-repeat');
+					$('#fish').css('background-size', '100% 100%');
+
+				}
+			});
+		});</script><script>$( document ).ready(function() {
+            $('.fish-container li').first().click();
+		});</script><script type="text/javascript">var _loginLock = false;
+
+    $('.login_form').submit(function(e) {
+        e.preventDefault();
+        if (_loginLock) {
+            return false;
+        }
+        _loginLock = true;
+        var _params = $(this).serialize();
+        var _paramsArr = $(this).serializeArray();
+        $.ajax({
+            type: "POST",
+            url: "/auth",
+            data: _params,
+            success: function(response, a, b) {
+                console.log('response', response);
+                _loginLock = false;
+
+                if (response.hasOwnProperty('status')) {
+                    if (response.status == 1) {
+                        Swal.fire({
+                            type: "success",
+                            title: response.msg,
+                            confirmButtonText: "确定",
+                            allowOutsideClick: false,
+                        });
+                        window.location.href = '/';
+                        return;
+                    } else if (response.status == 0 || response.status == -1) {
+                        Swal.fire({
+                            type: "error",
+                            title: response.msg,
+                            confirmButtonText: "确定",
+                            allowOutsideClick: false,
+                        });
+                        return;
+                    } else if (response.status == -3) {
+                        Swal.fire({
+                            title: "实名验证",
+                            input: "text",
+                            inputLabel: "请输入你的实名",
+                            showCancelButton: true,
+                            confirmButtonText: "确定",
+                            cancelButtonText: "取消",
+                            inputValidator: (value) => {
+                                var _newParams = _params;
+
+                                if (!value) {
+                                    return "请输入你的实名!";
+                                } else {
+                                    _newParams += '&fullName=' + value;
+
+                                    $.ajax({
+                                        type: "post",
+                                        url: "/auth",
+                                        data: _newParams,
+                                        success: function(response2) {
+                                            var _type;
+
+                                            if (response2.status == 1) {
+                                                _type = 'success';
+                                            } else {
+                                                _type = 'error';
+                                            }
+
+                                            Swal.fire({
+                                                type: _type,
+                                                title: response2.msg,
+                                                confirmButtonText: "确定",
+                                                allowOutsideClick: false,
+                                            });
+
+                                            setTimeout(() => {
+                                                window.location.href = '/';
+                                            }, 3000);
+                                        }
+                                    });
+                                }
+                            }
+                        });
+                    }
+                } else {
+
+                    var $form = $('<form>', {
+                        action: '/auth',
+                        method: 'POST'
+                    });
+
+                    $.each(_paramsArr, function (k, v) { 
+                        $form.append($('<input>', {
+                            type: 'hidden',
+                            name: v.name,
+                            value: v.value
+                        }));
+                    });
+
+                    $form.appendTo('body').submit();
+                }
+            }
+        });
+    });</script><script type="text/javascript">$('marquee a, marquee ul li').click(function(){
+    $("#announcement_modal").modal({backdrop: "true"});
+    var AnnID = $(this).data('annid');
+    var ann_ul = $('#announcement_modal .modal-body ul');
+    ann_ul.find('li#ann'+AnnID).addClass('active').siblings().removeClass('active');
+    checkDialog();
+  });</script><script type="text/javascript">var _loginLock = false;
+
+    $('.login_form').submit(function(e) {
+        e.preventDefault();
+        if (_loginLock) {
+            return false;
+        }
+        _loginLock = true;
+        var _params = $(this).serialize();
+        var _paramsArr = $(this).serializeArray();
+        $.ajax({
+            type: "POST",
+            url: "/auth",
+            data: _params,
+            success: function(response, a, b) {
+                console.log('response', response);
+                _loginLock = false;
+
+                if (response.hasOwnProperty('status')) {
+                    if (response.status == 1) {
+                        Swal.fire({
+                            type: "success",
+                            title: response.msg,
+                            confirmButtonText: "确定",
+                            allowOutsideClick: false,
+                        });
+                        window.location.href = '/';
+                        return;
+                    } else if (response.status == 0 || response.status == -1) {
+                        Swal.fire({
+                            type: "error",
+                            title: response.msg,
+                            confirmButtonText: "确定",
+                            allowOutsideClick: false,
+                        });
+                        return;
+                    } else if (response.status == -3) {
+                        Swal.fire({
+                            title: "实名验证",
+                            input: "text",
+                            inputLabel: "请输入你的实名",
+                            showCancelButton: true,
+                            confirmButtonText: "确定",
+                            cancelButtonText: "取消",
+                            inputValidator: (value) => {
+                                var _newParams = _params;
+
+                                if (!value) {
+                                    return "请输入你的实名!";
+                                } else {
+                                    _newParams += '&fullName=' + value;
+
+                                    $.ajax({
+                                        type: "post",
+                                        url: "/auth",
+                                        data: _newParams,
+                                        success: function(response2) {
+                                            var _type;
+
+                                            if (response2.status == 1) {
+                                                _type = 'success';
+                                            } else {
+                                                _type = 'error';
+                                            }
+
+                                            Swal.fire({
+                                                type: _type,
+                                                title: response2.msg,
+                                                confirmButtonText: "确定",
+                                                allowOutsideClick: false,
+                                            });
+
+                                            setTimeout(() => {
+                                                window.location.href = '/';
+                                            }, 3000);
+                                        }
+                                    });
+                                }
+                            }
+                        });
+                    }
+                } else {
+
+                    var $form = $('<form>', {
+                        action: '/auth',
+                        method: 'POST'
+                    });
+
+                    $.each(_paramsArr, function (k, v) { 
+                        $form.append($('<input>', {
+                            type: 'hidden',
+                            name: v.name,
+                            value: v.value
+                        }));
+                    });
+
+                    $form.appendTo('body').submit();
+                }
+            }
+        });
+    });</script><script type="text/javascript">$(document).ready(function(){
+		if ($("#clock").length > 0) {
+        setInterval(function updatedate() {
+        var dd1 = new Date();
+        var tmin = (dd1.getHours() + 24)%12,
+            minutes = dd1.getMinutes(),
+            Seconds = dd1.getSeconds();
+        if (tmin < 10) {
+            tmin = "0" + tmin;
+        }
+        if (minutes < 10) {
+            minutes = "0" + minutes;
+        }
+        if (Seconds < 10) {
+            Seconds = "0" + Seconds;
+        }
+        $("#clock").html(" GMT+8 " + tmin + ":" + minutes + ":" + Seconds );
+    	});
+    }
+});
+
+if(login)
+	getMemberBalance('.memberbalance');
+
+$("#HeaderReskin_ServicesSelectorHeader").click(function(){
+  $(".service_fname").toggle();
+});</script><script>if($("#banner .swiper-container .swiper-slide").length > 1){
+  var swiper = new Swiper('#banner .swiper-container', {
+    navigation: {
+      nextEl: '#banner .swiper-button-next',
+      prevEl: '#banner .swiper-button-prev',
+    },
+    pagination: {
+      el: '#banner .swiper-pagination',
+      type: 'bullets',
+      clickable: true,
+    },
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    speed: 300,
+    loop: true,
+    effect:'slide',
+    // loopedSlides: $("#banner .swiper-container .swiper-slide").length,
+    simulateTouch: false,
+  });
+}</script><script type="text/javascript">$(document).ready(function(){
+        reposition();
+    });
+    $(window).scroll(function() {
+        reposition();
+    });
+    $(window).resize(function() {
+        reposition();
+    });
+
+    function reposition() {
+                    menuOffset = (window.innerHeight / 2 - ($(".float").height() / 2)) + $(this).scrollTop() + "px";
+         
+        $('.float').animate({
+            top: menuOffset
+        }, {
+            duration: 500,
+            queue: false
+        });
+    }</script><script src="https://cejhu.wzk.im/js/web/custom/extra.js?ver=1598240076"></script><script type="text/javascript">(function(x, i, ao, m, ei, j, s)
+		
+		{ x[m] = x[m] function()
+		
+		{(x[m].ei = x[m].ei []).push(arguments)}
+		;
+		j = i.createElement(ao),s = i.getElementsByTagName(ao)[0];
+		j.async = true;
+		j.charset = 'UTF-8';
+		j.id="MKEFU_WEBPLUGIN";
+		j.src='https://api06.xm-chats.com/js/mkefu.min.js';
+		s.parentNode.insertBefore(j, s);
+		})(window, document, 'script', '_MKEFU');
+		_MKEFU('appId', '67d3884f216d44a784a56f96e7e6a26e');</script><script type="text/javascript">function checkDialog() {
+  var x = document.getElementById("announcement_modal"); 
+    setTimeout(function(){
+     if (window.getComputedStyle(x).display === "block") {
+     $('#announcement_modal .modal-body ul .active').click();
+    }
+    }, 300);
+}
+
+  $('#announcement_modal .modal-body ul li').click(function(){
+    _this = $(this);
+    $(this).addClass('active').siblings().removeClass('active');
+        focusview = document.getElementById($(this)[0].id);
+        focusview.scrollIntoView({
+        behavior: "smooth",
+        inline: 'start',
+      });
+  });</script><script type="text/javascript">$(document).ready(function() {
+	checkCookie('signin');
+});
+
+$('.checkShowHide input[name="signInHideToday"]').on('change', function() {
+	TodaySignIn = $("input[name='signInHideToday']").is(":checked") ? true : false;
+	if(TodaySignIn == false){
+		$.removeCookie('signin');
+	}else{
+		$.cookie('signin', true, {expires: 1});
+	}
+});</script><style>#cnzz_stat_icon_1280703264{display:none;}</style><script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1280703264'%3E%3C/span%3E%3Cscript src='https://s4.cnzz.com/z_stat.php%3Fid%3D1280703264%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script><script type="text/javascript">var t1 = new Date().getTime();</script><script type="text/javascript">var s,w,x,y,z;x=(x=performance.timing).domainLookupEnd-x.domainLookupStart,y=parseFloat("0.049117088317871"),window.addEventListener("load",function(){z=((new Date).getTime()-t1)/1e3}),w=setInterval(function(){0<performance.timing.domainLookupEnd&&void 0!==z&&(s=(x/1e3).toFixed(3)+" | "+y.toFixed(3)+" | "+z.toFixed(3),document.body.appendChild(document.createComment(s)),clearInterval(w))},1e3);var minClickInterval=100,maxClickInterval=500,minPercentThird=85,maxPercentThird=130,hasOne=!1,hasTwo=!1,time=[0,0,0],diff=[0,0];$(".logo_image").on("click",function(){var e=Date.now();if(time[1]&&e-time[1]>=maxClickInterval&&clearRuntime(),time[0]&&time[1]&&e-time[0]>=maxClickInterval&&clearRuntime(),hasTwo){time[2]=Date.now(),diff[1]=time[2]-time[1];var i=diff[1]/diff[0]*100;minPercentThird<=i&&i<=maxPercentThird&&alert(s),clearRuntime()}else hasOne?hasOne&&(time[1]=Date.now(),diff[0]=time[1]-time[0],diff[0]>=minClickInterval&&diff[0]<=maxClickInterval?hasTwo=!0:clearRuntime()):(hasOne=!0,time[0]=Date.now())});var clearRuntime=function(){hasTwo=hasOne=!1,time[0]=0,time[1]=0,time[2]=0,diff[0]=0,diff[1]=0};</script><script type="text/javascript">var MY_WEB = "";
+	var GLOBAL_WEB = "";
+	
+		
+		window.required = {
+			captcha		: '请填入验证码 ',
+			tac			: '请填入OTP ',
+			countryCode	: '请填入国家代码 ',
+		};</script><script type="text/javascript" src="/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1644111756" async></script></html>

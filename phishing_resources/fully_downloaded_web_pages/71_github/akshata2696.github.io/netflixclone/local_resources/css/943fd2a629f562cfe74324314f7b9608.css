@@ -1,0 +1,446 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    border-bottom: solid rgb(58, 58, 58) 10px;
+    position: relative;
+    width: 100vw;
+    height: 700px;
+    background: rgba(0, 0, 0, .4);
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, .8) 0, transparent 60%, rgba(0, 0, 0, .8));
+
+}
+
+.container-fluid {
+    padding: 15px 70px 0 70px;
+}
+
+.navbar .languageDropdown button {
+    margin-right: 25px;
+    height: 40px;
+    width: 120px;
+    font-size: 16px;
+}
+
+.btn-dark {
+    color: #fff;
+    background-color: #212529;
+    border-color: white;
+}
+
+.headerImageContainer {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.headerImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.btn{
+    width: 80px;
+}
+
+.headerText {
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 640px;
+    color: white;
+    text-align: center;
+}
+
+.input-group {
+    max-width: 980px;
+}
+
+.input-group input {
+    height: 70px;
+    padding-left: 12px;
+    margin-left: -30px;
+
+}
+
+.input-group span {
+    line-height: 2px;
+    background-color: rgb(229 9 20);
+    border: none;
+    color: white;
+    font-size: 30px;
+    margin-right: -50px;
+    padding-right: 20px;
+    padding-left: 27px;
+}
+
+
+.headerText h1 {
+    font-size: 60px;
+    font-weight: 600;
+    
+}
+
+.headerText h2 {
+
+    font-weight: 400;
+    line-height: 2.05em;
+    font-size: 1.625rem;
+    margin: 1rem auto;
+
+}
+
+.headerText h3 {
+    font-size: 18px;
+    font-weight: 400;
+    padding-bottom: 15px;
+    font-family: Netflix Sans,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+/* Main section */
+.subsection{ 
+    width: 100vw;
+ } 
+
+/* SECTION ONE CSS */
+
+.sectionOne {
+    background-color: #000;
+    color: white;
+    border-bottom: solid rgb(58, 58, 58) 10px;
+    padding: 20px 50px;
+    padding-bottom: 40px;
+}
+
+.cardh1{
+    font-size: 3.125rem;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+}
+
+.cardh2{
+    
+        font-size: 1.625rem;
+        font-weight: 400;
+        margin-top: 10px;
+    
+}
+.sectionOneCol {
+    position: relative;
+    z-index: 2;
+}
+
+.image {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.vid {
+    z-index: -1;
+    height: 52%;
+    width: 77%;
+    position: absolute;
+    top: 47%;
+    bottom: 47%;
+    left: 43%;
+    transform: translate(-50%, -50%);
+}
+
+.vid video {
+    width: 100%;
+    height: 100%;
+}
+
+.justify-content-center {
+    background-color: rgba(0, 0, 0, .4);
+}
+
+.tv {
+    height: 424px;
+    width: 530px;
+    padding: 10px 10px 10px 10px;
+}
+
+
+
+/* SECTION TWO CSS*/
+
+.sectionTwo {
+    position: relative;
+    background-color: #000;
+    color: white;
+    border-bottom: solid rgb(58, 58, 58) 10px;
+    padding: 0px 50px;
+    
+}
+
+.sectionTwoCol {
+    /* position: relative; */
+    z-index: 2;
+}
+
+.sectionTwoColImage {
+    max-height: 75%;
+    margin-top: 25px;
+    left: 40%;
+    margin-left: -100px;
+}
+
+.storyCard {
+    background-color: #000;
+    display: flex;
+    height: 100px;
+    padding-left: 15px;
+    border-radius: 15px;
+    border: solid white 1px;
+    position: absolute;
+    top: 65%;
+    left: 26%;
+    transform: translate(-50%, -50%);
+}
+
+.storyCard div {
+    display: flex;
+    align-items: center;
+}
+
+.storyCard img {
+    width: 60px;
+    height: 76px;
+    margin: 10px -9px;
+}
+
+.str {
+    margin-left: 35px;
+    margin-top: 20px;
+}
+
+.storyCard .sectionTwoColText {
+    width: 210px;
+    
+}
+
+.animation {
+    background: url(https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/download-icon.gif) 50% no-repeat;
+    background-size: 100%;
+    content: "";
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 3em;
+    outline: 2px solid #000;
+    outline-offset: -2px;
+    width: 3em;
+    margin-right: 10px;
+}
+
+/* SECTION THREE CSS*/
+.sectionThree {
+    background-color: #000;
+    color: white;
+    border-bottom: solid rgb(58, 58, 58) 10px;
+    padding: 43px 55px;
+    padding-bottom: 40px;
+}
+
+.sectionThreeCol {
+    position: relative;
+    z-index: 2;
+}
+
+.vid1 {
+    z-index: -1;
+    position: absolute;
+    top: 35%;
+    width: 330px;
+    left: 277px;
+    transform: translate(-50%, -50%);
+}
+
+.vid1 video {
+    width: 100%;
+    height: 100%;
+}
+
+.device{
+    height: 424px;
+    width: 530px;
+    padding: 10px 10px 10px 10px;
+}
+
+/* SECTION  CSS*/
+.sectionFour {
+    background-color: #000;
+    color: white;
+    border-bottom: solid rgb(58, 58, 58) 10px;
+    padding: 20px 50px;
+    padding-bottom: 40px;
+}
+
+.sectionFourCol {
+    position: relative;
+    z-index: 2;
+}
+
+.childimg{
+    height:350px;
+    width: 500px;
+    margin-left: 45px;
+
+}
+
+/***** section five css ****/
+
+.sectionFive { 
+    background-color: #000;
+    color: white;
+    border-bottom: solid rgb(58, 58, 58) 10px;
+    padding: 20px 50px;
+    padding-bottom: 70px;
+}
+
+.Questions {
+    text-align: center;
+    font-size: 3.125rem;
+    line-height: 3;
+    margin-bottom: 0.5rem;
+}
+
+.accordion-item{
+    color:black;
+}
+
+
+h3.email-form-title {
+    font-size: 1.2rem;
+    max-width: none;
+    padding-top: 60px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.col-lg-5 {
+    flex: 0 0 auto;
+    width: 36%;
+}
+
+/* FAQ CSS */
+
+.accordion-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: white;
+    padding: 1rem 1.25rem;
+    font-size: 1.625rem;
+    background-color: #303030;
+    text-align: left;
+    border: 0;
+    box-shadow: none;
+    overflow-anchor: none;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,border-radius .15s ease;
+}
+
+.accordion-button::after{
+    fill: none;
+}
+
+.accordion-flush .accordion-collapse {
+    border-width: 0;
+    background-color: #303030;
+}
+
+.accordion-button:not(.collapsed) {
+    box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%);
+    color: white;
+    background-color: #303030;
+}
+
+.accordion-body {
+    padding: 1rem 1.25rem;
+    color: white;
+    font-weight: 400;
+    text-align: left;
+    font-size: 1.625rem;
+}
+
+.col-sm-8 {
+    flex: 0 0 auto;
+    width: 55%;
+}
+
+
+
+.accordion-item {
+    background-color: black;
+    padding-top: 10px;
+    border: 1px solid rgba(0,0,0,.125);
+}
+
+.input-group {
+    width: 650px;
+}
+
+
+/* footer */
+.footer{
+    background-color: #000;
+    border-bottom: solid rgb(58, 58, 58) 10px;
+    padding: 60px 55px;
+    padding-bottom: 40px;
+    color: #737373;
+    width: 100vw;
+} 
+.footerHeading {
+    margin: 0 0 31px;
+    padding: 0;
+    font-size: 18px;
+}
+
+.footer .btn {
+    border: 1px solid #333;
+    color: #999;
+    width: 134px;
+    height: 54px;
+    padding-left: 12px;
+    text-indent: 0;
+    padding-right: 26px;
+    line-height: 1.7;
+    font-size: 17px;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #737373;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+
+.footer .languageDropdown #languageDropdownMenu {
+    min-width: 120px;
+}
+
+ul.link {
+    list-style-type: none;
+    line-height: 2.5em;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 13px;
+    padding-left: 0rem;
+}
+
+p.netflixIndia {
+    font-size: 13px;
+}
+

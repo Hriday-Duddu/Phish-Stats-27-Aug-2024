@@ -1,0 +1,257 @@
+.space {
+  height: 10px;
+  background-color: #232323;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  background-color: black;
+}
+header .logo {
+  /* border: 6px solid yellow; */
+  height: 60px;
+  width: 170px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 110px;
+  /* border: 5px solid greenyellow; */
+  /* position: relative; */
+  top: 2px;
+}
+.logo svg path {
+  fill: red;
+}
+.Main-1 {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.7) 20%,
+      rgba(0, 0, 0, 0.3) 30%,
+      rgba(0, 0, 0, 0.6) 70%,
+      rgba(0, 0, 0, 0.7) 90%
+    ),
+    /* url("https://assets.nflxext.com/ffe/siteui/vlv3/b2c3e95b-b7b5-4bb7-a883-f4bfc7472fb7/19fc1a4c-82db-4481-ad08-3a1dffbb8c39/IN-en-20240805-POP_SIGNUP_TWO_WEEKS-perspective_WEB_24a485f6-1820-42be-9b60-1b066f1eb869_small.jpg"); */
+      url("bg-netflex.jpg");
+
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 90vh;
+  background-size: cover;
+  /* background-blend-mode: multiply; */
+}
+
+.Main-1-right {
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 2px solid red; */
+  padding: 0px 10px;
+}
+.Main-1-right > .btn-1 {
+  background-color: #e50815;
+  padding: 12px;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+}
+.Main-1-right select {
+  background-color: transparent;
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+  margin: 0px 20px;
+  font-weight: bold;
+  width: 100px;
+}
+.Main-2 {
+  background-color: black;
+  display: flex;
+  color: white;
+  justify-content: space-between;
+  padding: 0px 100px;
+  height: 70vh;
+}
+.Main-2-left h1 {
+  font-size: 50px;
+  font-family: "Helvetica Neue", "Segoe UI", Roboto, Ubuntu, sans-serif;
+  /* border: 2px solid red; */
+  font-weight: bold;
+  position: relative;
+  top: 120px;
+  margin: 10px;
+}
+.Main-2-left P {
+  font-size: 24px;
+  font-weight: 400;
+  font-family: "Helvetica Neue", "Segoe UI", Roboto, Ubuntu, sans-serif;
+  /* border: 2px solid red; */
+  width: 530px;
+  position: relative;
+  top: 120px;
+}
+.Main-2-left {
+  padding: 20px 40px;
+  /* border: 2px solid green; */
+  width: 50%;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+.Main-2-right img {
+  background-image: url("https://www.zapcricket.com/cdn/shop/articles/WhatsApp_Image_2023-10-05_at_23.59.34.webp?v=1696533755");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  color: red;
+}
+
+section {
+  position: relative;
+  top: 200px;
+  /* background-color: red; */
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.parent-section {
+  text-align: center;
+  font-family: "Netflix Sans", "Helvetica Neue", "Segoe UI", Roboto, Ubuntu,
+    sans-serif;
+  /* border: 2px solid red; */
+  /* background-color: green; */
+  line-height: 40px;
+  color: white;
+}
+
+.parent-section h1 {
+  margin: 10px;
+  font-size: 48px;
+}
+.parent-section button {
+  padding: 20px;
+  /* width: 190px; */
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  margin: 20px;
+  height: 60px;
+  color: white;
+  background-color: red;
+}
+
+footer {
+  background-color: black;
+  color: #b3b3b3;
+  display: flex;
+  /* border: 3px solid fuchsia; */
+  font-family: "Netflix Sans", "Helvetica Neue", "Segoe UI", Roboto, Ubuntu,
+    sans-serif;
+}
+.container-2,
+.container-3,
+.container-4 {
+  padding: 40px 0px;
+}
+footer div {
+  /* border: 2px solid red; */
+  display: flex;
+}
+#last-btn {
+  position: relative;
+  margin: 25px;
+  right: 60px;
+}
+.Last-footer ul {
+  color: gray;
+  margin: 50px;
+}
+.Last-footer ul li {
+  text-decoration: underline;
+  margin: 10px;
+  display: flex;
+}
+.Last-footer p {
+  display: inline-block;
+  /* margin: 20px; */
+}
+.Last-footer {
+  padding-left: 130px;
+  display: flex;
+}
+
+.Main-3 {
+  /* border: 2px solid blanchedalmond; */
+  padding: 60px;
+  display: flex;
+  background-color: black;
+  color: white;
+  align-items: center;
+  justify-content: center;
+}
+.Main-3 img {
+  height: 400px;
+  /* width: 500px; */
+  /* border: 2px solid orange; */
+  margin: 30px;
+}
+.Main-3-text {
+  margin-left: 30px;
+  width: 75%;
+  /* border: 3px solid red; */
+}
+.Main-3 h1 {
+  font-size: 50px;
+  font-family: "Helvetica Neue", "Segoe UI", Roboto, Ubuntu, sans-serif;
+  /* border: 2px solid red; */
+  font-weight: bold;
+  position: relative;
+}
+.Main-3 p {
+  margin: 10px;
+  font-size: 24px;
+  font-weight: 400;
+  font-family: "Helvetica Neue", "Segoe UI", Roboto, Ubuntu, sans-serif;
+  /* border: 2px solid red; */
+  width: 530px;
+}
+.Main-4 {
+  background-color: black;
+  padding-top: 70px;
+}
+.Main-6 h1 {
+  font-family: "Helvetica Neue", "Segoe UI", Roboto, Ubuntu, sans-serif;
+  display: flex;
+  font-size: 50px;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+.Main-6 {
+  margin-top: 25px;
+  /* border: 3px solid magenta; */
+  background-color: black;
+  padding: 20px 170px;
+  color: white;
+}
+.Main-6 > h2 {
+  /* border: 2px solid red; */
+  border-radius: 2px;
+  height: 80px;
+  display: flex;
+  padding: 0px 30px;
+  align-items: center;
+  margin: 10px 0px;
+  background-color: #191919;
+  justify-content: space-between;
+}
+.Main-6 h2:hover {
+  cursor: pointer;
+  background-color: #373737;
+}

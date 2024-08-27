@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /~gitbook/
+Allow: /
+Sitemap: https://comsbaproslogin.gitbook.io/us/sitemap.xml

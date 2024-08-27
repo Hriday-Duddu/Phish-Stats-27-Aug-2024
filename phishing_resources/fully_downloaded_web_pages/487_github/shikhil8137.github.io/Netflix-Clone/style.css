@@ -1,0 +1,636 @@
+/* General styles */
+body {
+  margin: 0;
+  font-family: "Noto Sans", sans-serif;
+}
+
+
+
+/* styles */
+.backgroundImage {
+  width: 100%;
+  filter: brightness(25%);
+  min-height: 799px;
+  max-height: 799px;
+  object-fit: cover;
+}
+
+
+
+/* header section*/
+header {
+  display: flex;
+  flex-direction: row;
+  height: 80px;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.leftSideHeader {
+  flex: 1;
+}
+
+.rightSideHeader {
+  flex: 1;
+}
+
+.rightElements {
+  width: 214px;
+
+  margin-left: 52%;
+}
+
+.leftSideHeader img {
+  min-width: 110px;
+  margin-left: 17%;
+  max-width: 180px;
+  margin-top: 1%;
+}
+
+.laguageSymbol {
+  display: inline-block;
+  margin-right: -30px;
+  margin-left: 10px;
+}
+
+.downWordArrow {
+  display: inline-block;
+  margin-left: -30px;
+  margin-right: 20px;
+  height: 26px;
+  margin-bottom: 0;
+}
+
+.signInbutton {
+  display: inline-block;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.selesctor {
+  display: inline-block;
+  margin-top: 0;
+}
+
+.selesctor select {
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  background: transparent;
+  appearance: none;
+  padding-right: 30px;
+  padding-left: 30px;
+  height: 30px;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.laguageSelction {
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+}
+
+select {
+  border-radius: 3px;
+}
+
+.signInbutton {
+  height: 30px;
+  width: 80px;
+  border-radius: 3px;
+  background-color: rgb(223, 20, 30);
+  border: none;
+  font-weight: 550;
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  transition: .15s;
+  cursor: pointer;
+}
+
+select option {
+  color: black;
+}
+
+.sectionOne {
+  position: relative;
+}
+
+/* main section */
+main {
+  display: flex;
+  flex-direction: row;
+  z-index: 1;
+}
+
+.leftSideMain {
+  flex: 1;
+
+}
+
+.middleSideMain {
+  width: 600px;
+  max-width: 700px;
+  min-height: 300px;
+
+
+}
+
+.rightsideMain {
+  flex: 1;
+
+}
+
+.bolderText {
+  font-weight: 1000;
+  font-size: 56px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  margin-bottom: 0;
+  margin-left: 14px;
+  margin-right: 14px;
+  margin-top: 40px;
+  font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+}
+
+.SliteBolderText {
+  font-weight: 400;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  margin-top: 2px;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.normalText {
+
+  font-weight: 300;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  font-size: 15px;
+  font-family: "Noto Sans", sans-serif;
+  margin-top: 25px;
+
+}
+
+.MainInputSection {
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  column-gap: 8px;
+  margin-right: 14px;
+  margin-left: 15px;
+}
+
+.MainInputSection input {
+  max-width: 550px;
+  height: 50px;
+  min-width: 200px;
+  background-color: rgba(20, 20, 20, 0.8);
+  border: 1px solid rgb(100, 100, 100);
+  border-radius: 5px;
+  color: white;
+  font-size: 20px;
+}
+
+.MainInputSection button {
+  max-width: 230px;
+  height: 54px;
+  margin-right: -10px;
+
+}
+
+.gratherThanSymbol {
+  width: 20px;
+  height: 40px;
+  margin-top: 2px;
+
+  float: left;
+}
+
+.getStarted {
+  float: left;
+  margin-bottom: 0;
+  font-size: 23px;
+  margin-top: 5px;
+  margin-left: 26px;
+  font-family: "Noto Sans", sans-serif;
+  color: white;
+  font-weight: 500;
+}
+
+.gratherThanSymbol svg {
+  margin-top: 6px;
+}
+
+@media(max-width:600px) {
+  .MainInputSection {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    justify-items: center;
+  }
+
+  .getStarted {
+    margin-left: 4px;
+  }
+
+  .backgroundImage {
+    min-height: 790px;
+  }
+  .bolderText {
+    margin-top: -100px;
+  }
+
+}
+
+main {
+  position: absolute;
+  top: 220px;
+  right: 0;
+  left: 0;
+}
+
+::placeholder {
+  color: rgb(201, 201, 201);
+  font-size: 15px;
+  padding-left: 15px;
+}
+
+.getStartButton{
+  background-color: rgb(223, 20, 30);
+  border: 1px solid;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: .15s;
+}
+
+/* Middile section*/
+.middileSection1and2 {
+  height: 100px;
+  width: 100%;
+  border: 6px solid transparent;
+  background: linear-gradient(to bottom, rgba(0, 0, 255, 0.5) -69%, rgba(0, 0, 255, 0) 63%) padding-box,
+
+    linear-gradient(#000000, #000000) padding-box, linear-gradient(to right, rgba(33, 13, 22, 1) 16%, rgba(184, 40, 105, 1), rgba(229, 9, 20, 1), rgba(184, 40, 105, 1), rgba(33, 13, 22, 1) 84%) border-box;
+  border-radius: 100% 100% 0 0;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  position: absolute;
+  top: 700px;
+  
+}
+.trendingNow{
+  color: white;
+  font-size: 22px;
+    font-weight: 500;
+    margin-top: 60px;
+    margin-left: 10%;
+ 
+}
+
+/* Section2 */
+.section2{
+  background-color: black;
+
+  
+}
+.countryMovieSelector{
+  background-color: rgb(0, 0, 0);
+}
+.CountrySelector{
+ margin-left: 10%;
+ width: 95px;
+ height: 39px;
+ appearance: none;
+ color: white;
+ margin-top: 5px;
+ font-size: 15px;
+ padding-left: 12px;
+ font-weight: 500;
+ background-color: rgba(75, 75, 75, .2);
+}
+.MovieSelector{
+  font-size: 15px;
+    width: 115px;
+    height: 39px;
+    margin-left: 2.5%;
+    appearance: none;
+    padding-left: 12px;
+    color: white;
+    font-weight: 500;
+    background-color: rgba(75, 75, 75, .2);
+}
+.downArrowCountry{
+  display: inline-block;
+  margin-left: -32px;
+}
+.downArrowMovie{
+  display: inline-block;
+  margin-left: -32px;
+}
+/* Recently movie section */
+.recentlyAddedMovies {
+  display: flex;
+  flex-direction: row;
+}
+
+.leftRecently, .rightRecently {
+  width: 170px;
+ background-color: black;
+}
+
+.middleRecently {
+  flex: 1;
+  background-color: black;
+  overflow-x: auto; 
+}
+
+.recentlyMoviesContainer {
+  display: inline-block;
+  white-space: nowrap; 
+  overflow: hidden;
+}
+
+.recentlyMovies {
+  position: relative;
+  display: inline-block;
+  margin: 15px;
+
+}
+
+.ranking-number {
+  position: absolute;
+  bottom: 9px;
+  margin-left: -20px;
+  font-size: 6em;
+  font-weight: bold;
+  color: black;
+  -webkit-text-stroke: 2px white; 
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.resentlymovies1 img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.rightRecentlyButten{
+  background-color: rgba(59, 59, 59, 0.5);
+  border: none;
+  height: 120px;
+  margin-top: 90px;
+  width: 25px;
+  margin-left: 6px;
+  border-radius: 6px;
+}
+
+.rightRecentlyButten svg{
+  margin-left: -6px;
+}
+/* More reason to join section */
+
+.MoreReasonsToJoin{
+  display: flex;
+}
+.leftSideMore .rightSideMore{
+width: 80px;
+}
+.middleSideMore{
+  flex: 1;
+}
+/* info-contaner */
+.info-container{
+  background: linear-gradient(to bottom right, #001131e6 35%, #520034);
+  min-height: 250px;
+  position: relative;
+  padding-right: 18px;
+  padding-left: 15px;
+  border-radius: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+flex: 1;
+margin-left: 15px;
+}
+.text-content h6{
+  color: white;
+  font-size: 23px;
+  margin-top: 4px;
+  margin-bottom: 20px;
+  font-weight: 510;
+}
+.text-content p{
+  font-size: 15px;
+  margin-top: 0;
+  color:rgba(255, 255, 255, 0.6);
+}
+.svgIcon svg{
+  padding-top: 15px;
+  margin-top: 10px;
+  padding-left: 73%;
+}
+.middleSideMore{
+  display: flex;
+  flex-direction: row;
+  max-height: 340px;
+}
+.information-containers{
+  background-color: black;
+}
+.hedding{
+  color: white;
+  margin-top: 0;
+  font-size: 22px;
+  font-weight: 550;
+  padding-top: 50px;
+  margin-left: 10%;
+}
+.leftSideMore{
+  width: 9%;
+}
+.rightSideMore{
+  width: 9.7%;
+}
+.svgIcon{
+  margin-top: 10px;
+  position: absolute;
+  top: 60%;
+  left: 53%;
+  right: 25%;
+}
+
+/* Question section */
+.info-hedding{
+  background-color: black;
+  color: white;
+  margin-top: 0;
+  padding-top: 70px;
+  font-size: 25px;
+  font-weight: 500;
+  font-family: "Cabin", sans-serif;
+  padding-left: 10%;
+  margin-bottom: 0;
+  padding-bottom: 20px;
+}
+
+.leftSideQust{
+width: 10%;
+}
+.middleQust{
+ flex: 1;
+ background-color: #313131;
+ max-width: 980px;
+}
+.rightSideQust{
+width: 10%;
+}
+.qustionSection{
+  display: flex;
+  flex-direction: row;
+  background-color: black;
+}
+.qustion{
+flex:1;
+margin-left: 22px;
+}
+.qustion p{
+  font-size: 22px;
+  font-weight: 500;
+  color: white;
+}
+
+.plusSymbol{
+margin-right: 25px;
+}
+.Qust{
+display: flex;
+flex-direction: row;
+height: 80px;
+align-items: center;
+}
+.answer{
+  height: 20px;
+  width: 100%;
+  background-color: #533939;
+   display: none;
+   margin-bottom: 10px;
+}
+.borderForQst{
+  height: 8px;
+  width: 100%;
+  margin: 0;
+  background-color: #000000;
+}
+.plusSymbol svg path{
+  fill: white;
+}
+/* Bottum input Section */
+.bottumInputSection{
+  display: flex;
+  flex-direction: row;
+ 
+}
+.leftInputSection{
+  width: 10%;
+
+}
+.rightinputSection{
+  width: 25%;
+
+}
+.middleInputSection{
+  flex: 1;
+
+}
+.ReadyToWatch{
+  background-color: #000000;
+  color: white;
+  margin-top: 0;
+  padding-top: 60px;
+  padding-left: 10%;
+  margin-bottom: 0;
+padding-bottom: 15px;
+}
+.bottumInput{
+  flex: 1;
+  border-radius: 5px;
+  height: 50px;
+  border: 1px solid rgb(53, 53, 53);
+  background-color: rgb(41, 41, 41.3,.5);
+}
+.inputButton{
+  display: flex;
+  flex-direction: row;
+ 
+}
+.inputButton button{
+  width: 220px;
+  margin-left: 8px;
+  font-size: 23px;
+  font-weight: 550;
+  background-color: rgb(223, 20, 30);
+  color: white;
+  border: none;
+  border-radius: 5px;
+ transition: .15s;
+ 
+}
+.gerstartarrow{
+  display: inline-block;
+}
+.gerstartarrow svg{
+  fill: white;
+  margin-top: 6px;
+}
+.GetButton{
+  display: inline-block;
+margin: 0;
+margin-bottom: 10px;
+}
+.contact{
+  font-family: "Inter", sans-serif;
+  color: rgba(255, 255, 255, 0.712);
+margin-left: 25px;
+  margin-top: 30px;
+  font-size: 15px;
+}
+.bottumInputSection{
+  background-color: #000000;
+}
+.contact a{
+  color: rgba(255, 255, 255, 0.712);
+}
+.Link{
+  color: rgba(172, 172, 172, 0.973);
+  font-size: 14px;
+}
+.tableContant{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 113px;
+  padding-left: 25px;
+}
+.NetflixIndia{
+  color: rgba(172, 172, 172, 0.973);
+  font-size: 14px;
+  margin-left: 25px;
+  margin-top: 40px;
+  padding-bottom: 80px;
+}
+
+/* hover actions */
+.signInbutton:hover{
+  background-color: rgba(223, 20, 30,.8);
+}
+.getStartButton:hover{
+  background-color: rgba(223, 20, 30,.9);
+}
+.middleQust:hover{
+  background-color:#3a3a3a ;
+}
+.inputButton button:hover{
+ background-color: rgba(223, 20, 30,.9);
+}

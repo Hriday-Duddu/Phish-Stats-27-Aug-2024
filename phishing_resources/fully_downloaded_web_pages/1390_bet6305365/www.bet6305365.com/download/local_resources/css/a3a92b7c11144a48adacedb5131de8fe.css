@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>找不到您访问的页面</title>
+        <link rel="icon" type="image/png" href="https://cejhu.wzk.im/image/web/?ver=1712555571" sizes="16x16" />
+        <link rel="stylesheet" type="text/css" href="https://cejhu.wzk.im/plugins/bootstrap/bootstrap.min.css?ver=1598240076">
+        <style>
+            body, html {
+                font-family:Arial;
+                color: #000;
+                background: #fff;
+            }
+            body { padding-top: 25px; }
+            h1 { font-size: 34px; color:#ff463d; font-weight:bold; margin:0px; }
+            .logo{ margin:0 auto;width:150px; }
+            p {font-size:20px;line-height:180%;}
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="text-center">
+                                        <img src="https://cejhu.wzk.im/image/web/logo.png?ver=1598240076" alt="" class="img-responsive default-bg logo">
+                                        <img src="https://cejhu.wzk.im/errors/404_img.png?ver=1602815610" alt="" class="img-responsive error_img default-bg">
+                    <h1>找不到您访问的页面</h1>
+                    <p>
+                    网页链接不存在, <span id="countdown"></span>秒后帮你跳转回首页
+                    </p>
+                                            <code class="text-danger bg-danger">链接:http://www.bet6305365.com/download//index.html</code>
+                                    </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        var count = 5;
+        setInterval(function(){
+            document.getElementById("countdown").innerHTML = count;
+            count--;
+        }, 1000);
+
+        setTimeout(function()
+        {
+            window.location.replace('/')
+        }, 5000)
+    </script>
+</html>

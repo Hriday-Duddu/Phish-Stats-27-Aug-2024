@@ -1,0 +1,306 @@
+.content .pc:hover {
+    background: url("/image/web/unite/download/ico_pc_hover.png") center 20px no-repeat;
+}
+
+.content .android:hover {
+    background: url("/image/web/unite/download/ico_ad_hover.png") center 20px no-repeat;
+}
+
+.content .ios:hover {
+    background: url("/image/web/unite/download/ico_ios_hover.png") center 20px no-repeat;
+}
+
+.content .pc.navSelectClass {
+    background: url("/image/web/unite/download/ico_pc_hover.png") center 20px no-repeat;
+}
+
+.content .ios.navSelectClass {
+    background: url("/image/web/unite/download/ico_ios_hover.png") center 20px no-repeat;
+}
+
+.content .android.navSelectClass {
+    background: url("/image/web/unite/download/ico_ad_hover.png") center 20px no-repeat;
+}
+
+.content .pc {
+    background: url("/image/web/unite/download/ico_pc.png") center 20px no-repeat;
+}
+
+.content .ios {
+    background: url("/image/web/unite/download/ico_ios.png") center 20px no-repeat;
+}
+
+.content .android {
+    background: url("/image/web/unite/download/ico_ad.png") center 20px no-repeat;
+}
+
+.content .navigation{
+    background: url("/image/web/unite/download/365asia_menu_bg.png") top center no-repeat;
+    overflow: hidden;
+}
+
+.navSelectClass {
+    box-shadow: 0px 0px 18px 0 #ccc inset;
+    border-radius: 9px 4px;
+}
+
+.navMenuList div:hover{
+    box-shadow: 0px 0px 18px #ccc inset;
+    border-radius: 9px 4px;
+}
+
+.b_bg{width: 389px;height: 10px;border-bottom: 1px solid #ccc;top: 259px;position: relative;}
+
+.navMenuList .img{
+    width: 112px;
+    height: 116px;
+    display: block;
+    margin: 0 auto;
+}
+
+.pc:hover b{
+    color: #ffe11b;
+}
+
+.ios:hover b{
+    color: #ffe11b;
+}
+
+.android:hover b{
+    color: #ffe11b;
+}
+
+.pc, .ios, .android {
+    width: 33.3333333%;
+    float: left;
+    text-align: center;
+    color: #737373;
+    height: 250px;
+    cursor: pointer;
+
+}
+
+.pc img, .ios img, .android .img {
+    display:block;
+}
+
+.navSelectClass b {
+    color: #ffe11b;
+}
+
+.pc b, .ios b, .android b {
+    display: block;
+    margin: 10px 0px;
+    font-family: "Microsoft Yahei", Arial, Helvetica, sans-serif;
+    font-size: 24px;
+}
+
+.navSelectClass span {
+    color: #fff;
+}
+
+.pc span, .ios span, .android span {
+    display: block;
+    font-size: 12px;
+    line-height: 22px;
+}
+
+.MobileContentStyle {
+    box-shadow: 0px 2px 5px #000;
+    padding: 20px;
+}
+
+ul, li {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+
+.MobileContentStyle li {
+    border-bottom: 1px solid #ccc;
+    padding: 20px 0px;
+}
+
+.androidLeft {
+    width: 595px;
+    float: left;
+    padding-bottom: 20px;
+}
+
+.pcHead {
+    padding-top: 25px;
+}
+
+.pcPtLogo {
+    float: left;
+    margin: 20px 10px 10px 70px;
+}
+
+.pcHead h3 {
+    padding-top: 35px;
+}
+
+.androidLeft h3 {
+    margin: 0px;
+    font-size: 33px;
+    color: #fff;
+    font-weight: 300;
+    padding: 30px 0px 10px 80px;
+    text-shadow: 0px 0px 5px #07e8a5;
+}
+
+.androidLeft p {
+    color: #ccc;
+    line-height: 24px;
+    padding-left: 80px;
+}
+
+.pcptBtn {
+    width: 150px;
+    margin-left: 75px;
+    display: block;
+}
+
+.androidRight {
+    float: right;
+    width: 480px;
+    position: relative;
+}
+
+.androidLeft {
+    width: 595px;
+    float: left;
+    padding-bottom: 20px;
+}
+
+.pcHead {
+    padding-top: 25px;
+}
+
+.androidRight {
+    float: right;
+    width: 480px;
+    position: relative;
+}
+
+.MobileContentStyle .borderNone {
+    border: 0px;
+}
+
+.MobileContentStyle li {
+    border-bottom: 1px solid #a6a6a6;
+    padding: 20px 0px;
+}
+
+.MobileContentStyle .androidRight .Logo{
+  width: 454px; 
+  height: 86px;
+}
+
+.MobileContentStyle .androidRight .Image{
+  width: 454px; 
+  height: 310px;
+}
+
+.MobileContentStyle .androidRight .AppIcon.iosIcon{
+  width: 63px;
+  height: 63px; 
+  position: absolute;
+  left: 196px; 
+  top: 175px;
+  border-radius: 10px;
+}
+.MobileContentStyle .androidRight .AppIcon.androidIcon{
+  width: 63px;
+  height: 63px; 
+  position: absolute;
+  left: 193px;
+  top: 181px;
+  border-radius: 10px;
+}
+
+.stepNum {
+    float: left;
+    font-size: 48px;
+    color: #1d6d55;
+    padding: 10px 12px 10px 10px;
+}
+
+.stepText {
+    color: #fff;
+    float: left;
+    font-size: 14px;
+    line-height: 24px;
+    width: 505px;
+}
+
+.stepText span {
+    display: block;
+    background: #211311;
+    border: 1px solid #134c3b;
+    margin: 5px 0px;
+    padding: 0px 5px;
+    width: 180px;
+}
+
+.marleft10 {
+    margin-left: 10px;
+}
+
+.right {
+    float: right;
+}
+
+.step1{
+	margin-top:20px;
+}
+
+.step2{
+	margin-top:20px;
+}
+
+.content .fnameContent{
+    background: #292929;
+}
+
+.qrcode {
+  background-color: #fff;
+  padding: 8px;
+  height: 120px;
+}
+
+.panelDescription{
+  position: relative;
+}
+
+.panelDescription img{
+  width: 100%;
+}
+
+.panelDescription p{
+  position: absolute;
+  color: #fff;
+  top: 28.4%;
+  left: 23.2%;
+  font-size: 1.2em;
+  line-height: 30px;
+  font-family: 'Microsoft JhengHei';
+  letter-spacing: 0.5px;
+}
+.fnameCenter.navMenuList{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 1315px){
+.fnameCenter.navMenuList,.fnameCenter.pcIosAndroid{
+    width: 1000px!important;
+}
+}
+.fnameCenter.navMenuList,.fnameCenter.pcIosAndroid{
+    width: 1315px;
+}
+.fnameCenter {
+    margin: 0 auto;
+}

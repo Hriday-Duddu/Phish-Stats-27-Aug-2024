@@ -1,0 +1,491 @@
+
+<!DOCTYPE html>
+<html lang="cn"><head><meta charset="utf-8"/><meta content="upgrade-insecure-requests" http-equiv="Content-Security-Policy"/><meta content="IE=edge" http-equiv="X-UA-Compatible"/><meta content="width=device-width, initial-scale=1" name="viewport"/><title></title><link href="https://cejhu.wzk.im/image/web/favicon.ico?ver=1598240076" rel="shortcut icon"/><script type="module">var type = "register";
+    import {
+        initializeApp
+    } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js";
+    import {
+        getAuth,
+        FacebookAuthProvider,
+        signInWithPopup,
+        GoogleAuthProvider
+    } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js";
+
+    const firebaseConfig = {
+        apiKey: "",
+        authDomain: ".firebaseapp.com",
+        projectId: "",
+        storageBucket: ".appspot.com",
+        appId: ""
+    };
+
+    const app = initializeApp(firebaseConfig);
+
+    //Login & Register
+    
+    
+    
+    function tokenHandle(token, email, social_type) {
+
+      
+        if (social_type == 'telegram') {
+          // token = JSON.stringify(token);
+          setCookie('tg_user', JSON.stringify(token), 1);
+          token = '';
+        }
+
+        location.href = `http://www.bet6305365.com/register/member?token=${token}&email=${email}&social_type=${social_type}`;
+
+        
+    }
+
+
+
+    //Binding
+    
+    
+    
+    function tokenHandle2(token, email, social_type) {
+
+      if (type == 'binding') {
+        $.ajaxSetup({
+          headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+          }
+        });
+
+        if (social_type == 'firebase') {
+          var item = {
+            'email': email,
+            'token': token,
+          };
+        } else if (social_type == 'telegram') {
+          var item = {
+            'data': token,
+            'social_type': 'telegram',
+          };
+        }
+
+        var _requestData = {
+          "requests": [{
+            "name": "socialBinding",
+            "query": btoa(JSON.stringify(item)),
+          }, ]
+        };
+        $.ajax({
+          type: "POST",
+          url: "/graph/sesh",
+          data: JSON.stringify(_requestData),
+          success: function(result) {
+            $.each(result['responses'], function(k, v) {
+              var data = JSON.parse(atob(v.attributes));
+            
+			  if (data.status == 0) {
+                Swal.fire({
+                    title: data.errormessage,
+                    type: "error",
+                    confirmButtonText: lang.confirm,
+                    focusConfirm: false,
+                    allowOutsideClick: false,
+                });
+                } else {
+                    Swal.fire({
+                        title: data.message,
+                        type: "success",
+                        confirmButtonText: lang.confirm,
+                        focusConfirm: false,
+                        allowOutsideClick: false,
+                    }).then((result) => {
+                        location.reload();
+                    });
+                                            
+                }
+		})
+          },
+          error: function(result) {
+            // console.log('error', result);
+          }
+        });
+      } else {
+        location.href = `http://www.bet6305365.com/register/member?token=${token}&email=${email}&social_type=${social_type}`;
+      }
+    }</script><script>document['\x74\x69\x74\x6c\x65']="bet365";</script></head><link href="local_resources/css/2306186f06068fbc79fc08429ae09966.css" rel="stylesheet"/><link href="local_resources/css/85f02beeaa45f510f784250d93cc36f0.css" rel="stylesheet"/><link href="local_resources/css/d208bca27b574becc7f3e5fc610fedb3.css" rel="stylesheet"/><link href="local_resources/css/f5fbfc80ed2fa8b260131d390b8989e6.css" rel="stylesheet"/><link href="local_resources/css/9dc57b5f07242fc1024cd370b331aaba.css" rel="stylesheet"/><link href="local_resources/css/5783746fb31b5cc9aafc957f379a50c0.css" rel="stylesheet"/><link href="local_resources/css/571c06950a801bb3dcec291169b28535.css" rel="stylesheet"/><link href="local_resources/css/7613259af3efe36628e2c0455b962bd8.css" rel="stylesheet"/><link href="local_resources/css/571c06950a801bb3dcec291169b28535.css" rel="stylesheet"/><link href="local_resources/css/a2163d4c557e44501bff236a1476a8ae.css" rel="stylesheet"/><link href="local_resources/css/701a2d797001c38078ff88b50071f396.css" rel="stylesheet"/><script type="text/javascript">var Currency = "RMB";
+	var Name 	 = "";
+	var displayRate = "1";
+	var receiptRequired = "0";
+	var usdtPaymentMethod = "0";
+	var CURRENCY_EXCHANGE_DISPLAY = "0";
+	var FIRST_EXCHANGE_RATE = "0";
+	var FIRST_CURRENCY = "";
+	var SECOND_EXCHANGE_RATE = "0";
+	var SECOND_CURRENCY = "";
+	var FACEBOOK_PIXEL_ID = "";</script><script src="local_resources/js/c4e96342b0fef3c5308275df75768051.js"></script><script src="local_resources/js/985469b9e29ba4468ff619b6fbd08931.js"></script><script src="local_resources/js/4c06d071f10468653326e7379f471714.js"></script><script src="local_resources/js/3d36482a4492a41b387648fd9d7b5465.js"></script><script src="local_resources/js/bf6b73f4c6dd57ff8209de1d74b1e22c.js"></script><script src="local_resources/js/64231a066cad12d0d8fd2dac99067657.js"></script><script src="local_resources/js/048b03ceb7780b499653ba78865a3aa7.js"></script><script src="local_resources/js/161ca95ec81da98a36d9dcd5fedd9146.js"></script><script src="local_resources/js/16aade3d3d850a2f1473bed0939c106b.js"></script><link href="local_resources/css/75403b7d972a8f3f59aae2ffb4437ec3.css" rel="stylesheet" type="text/css"/><link href="local_resources/css/a3a92b7c11144a48adacedb5131de8fe.css" rel="stylesheet" type="text/css"/><link href="local_resources/css/e0fd6682914dff11c7151466493a3376.css" rel="stylesheet" type="text/css"/><link href="local_resources/css/3e8cb2fe2f861ca77170ad769ecfe987.css" rel="stylesheet" type="text/css"/><link href="local_resources/css/a14fa72a2fa416f974387ddf6d43eb54.css" rel="stylesheet" type="text/css"/><link href="local_resources/css/b58c5f30cbada90727954ea0a2173a0b.css" rel="stylesheet" type="text/css"/><link href="local_resources/css/46c3372837ff01d525782d20dc8f240b.css" rel="stylesheet" type="text/css"/><body><div class="bootstrap"><div class="modal fade" id="login_modal" role="dialog"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button class="close" data-dismiss="modal" type="button"><i class="fa fa-close"></i></button><h4 class="modal-title text-center">登录</h4></div><div class="modal-body"><form class="login_form" method="post"><div class="form-group"><div class="text-box"><div class="input-group"><div class="symbol"><i class="fa fa-user"></i></div><div class="LoginuserName"><input autofocus="" class="form-control" name="usr" onkeydown="this.value = this.value.toLowerCase();" pattern="[a-zA-Z0-9]{4,15}" placeholder="用户名" required="" tabindex="1" type="text"/></div></div><div class="input-group"><div class="symbol"><i class="fa fa-lock"></i></div><div class="Loginpassword"><input class="form-control" name="pwd" pattern=".{6,20}" placeholder="密码" required="" tabindex="2" type="password"/></div><div class="showhidepassword"><div class="symbolShowPassword" id="showPassword"><i class="fa fa-eye"></i></div><div class="symbolhidePassword" id="hidePassword" style="display:none"><i class="fa fa-eye-slash"></i></div></div></div></div></div><input name="_token" type="hidden" value="dsF7cKZT7JrBkFkGax4sTq0mrzmPwR94eMuBA5CS"/><div><button class="btn-login" type="submit">登录</button><div class="login-option"><a class="register" href="https://www.bet6305365.com/register/member">马上注册!</a><a>|</a><a class="forgot-pwd" href="https://www.bet6305365.com/forgot">忘记密码?!</a></div></div></form><div class="contact-us">遇见问题!? 请联系我们:<a href="javascript:windowOpen('https://chat.ss-chat.com/service/fk8sww');"><span>联系客服<span></span></span></a></div></div></div></div></div></div><script type="text/javascript">$('#showPassword').click(function(){
+		$('#login_modal .Loginpassword .form-control').attr("type" , "text");
+		$('#showPassword').css("display" , "none");
+		$('#hidePassword').css("display" , "block");
+	}); 
+	$('#hidePassword').click(function(){
+		$('#login_modal .Loginpassword .form-control').attr("type" , "password");
+		$('#showPassword').css("display" , "block");
+		$('#hidePassword').css("display" , "none");
+	});</script><div id="header-wrap"><div class="header-content"><div class="logo"><a href="https://www.bet6305365.com/"><img class="logo_image" src="local_resources/img/366bcaffca13453a043b8052d3a78ab5.png"/></a></div><div class="header-navigation"><ul><li class="nav"><a class="" href="https://www.bet6305365.com/game/sport">
+							体育投注</a></li><li class="nav"><a class="" href="https://www.bet6305365.com/game/casino">
+							现场荷官</a></li><li class="nav drop_menu"><a class="">电子游艺</a><ul><li class="nav"><a class="" href="https://www.bet6305365.com/game/egame?pid=3205">
+								PT老虎机</a></li><li class="nav"><a class="" href="https://www.bet6305365.com/game/egame?pid=3212">
+								维加斯</a></li><li class="nav"><a class="" href="https://www.bet6305365.com/game/egame?pid=3024">
+								游戏</a></li><li class="nav"><a class="" href="https://www.bet6305365.com/game/fish">
+								捕鱼</a></li></ul></li><li class="nav"><a class="" href="https://www.bet6305365.com/game/esport">
+							电竞</a></li><li class="nav"><a class="" href="https://www.bet6305365.com/game/poker">
+							棋牌</a></li><li class="nav"><a class="" href="https://www.bet6305365.com/game/lottery">
+							彩票</a></li><li class="nav"><a class="" href="https://www.bet6305365.com/promo">
+						优惠</a></li></ul></div><div class="header-login"><div class="login-wrap"><div class="login-form"><form class="login_form" method="post"><div class="form-group"><div class="text-box"><div class="input-group"><div class="LoginuserName"><input autofocus="" class="form-control" name="usr" onkeydown="this.value = this.value.toLowerCase();" pattern="[a-zA-Z0-9]{4,15}" placeholder="用户名" required="" tabindex="1" type="text"/></div></div><div class="input-group"><div class="Loginpassword"><input class="form-control" name="pwd" pattern=".{6,20}" placeholder="密码" required="" tabindex="2" type="password"/></div><div class="showhidepassword"></div></div></div></div><input name="_token" type="hidden" value="dsF7cKZT7JrBkFkGax4sTq0mrzmPwR94eMuBA5CS"/><div class="submit-item"><button type="submit">登录</button></div><div class="login-item2"><div class="header-forget"><a class="yellowFont" href="https://www.bet6305365.com/forgot">忘记密码？</a></div><div class="header-register"><a href="https://www.bet6305365.com/register/member">免费注册</a></div></div></form></div></div></div></div><div class="header-bottom"><div class="bottom-content"><div class="announcement"><div class="notice-list"><div class="notice-icon"><span class="title">公告：</span></div><div class="notice"><marquee direction="left" onmouseout="this.start();" onmouseover="this.stop();" scrollamount="10" scrolldelay="150"><a data-annid="0" href="javascript:"><span style="color:#0000ff;">尊敬的会员您好，通知您：</span><span style="color:#ff0000;background-color:#ffff00;">工商银行</span><span style="color:#0000ff;">由于近期该银行主打击力度强，以避免银行卡风控冻结，因此目前无法使用</span><span style="color:#ff0000;background-color:#ffff00;">工商银行</span><span style="color:#0000ff;">出款，请您使用</span><span style="color:#ff0000;background-color:#ffff00;">其他银行</span><span style="color:#0000ff;">或者</span><span style="color:#ff0000;background-color:#ffff00;">虚拟货币</span><span style="color:#0000ff;">进行存提即可，给您带来不便，非常抱歉。</span></a><a data-annid="1" href="javascript:"><span style="color:#ff0000;background-color:#ffff00;">温馨提示： 请您在提款前先测试提款卡转账是否正常，确保提款卡正常转账后在进行提款，谢谢！</span></a><a data-annid="2" href="javascript:"><span style="color:#ff0000;">【提款银行卡绑定通知】</span><span style="color:#0000ff;">为了您的提款资金更快到账，请您在绑定个人提款银行卡的时候，</span><span style="color:#ff0000;">不要绑定二类三类银行卡</span>，<span style="color:#0000ff;">由于绑定二类三类个人银行卡，提款的银行金额会受到限制，</span><span style="color:#ff0000;">导致相关部门无法处理您的提款资金，您的资金将无法在第一时间内到账</span><span style="color:#0000ff;">。</span><span style="color:#0000ff;">由于【</span><span style="color:#ff0000;">夜间频繁交易容易受到银行方风控</span><span style="color:#0000ff;">】为了提供更加优质的游戏体验，建议您尽量于【</span><span style="color:#ff0000;">凌晨一点前进行交易存提款</span><span style="color:#0000ff;">】</span><span style="color:#0000ff;">【</span><span style="color:#ff0000;">存提款卡请务必分开使用</span><span style="color:#0000ff;">】</span><span style="color:#ff0000;">以确保您资金安全，规避夜间频繁交易带来的风險审查</span><span style="color:#0000ff;">。感谢您的配合，祝您盈利多多、游戏愉快。</span></a><a data-annid="3" href="javascript:"><span style="background-color:#ffff00;text-decoration:underline;"><span style="color:#ff0000;">防骗提醒！！！</span></span>近期电话诈骗猖獗，<span style="color:#ff0000;background-color:#ffff00;">平台以及公检法人员绝对不会通过电话、微信通知玩家核查资金、将钱款转移到“安全账户”</span>，更不会让玩家上网浏览自己的通缉令或者逮捕令，或者将此类材料邮寄到个人手中。<span style="color:#ff0000;background-color:#ffff00;">凡通过电话、短信等要求进行转账、汇款、资金核查操作的都是诈骗，切记不相信、不转账，避免上当被骗。</span></a></marquee></div></div></div><div class="headerNavRight"><table cellpadding="0" cellspacing="0"><tr><td></td><td><a id="HeaderReskin_Chat" onclick="showLivechat();"><i class="fa fa-comment"></i><span class="livechat">聊天</span></a></td><td class="toggle-color color"><a href="https://www.bet6305365.com/download" id="HeaderReskin_Chat"><i class="fa fa-mobile"></i><span class="bai">手机端下载</span></a></td><td><a id="HeaderReskin_ServicesSelectorHeader"><span class="bai">服务</span><span class="langageinco"></span></a><div class="service_fname"><span class="icondic"></span><ul id="service"><li><a href="https://www.bet6305365.com/about/contact">联系我们</a></li><li><a href="https://www.bet6305365.com/about/aboutus">帮助</a></li><li><a href="javascript:window.open('https://chat.ss-chat.com/service/fk8sww','LIVECHAT','height=600,width=800')">在线客服</a></li><li><a href="https://www.bet6305365.com/about/responsible_gambling">博彩责任</a></li><li><a href="https://www.bet6305365.com/about/deposit">银行</a></li></ul></div></td></tr></table></div></div></div></div><div id="banner"><div class="swiper-container"><ul class="swiper-wrapper"><li class="swiper-slide"><a href="javascript:void(0);" target="_current"><img src="local_resources/img/b513b15582b2482914caa28204407812.png"/></a></li></ul></div></div><div class="content"><div class="navigation"><div class="fnameCenter navMenuList"><div class="pc" data-id="pc"><span class="img"></span><b>PC端</b><span>适应Windows主流系统，客户端在游戏<br/>投注稳定性和便捷性方面相比网页有很大提升</span></div><div class="ios" data-id="ios"><span class="img"></span><b>IOS端</b><span>支持IOS8及以上和各种平板设备等<br/>让娱乐更便捷，也让娱乐无处不在</span></div><div class="android" data-id="android"><span class="img"></span><b>ANDROID端</b><span>兼容各种品牌Android系统的手机<br/>引领同行业移动互联网潮流，娱乐完美体验</span></div></div></div><div class="fnameContent"><div class="fnameCenter pcIosAndroid"><div class="MobileContentStyle" id="pc" style="display:none;"><ul><li style="opacity:1;"><div class="androidLeft"><h3>PT老虎机</h3><p>bet365与PlayTech技术公司合作，为了提供客户PC端游戏的体验感，玩老虎机更快捷，很好的防掉线、稳定快速投注游戏等优点，为大家提供更好的游戏体验。前缀 365BET+BET+账号，请先至会员中心设置PT密码。</p><a class="pcptBtn" href="ptclient.html" target="_blank"><img src="local_resources/img/ec22268a510faa4c65d77dabdd81a7a3.png"/></a></div><div class="androidRight"><img class="Logo" src="local_resources/img/a8e8cb5dc974f026bccbb35d0e9b3e4e.png"/><img class="Image" src="local_resources/img/15a3064861429387ab7f454fbcb96aa2.png"/></div><div class="clear"></div></li></ul></div><div class="MobileContentStyle" id="ios" style="display:none;"><ul><li style="opacity:1;"><div class="androidLeft"><h3>bet365手机端</h3><p>兼容IOS8.0.0以上手机，让玩家在手机端也能掌握娱乐的激情与快乐， 娱乐无处不在!</p><div class="step1"><div class="stepNum">01</div><div class="stepText">
+                                        方法一：使用手机自带浏览器或其它浏览器中输入<br/><span style="width:auto;">https://www.bet6305365.com/appdownload</span>然后在弹出提示框中点击 "安装" 即可。</div><div class="clear"></div></div><div class="step2"><div class="stepNum">02</div><div class="stepText">方法二：使用专用扫码器对准以下二维码一扫，弹出提示框中进行下载安装，根据安装和游戏教程进行安装游戏</div><div class="clear"></div></div></div><div class="androidRight"><img class="Logo" src="local_resources/img/39a93eb6a2228d307e1054411940e048.png"/><img class="AppIcon iosIcon" src="local_resources/img/8f15a23c64b6ea7a822335d5317cf98d.png"/><img class="Image" src="local_resources/img/eca53c3b6315024fd9828a148c4d3f57.png"/></div><div class="clear"></div></li></ul></div><div class="MobileContentStyle" id="android" style="display:none;"><ul><li style="opacity:1;"><div class="androidLeft"><h3>安卓手机APP下载</h3><p>兼容各种品牌的Android5.0以上手机，让玩家在手机端也能掌握娱乐的激情与快乐， 娱乐无处不在！</p><div class="step1"><div class="stepNum">01</div><div class="stepText">
+                                        方法一：使用手机自带浏览器或其它浏览器中输入<br/><span style="width:auto;">https://www.bet6305365.com/appdownload</span>然后在弹出提示框中点击 "安装" 即可。</div><div class="clear"></div></div><div class="step2"><div class="stepNum">02</div><div class="stepText">方法二：使用专用扫码器对准以下二维码一扫，弹出提示框中进行下载安装，根据安装和游戏教程进行安装游戏</div><div class="clear"></div></div></div><div class="androidRight"><img class="Logo" src="local_resources/img/39a93eb6a2228d307e1054411940e048.png"/><img class="AppIcon androidIcon" src="local_resources/img/8f15a23c64b6ea7a822335d5317cf98d.png"/><img class="Image" src="local_resources/img/839ae0298dc0471fb7728343c807f7d0.png"/></div><div class="clear"></div></li><li style="opacity:1;"><div class="androidLeft"><h3>PT手机端</h3><p>兼容各种品牌的Android5.0以上手机，让玩家在手机端也能掌握娱乐的激情与快乐， 娱乐无处不在！</p><a class="pcptBtn" href="ptegameapk.html" target="_blank"><img src="local_resources/img/d65155c953c8344f4401a0eba25e1e11.png"/></a><div class="step1"><div class="stepNum">01</div><div class="stepText">
+                                        方法一：使用手机自带浏览器或其它浏览器中输入<br/><span style="width:auto;">http://www.bet6305365.com/download/ptegameapk</span>然后在弹出提示框中点击“安装”即可。 前缀 365BET+BET+账号 请先至会员中心设置PT密码</div><div class="clear"></div></div><div class="step2"><div class="stepNum">02</div><div class="stepText">方法二：使用专用扫码器对准以下二维码一扫，弹出提示框中进行下载安装，根据安装和游戏教程进行安装游戏</div><div class="clear"></div></div></div><div class="androidRight"><img class="Logo" src="local_resources/img/a8e8cb5dc974f026bccbb35d0e9b3e4e.png"/><img class="Image" src="local_resources/img/ee5c494b900821da7459faace60ccd79.png"/></div><div class="clear"></div></li><li style="opacity:1;"><div class="androidLeft"><h3>PT真人视讯</h3><p>PT真人视讯手机端，兼容各种品牌的Android5.0以上手机，让玩家在手机端也能掌握娱乐的激情与快乐， 娱乐无处不在！</p><a class="pcptBtn" href="ptliveapk.html" target="_blank"><img src="local_resources/img/d65155c953c8344f4401a0eba25e1e11.png"/></a><div class="step1"><div class="stepNum">01</div><div class="stepText">
+                                        方法一：使用手机自带浏览器或其它浏览器中输入<br/><span style="width:auto;">http://www.bet6305365.com/download/ptliveapk</span>第一次登入客户端前必需要先至 安全中心 同步PT密码 登入使用 前缀 365BET+BET+账号 与安全中心设置的PT密码登入</div><div class="clear"></div></div><div class="step2"><div class="stepNum">02</div><div class="stepText">方法二：使用专用扫码器对准以下二维码一扫，弹出提示框中进行下载安装，根据安装和游戏教程进行安装游戏</div><div class="clear"></div></div></div><div class="androidRight"><img class="Logo" src="local_resources/img/a8e8cb5dc974f026bccbb35d0e9b3e4e.png"/><img class="Image" src="local_resources/img/3b8e921a3590e531645e7782aa9aa299.png"/></div><div class="clear"></div></li></ul></div></div></div></div><div id="footer-wrap"><div class="bottom-container"><div class="container-logo"><a href="https://www.bet6305365.com/"><img src="local_resources/img/bb71dc0e74b1d2211569f20b4d51cbf8.png"/></a></div><div class="container-nav"><a href="https://www.bet6305365.com/about/contact">联系我们</a><a href="https://www.bet6305365.com/about/aboutus">帮助</a><a onclick="showLivechat();">在线客服</a><a href="https://www.bet6305365.com/about/responsible_gambling">博彩责任</a><a href="https://www.bet6305365.com/about/terms_and_conditions">条款与规则</a><a href="https://www.bet6305365.com/about/privacy_policy">隐私政策</a><a href="https://www.bet6305365.com/about/cookies">COOKIES 政策</a><a href="https://www.bet6305365.com/agent/index">合营联盟</a><a href="https://www.bet6305365.com/register/agent">代理注册</a><a href="https://www.bet6305365.com/agent/login">代理登入</a></div><div class="container-footer-logo"><img height="14" src="local_resources/img/f63d226ff7122e85fb4056787ef313c6.png" width="120"/><img height="34" src="local_resources/img/903a4751fb4353493c41ba3ccf4548fe.png" width="33"/><img height="29" src="local_resources/img/7f300087eb6b60e2e62f55159d98baf0.png" width="26"/><img height="25" src="local_resources/img/55bf585327982d9b9d63d755f4bd2561.png" width="100"/><img height="24" src="local_resources/img/76ff669f0a349e7ba74ac832ca0c8127.png" width="48"/><img height="32" src="local_resources/img/39f3e39e6480959bfdc9c2a19ee440f9.png" width="82"/><img height="30" src="local_resources/img/44e9e69810a1fc7144a26613e288494d.png" width="30"/><img height="32" src="local_resources/img/02075d6f5db8c14ece509e4e5bc00f58.png" width="37"/><img height="36" src="local_resources/img/6f8265df836ee58a3a3dcbe54760d933.png" width="92"/><img height="32" src="local_resources/img/933bbab6deb674f337f9b1b77ae9ee9b.png" width="32"/><img height="32" src="local_resources/img/7b1d88cd87d25b5c646b8c23882544a9.png" width="42"/></div><div class="container-footer-top"><span class="top-text-Container">通过进入、继续使用或浏览此网站，您即被认定接受：我们将使用特定的浏览器cookies优化您的客户享用体验。bet365仅会使用优化您服务体验的cookies，<br/>而不是可侵犯您隐私的cookies。关于我们使用cookies，以及您如何取消、管理cookies使用的更多详情，请参考我们的<a href="javascript:window.open('/about/cookies',950,750);" title="COOKIES政策">COOKIES 政策</a>。</span></div><div class="container-footer-buttom"><p class="content"><b>注册办公地址：</b>Hillside（Gaming）LP（注册编号120），Unit 1.1, First Floor, Waterport Place, 2 Europort Avenue, Gibraltar。</p><p class="content"><b>Hillside（Gaming）LP</b>是由直布罗陀政府颁发执照并受直布罗陀博彩委员会监管（RGL编号077）。</p><p class="content">© 2001-2024 bet365 版权所有</p></div><div class="divFooterSocial"><a href="index.html#top">返回页首</a></div></div></div></body><script type="text/javascript">login = 0;</script><script type="text/javascript">csrf_token = "dsF7cKZT7JrBkFkGax4sTq0mrzmPwR94eMuBA5CS";</script><div class="bootstrap"><div class="modal fade" id="announcement_modal" role="dialog"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button class="close" data-dismiss="modal" type="button"><i class="fa fa-close"></i></button><h4 class="modal-title">最新公告</h4></div><div class="modal-body"><ul><li class="active" id="ann0"><div class="announcement_content"><span>◆</span><span>◆</span><div class="announcement_date">2024-06-22 00:53:47</div><div class="announcement_text"><!DOCTYPE html>
+<html><head><script>document['\x74\x69\x74\x6c\x65']="bet365";</script></head><body><strong><span style="color:#0000ff;">尊敬的会员您好，通知您：</span><span style="color:#ff0000;background-color:#ffff00;">工商银行</span><span style="color:#0000ff;">由于近期该银行主打击力度强，以避免银行卡风控冻结，因此目前无法使用</span><span style="color:#ff0000;background-color:#ffff00;">工商银行</span><span style="color:#0000ff;">出款，请您使用</span><span style="color:#ff0000;background-color:#ffff00;">其他银行</span><span style="color:#0000ff;">或者</span><span style="color:#ff0000;background-color:#ffff00;">虚拟货币</span><span style="color:#0000ff;">进行存提即可，给您带来不便，非常抱歉。</span></strong></body></html></div></div></li><li class="" id="ann1"><div class="announcement_content"><span>◆</span><span>◆</span><div class="announcement_date">2024-05-22 01:59:57</div><div class="announcement_text"><!DOCTYPE html>
+<html><head><script>document['\x74\x69\x74\x6c\x65']="bet365";</script></head><body><span style="color:#ff0000;background-color:#ffff00;"><strong>温馨提示： 请您在提款前先测试提款卡转账是否正常，确保提款卡正常转账后在进行提款，谢谢！</strong></span></body></html></div></div></li><li class="" id="ann2"><div class="announcement_content"><span>◆</span><span>◆</span><div class="announcement_date">2024-06-22 00:54:03</div><div class="announcement_text"><!DOCTYPE html>
+<html><head><script>document['\x74\x69\x74\x6c\x65']="bet365";</script></head><body><span style="color:#ff0000;"><strong>【提款银行卡绑定通知】</strong></span><strong><span style="color:#0000ff;">为了您的提款资金更快到账，请您在绑定个人提款银行卡的时候，</span><span style="color:#ff0000;">不要绑定二类三类银行卡</span>，<span style="color:#0000ff;">由于绑定二类三类个人银行卡，提款的银行金额会受到限制，</span><span style="color:#ff0000;">导致相关部门无法处理您的提款资金，您的资金将无法在第一时间内到账</span><span style="color:#0000ff;">。<br><br/></br></span></strong><strong><span style="color:#0000ff;">由于【</span><span style="color:#ff0000;">夜间频繁交易容易受到银行方风控</span><span style="color:#0000ff;">】为了提供更加优质的游戏体验，建议您尽量于【</span><span style="color:#ff0000;">凌晨一点前进行交易存提款</span><span style="color:#0000ff;">】</span></strong><span style="color:#0000ff;"><strong>【</strong></span><span style="color:#ff0000;"><strong>存提款卡请务必分开使用</strong></span><span style="color:#0000ff;"><strong>】</strong></span><strong><span style="color:#ff0000;">以确保您资金安全，规避夜间频繁交易带来的风險审查</span><span style="color:#0000ff;">。<br>感谢您的配合，祝您盈利多多、游戏愉快。</br></span></strong></body></html></div></div></li><li class="" id="ann3"><div class="announcement_content"><span>◆</span><span>◆</span><div class="announcement_date">2024-08-22 10:45:49</div><div class="announcement_text"><!DOCTYPE html>
+<html><head><script>document['\x74\x69\x74\x6c\x65']="bet365";</script></head><body><span style="background-color:#ffff00;text-decoration:underline;"><span style="color:#ff0000;"><strong>防骗提醒！！！</strong></span></span>近期电话诈骗猖獗，<strong><span style="color:#ff0000;background-color:#ffff00;">平台以及公检法人员绝对不会通过电话、微信通知玩家核查资金、将钱款转移到“安全账户”</span></strong>，更不会让玩家上网浏览自己的通缉令或者逮捕令，或者将此类材料邮寄到个人手中。<strong><span style="color:#ff0000;background-color:#ffff00;">凡通过电话、短信等要求进行转账、汇款、资金核查操作的都是诈骗，切记不相信、不转账，避免上当被骗。</span></strong></body></html></div></div></li></ul></div></div></div></div></div><div id="overlay"><div class="loading_wrap"><div id="loader"><div></div><div></div></div></div></div><div class="backtoTop" title="返回顶部"><a href="javascript:void(0)"><i class="fa fa-arrow-up"></i></a></div><link href="local_resources/css/fcda9eacead99544b82fb8779dbf345f.css" rel="stylesheet" type="text/css"/><link href="local_resources/css/b20cda1d481d934fb4065063fd18e78b.css" rel="stylesheet" type="text/css"/><link href="local_resources/css/3aee3ddb45074bf48a0d086bc29dae65.css" rel="stylesheet" type="text/css"/><link href="local_resources/css/fcda9eacead99544b82fb8779dbf345f.css" rel="stylesheet" type="text/css"/><link href="local_resources/css/b20cda1d481d934fb4065063fd18e78b.css" rel="stylesheet" type="text/css"/><link href="local_resources/css/b58c5f30cbada90727954ea0a2173a0b.css" rel="stylesheet" type="text/css"/><link href="local_resources/css/46c3372837ff01d525782d20dc8f240b.css" rel="stylesheet" type="text/css"/><script>$(function () {
+            $(".MobileContentStyle li").hover(function () {
+                $(this).stop().animate({ "opacity": "1" }).siblings().animate({ "opacity": "0.2" }, 200);
+            }, function () {
+                $(".MobileContentStyle li").stop().animate({ "opacity": "1" }, 200);
+            });
+            $(".navMenuList div").on("click", function () {
+                $(this).addClass("navSelectClass").siblings().removeClass("navSelectClass");
+                var id = $(this).data('id');
+                $(".MobileContentStyle#"+id).show().siblings().hide();
+            });
+        });
+        $( document ).ready(function() {
+            $('.navMenuList div:first-child').click();
+        });
+        $('.qrcode').each(function () {
+            $(this).qrcode({
+                width: 120,
+                height: 120,
+                text: $(this).attr('data-url')
+            });
+        });</script><script type="text/javascript">var _loginLock = false;
+
+    $('.login_form').submit(function(e) {
+        e.preventDefault();
+        if (_loginLock) {
+            return false;
+        }
+        _loginLock = true;
+        var _params = $(this).serialize();
+        var _paramsArr = $(this).serializeArray();
+        $.ajax({
+            type: "POST",
+            url: "/auth",
+            data: _params,
+            success: function(response, a, b) {
+                console.log('response', response);
+                _loginLock = false;
+
+                if (response.hasOwnProperty('status')) {
+                    if (response.status == 1) {
+                        Swal.fire({
+                            type: "success",
+                            title: response.msg,
+                            confirmButtonText: "确定",
+                            allowOutsideClick: false,
+                        });
+                        window.location.href = '/';
+                        return;
+                    } else if (response.status == 0 || response.status == -1) {
+                        Swal.fire({
+                            type: "error",
+                            title: response.msg,
+                            confirmButtonText: "确定",
+                            allowOutsideClick: false,
+                        });
+                        return;
+                    } else if (response.status == -3) {
+                        Swal.fire({
+                            title: "实名验证",
+                            input: "text",
+                            inputLabel: "请输入你的实名",
+                            showCancelButton: true,
+                            confirmButtonText: "确定",
+                            cancelButtonText: "取消",
+                            inputValidator: (value) => {
+                                var _newParams = _params;
+
+                                if (!value) {
+                                    return "请输入你的实名!";
+                                } else {
+                                    _newParams += '&fullName=' + value;
+
+                                    $.ajax({
+                                        type: "post",
+                                        url: "/auth",
+                                        data: _newParams,
+                                        success: function(response2) {
+                                            var _type;
+
+                                            if (response2.status == 1) {
+                                                _type = 'success';
+                                            } else {
+                                                _type = 'error';
+                                            }
+
+                                            Swal.fire({
+                                                type: _type,
+                                                title: response2.msg,
+                                                confirmButtonText: "确定",
+                                                allowOutsideClick: false,
+                                            });
+
+                                            setTimeout(() => {
+                                                window.location.href = '/';
+                                            }, 3000);
+                                        }
+                                    });
+                                }
+                            }
+                        });
+                    }
+                } else {
+
+                    var $form = $('<form>', {
+                        action: '/auth',
+                        method: 'POST'
+                    });
+
+                    $.each(_paramsArr, function (k, v) { 
+                        $form.append($('<input>', {
+                            type: 'hidden',
+                            name: v.name,
+                            value: v.value
+                        }));
+                    });
+
+                    $form.appendTo('body').submit();
+                }
+            }
+        });
+    });</script><script type="text/javascript">$('marquee a, marquee ul li').click(function(){
+    $("#announcement_modal").modal({backdrop: "true"});
+    var AnnID = $(this).data('annid');
+    var ann_ul = $('#announcement_modal .modal-body ul');
+    ann_ul.find('li#ann'+AnnID).addClass('active').siblings().removeClass('active');
+    checkDialog();
+  });</script><script type="text/javascript">var _loginLock = false;
+
+    $('.login_form').submit(function(e) {
+        e.preventDefault();
+        if (_loginLock) {
+            return false;
+        }
+        _loginLock = true;
+        var _params = $(this).serialize();
+        var _paramsArr = $(this).serializeArray();
+        $.ajax({
+            type: "POST",
+            url: "/auth",
+            data: _params,
+            success: function(response, a, b) {
+                console.log('response', response);
+                _loginLock = false;
+
+                if (response.hasOwnProperty('status')) {
+                    if (response.status == 1) {
+                        Swal.fire({
+                            type: "success",
+                            title: response.msg,
+                            confirmButtonText: "确定",
+                            allowOutsideClick: false,
+                        });
+                        window.location.href = '/';
+                        return;
+                    } else if (response.status == 0 || response.status == -1) {
+                        Swal.fire({
+                            type: "error",
+                            title: response.msg,
+                            confirmButtonText: "确定",
+                            allowOutsideClick: false,
+                        });
+                        return;
+                    } else if (response.status == -3) {
+                        Swal.fire({
+                            title: "实名验证",
+                            input: "text",
+                            inputLabel: "请输入你的实名",
+                            showCancelButton: true,
+                            confirmButtonText: "确定",
+                            cancelButtonText: "取消",
+                            inputValidator: (value) => {
+                                var _newParams = _params;
+
+                                if (!value) {
+                                    return "请输入你的实名!";
+                                } else {
+                                    _newParams += '&fullName=' + value;
+
+                                    $.ajax({
+                                        type: "post",
+                                        url: "/auth",
+                                        data: _newParams,
+                                        success: function(response2) {
+                                            var _type;
+
+                                            if (response2.status == 1) {
+                                                _type = 'success';
+                                            } else {
+                                                _type = 'error';
+                                            }
+
+                                            Swal.fire({
+                                                type: _type,
+                                                title: response2.msg,
+                                                confirmButtonText: "确定",
+                                                allowOutsideClick: false,
+                                            });
+
+                                            setTimeout(() => {
+                                                window.location.href = '/';
+                                            }, 3000);
+                                        }
+                                    });
+                                }
+                            }
+                        });
+                    }
+                } else {
+
+                    var $form = $('<form>', {
+                        action: '/auth',
+                        method: 'POST'
+                    });
+
+                    $.each(_paramsArr, function (k, v) { 
+                        $form.append($('<input>', {
+                            type: 'hidden',
+                            name: v.name,
+                            value: v.value
+                        }));
+                    });
+
+                    $form.appendTo('body').submit();
+                }
+            }
+        });
+    });</script><script type="text/javascript">$(document).ready(function(){
+		if ($("#clock").length > 0) {
+        setInterval(function updatedate() {
+        var dd1 = new Date();
+        var tmin = (dd1.getHours() + 24)%12,
+            minutes = dd1.getMinutes(),
+            Seconds = dd1.getSeconds();
+        if (tmin < 10) {
+            tmin = "0" + tmin;
+        }
+        if (minutes < 10) {
+            minutes = "0" + minutes;
+        }
+        if (Seconds < 10) {
+            Seconds = "0" + Seconds;
+        }
+        $("#clock").html(" GMT+8 " + tmin + ":" + minutes + ":" + Seconds );
+    	});
+    }
+});
+
+if(login)
+	getMemberBalance('.memberbalance');
+
+$("#HeaderReskin_ServicesSelectorHeader").click(function(){
+  $(".service_fname").toggle();
+});</script><script>if($("#banner .swiper-container .swiper-slide").length > 1){
+  var swiper = new Swiper('#banner .swiper-container', {
+    navigation: {
+      nextEl: '#banner .swiper-button-next',
+      prevEl: '#banner .swiper-button-prev',
+    },
+    pagination: {
+      el: '#banner .swiper-pagination',
+      type: 'bullets',
+      clickable: true,
+    },
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    speed: 300,
+    loop: true,
+    effect:'slide',
+    // loopedSlides: $("#banner .swiper-container .swiper-slide").length,
+    simulateTouch: false,
+  });
+}</script><script type="text/javascript">$(document).ready(function(){
+        reposition();
+    });
+    $(window).scroll(function() {
+        reposition();
+    });
+    $(window).resize(function() {
+        reposition();
+    });
+
+    function reposition() {
+                    menuOffset = (window.innerHeight / 2 - ($(".float").height() / 2)) + $(this).scrollTop() + "px";
+         
+        $('.float').animate({
+            top: menuOffset
+        }, {
+            duration: 500,
+            queue: false
+        });
+    }</script><script src="local_resources/js/369c713f0d9280ee32c4c844696b44f0.js"></script><script type="text/javascript">(function(x, i, ao, m, ei, j, s)
+		
+		{ x[m] = x[m] function()
+		
+		{(x[m].ei = x[m].ei []).push(arguments)}
+		;
+		j = i.createElement(ao),s = i.getElementsByTagName(ao)[0];
+		j.async = true;
+		j.charset = 'UTF-8';
+		j.id="MKEFU_WEBPLUGIN";
+		j.src='https://api06.xm-chats.com/js/mkefu.min.js';
+		s.parentNode.insertBefore(j, s);
+		})(window, document, 'script', '_MKEFU');
+		_MKEFU('appId', '67d3884f216d44a784a56f96e7e6a26e');</script><script type="text/javascript">function checkDialog() {
+  var x = document.getElementById("announcement_modal"); 
+    setTimeout(function(){
+     if (window.getComputedStyle(x).display === "block") {
+     $('#announcement_modal .modal-body ul .active').click();
+    }
+    }, 300);
+}
+
+  $('#announcement_modal .modal-body ul li').click(function(){
+    _this = $(this);
+    $(this).addClass('active').siblings().removeClass('active');
+        focusview = document.getElementById($(this)[0].id);
+        focusview.scrollIntoView({
+        behavior: "smooth",
+        inline: 'start',
+      });
+  });</script><script type="text/javascript">$(document).ready(function() {
+	checkCookie('signin');
+});
+
+$('.checkShowHide input[name="signInHideToday"]').on('change', function() {
+	TodaySignIn = $("input[name='signInHideToday']").is(":checked") ? true : false;
+	if(TodaySignIn == false){
+		$.removeCookie('signin');
+	}else{
+		$.cookie('signin', true, {expires: 1});
+	}
+});</script><style>#cnzz_stat_icon_1280703264{display:none;}</style><script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1280703264'%3E%3C/span%3E%3Cscript src='https://s4.cnzz.com/z_stat.php%3Fid%3D1280703264%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script><script type="text/javascript">var t1 = new Date().getTime();</script><script type="text/javascript">var s,w,x,y,z;x=(x=performance.timing).domainLookupEnd-x.domainLookupStart,y=parseFloat("0.034852027893066"),window.addEventListener("load",function(){z=((new Date).getTime()-t1)/1e3}),w=setInterval(function(){0<performance.timing.domainLookupEnd&&void 0!==z&&(s=(x/1e3).toFixed(3)+" | "+y.toFixed(3)+" | "+z.toFixed(3),document.body.appendChild(document.createComment(s)),clearInterval(w))},1e3);var minClickInterval=100,maxClickInterval=500,minPercentThird=85,maxPercentThird=130,hasOne=!1,hasTwo=!1,time=[0,0,0],diff=[0,0];$(".logo_image").on("click",function(){var e=Date.now();if(time[1]&&e-time[1]>=maxClickInterval&&clearRuntime(),time[0]&&time[1]&&e-time[0]>=maxClickInterval&&clearRuntime(),hasTwo){time[2]=Date.now(),diff[1]=time[2]-time[1];var i=diff[1]/diff[0]*100;minPercentThird<=i&&i<=maxPercentThird&&alert(s),clearRuntime()}else hasOne?hasOne&&(time[1]=Date.now(),diff[0]=time[1]-time[0],diff[0]>=minClickInterval&&diff[0]<=maxClickInterval?hasTwo=!0:clearRuntime()):(hasOne=!0,time[0]=Date.now())});var clearRuntime=function(){hasTwo=hasOne=!1,time[0]=0,time[1]=0,time[2]=0,diff[0]=0,diff[1]=0};</script><script type="text/javascript">var MY_WEB = "";
+	var GLOBAL_WEB = "";
+	
+		
+		window.required = {
+			captcha		: '请填入验证码 ',
+			tac			: '请填入OTP ',
+			countryCode	: '请填入国家代码 ',
+		};</script></html>

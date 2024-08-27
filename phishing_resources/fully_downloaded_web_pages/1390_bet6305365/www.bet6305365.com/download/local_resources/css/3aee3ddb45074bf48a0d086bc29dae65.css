@@ -1,0 +1,128 @@
+#footer-wrap{
+  background: #151515;
+  border-top: 1px solid #2d2d2d;
+}
+.bottom-container{
+  margin: 0 auto;
+  width: 990px;
+  font-family: verdana;
+  overflow: hidden;
+  text-align: center;
+  padding-bottom: 20px;
+}
+.container-logo{
+  padding: 20px 0;
+}
+.container-nav{
+  margin-bottom: 20px;
+  color: #727272;
+  font-size: 11px;
+}
+.container-nav a{
+  margin: 0 12px 0 0;
+  padding: 0 6px;
+}
+
+.container-nav a:hover{
+  color: #fff;
+  cursor: pointer;
+}
+
+.container-footer-logo{
+  margin-bottom: 15px;
+}
+
+.container-footer-logo img{
+  margin: 0 5px;
+}
+
+.container-footer-top {
+  line-height: 20px;
+  margin-bottom: 15px;
+  color: #727272;
+  font-size: 12px;
+}
+
+.container-footer-buttom p{
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+.container-footer-buttom .content{
+  padding-bottom: 5px;
+  color: #727272;
+  font-size: 12px;
+  background: none;
+}
+
+#index-footer{
+  background-color: #004531;
+  border-top: 1px solid #350c11;
+  padding: 10px;
+  float: left;
+}
+
+.index-footer-conatiner{
+  color: #417667;
+  line-height: 1;
+  border-bottom: 1px solid #275a4b;
+  font-family: Arial,"sans-serif",Microsoft YaHei;
+}
+
+.index-footer-conatiner .index-footer-container-nav{
+  text-align: center;
+  border-top: 1px solid #275a4b;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.index-footer-conatiner .index-footer-container-nav{
+  font-size: 12px;
+  color: #80a298;
+}
+
+.index-footer-conatiner .index-footer-container-nav a:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.index-footer-conatiner .index-footer-container-nav a::after{
+  content: "|";
+  margin: 0px 4px;
+}
+
+.index-footer-conatiner .index-footer-container-nav a:last-child:after {
+  display: none;
+}
+
+.index-footer-conatiner .index-footer-text span.copy{
+  text-align: center;
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 3px;
+  color: #80a298;
+  font-size: 12px;
+  border-bottom: 1px solid #275a4b;
+  padding-bottom: 5px;
+}
+
+.index-footer-conatiner .index-footer-content{
+  padding: 8px 0px;
+  border-bottom: solid 1px #275a4b;
+}
+.index-footer-conatiner .index-footer-content img{
+  width: 100%;
+}
+.divFooterSocial a {
+    display: inline-block;
+    height: 21px;
+    line-height: 12px;
+    background-color: #242424;
+    border-radius: 3px;
+    padding: 9px 20px 0 0;
+    min-width: 80px;
+    margin-left: 12px;
+    padding-left: 20px;
+    font-size: 11px;
+    color: #727272;
+}

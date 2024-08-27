@@ -1,0 +1,131 @@
+#announcement_modal .modal-dialog {
+  width: 650px;
+  height: 400px;
+  margin-top: calc((100vh - 400px)/2);
+}
+
+#announcement_modal .modal-content{
+  overflow: hidden;
+}
+
+#announcement_modal .modal-header {
+  color: #fff;
+  background-color: #2c1917;
+  padding: 0;
+  height: 45px;
+}
+
+#announcement_modal .modal-title{
+  line-height: 45px;
+  padding-left: 10px;
+  font-size: 18px;
+  float: left;
+}
+
+#announcement_modal .close {
+  font-size: 18px;
+  color: #fff;
+  line-height: 45px;
+  padding-right: 10px;
+  opacity: 1;
+  font-weight: normal;
+  text-shadow: none;
+}
+
+#announcement_modal .modal-body {
+  width: 100%;
+  height: 355px;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+#announcement_modal .modal-body ul{
+  margin-top: 20px;
+  counter-reset: section;
+}
+
+#announcement_modal .modal-body ul li:before{
+  counter-increment: section;
+  content: counter(section);
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  position: absolute;
+  background-color: #d2d1d1;
+  color: #000;
+  border-radius: 15px;
+  top: 10px;
+}
+
+#announcement_modal .modal-body ul li{
+  padding: 0 20px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+#announcement_modal .modal-body ul li .announcement_content{
+  width: 520px;
+  background: #fff;
+  border: 1px solid #b4b4b4;
+  padding: 10px;
+  position: relative;
+  left: 50px;
+}
+
+#announcement_modal .modal-body ul li.active:before{
+  background-color: #2c1917;
+  color: #fff;
+}
+
+#announcement_modal .modal-body ul li.active .announcement_content{
+  border: 1px solid #2c1917;
+}
+
+#announcement_modal .modal-body ul li.active .announcement_content>span:nth-of-type(2){
+  color: #2c1917;
+}
+
+#announcement_modal .modal-body ul li .announcement_content>span:nth-of-type(1){
+  color: #fff;
+  font-size: 24px;
+  position: absolute;
+  left: -7px;
+  top: 3px;
+  z-index: 110;
+  font-family: Microsoft YaHei,微软雅黑,Microsoft JhengHei,Helvetica Neue,Helvetica!important;
+}
+
+#announcement_modal .modal-body ul li .announcement_content>span:nth-of-type(2){
+  color: #979797;
+  font-size: 24px;
+  position: absolute;
+  left: -8px;
+  top: 3px;
+  font-family: Microsoft YaHei,微软雅黑,Microsoft JhengHei,Helvetica Neue,Helvetica!important;
+}
+
+#announcement_modal .modal-body ul li .announcement_content .announcement_date{
+  line-height: 28px;
+  border-bottom: 1px solid #e8e7e7;
+  height: 28px;
+  color: #666;
+}
+#announcement_modal .modal-body ul li .announcement_content .announcement_text{
+  padding: 5px;
+  line-height: 16px;
+  color: #707070;
+}
+.notice marquee a p{
+  display: inline-block !important;
+}
+.notice marquee div{
+  display: inline-block !important;
+}
+.notice marquee a{
+  display: inline-block !important; 
+}

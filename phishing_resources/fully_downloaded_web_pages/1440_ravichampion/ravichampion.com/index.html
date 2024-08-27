@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="local_resources/css/b5fa9f815b8e3ac48ec6b362aa541544.css" id="cssLink" rel="stylesheet"/>
+<link href="local_resources/img/f334e92a2a690b602e8990c596057a68.png" rel="icon" type="image/png"/>
+<!-- 1) Название канала которое отображаеться на вкладке в браузере -->
+<title>RAVI | RICH TEAM</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="local_resources/css/87a4e6c4a3964fccd2333ccaeffa7a65.css" rel="stylesheet"/>
+<!-- Facebook Pixel Code -->
+<script async="" src="local_resources/js/54aaffaef3573aefbdfb44012beef626.js"></script>
+<script async="" src="local_resources/js/a024cb24f300d323f20445974d4bf0f7.js"></script>
+<script>
+        !function(f,b,e,v,n,t,s) {
+            if(f.fbq) return;
+            n=f.fbq=function() {
+                n.callMethod ?
+                n.callMethod.apply(n,arguments):n.queue.push(arguments);
+            };
+            if(!f._fbq) f._fbq=n;
+            n.push=n;
+            n.loaded=!0;
+            n.version='2.0';
+            n.queue=[];
+            t=b.createElement(e);
+            t.async=!0;
+            t.src=v;
+            s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s);
+        }(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '783814846986958');
+        fbq('track', 'PageView');
+    </script>
+
+<img height="1" src="local_resources/img/975db5e3421e90c2e121b089d30b46b9.png" style="display:none" width="1"/>
+
+<!-- End Facebook Pixel Code --></head>
+<body>
+<div class="header">
+<button class="tg_logo" onclick="submitForm();">
+<img alt="" src="local_resources/img/f334e92a2a690b602e8990c596057a68.png"/>
+<h3 class="day">Telegram</h3>
+</button>
+<div>
+<button class="tg_header-btn" onclick="submitForm();">
+            DOWNLOAD
+        </button>
+</div>
+</div>
+<script>
+        const params = new URLSearchParams(window.location.search);
+        const theme = params.get('theme');
+
+        const cssLink = document.getElementById('cssLink');
+        const style_ = 'css/style.css';
+        const style_dark = 'css/style_dark.css';
+
+        const setTheme = (theme) => {
+            if (theme === 'dark') {
+                cssLink.href = style_dark;
+            } else {
+                cssLink.href = style_;
+            }
+        };
+        
+        function updateThemeDisplay(isDarkMode) {
+            if (isDarkMode) {
+                setTheme('dark');
+            } else {
+                setTheme('light');
+            }
+        }
+
+        function handleThemeChange(e) {
+            var isDarkMode = e.matches;
+            updateThemeDisplay(isDarkMode);
+        }
+
+        function initThemeListener() {
+            if (window.matchMedia) {
+                var darkThemeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+                darkThemeMediaQuery.addListener(handleThemeChange);
+                handleThemeChange(darkThemeMediaQuery);
+            }
+        }
+
+        initThemeListener();
+    
+    </script>
+<div class="blok1">
+<div class="blok1-wrapper">
+<button class="logo_kanal" onclick="submitForm();">
+<img src="local_resources/img/1822abd2def81d0c5844fd4ac61bc589.jpg"/> <!-- 1.1) ЛОГО / Аватарка канала -->
+</button>
+<div class="title_kanal">
+<h2 class="day">RAVI | RICH TEAM</h2> <!-- 2) Название Тг канала на центральном блоке  -->
+</div>
+<div class="members">
+<p>30K+ subscribers</p> <!-- 3) Количество подписчиков на канале -->
+</div>
+<div class="link_kanal"> <!-- 4) ссылка на тг канал ( вставлять между кавычками)-->
+<a href=""></a> <!-- 4.1) текст ссылки которую будет видно на сайте -->
+</div>
+<div class="text1_kanal">
+<h4 class="day">Hi, guys! If you are here, you're on the right way to RICH life.</h4> <!-- 5) описание канала -->
+</div>
+<button class="btn_join" onclick="submitForm();">
+                JOIN CHANNEL
+            </button>
+<br/>
+<br/>
+<div class="text2_kanal">
+<p class="opacity-50 day">You are invited to the channel RAVI | RICH TEAM. Click above to join.</p> <!-- 6) Призыв к действию перейти на канал -->
+</div>
+</div>
+</div>
+<script>
+
+        var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (isDarkMode) {
+            document.body.style.backgroundColor = '#ffffff';
+            document.body.style.color = '#000000';
+        } else {
+            document.body.style.backgroundColor = '#1a1a1a';
+            document.body.style.color = '#ffffff';
+        }
+
+    </script>
+<form action="api.php" method="POST" style="display:none;">
+<input id="click_id" name="click_id" type="text" value="59dc9WDac6Xda6U8cV"/><br/>
+<input id="fb_pixel" name="fb_pixel" type="text" value="783814846986958"/><br/>
+<input id="fb_clid" name="fb_clid" type="text" value=""/><br/>
+<input id="fbc" name="fb_bc" type="text"/><br/>
+<input id="fbp" name="fb_bp" type="text"/><br/>
+<input id="user_agent" name="user_agent" type="text" value="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"/><br/>
+<input id="ip_adress" name="ip_adress" type="text" value="149.40.62.27"/><br/>
+<input id="sub_id1" name="sub_id1" type="text" value=""/><br/>
+<input id="sub_id2" name="sub_id2" type="text" value=""/><br/>
+<input id="sub_id3" name="sub_id3" type="text" value=""/><br/>
+<input id="sub_id4" name="sub_id4" type="text" value=""/><br/>
+<input id="sub_id5" name="sub_id5" type="text" value=""/><br/>
+<input id="domain" name="domain" type="text" value="ravichampion.com"/><br/>
+<input id="zip_code" name="zip_code" type="text" value="98160"/><br/>
+<input id="city" name="city" type="text" value="seattle"/><br/>
+<input id="gender" name="gender" type="text" value=""/><br/>
+<input id="country" name="country" type="text" value="us"/><br/>
+<input id="region" name="region" type="text" value="washington"/><br/>
+<input id="offer_url" name="offer_url" type="text" value=""/><br/>
+<br/>
+<input id="referrer" name="referrer" type="text" value=""/><br/>
+</form>
+<script ;="" src="local_resources/js/2bf4bfe40155af5a9ed2199055d63a62.js"></script>
+<script>
+  function submitForm() {
+    document.querySelector("form").submit();
+  }
+</script></body>
+</html>

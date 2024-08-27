@@ -1,0 +1,28 @@
+@charset "utf-8";
+/* CSS Document */
+
+.pc{ display: block;}
+.wap{ display: none;}
+.daohangwap img.off{ display: none;}
+
+.mobile-menu{ display: none;}
+.daohangwap{ position:absolute; right: 15px;}
+@media screen and (max-width:960px){
+	.common-navbar-container .common-navbar{ position: relative;}
+	 .wap{ display:block;}
+	 .mobile-menu.wap{ display: none;}
+	 .pc{ display:none !important;}
+	 .mini-download .flex-row{ display: block;}
+	 .mini-download.platforms>div>div{ display: block; width: 100%;}
+	 
+	 .mini-download.platforms .qrcode{ box-shadow: none;}
+	 .common-navbar nav{ display: none;}
+	 .common-footer .nav-links .links-wrap.pc{ display: none;}
+	 .common-footer .social.pc{ display: none;}
+	 .download.waist .content{ width: 100%; display: block;}
+	 .download.waist .content .example{ display: none;}
+	 .download.waist{ padding:40px 20px; text-align: center; height: auto;}
+	 .download.waist .experience_desc{ display: block;text-align: center;}
+	 .download.waist .download-btn{ display: block; margin: 0 auto; line-height: 48px;}
+	 .daohangwap.on img.off{ display: block;} .daohangwap.on img.on{ display: none;}
+	}

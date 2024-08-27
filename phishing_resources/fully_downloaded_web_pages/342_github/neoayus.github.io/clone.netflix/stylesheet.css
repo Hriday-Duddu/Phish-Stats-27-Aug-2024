@@ -1,0 +1,219 @@
+/* Including Roboto font  */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* Universal Changes  */
+*{
+   border : 0 ; 
+   padding : 0 ; 
+   margin : 0 ; 
+   box-sizing: border-box;
+   font-family: 'Roboto' ; 
+   
+ /* pasting this here so i dont' have to add it everywhere else  */
+   position:relative ;
+   z-index: 1 ; 
+}
+
+body{
+ /* HANDELING OVERFLOW AND SCROLL BAR  */
+   overflow: auto ;
+   scrollbar-width: none; 
+}
+
+/* Background Image and Black Transparent Overlay  */
+body .bg{ 
+ /* setting up background-image  */
+   height: 100vh ; 
+   width: 100vw ; 
+   background-image: url('assets/images/background-image.jpeg') ;
+   background-position: center ; 
+   background-repeat: no-repeat ; 
+   background-size: cover ;    
+
+   position: relative ;
+   z-index : -1 ; 
+   
+ /* setting display to flex to fit in header and the rest of content  */
+   display: flex ; 
+   flex-direction: column ;
+   
+ /* setting up black overlay  */
+   &::before{
+      height: 100vh ; 
+      width: 100vw ; 
+      background: rgb(0,0,0,0.678)  ;
+      
+      top: 0 ;
+      left: 0 ; 
+      
+      content: '' ; 
+      position: absolute ; 
+      z-index: 0 ; 
+   }
+
+ /* aligning main-content to center  */
+   display: flex ; 
+   justify-content: center ;
+   align-items: center ;
+   
+}
+
+/* header and netflix logo  */
+body .bg .head{
+   height: 20vh; 
+   width: 100vw ; 
+}
+
+body .bg header .netflix-logo{
+   height: 6rem ;
+   width: auto ; 
+   
+   margin-left: 12rem ; 
+   margin-top: 10px ; 
+   background-image: url('assets/images/logo.png') ; 
+   background-repeat: no-repeat ; 
+   background-size: contain ;
+}
+
+/* Sign-Up/Sign-In Box  */
+body .bg .main-box{  
+   width: 26vw ; 
+   height: 90vh ; 
+   background: rgb(0,0,0,0.74);
+
+   border-top-left-radius: 0.3rem;
+   border-top-right-radius: 0.3rem;
+}
+
+/* MAIN CONTENT INSIDE SIGN IN:  */
+body .bg .main-box .main-content{
+   height: 100% ; 
+   display: flex; 
+   flex-direction: column ; 
+   color: white ;
+
+   justify-content: space-evenly;
+   margin-left: 3.5rem ; 
+   margin-top: 0.7rem ; 
+}
+
+/* Sign In  */
+body .bg .main-box .main-content h1{
+   font-size: 2.6rem ; 
+}
+
+/* text area  */
+body .bg .main-box .main-content .input{
+   /* display: flex; 
+   flex-direction: column ;  */
+
+   align-items: center ; 
+   justify-items: center ;
+}
+
+body .bg .main-box .main-content .input .creds{
+   height: 3.7rem ;
+   width: 85% ; 
+   margin-top: 2rem ;
+
+   align-items: center;
+
+   color: rgb(161, 161, 161) ;
+   font-size: 1rem;  
+   padding-left: 1.5rem ; 
+
+
+   border: .3px solid grey ; 
+   border-radius: .22rem ;
+   background-color: rgba(63, 63, 63, 0.411) ;
+}
+
+/* Buttons  */
+.main-box .main-content .main-signin{
+   display: flex; 
+   flex-direction : column ; 
+}
+
+.main-box .main-content .main-signin .btn{
+   height: 3.1rem ; 
+   width: 85%; 
+   
+   color: white ;
+   font-size: 1.2rem ; 
+   border-radius: .22rem ;
+   background-color: rgba(63, 63, 63, 0.411) ;
+   margin-bottom: 0.8rem ; 
+}
+
+.main-box .main-content .main-signin p{
+   width: 85% ; 
+   text-align: center ;
+   margin-bottom: 0.8rem ; 
+} 
+
+.main-box .main-content .main-signin .red{
+   background-color: rgb(198, 1, 1);
+   font-weight: 700;
+}
+
+.main-box .main-content a{
+   width: 85% ; 
+   font-size: 1rem ; 
+   text-align: center ;
+   text-decoration: none ; 
+   color : white ; 
+
+}
+
+/* check box  */
+.main-box .main-content .main-check{
+   font-size: 1rem ;  
+}
+.main-box .main-content .main-check input[type="checkbox"]{
+   transform: scale(1.5) ; 
+   margin-right: .6rem ; 
+}
+
+.main-box .main-content .main-signup a{
+   color: rgb(202, 202, 202);  
+}
+
+
+.main-box .main-content .main-captcha{
+   font-size: .8rem ; 
+   width: 85% ; 
+   color: rgba(156, 155, 155, 0.799);  
+   bottom: 10px ;
+
+}
+.main-box .main-content .main-captcha a{
+   font-size: .8rem ; 
+   color: rgb(42, 42, 219) ; 
+}
+
+ /* DESIGNING FOOTER  */
+footer{
+   font-size : 1.15rem ;
+   
+   text-decoration: rgba(160, 160, 160, 0.828) underline;
+   height: 55vh ;
+   width: auto ; 
+   background-color: black ; 
+   
+   display: flex; 
+   flex-wrap: wrap;
+   
+}
+
+footer .list{
+   color: rgba(146, 146, 146, 0.927) ;  
+   margin-top: 10rem ; 
+   position: relative ;
+   
+   list-style-type: none ; 
+}
+
+footer .list li{
+   margin-top: 1rem ;
+   margin-left: 8rem ;
+}

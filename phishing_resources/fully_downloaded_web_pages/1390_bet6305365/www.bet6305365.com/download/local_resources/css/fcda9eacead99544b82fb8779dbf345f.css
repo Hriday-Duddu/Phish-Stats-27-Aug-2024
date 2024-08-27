@@ -1,0 +1,159 @@
+/*login pop*/
+#login_modal {
+    font-family: 'Microsoft YaHei', Arial;
+}
+#login_modal .modal-dialog {
+    width: 500px;
+    margin-top: calc((100vh - 350px)/2);
+}
+#login_modal .modal-content {
+    border-radius: 25px;
+    background-color: #063f2ee0;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+}
+#login_modal .modal-header {
+    color: #f9f9f9;
+    border: none;
+}
+#login_modal .modal-header .modal-title{
+    font-size:25px;
+}
+#login_modal .modal-header button{
+	color:#fff;
+	opacity: 1;
+    padding-top: 3px;
+}
+#login_modal .modal-body{
+    position: relative;
+    font-weight: bold;
+    text-align: center;
+}
+#login_modal .login_form{
+    width: 350px;
+    margin: 0 auto;
+}
+#login_modal .input-group {
+    display: flex;
+    padding-bottom: 10px;
+}
+#login_modal .input-group .symbol{
+    z-index: 8;
+    color: #126c50;
+    display: flex;
+    align-items: center;
+    bottom: 4px;
+    left: 15px;
+    height: 100%;
+    font-size: 20px;
+}
+#login_modal .input-group .symbolhidePassword,
+#login_modal .input-group .symbolShowPassword{
+    z-index: 8;
+    align-items: center; 
+    bottom: 12px;
+    right: 15px;
+    height: 40%;  
+    position: relative;
+    font-size: 20px;
+    cursor: pointer;
+}
+#login_modal .input-group .showhidepassword{
+    bottom: 15%;
+    right: 0%;
+    position: absolute;
+}
+#login_modal .input-group .symbol{
+    z-index: 8;
+    color: #126c50;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 4px;
+    left: 15px;
+    height: 100%;
+    font-size: 20px;
+}
+#login_modal .input-group .form-control{
+    border-radius: 30px;
+    height: 45px;
+    padding: 0 30px 0 45px;
+    color: #0e0e0e;
+    z-index: 0;
+}
+#login_modal .login-captcha{
+    position: relative; 
+    width: 100%;
+}
+#login_modal .captcha_img{
+    position: absolute;
+    cursor: pointer;
+    top: 8px;
+    right: 13px;
+    bottom: 0;
+    width: 100px;
+}
+#login_modal .login_form .btn-login{
+    border-radius: 20px;
+    border: none;
+    background: #126c50;
+    cursor: pointer;
+    color: #fff;
+    width: 30%;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    font-size:18px;
+    float: right;
+}
+#login_modal .login_form .btn-login:hover {
+    color:#fad910;
+    background: #307560;
+}
+#login_modal .login_form .login-option {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    width: 40%;
+    height: 45px;
+}
+#login_modal .login_form .login-option a{
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+}
+#login_modal .contact-us {
+    color:#929695;
+    margin-top: 5%;
+}
+#login_modal .contact-us a{
+    color: white;
+    padding-left: 5px;
+    text-decoration: none;
+}
+#login_modal .login_form .LoginuserName , 
+#login_modal .login_form .Loginpassword ,
+#login_modal .login_form .login-item ,
+#login_modal .login_form .gdcode{
+    width: 100%;
+}
+
+
+#login_modal .modal-header .close:hover,
+#login_modal .login-option .register:hover,
+#login_modal .login-option .forgot-pwd:hover,
+#login_modal .contact-us span:hover
+{
+    color: #fad910;
+}
+
+/* social-login */
+.sociallogin-box 
+{
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    margin: 5% 0 0;
+}

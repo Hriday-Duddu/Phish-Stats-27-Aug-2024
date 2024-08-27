@@ -1,0 +1,373 @@
+@charset "UTF-8";
+
+/*!
+ * bet365_905
+ * Author: Dear
+ * Update by 2019-04-01
+ * 42436
+ */
+
+/* 禁用响应 */
+@media (min-width:990px) {
+	.container { width: 1000px; }
+}
+@media (min-width:1200px) {
+	.container { width: 1000px; }
+}
+.container { position: relative; width: 1000px; margin: 0 auto; padding: 0; overflow: visible; }
+
+/* ==================== common 公共 ==================== */
+a { color: #666; }
+a:hover { text-decoration: none; color: #ff0; }
+ul,
+ol { margin: 0; padding: 0; list-style: none; }
+body { background: #222; color: #666; font-size: 14px; font-family: 'Microsoft YaHei', "Helvetica Neue", Helvetica, Arial, sans-serif; }
+.list-inline { margin: 0; }
+.red { color: #F00 !important; }
+.yellow { color: #FF0 !important; }
+.page-banner {height: 220px;background: no-repeat center top;}
+.main-chess .page-banner {height: 350px;}
+
+/* ==================== top 公共页头 ==================== */
+
+/*header-top 页头顶部链接*/
+.header-top { height: 31px; line-height: 30px; background: #007b5c; color: #45cea9; }
+.header-top .container { border-bottom: 1px solid #006347; width: 1100px;}
+body.casino header .header-top .container {width: 1100px;}
+.header-top .header-top-time { float: right; max-width: 290px; white-space: nowrap; }
+.header-top .header-top-time ._user_time { padding: 0 0 0 17px; background: no-repeat 0 center; }
+.header-top .header-top-right { float: left; font-size: 12px; }
+.header-top .header-top-right .list-inline li{padding:0 2px;}
+.header-top .header-top-right a { color: #45cea9; }
+.header-top .header-top-right a:hover { color: #ff0; }
+.header-top .header-top-right .language { position: relative; }
+.header-top .header-top-right .language a { display: block; width: 75px; height: 24px; padding: 0 0 0 10px; color: #fff; font-size: 12px; line-height: 22px; border: 1px solid #00a278; background-color: #006548; }
+.header-top .header-top-right .language .dropdown-menu { left: 5px; display: block; width: 75px; height: 0; min-width: 0; margin: 0; padding: 0; border: none; overflow: hidden; opacity: 0; transition: all .3s; }
+.header-top .header-top-right .language .dropdown-menu li { width: 100%; margin: 0; padding: 0; }
+.header-top .header-top-right .language:hover .dropdown-menu { height: 48px; opacity: 1; }
+
+/*static-bar logo和主导航菜单*/
+header .static-bar { height: 80px; background: #007b5c; border-bottom: 1px solid #009e7a; }
+header .static-bar .container { height: 79px; border-top: 1px solid #00946d;width: 1100px; }
+body.casino header .static-bar .container{width: 1100px;}
+header .static-bar .logo { position: absolute; left: 50px; top: 0; width: 150px; height: 79px; z-index: 2; }
+header .static-bar .logo img { position: absolute; left: 0; top: 50%; transform: translateY(-50%); max-width: 150px; max-height: 79px; }
+
+/*右侧导航菜单*/
+header .static-bar .navbar-nav { position: absolute; top: 0; right: 50px; display: flex; width: 820px; height: inherit; }
+header .static-bar .navbar-nav>li { position: relative; flex: auto; }
+header .static-bar .navbar-nav>li>a { display: block; height: 79px; line-height: 79px; padding: 0; text-align: center; color: #FFF; }
+header .static-bar .navbar-nav>li>a span { display: block; }
+
+/*header .static-bar .navbar-nav>li:hover{ background: url(images/nav_active_bg.png) no-repeat center bottom; }*/
+header .static-bar .navbar-nav>li.active>a,
+header .static-bar .navbar-nav>li:hover>a { border-bottom: 2px solid #fcff00; color: #fcff00; }
+header .static-bar .navbar-nav>li.hot { background: no-repeat right 8px; }
+header .static-bar .navbar-nav .dropdown-menu { margin: -2px 0 0; border: none; border-top: 2px solid #ff0; }
+
+/* subimg 左侧带图片的二级下拉 */
+header .static-bar .navbar-nav .subimg .dropdown-menu { width: 676px; height: 181px; margin: 0; padding: 0 0 0 70px; font-size: 0; border: 1px solid #009b73; border-radius: 3px; overflow: hidden; }
+header .static-bar .navbar-nav .subimg .dropdown-menu:before { content: ""; position: absolute; left: 0; top: 0; display: block; width: 70px; height: 100%; background: #007b5c; }
+header .static-bar .navbar-nav .subimg .dropdown-menu li { float: left; width: 151px; height: 60px; margin: 0; padding: 0; border: 0; border-right: 1px solid #464646; border-bottom: 1px solid #464646; }
+header .static-bar .navbar-nav .subimg .dropdown-menu li a { position: relative; display: block; height: 100%; line-height: 60px; padding: 0 0 0 70px; font-size: 12px; overflow: hidden; text-overflow: ellipsis; }
+header .static-bar .navbar-nav .subimg .dropdown-menu li a:hover { background-color: rgba(255, 255, 0, .9); color: #af0001; }
+header .static-bar .navbar-nav .subimg .dropdown-menu li a span {background: no-repeat center / contain; position: absolute; left: 10px; top: 5px; width: 55px; height: 50px; }
+/*header .static-bar .navbar-nav .subimg.navitem_mg .dropdown-menu:before { background-image: url(images/dropdown_menu/recommend_mg.jpg); }*/
+/*header .static-bar .navbar-nav .subimg.navitem_pt .dropdown-menu:before { background-image: url(images/dropdown_menu/recommend_pt.jpg); }*/
+/*header .static-bar .navbar-nav .subimg.navitem_ag .dropdown-menu:before { background-image: url(images/dropdown_menu/recommend_ag.jpg); }*/
+/*header .static-bar .navbar-nav .subimg.navitem_bb .dropdown-menu:before { background-image: url(images/dropdown_menu/recommend_bb.jpg); }*/
+/*header .static-bar .navbar-nav .subimg.navitem_cq9 .dropdown-menu:before { background-image: url(images/dropdown_menu/recommend_cq9.jpg); }*/
+/*header .static-bar .navbar-nav .subimg.navitem_fish_gg .dropdown-menu:before { background-image: url(images/dropdown_menu/recommend_chess.jpg); }*/
+
+/*header-links 页头链接*/
+.header-links { position: relative; z-index: 1; height: 79px; padding-top: 10px; background-color: #333; border-top: 1px solid #009e7a; border-bottom: 1px solid #464646; }
+.header-links ul { display: flex; }
+.header-links ul li { position: relative; flex: 1; line-height: 29px; padding: 0 0 0 20px; }
+.header-links ul li+li:after { content: ''; position: absolute; top: 8px; left: 0; height: 45px; border-right: 1px solid #464646; }
+.header-links ul li div span { margin-right: 20px; color: #fff; }
+.header-links ul li div a { display: inline-block; width: 80px; color: #999; }
+.header-links ul li div a:hover { color: #ff0 !important; }
+.header-links ul li div a.license { position: relative; }
+.header-links ul li div a.license:after { content: ""; position: absolute; top: 100%; left: -7px; width: 198px; height: 0; background: no-repeat 0 0; opacity: 0; transition: all .5s; }
+.header-links ul li div a.license:hover:after { height: 249px; opacity: 1; }
+
+/*login-bar 登陆表单*/
+.login-bar { height: 54px; }
+.login-bar .container { height: 54px; padding: 9px 0 0; border-bottom: 1px solid #3e3e3e; }
+.login-bar .container:after { content: ""; position: absolute; left: 0; top: 0; width: 74px; height: 100%; background: no-repeat 0 center; border-bottom: 1px solid #ff0; }
+
+/*非首页的登陆表单*/
+body.index header .login-bar { display: none; }
+.login-bar { background: #1d1717; }
+.login-bar .members { float: right;}
+.members .login-before form>* { float: left; height: 33px; border-radius: 3px; margin: 0 8px 0 0; line-height: 33px; }
+.members .login-before form a { color: #fff; }
+.members .login-before form a:hover { color: #ff0; }
+.members .login-before form input { width: 190px; height: 33px; line-height: 31px; background: #333 no-repeat 10px center; padding: 0 0 0 30px; border: 1px solid #333; font-size: 13px; color: #fff; }
+/*.members .login-before form input[name="username"] { background-image: url(images/input_id.png); }*/
+/*.members .login-before form input[name="password"] { background-image: url(images/input_pw.png); }*/
+/*.members .login-before form input[name="captcha"] { background-image: url(images/input_code.png); }*/
+.members .login-before form ._vr_captcha_box { position: relative; }
+.members .login-before form ._vr_captcha_box img { position: absolute; top: 2px; right: 2px; width: 90px; height: 29px; }
+.login-bar .members .login-before form .btn-login {position: relative;  background: no-repeat center 0; text-align: center; transition: all .3s; }
+.login-bar .members .login-before form .btn-login a {color: #000;width: 110px; height: 33px;display: block;}
+.login-bar .members .login-before form .btn-login:hover { background-position-y: bottom; color: #000; }
+.login-bar .members .login-before form .btn-login:hover a {color: #000;}
+.login-bar .members .login-before form ._vr_signSwitch{width: 110px;color: #000;text-align: center;background: linear-gradient(#ff0 50%,#f1f100 50%);transition: .3s}
+.login-bar .members .login-before form ._vr_signSwitch:hover{opacity: .7;}
+
+/*login-after 登陆后*/
+._vr_loginSuccess{margin-top: 8px;}
+.header-panel._vr_loginSuccess ul li a{color: #666;}
+._vr_loginSuccess ._vr_nickname { color: #FFD200; }
+._vr_loginSuccess ._vr_balanceBox { vertical-align: top; }
+._vr_loginSuccess ._vr_balanceBox .dropdown-menu { margin: 0; background: #2c2223; border: 1px solid #fefdc5; }
+._vr_loginSuccess ._vr_balanceBox .dropdown-menu a { color: #fff; }
+._vr_loginSuccess ._vr_balanceBox .dropdown-menu li:hover { background: #1d1717; }
+
+/* ==================== footer 首页页脚 ==================== */
+.footer-article-wrap{margin:15px auto 0;width:1000px;height:430px;color: #45ce9f;}
+.footer-article{float:left;height:428px;}
+.footer-article h5{margin:0 0 30px 8px;width:193px;height:64px;}
+.footer-article p{line-height: 22px;}
+.footer-article .footer-money .info-item .num-item{width: 274px;padding-right: 14px; overflow: hidden;margin-bottom: 40px;}
+.footer-article .footer-money .info-item .num-item .time{font-size: 25px;font-weight: 500;line-height: 45px;}
+.footer-article .footer-money .info-item .num{font-size: 42px;color: #45ce9f;vertical-align: -4px;margin-right: 5px;}
+.footer-article .footer-money .info-item .num-item .bar{clear: both;position: relative;height: 18px;background: no-repeat;}
+.footer-article .footer-money .info-item .num-item .bar .bar-inside{position: absolute;height: 14px;top: 2px;left: 2px;background: #09503c;border-radius: 7px;width: 0;-webkit-transition: all 1s;transition: all 1s;}
+.footer-article .footer-money .info-item .num-item .bar.b1 .reached{width: 116px;}
+.footer-article .footer-money .info-item .num-item .bar.b2 .reached{width: 208px;}
+.footer-article .footer-money .info-item .sub-tit{width: 180px;height: 50px;margin-top: 20px;padding-top:30px; background: no-repeat;}
+.footer-article2{width:270px;}
+.footer-article2 h5{margin:0 0 25px 1px;}
+.footer-article3{margin-left:15px;width:302px;border-right:0;}
+.footer-article3 h5{margin:0 0 10px 0;}
+.footer-article3-img1{margin-bottom:16px;width:335px;height:131px;background: no-repeat;}
+.footer-article3-img2 { width: 302px; height: 40px; line-height: 40px; font-size: 20px; font-weight: bold; color: #000; text-align: center; white-space: nowrap; }
+
+/* ==================== footer 公共页脚 ==================== */
+footer.footer { padding: 15px 0 35px; background-color: #303030; }
+footer .footer-logo { display: block; height: 50px; background: no-repeat center; }
+
+/*footer-link*/
+footer .footer-link { }
+footer .footer-link ul { text-align: center; padding: 28px 0; font-size: 0; }
+footer .footer-link ul li { display: inline-block; height: 14px; line-height: 14px; padding: 0 10px; font-size: 14px; }
+
+/*footer-partner*/
+footer .footer-partner { height: 52px; background: no-repeat center 0; }
+
+/*footer-suggest*/
+footer .footer-suggest { text-align: center; }
+
+/* ==================== notice 公共公告 ==================== */
+.notice { width: 100%; }
+.notice .notice_bg { position: relative; height: 36px; line-height: 35px; }
+.notice .container { padding: 0 0 0 80px; border-bottom: 1px solid #3e3e3e; }
+.notice .notice-title { position: absolute; left: 0; top: 0; width: 80px; padding: 0 0 0 20px; background: no-repeat 0 center; border-bottom: 1px solid #ffe309; color: #ffe309; font-size: 12px; }
+.notice .notice-list { height: 35px; }
+.notice .notice-list a { color: #FFF; font-size: 13px; }
+.notice .notice-list a:hover { text-decoration: underline; }
+body.index .notice .container { width: 860px; }
+
+/* ==================== index 首页 ==================== */
+.index-layout { background: #007b5b; }
+.index-layout .layout-left { float: left; width: 120px; height: 796px; padding: 10px 0 0; background: no-repeat 0 0; }
+.index-layout .layout-left:before { content: ''; display: block; height: 25px; margin-bottom: 6px; background: no-repeat center; }
+.index-layout .layout-left>ol { list-style: decimal; padding: 0 0 0 25px; }
+.index-layout .layout-left>ol>li { position: relative; height: 28px; line-height: 28px; margin-bottom: 2px; font-size: 13px; color: #45cea9; cursor: pointer;}
+.index-layout .layout-left>ol>li.recommend>span:after { content: ''; display: inline-block; width: 25px; height: 28px; margin-left: 3px; vertical-align: top; background: no-repeat center; }
+.index-layout .layout-left>ol>li>span { color: #FFF; white-space: nowrap; }
+.index-layout .layout-left>ol>li>a.tool-tip { position: absolute; z-index: 5; display: none; left: 70px; top: -17px; width: 125px; height: 60px; padding: 10px 0 0 63px; background: no-repeat 0 0; color: #FFF; }
+.index-layout .layout-left>ol>li:hover>a.tool-tip { display: block; }
+.index-layout .layout-left>ol>li>a.tool-tip i {background: no-repeat center / contain; position: absolute; left: 10px; top: 10px; width: 50px; height: 40px; }
+.index-layout .layout-left>ol>li>a.tool-tip p { margin: 0; color: #ad0000; font-size: 12px; font-weight: bold; line-height: 12px; }
+.index-layout .layout-left>ol>li>a.tool-tip span { display: inline-block; margin-top: 5px; padding: 0 3px; color: #fff; font-size: 12px; line-height: 19px; background-color: #2b2b2b; border-radius: 3px; }
+.index-layout .layout-left>ol>li>a.tool-tip span:hover { color: red; }
+
+/* layout-right 首页右侧*/
+.index-layout .layout-right { float: right; width: 880px; padding: 10px; background: #333; }
+.index-layout .layout-right .banner-wrapper { position: relative; padding: 0 230px 0 0; }
+
+/* home-slide 轮播*/
+.slide.home-slide,
+.slide.home-slide .slide-inner,
+.slide.home-slide .slide-inner li,
+.slide.home-slide .slide-inner li a { display: block; height: 260px; }
+.slide.home-slide .slide-inner>a { display: block; opacity: 0; transition: .3s all; }
+.slide.home-slide .slide-indicators li { width: 12px; height: 12px; border-radius: 15px; margin: 0 5px; background: #333; opacity: .3; }
+.slide.home-slide .slide-indicators li.active,
+.slide.home-slide .slide-indicators li:hover { opacity: 1; background: #ffeb0f; }
+
+/*login-bar index的登陆框*/
+.banner-wrapper .members { position: absolute; right: 0; top: 0; width: 220px; height: 260px; padding: 14px 15px 5px; background: #007b5c; }
+.banner-wrapper .members .login-title { height: 40px; margin: 0 0 13px; background: no-repeat center top; }
+.banner-wrapper .members .login-before form>* { margin: 0 0 5px; }
+.banner-wrapper .members .login-before form input { background-color: #035e46; border: 1px solid #009b73; }
+/*.banner-wrapper .members .login-before form a{margin: 0 4px;}*/
+.banner-wrapper .members .login-before form .btn-login {background: no-repeat center 0; text-align: center;transition: all .3s; }
+.banner-wrapper .members .login-before form .btn-login a {width: 190px;height: 33px;display: block;color: #000;}
+.banner-wrapper .members .login-before form .btn-login:hover { background-position-y: bottom; }
+.banner-wrapper .members .login-before form .btn-register{float: right;}
+.banner-wrapper .members .login-before form ._vr_signSwitch{ float: right;margin-left: 8px; }
+
+/* login-after 登陆后*/
+/*.banner-wrapper .members .login-after .login-title { background-image: url(images/member_title.png); }*/
+.banner-wrapper .members .login-after a { color: #fff; }
+.banner-wrapper .members .login-after a:hover { color: #ff0; }
+.banner-wrapper .members .login-after>ul>li { float: left; width: 33.3%; line-height: 30px; font-size: 12px; }
+.banner-wrapper .members .login-after>ul>li.text,
+.banner-wrapper .members .login-after>ul>li.balance { width: auto; padding: 0; color: #fff; }
+.banner-wrapper .members .login-after>ul>li.balance { border-bottom: 1px solid #444; }
+.banner-wrapper .members .login-after>ul>li.logout { display: block; width: 190px; border-top: 1px solid #444; margin: 10px 0 0; padding: 15px 0 0; }
+.banner-wrapper .members .login-after>ul>li.logout a { display: block; height: 25px; color: #fff; font-size: 12px; line-height: 25px; text-align: center; background: #ff0000; }
+
+/*game-links*/
+.layout-right .game-links { height: 260px; }
+.layout-right .game-links>* { float: left; vertical-align: top; }
+.layout-right .game-links .slot-list { width: 308px; height: 260px; margin-right: 10px; background: no-repeat 0 0; }
+.layout-right .game-links .slot-list li { float: left; width: 77px; height: 87px; text-align: center; }
+.layout-right .game-links .slot-list li a { display: block; width: 76px; height: 86px; border: 2px solid transparent; font-size: 12px; color: #FFF; }
+.layout-right .game-links .slot-list li a .api-logo { display: block; margin: 0 0 7px -7px; transform: scale(.8) }
+.layout-right .game-links .slot-list li:hover a { border: 2px solid #ff0; }
+.layout-right .game-links .slot-list li a.more { background: no-repeat center 15px; padding: 57px 0 0; color: #03513c; }
+.layout-right .game_marker_02:after {width: 60px;height: 60px;right: -4px;top: -4px;}
+/*other-links*/
+.layout-right .game-links .other-links { width: 313px; }
+.layout-right .game-links .other-links li { float: left; width: 313px; height: 125px; }
+.layout-right .game-links .other-links li.other-chess { margin: 0 0 10px; background: no-repeat 0 0; }
+.layout-right .game-links .other-links li.other-fish { background: no-repeat 0 0; }
+.layout-right .game-links .other-links li a { display: block; width: 100%; height: 100%; padding: 18px 0 0 190px; border: 2px solid transparent; }
+.layout-right .game-links .other-links li a h5 { color: #fff; font-weight: normal; font-size: 16px; margin: 0; }
+.layout-right .game-links .other-links li a p { margin: 10px 0; color: #45cea9; font-size: 12px; }
+.layout-right .game-links .other-links li a span { display: inline-block; width: 80px; height: 20px; color: #fff; font-size: 13px; line-height: 20px; text-align: center; background-color: #035e46; border-radius: 25px; }
+.layout-right .game-links .other-links li a span i { font-size: 12px; }
+.layout-right .game-links .other-links li a:hover { border: 2px solid #ff0; box-shadow: 2px 2px 8px #029961 inset, -2px -2px 8px #029961; color: #FF0; }
+.layout-right .game-links .other-links li a:hover h5 { color: #FF0; }
+.layout-right .game-links .other-links li a:hover p { color: #FF0; }
+.layout-right .game-links .other-links li a:hover span { color: #ad0000; background-color: #ff0; }
+
+/*right-area*/
+.layout-right .game-links .right-area { width: 220px; height: 260px; margin: 0 0 0 9px; padding: 18px 10px 0; background: #006f51; }
+.layout-right .game-links .right-area .jackpot { height: 72px; padding: 35px 0 3px; background: no-repeat center top; color: #ffeb0f; font-size: 24px; font-weight: bold; text-align: center; }
+
+/* winners 中奖名单*/
+.layout-right .game-links .right-area .winners { }
+.layout-right .game-links .right-area .winners span { float: left; width: 33%; vertical-align: top; color: #45cea9; font-size: 12px; text-align: center; }
+.layout-right .game-links .right-area .winners .list-head { height: 23px; line-height: 23px; background: repeat-x 0 0; }
+.layout-right .game-links .right-area .winners .winner-list { width: 100%; height: 140px; overflow: hidden; }
+.layout-right .game-links .right-area .winners .winner-list li { height: 29px; font-size: 12px; line-height: 28px; border-bottom: 1px dotted #008468; }
+.layout-right .game-links .right-area .winners .winner-list li span.user { color: #fff; }
+.layout-right .game-links .right-area .winners .winner-list li span.game { color: #45cea9; }
+.layout-right .game-links .right-area .winners .winner-list li span.money { color: #ff0; }
+
+/*deposit-list 支付方式*/
+.layout-right .deposit-list { display: flex; width: 860px; height: 73px; margin: 10px 0 0; padding: 5px 0; background: #005a41; }
+.layout-right .deposit-list li { flex: 1; }
+.layout-right .deposit-list li a { position: relative; top: 0; display: block; padding: 14px 0 0 51px; color: #FFF; font-size: 14px; background: no-repeat 10px 15px; transition: all .3s; }
+.layout-right .deposit-list li:hover a { top: -5px; color: #ff0; }
+.layout-right .deposit-list li:hover a span { color: #ff0; }
+/*.layout-right .deposit-list li.ali-pay a { background-image: url(images/deposit_img02.png) }*/
+/*.layout-right .deposit-list li.wechat-pay a { background-image: url(images/deposit_img03.png) }*/
+/*.layout-right .deposit-list li.qq-pay a { background-image: url(images/deposit_img04.png) }*/
+/*.layout-right .deposit-list li.rapid a { background-image: url(images/deposit_img05.png) }*/
+.layout-right .deposit-list li a span { display: block; color: #459881; font-size: 12px; line-height: 12px; }
+.index-footer { float: right; width: 880px; padding: 25px 7px 80px; text-align: left; font-size: 12px; background: repeat-x 0 0; }
+.index-footer .list-inline li { padding: 0 10px; line-height: 12px; font-size: 12px; }
+.index-footer .list-inline li+li { border-left: 1px solid #45cea9; }
+.index-footer .list-inline li a { color: #45cea9; }
+.index-footer .list-inline li a:hover { color: #ff0; }
+.index-footer .copy-right { margin: 15px 0 27px; color: #45cea9; }
+.index-footer .footer-partner-index { height: 68px; background: no-repeat center; }
+.index-footer .bottom-info { line-height: 17px; margin: 30px 0 0; color: #269879; text-align: left; }
+
+/* ==================== live 真人 ==================== */
+.live-warp { }
+.live-warp ul { margin: 0 -5px; }
+.live-warp ul li { margin: 0; padding: 0; }
+.live-warp ul li a { position: relative; display: block; width: 240px; height: 316px; margin: 10px auto;background: no-repeat center 0;}
+.live-warp ul li a .live-logo { position: absolute; top: 5px; left: 5px; width: 136px; height: 40px; background: no-repeat left center/ auto 40px;}
+.live-warp ul li a .text { position: absolute; bottom: 0; width: 100%; height: 48px; padding: 16px 0 0 10px; background: #2f2f2f; color: #FFF; font-weight: bold; transition: all .3s; }
+.live-warp ul li a .text .live-name { font-size: 14px; }
+.live-warp ul li a .text .live-btn { float: right; width: 76px; height: 23px; margin: 0 10px 0 0; line-height: 21px; color: #FFF; text-align: center; border: 1px solid #535353; border-radius: 23px; transition: all .3s; }
+.live-warp ul li a:hover:after { content: ""; position: absolute; left: 0; top: 0; display: block; width: 100%; height: 100%; border: 1px solid #eee414; }
+.live-warp ul li a.more:hover:after { display: none; }
+.live-warp ul li a:hover .text { background: #eee414; color: #ad0000; }
+.live-warp ul li a:hover .text .live-btn { background: #ad0000; border-color: #ad0000; }
+.live-warp ul li a:hover .text .live-btn:after { content: "→" }
+.live-warp .game_marker_02:after {right: 0;}
+/* ==================== casino 电子 ==================== */
+body.casino .container { width: 1000px; }
+#myCasino .container { padding: 10px; }
+#myCasino.casino.theme-black .api-nav .swiper-container .swiper-slide.active {  border-top: 3px solid #ffff00; }
+#myCasino.casino.theme-black .casino-sorts .nav-tabs > li.active > a { background: #c7b700;}
+#myCasino.casino > .container .game-list-header .jackpot .j_txt .t_g_name span { color: #ffff00; }
+#myCasino.casino > .container .game-list-header .all_g_txt span { color: #ffff00; }
+#myCasino.casino > .container .casino-game-list .game-item .game-info .g_line2 span { color: #ffff00;}
+
+
+
+
+/* ==================== sports 体育 ==================== */
+.sports-warp { }
+.sports-warp ul { margin: 0 -5px; padding: 0 0 0 20px; }
+.sports-warp ul li { margin: 0; padding: 0; }
+.sports-warp ul li a { position: relative; display: block; width: 320px; height: 340px; margin: 20px auto 0; background: #666; background: no-repeat center bottom;}
+.sports-warp ul li a:before { content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: 320px; border: 2px solid transparent; transition: all .3s; }
+.sports-warp ul li a img { position: absolute; left: 0; top: 0; }
+.sports-warp ul li a .text { position: absolute; bottom: 0; width: 100%; height: 80px; padding: 18px 0 0 100px; background: rgba(22, 21, 21, .9); color: #FFF; font-weight: bold; transition: all .3s; }
+.sports-warp ul li a .text .sports-logo { position: absolute; top: 5px; left: 5px; width: 90px; height: 70px; font-size: 35px; font-weight: 100; line-height: 70px; text-align: center; }
+.sports-warp ul li a .text .sports-name { color: #fff; font-size: 18px; }
+.sports-warp ul li a .text .sports-name span { display: block; color: #474747; font-size: 12px; font-weight: 100; }
+.sports-warp ul li a .text .sports-btn { position: absolute; right: 18px; bottom: 25px; width: 30px; height: 30px; background: no-repeat center 0; }
+.sports-warp ul li a:hover:before { border-color: #fde010; }
+.sports-warp ul li a:hover .text { background-color: #fde010; }
+.sports-warp ul li a:hover .text .sports-logo,
+.sports-warp ul li a:hover .text .sports-name,
+.sports-warp ul li a:hover .text .sports-name span { color: #ad0101; }
+.sports-warp ul li a:hover .text .sports-btn { background-position-y: bottom; }
+.sports-warp .game_marker_02:after {top: 15px;}
+/* ==================== lottery 彩票 ==================== */
+.lottery-warp ul { padding: 0 0 20px; }
+.lottery-warp ul li a { position: relative; bottom: 0; display: block; width: 320px; height: 150px; margin: 20px auto 0; padding: 18px 0 0 142px; background: #191919; border-radius: 150px; transition: all .5s; }
+.lottery-warp ul li a img { position: absolute; left: 15px; top: 50%; max-width: 121px; max-height: 121px;transform: translateY(-50%);}
+.lottery-warp ul li a span.lottery-name { display: block; color: #fff; font-size: 18px; }
+.lottery-warp ul li a span.lottery-desc { display: block; margin: 12px 0; color: #666; font-size: 12px; }
+.lottery-warp ul li a span.lottery-btn { display: block; width: 98px; height: 28px; padding-left: 20px; background: #252525 no-repeat 80px center; border-radius: 25px; color: #fff; font-size: 12px; line-height: 28px; text-align: left; }
+.lottery-warp ul li a:hover { bottom: 10px; background: #ffeb0f; }
+.lottery-warp ul li a:hover span.lottery-name { color: #b31303; }
+.lottery-warp ul li a:hover span.lottery-btn { background-color: #b31303; }
+
+/* ==================== chess 棋牌 ==================== */
+
+/* ==================== fish 捕鱼 ==================== */
+
+/* ==================== promo 优惠 ==================== */
+#myPromo { width: 100%; background: none; }
+#myPromo .promo-top-bar > ul li.active { color: #ae0103; font-weight: bold; background-color: #ffe309; }
+#myPromo .promo-top-bar > ul li.active:after { border-top: 5px solid #ffe309; }
+#myPromo .list-type2 .list_type2_item_tit { display: none; }
+#myPromo .list-type2 .promo-item .shadow .btn-apply { background-color: #ffe309; color: #ae0103; }
+.main-promo.theme-black .list-type2 .promo-item .promo-detail{background: #fff!important;}
+.main-promo.theme-black .list-type2 .promo-item .promo-detail .tit{color: #000!important;}
+
+/* ==================== about 关于 ==================== */
+.about .about_aside { }
+.about .about_aside .page-list { width: 220px; padding: 0 20px; background: #1b1b1b; }
+.about .about_aside .page-list .about_aside_title { width: 220px; height: 60px; line-height: 60px; margin: 0 0 0 -20px; background: #007b5c; color: #FFF; font-size: 20px; text-align: center; }
+.about .about_aside .page-list .about_aside_title span { font-size: 12px; }
+.about .about_aside .page-list>a { display: block; height: 40px; line-height: 39px; background: no-repeat right 0; border-bottom: 1px solid #2a2929; }
+.about .about_aside .page-list>a:last-child { border-bottom: none; }
+.about .about_aside .page-list>a.active,
+.about .about_aside .page-list>a:hover { color: #ff0; background-position-y: bottom; }
+.about .right-about { margin-left: -10px; background: #1b1b1b; color: #FFF; }
+
+/* ==================== register 注册 ==================== */
+.about .right-register { margin-left: -10px; background: #1b1b1b; color: #FFF; }
+.about .right-register legend { color: #ffe309; font-size: 16px; border-bottom: 1px solid #343434; }
+.about .right-register [name="registerBtn"] { width: 140px; height: 40px; padding: 0; background-color: #ffe309; border: none; border-radius: 20px; color: #ad0101; font-size: 14px; line-height: 40px; }
+
+/* ==================== agent 代理 ==================== */
+.agent .tab-content>.tab-pane>.container { color: #FFF; }
+
+/* ==================== float 浮动图 ==================== */

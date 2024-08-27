@@ -1,0 +1,409 @@
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: black;
+}
+
+.main {
+    background-image: url("https://assets.nflxext.com/ffe/siteui/vlv3/655a9668-b002-4262-8afb-cf71e45d1956/5ff265b6-3037-44b2-b071-e81750b21783/IN-en-20240715-POP_SIGNUP_TWO_WEEKS-perspective_WEB_c6d6616f-4478-4ac2-bdac-f54b444771dd_small.jpg");
+    height: 70vh;
+    background-size: max(1200px, 100vw);
+    position: relative;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+}
+
+
+.main .box {
+    height: 70vh;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    opacity: 0.74;
+}
+
+nav {
+    display: flex;
+    max-width: 60vw;
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
+    height: 62px;
+}
+
+nav img {
+    color: red;
+    width: 114px;
+    position: relative;
+    z-index: 10;
+}
+
+nav button {
+    position: relative;
+    z-index: 10;
+}
+
+.hero {
+    font-family: "Martel Sans", sans-serif;
+    height: 73%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: rgb(255, 255, 255);
+    position: relative;
+    gap: 23px;
+    padding: 30px;
+
+}
+
+.hero> :first-child {
+    font-weight: bolder;
+    font-size: 42px;
+    text-align: center;
+}
+
+.hero> :nth-child(2) {
+    font-weight: 400;
+    font-size: 24px;
+    text-align: center;
+}
+
+
+.hero> :nth-child(3) {
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
+}
+
+.seperation {
+    height: 7px;
+    background-color: rgb(73, 66, 66);
+    padding: 0px;
+}
+
+.btn {
+    padding: 3px 8px;
+    font-weight: bolder;
+    background-color: rgba(248, 243, 248, 0.021);
+    color: white;
+}
+
+.btn-red-sm {
+    background-color: red;
+    color: white;
+    font-weight: 400;
+
+}
+
+.btn-red {
+    background-color: red;
+    color: white;
+    padding: 3px 24px;
+    font-size: 20px;
+    border-radius: 4px;
+
+}
+
+.main input {
+    padding: 3px 24px;
+    font-size: 20px;
+    border-radius: 4px;
+    background-color: rgba(23, 23, 23, 0.2);
+
+}
+
+.first {
+    display: flex;
+    justify-content: center;
+    max-width: 70vw;
+    margin: auto;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.sec-image {
+    position: relative;
+    z-index: 10;
+}
+
+.sec-image img {
+    width: 30vw;
+    position: relative;
+    z-index: 10;
+    top: 20px;
+}
+
+.sec-image video {
+    width: 28vw;
+    position: absolute;
+    top: 51px;
+    right: 0;
+
+
+}
+
+section.first>div {
+    display: flex;
+    flex-direction: column;
+}
+
+section.first>div :first-child {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+section.first>div :nth-child(2) {
+    font-size: 20px;
+}
+
+.seperation2 {
+    height: 7px;
+    background-color: rgb(73, 66, 66);
+    padding: 0px;
+    margin: 20px 0px;
+}
+
+
+.second {
+    display: flex;
+    justify-content: center;
+    max-width: 70vw;
+    margin: auto;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.span {
+    display: flex;
+    flex-direction: column;
+}
+
+.Dow {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.save {
+    font-size: 20px;
+}
+
+
+.third {
+    display: flex;
+    justify-content: center;
+    max-width: 70vw;
+    margin: auto;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.sec-image1 {
+    position: relative;
+    z-index: 10;
+}
+
+
+.sec-image1 img {
+    width: 30vw;
+    position: relative;
+    z-index: 10;
+    top: 20px;
+    margin-left: 20%;
+}
+
+.sec-image1 video {
+    width: 19vw;
+    position: absolute;
+    top: 55px;
+    left: 38%;
+}
+
+
+.watch {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.stream {
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.seperation3 {
+    height: 7px;
+    background-color: rgb(73, 66, 66);
+    padding: 0px;
+    margin: 20px 0px;
+}
+
+
+.forth {
+    display: flex;
+    justify-content: center;
+    max-width: 70vw;
+    margin: auto;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.sec-image2 {
+    position: relative;
+    z-index: 10;
+}
+
+
+.sec-image2 img {
+    width: 30vw;
+    position: relative;
+    z-index: 10;
+    top: 20px;
+    margin-left: 20%;
+}
+
+.create {
+    font-size: 48px;
+    font-weight: bold;
+    margin-left: 20%;
+}
+
+.send {
+    font-size: 20px;
+    margin-left: 20%;
+
+}
+
+
+.seperation4 {
+    height: 7px;
+    background-color: rgb(73, 66, 66);
+    padding: 0px;
+    margin: 20px 0px;
+}
+
+.FAQ h1 {
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    color: white;
+}
+
+.question1 {
+    background-color: rgb(32, 30, 30);
+    width: 60%;
+    margin-left: 20%;
+    height: 50px;
+}
+
+.question1 p {
+    color: white;
+    font-family: "Poppins", sans-serif;
+    padding: 10px;
+    margin-left: 2%;
+    font-size: 24px;
+}
+
+.question2 {
+    background-color: rgb(32, 30, 30);
+    width: 60%;
+    margin-left: 20%;
+    height: 50px;
+}
+
+
+.question3 {
+    background-color: rgb(32, 30, 30);
+    width: 60%;
+    margin-left: 20%;
+    height: 50px;
+}
+
+.question4 {
+    background-color: rgb(32, 30, 30);
+    width: 60%;
+    margin-left: 20%;
+    height: 50px;
+}
+
+.question5 {
+    background-color: rgb(32, 30, 30);
+    width: 60%;
+    margin-left: 20%;
+    height: 50px;
+}
+
+.question6 {
+    background-color: rgb(32, 30, 30);
+    width: 60%;
+    margin-left: 20%;
+    height: 50px;
+}
+
+
+.question2 p {
+    color: white;
+    font-family: "Poppins", sans-serif;
+    padding: 10px;
+    margin-left: 2%;
+    font-size: 24px;
+}
+
+
+.question3 p {
+    color: white;
+    font-family: "Poppins", sans-serif;
+    padding: 10px;
+    margin-left: 2%;
+    font-size: 24px;
+}
+
+
+.question4 p {
+    color: white;
+    font-family: "Poppins", sans-serif;
+    padding: 10px;
+    margin-left: 2%;
+    font-size: 24px;
+}
+
+
+.question5 p {
+    color: white;
+    font-family: "Poppins", sans-serif;
+    padding: 10px;
+    margin-left: 2%;
+    font-size: 24px;
+}
+
+
+.question6 p {
+    color: white;
+    font-family: "Poppins", sans-serif;
+    padding: 10px;
+    margin-left: 2%;
+    font-size: 24px;
+}
+
+.seperation5 {
+    height: 7px;
+    background-color: rgb(73, 66, 66);
+    padding: 0px;
+    margin: 20px 0px;
+}
